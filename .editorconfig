@@ -1,0 +1,18 @@
+# https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties
+root = true
+
+# 匹配全部文件
+[*]
+# 结尾换行符，可选"lf"、"cr"、"crlf"
+end_of_line = lf
+# 在文件结尾插入新行
+insert_final_newline = true
+# 删除一行中的前后空格
+trim_trailing_whitespace = true
+
+# 缩进样式 tab space
+indent_style = space
+# 缩进大小 数字或者tab
+indent_size = tab
+# 单个制表符的宽度
+tab_width = 2

@@ -1,0 +1,64 @@
+{
+  "name": "@own-basic-component/request",
+  "version": "0.0.1",
+  "packageManager": "pnpm@7.21.0",
+  "license": "MIT",
+  "author": "chenxueli",
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/chenxueli0109/own-basic-component.git",
+    "directory": "packages/basic-http"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://gitee.com/chenxueli0109/own-basic-component/packages/basic-request/"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "unbuild",
+    "build:stub": "unbuild --stub",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config-vue": "^0.37.0",
+    "@own-basic-component/config": "workspace:*",
+    "@own-basic-component/util": "workspace:*",
+    "@types/node": "^18.15.11",
+    "@vueuse/core": "^9.13.0",
+    "eslint": "^8.38.0",
+    "pnpm": "^7.32.0",
+    "typescript": "^5.0.4",
+    "unbuild": "^1.2.0",
+    "vite": "^4.2.1",
+    "vite-plugin-dts": "^2.2.0",
+    "vitest": "^0.29.8",
+    "vue": "^3.2.47"
+  },
+  "peerDependencies": {
+    "@own-basic-component/config": "^1.1.20",
+    "@own-basic-component/util": "^1.1.20",
+    "vite": "^4.0.1",
+    "vue": "^3.2.45"
+  },
+  "eslintConfig": {
+    "extends": "@antfu/eslint-config-vue"
+  },
+  "gitHead": "73da614dc5a0242a9daee3051c7a9a12b087a676"
+}

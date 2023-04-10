@@ -1,0 +1,45 @@
+{
+  "name": "@own-basic-component/config",
+  "version": "0.0.1",
+  "packageManager": "pnpm@7.21.0",
+  "license": "MIT",
+  "author": "chenxueli",
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/chenxueli0109/own-basic-component.git",
+    "directory": "packages/basic-config"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://gitee.com/chenxueli0109/own-basic-component/packages/basic-config/"
+  },
+  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "unbuild",
+    "build:stub": "unbuild --stub"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config-vue": "^0.37.0",
+    "@types/node": "^18.15.11",
+    "eslint": "^8.38.0",
+    "pnpm": "^7.32.0",
+    "typescript": "^5.0.4",
+    "unbuild": "^1.2.0"
+  },
+  "gitHead": "73da614dc5a0242a9daee3051c7a9a12b087a676"
+}
