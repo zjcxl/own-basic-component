@@ -11,7 +11,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://gitee.com/chenxueli0109/own-basic-component/packages/basic-ui-naive/"
+    "registry": "https://registry.npmjs.org/"
   },
   "type": "module",
   "main": "./dist/index.umd.cjs",
@@ -35,9 +35,9 @@
     "up": "taze major -I"
   },
   "dependencies": {
-    "@own-basic-component/config": "workspace:*",
-    "@own-basic-component/request": "workspace:*",
-    "@own-basic-component/util": "workspace:*",
+    "@own-basic-component/config": "0.0.3",
+    "@own-basic-component/request": "0.0.3",
+    "@own-basic-component/util": "0.0.3",
     "@vueuse/core": "^9.13.0",
     "vue": "^3.2.47"
   },
@@ -66,5 +66,6 @@
   },
   "eslintConfig": {
     "extends": "@antfu"
-  }
+  },
+  "gitHead": "847f386b3487f2e11b9297e44d5f67faf274f46f"
 }

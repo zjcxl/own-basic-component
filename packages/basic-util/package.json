@@ -11,7 +11,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://gitee.com/chenxueli0109/own-basic-component/packages/basic-util/"
+    "registry": "https://registry.npmjs.org/"
   },
   "type": "module",
   "main": "./dist/index.cjs",
@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.37.0",
-    "@own-basic-component/config": "workspace:*",
+    "@own-basic-component/config": "0.0.3",
     "@types/node": "^18.15.11",
     "eslint": "^8.38.0",
     "pnpm": "^7.32.0",
@@ -49,5 +49,5 @@
   "peerDependencies": {
     "@own-basic-component/config": "^1.1.20"
   },
-  "gitHead": "73da614dc5a0242a9daee3051c7a9a12b087a676"
+  "gitHead": "847f386b3487f2e11b9297e44d5f67faf274f46f"
 }

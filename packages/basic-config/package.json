@@ -11,7 +11,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://gitee.com/chenxueli0109/own-basic-component/packages/basic-config/"
+    "registry": "https://registry.npmjs.org/"
   },
   "module": "./dist/index.mjs",
   "main": "./dist/index.cjs",
@@ -41,5 +41,5 @@
     "typescript": "^5.0.4",
     "unbuild": "^1.2.0"
   },
-  "gitHead": "73da614dc5a0242a9daee3051c7a9a12b087a676"
+  "gitHead": "847f386b3487f2e11b9297e44d5f67faf274f46f"
 }
