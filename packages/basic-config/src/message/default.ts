@@ -59,9 +59,9 @@ export const defaultMessageConfig: Required<MessageUtilConfig<any, any>> = {
     },
     /**
      * 弹框的信息
-     * @param content 内容
-     * @param duration 持续时间
-     * @param onClose 关闭的回调
+     * @param title 内容
+     * @param ok 持续时间
+     * @param cancel 关闭的回调
      */
     confirm(title: string | (() => string), ok?: () => void, cancel?: () => void): void {
       console.log(title, ok, cancel)
