@@ -16,7 +16,7 @@ export * from './request'
 export * from './request/types'
 export { handleMergeRequestConfig } from './request/method'
 
-const version = '1.1.51'
+const version = '0.0.3'
 
 export {
   version,
