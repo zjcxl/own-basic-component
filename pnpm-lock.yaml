@@ -66,10 +66,10 @@ importers:
         specifier: ^0.37.0
         version: 0.37.0(@typescript-eslint/eslint-plugin@5.57.1)(@typescript-eslint/parser@5.57.1)(eslint@8.38.0)(typescript@5.0.4)
       '@own-basic-component/config':
-        specifier: workspace:*
+        specifier: 0.0.3
         version: link:../basic-config
       '@own-basic-component/util':
-        specifier: workspace:*
+        specifier: 0.0.3
         version: link:../basic-util
       '@types/node':
         specifier: ^18.15.11
@@ -112,13 +112,13 @@ importers:
         specifier: ^0.37.0
         version: 0.37.0(@typescript-eslint/eslint-plugin@5.57.1)(@typescript-eslint/parser@5.57.1)(eslint@8.38.0)(typescript@5.0.4)
       '@own-basic-component/config':
-        specifier: workspace:*
+        specifier: 0.0.3
         version: link:../basic-config
       '@own-basic-component/request':
-        specifier: workspace:*
+        specifier: 0.0.3
         version: link:../basic-request
       '@own-basic-component/util':
-        specifier: workspace:*
+        specifier: 0.0.3
         version: link:../basic-util
       '@types/node':
         specifier: ^18.15.11
@@ -157,13 +157,13 @@ importers:
         specifier: ^0.37.0
         version: 0.37.0(@typescript-eslint/eslint-plugin@5.57.1)(@typescript-eslint/parser@5.57.1)(eslint@8.38.0)(typescript@5.0.4)
       '@own-basic-component/config':
-        specifier: workspace:*
+        specifier: 0.0.3
         version: link:../basic-config
       '@own-basic-component/request':
-        specifier: workspace:*
+        specifier: 0.0.3
         version: link:../basic-request
       '@own-basic-component/util':
-        specifier: workspace:*
+        specifier: 0.0.3
         version: link:../basic-util
       '@types/node':
         specifier: ^18.15.11
@@ -199,13 +199,13 @@ importers:
   packages/basic-ui-naive:
     dependencies:
       '@own-basic-component/config':
-        specifier: workspace:*
+        specifier: 0.0.3
         version: link:../basic-config
       '@own-basic-component/request':
-        specifier: workspace:*
+        specifier: 0.0.3
         version: link:../basic-request
       '@own-basic-component/util':
-        specifier: workspace:*
+        specifier: 0.0.3
         version: link:../basic-util
       '@vueuse/core':
         specifier: ^9.13.0
@@ -291,7 +291,7 @@ importers:
         specifier: ^0.37.0
         version: 0.37.0(@typescript-eslint/eslint-plugin@5.57.1)(@typescript-eslint/parser@5.57.1)(eslint@8.38.0)(typescript@5.0.4)
       '@own-basic-component/config':
-        specifier: workspace:*
+        specifier: 0.0.3
         version: link:../basic-config
       '@types/node':
         specifier: ^18.15.11
