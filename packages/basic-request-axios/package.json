@@ -56,9 +56,9 @@
     "vue": "^3.2.47"
   },
   "peerDependencies": {
-    "@own-basic-component/config": "^1.1.20",
-    "@own-basic-component/request": "^1.1.20",
-    "@own-basic-component/util": "^1.1.20",
+    "@own-basic-component/config": "^0.0.1",
+    "@own-basic-component/request": "^0.0.1",
+    "@own-basic-component/util": "^0.0.1",
     "vite": "^4.0.1",
     "vue": "^3.2.45"
   },
