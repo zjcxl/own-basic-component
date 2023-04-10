@@ -38,11 +38,11 @@
     "nanoid": "^4.0.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config-vue": "^0.37.0",
-    "@own-basic-component/config": "0.0.6",
+    "@antfu/eslint-config-vue": "^0.38.4",
+    "@own-basic-component/config": "workspace:*",
     "@types/node": "^18.15.11",
     "eslint": "^8.38.0",
-    "pnpm": "^7.32.0",
+    "pnpm": "^8.2.0",
     "typescript": "^5.0.4",
     "unbuild": "^1.2.0"
   },

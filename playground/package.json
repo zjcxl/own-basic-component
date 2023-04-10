@@ -11,6 +11,7 @@
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@antfu/eslint-config-vue": "^0.38.4",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/ui-naive": "workspace:*",
