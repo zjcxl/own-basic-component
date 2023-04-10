@@ -46,8 +46,5 @@
     "typescript": "^5.0.4",
     "unbuild": "^1.2.0"
   },
-  "peerDependencies": {
-    "@own-basic-component/config": "^0.0.1"
-  },
   "gitHead": "847f386b3487f2e11b9297e44d5f67faf274f46f"
 }

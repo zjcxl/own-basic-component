@@ -51,12 +51,6 @@
     "vitest": "^0.29.8",
     "vue": "^3.2.47"
   },
-  "peerDependencies": {
-    "@own-basic-component/config": "^0.0.1",
-    "@own-basic-component/util": "^0.0.1",
-    "vite": "^4.0.1",
-    "vue": "^3.2.45"
-  },
   "eslintConfig": {
     "extends": "@antfu/eslint-config-vue"
   },
