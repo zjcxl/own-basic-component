@@ -1,6 +1,6 @@
 {
   "name": "@own-basic-component/request",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "packageManager": "pnpm@7.21.0",
   "license": "MIT",
   "author": "chenxueli",
@@ -38,8 +38,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.37.0",
-    "@own-basic-component/config": "0.0.5",
-    "@own-basic-component/util": "0.0.5",
+    "@own-basic-component/config": "0.0.6",
+    "@own-basic-component/util": "0.0.6",
     "@types/node": "^18.15.11",
     "@vueuse/core": "^9.13.0",
     "eslint": "^8.38.0",
