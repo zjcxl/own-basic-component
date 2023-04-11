@@ -44,6 +44,7 @@ export default defineComponent({
     }
   },
   render() {
+    console.log(this.$props)
     return (
       <>
         <BaseTableHelper {...this.$props} columns={this.columns} ref='officialBaseTableHelper' helper-type='table' >

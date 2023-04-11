@@ -23,6 +23,7 @@ export default defineComponent({
     }
   },
   render() {
+    console.log(this.$props)
     return (
       <>
         <BaseTableHelper {...this.$props} ref='baseTableHelper' helper-type='list'>
