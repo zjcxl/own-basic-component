@@ -7,7 +7,7 @@ import Clipboard from 'clipboard'
  * 生成uuid
  * @returns {string}
  */
-const uuid = (): string => {
+function uuid(): string {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
     const r = (Math.random() * 16) | 0
     return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16)
@@ -22,7 +22,7 @@ type _typeObj = Record<string, any>
  * @param _object 如果不传返回为空对象 必须是js的{}对象
  * @param _obj 可选 返回传入的@param _object 必须是js的{}对象,
  */
-const deepCopy = (_object: _typeObj, _obj: _typeObj = {}): _typeObj => {
+function deepCopy(_object: _typeObj, _obj: _typeObj = {}): _typeObj {
   if (!(Object.prototype === Object.getPrototypeOf(_object)))
     return new Error('传入参数***_object***类型错误')
   for (const key in _object) {
@@ -39,7 +39,7 @@ const deepCopy = (_object: _typeObj, _obj: _typeObj = {}): _typeObj => {
  * @param html html文本
  * @returns {string}
  */
-const formatTextFromHtml = (html: string): string => {
+function formatTextFromHtml(html: string): string {
   return html.replace(/<.+?>/g, '').replace(/&nbsp;/ig, '').replace(/\s/ig, '').replace(/\n/g, '')
 }
 
@@ -48,7 +48,7 @@ const formatTextFromHtml = (html: string): string => {
  * @param size 文件大小
  * @returns {string}
  */
-const formatMemorySize = (size: number): string => {
+function formatMemorySize(size: number): string {
   if (size < 1024)
     return `${size}B`
   else if (size / 1024 < 1024)
@@ -66,7 +66,7 @@ const formatMemorySize = (size: number): string => {
  * @param content
  * @returns {string}
  */
-const toDBC = (content: string): string => {
+function toDBC(content: string): string {
   let temp = ''
   for (let i = 0; i < content.length; i++) {
     if (content.charCodeAt(i) === 32)
@@ -82,7 +82,7 @@ const toDBC = (content: string): string => {
  * @param content
  * @returns {string}
  */
-const toCDB = (content: string): string => {
+function toCDB(content: string): string {
   let temp = ''
   for (let i = 0; i < content.length; i++) {
     if (content.charCodeAt(i) === 12288) {
@@ -101,7 +101,7 @@ const toCDB = (content: string): string => {
  * 复制到剪贴板
  * @param text
  */
-const copyText = (text: any) => {
+function copyText(text: any) {
   const element = document.createElement('button')
   const clipboard = new Clipboard(element, {
     text: () => String(text).valueOf() as string,

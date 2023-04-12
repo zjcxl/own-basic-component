@@ -20,7 +20,7 @@ const NUMBER_MAP: Record<string, {
  * 初始化计数键值对
  * @param key
  */
-const init = (key = DEFAULT_MASK_KEY) => {
+function init(key = DEFAULT_MASK_KEY) {
   if (!NUMBER_MAP[key]) {
     NUMBER_MAP[key] = {
       count: 0,
@@ -32,7 +32,7 @@ const init = (key = DEFAULT_MASK_KEY) => {
  * 设置遮罩层的最终配置信息
  * @param config 遮罩层的配置信息
  */
-export const setResultConfig = <T = HTMLElement>(config: MaskUtilConfig<T>) => {
+export function setResultConfig<T = HTMLElement>(config: MaskUtilConfig<T>) {
   resultConfig = config
 }
 

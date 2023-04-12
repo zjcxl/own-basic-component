@@ -10,7 +10,7 @@ const cache: Record<string, any> = {}
  * @param key 键
  * @param item 信息
  */
-export const setCache = <T = any>(key: string, item: T) => {
+export function setCache<T = any>(key: string, item: T) {
   cache[key] = item
 }
 
@@ -18,4 +18,6 @@ export const setCache = <T = any>(key: string, item: T) => {
  * 获取信息
  * @param key 键
  */
-export const getCache = <T = any>(key: string) => cache[key] as T
+export function getCache<T = any>(key: string) {
+  return cache[key] as T
+}

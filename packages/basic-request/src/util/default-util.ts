@@ -7,14 +7,12 @@ import type { Method, QueryType, RequestConfig, ResultModel } from '@own-basic-c
  * @param extra 额外数据
  * @param config 配置信息
  */
-export const getHeadersFromConfig = <T = any, RESPONSE_TYPE = ResultModel<T>>(
-  extra: {
-    method: Method
-    api: string
-    data: QueryType
-  },
-  config: RequestConfig<T, RESPONSE_TYPE>,
-): Record<string, string> => {
+export function getHeadersFromConfig<T = any, RESPONSE_TYPE = ResultModel<T>>(extra: {
+  method: Method
+  api: string
+  data: QueryType
+},
+config: RequestConfig<T, RESPONSE_TYPE>): Record<string, string> {
   const headers: Record<string, string> = {}
   if (config.header) {
     const headerMap = config.header()

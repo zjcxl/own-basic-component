@@ -7,13 +7,13 @@ import type { MaskUtilConfig, MaskUtilMethodConfig } from './types'
  * 定义遮罩层的工具
  * @param config 遮罩层的配置信息
  */
-export const defineMaskUtilConfig = <T = HTMLElement>(config: MaskUtilConfig<T>) => {
+export function defineMaskUtilConfig<T = HTMLElement>(config: MaskUtilConfig<T>) {
   setResultConfig(config)
 }
 
 /**
  * 使用遮罩层的方法
  */
-export const useMask = (): MaskUtilMethodConfig => {
+export function useMask(): MaskUtilMethodConfig {
   return PARENT_MASK_CONFIG
 }

@@ -19,7 +19,7 @@ export const FILE_CONFIG = {
  * @param base64 base64
  * @returns {Blob}
  */
-const base64toBlob = (base64: string): Blob => {
+function base64toBlob(base64: string): Blob {
   const array = base64.split(',')
   const mime = array[0].match(/:(.*?);/)?.[1] || ''
   const blobStr = atob(array[1])
@@ -35,7 +35,7 @@ const base64toBlob = (base64: string): Blob => {
  * @param blob blob
  * @returns {Promise<string | ArrayBuffer>}
  */
-const blobToBase64 = (blob: Blob): Promise<string | ArrayBuffer> => {
+function blobToBase64(blob: Blob): Promise<string | ArrayBuffer> {
   return new Promise((resolve) => {
     const reader = new FileReader()
     reader.onload = (e) => {
@@ -50,7 +50,7 @@ const blobToBase64 = (blob: Blob): Promise<string | ArrayBuffer> => {
  * @param path 路径
  * @param prefix 路径前缀
  */
-const buildPath = (path: string, prefix: string) => {
+function buildPath(path: string, prefix: string) {
   const { baseUrl } = getProjectConfig()
   // http开头或者前缀开头，不做处理
   if (path.startsWith('http://') || path.startsWith('https://') || (baseUrl && path.indexOf(baseUrl) === 0))
@@ -65,7 +65,7 @@ const buildPath = (path: string, prefix: string) => {
  * @param path 文件路径
  * @param suffix 文件后缀
  */
-export const getUploadPath = (path?: string, suffix?: string) => {
+export function getUploadPath(path?: string, suffix?: string) {
   return !path ? '' : buildPath(path, FILE_CONFIG.uploadPrefix) + (suffix || '')
 }
 
@@ -74,7 +74,7 @@ export const getUploadPath = (path?: string, suffix?: string) => {
  * @param path 文件路径
  * @param suffix 文件后缀
  */
-export const getTempPath = (path?: string, suffix?: string) => {
+export function getTempPath(path?: string, suffix?: string) {
   return !path ? '' : buildPath(path, FILE_CONFIG.tempPrefix) + (suffix || '')
 }
 
@@ -83,7 +83,7 @@ export const getTempPath = (path?: string, suffix?: string) => {
  * @param path 文件路径
  * @param suffix 文件后缀
  */
-export const getBackupPath = (path?: string, suffix?: string) => {
+export function getBackupPath(path?: string, suffix?: string) {
   return !path ? '' : buildPath(path, FILE_CONFIG.backupPrefix) + (suffix || '')
 }
 
@@ -92,7 +92,7 @@ export const getBackupPath = (path?: string, suffix?: string) => {
  * @param path
  * @param fileName
  */
-export const downloadFile = (path: string, fileName: string): void => {
+export function downloadFile(path: string, fileName: string): void {
   const link = document.createElement('a')
   link.style.display = 'none'
   link.target = '_blank'
@@ -107,7 +107,7 @@ export const downloadFile = (path: string, fileName: string): void => {
  * 下载上传文件
  * @param file 文件对象
  */
-export const downloadUploadFile = (file: { uploadPath: string; oldFileName: string }) => {
+export function downloadUploadFile(file: { uploadPath: string; oldFileName: string }) {
   const downPath = getUploadPath(file.uploadPath)
   downloadFile(downPath, file.oldFileName || '文件')
 }
@@ -117,7 +117,7 @@ export const downloadUploadFile = (file: { uploadPath: string; oldFileName: stri
  * @param path 文件路径
  * @param fileName 新文件文件名
  */
-export const downloadTempFile = (path: string, fileName: string) => {
+export function downloadTempFile(path: string, fileName: string) {
   downloadFile(getTempPath(path), fileName)
 }
 
@@ -126,7 +126,7 @@ export const downloadTempFile = (path: string, fileName: string) => {
  * @param path 文件路径
  * @param fileName 新文件文件名
  */
-export const downloadBackupFile = (path: string, fileName: string) => {
+export function downloadBackupFile(path: string, fileName: string) {
   downloadFile(getBackupPath(path), fileName)
 }
 

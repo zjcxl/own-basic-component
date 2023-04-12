@@ -5,7 +5,7 @@
  * 手机号验证
  * @param phone 手机号
  */
-const isPhone = (phone: string): boolean => {
+function isPhone(phone: string): boolean {
   return /^1([3-9])\d{9}$/.test(phone)
 }
 
@@ -13,7 +13,7 @@ const isPhone = (phone: string): boolean => {
  * 用户账号验证,只能包括数字字母的组合，长度为4-15位
  * @param account 用户账号
  */
-const isAccount = (account: string): boolean => {
+function isAccount(account: string): boolean {
   return /^[A-Za-z\d]{4,15}$/.test(account)
 }
 
@@ -21,7 +21,7 @@ const isAccount = (account: string): boolean => {
  * 邮箱验证
  * @param email 邮箱
  */
-const isEmail = (email: string): boolean => {
+function isEmail(email: string): boolean {
   return /^\w+@[a-z\d]+\.[a-z]{2,4}$/.test(email)
 }
 
@@ -66,7 +66,7 @@ const PROVINCE_CODE: Record<number, string> = {
  * 验证身份证的省份编号
  * @param content
  */
-const checkProvince = (content: string) => {
+function checkProvince(content: string) {
   return !!(/^[1-9]\d/.test(content) && PROVINCE_CODE[Number.parseInt(content)])
 }
 
@@ -74,7 +74,7 @@ const checkProvince = (content: string) => {
  * 验证身份证的出生日期
  * @param content
  */
-const checkBirthday = (content: string) => {
+function checkBirthday(content: string) {
   const pattern = /^(18|19|20)\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)$/
   if (pattern.test(content)) {
     const year = content.substring(0, 4)
@@ -91,7 +91,7 @@ const checkBirthday = (content: string) => {
  * 验证身份证的顺序码
  * @param content
  */
-const checkCode = (content: string) => {
+function checkCode(content: string) {
   const p = /^[1-9]\d{5}(18|19|20)\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[\dXx]$/
   const factor = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
   const parity = ['1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2']
@@ -111,7 +111,7 @@ const checkCode = (content: string) => {
  * 验证身份证号码
  * @param content
  */
-const isIdCard = (content: string) => {
+function isIdCard(content: string) {
   if (checkCode(content)) {
     const date = content.substring(6, 14)
     if (checkBirthday(date) && checkProvince(content.substring(0, 2)))

@@ -7,7 +7,7 @@ import type { QueryType } from '@own-basic-component/config'
  * @param data
  * @param requestData
  */
-export const handleFormDataParams = (data: QueryType, requestData: any) => {
+export function handleFormDataParams(data: QueryType, requestData: any) {
   if (typeof data !== 'object') {
     requestData.data = data
     return

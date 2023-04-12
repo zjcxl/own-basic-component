@@ -8,7 +8,7 @@ import { browserIsSafari, browserIsTrident } from './browser'
  * @param format 格式化的格式
  * @returns {TimestampModel}
  */
-const formatByTimestamp = (value = 0, format = 'hh:mm:ss.SSS') => {
+function formatByTimestamp(value = 0, format = 'hh:mm:ss.SSS') {
   return new TimestampModel(value, format)
 }
 
@@ -18,7 +18,7 @@ const formatByTimestamp = (value = 0, format = 'hh:mm:ss.SSS') => {
  * @param format 格式化的格式
  * @returns {TimeModel}
  */
-const formatByTime = (value = 0, format = 'hh:mm:ss.SSS') => {
+function formatByTime(value = 0, format = 'hh:mm:ss.SSS') {
   return new TimeModel(value, format)
 }
 
@@ -28,7 +28,7 @@ const formatByTime = (value = 0, format = 'hh:mm:ss.SSS') => {
  * @param format 格式化的格式
  * @returns {DateModel}
  */
-const formatByDate = (value = new Date(), format = 'yyyy-MM-dd HH:mm.ss.SSS') => {
+function formatByDate(value = new Date(), format = 'yyyy-MM-dd HH:mm.ss.SSS') {
   return new DateModel(value, format)
 }
 
@@ -38,7 +38,7 @@ const formatByDate = (value = new Date(), format = 'yyyy-MM-dd HH:mm.ss.SSS') =>
  * @param format 格式化的格式
  * @returns {DateModel}
  */
-const formatByString = (date: string, format = 'yyyy-MM-dd HH:mm.ss.SSS') => {
+function formatByString(date: string, format = 'yyyy-MM-dd HH:mm.ss.SSS') {
   const replaceDate = date.replace(/T/, ' ').replace(/-/g, '/')
   const value = new Date(replaceDate)
   return formatByDate(value, format)
@@ -50,7 +50,7 @@ const formatByString = (date: string, format = 'yyyy-MM-dd HH:mm.ss.SSS') => {
  * @param needSlash 是否需要斜杠
  * @param length
  */
-const formatDateTimeWithSub = (dateTime: string | undefined, length: number, needSlash?: boolean): string => {
+function formatDateTimeWithSub(dateTime: string | undefined, length: number, needSlash?: boolean): string {
   if (!dateTime)
     return ''
 
@@ -69,7 +69,7 @@ const formatDateTimeWithSub = (dateTime: string | undefined, length: number, nee
  * @param dateTime
  * @param needSlash 是否需要斜杠
  */
-const formatSubDate = (dateTime: string | undefined, needSlash?: boolean): string => {
+function formatSubDate(dateTime: string | undefined, needSlash?: boolean): string {
   return formatDateTimeWithSub(dateTime, 10, needSlash)
 }
 
@@ -78,7 +78,7 @@ const formatSubDate = (dateTime: string | undefined, needSlash?: boolean): strin
  * @param dateTime
  * @param needSlash 是否需要斜杠
  */
-const formatSubDateTime = (dateTime: string | undefined, needSlash?: boolean): string => {
+function formatSubDateTime(dateTime: string | undefined, needSlash?: boolean): string {
   return formatDateTimeWithSub(dateTime, 16, needSlash)
 }
 
@@ -88,7 +88,9 @@ const formatSubDateTime = (dateTime: string | undefined, needSlash?: boolean): s
  * @param length 格式化后的长度
  * @returns {string} 字符串
  */
-const text = (number = 0, length = 2) => (`${number}`).padStart(length, '0')
+function text(number = 0, length = 2) {
+  return (`${number}`).padStart(length, '0')
+}
 
 /**
  * 时间戳对象
@@ -213,7 +215,7 @@ class DateModel {
   }
 
   _renderValue(value: Date | string = new Date()) {
-    value = typeof value === 'string' && (browserIsSafari() || browserIsTrident()) ? value.replace(/-/g, '/') : value
+    value = (typeof value === 'string' && (browserIsSafari() || browserIsTrident())) ? value.replace(/-/g, '/') : value
     this._date = value instanceof Date ? value : new Date(value)
     this._year = this._date.getFullYear()
     this._month = this._date.getMonth() + 1

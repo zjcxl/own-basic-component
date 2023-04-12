@@ -9,17 +9,15 @@ import type { MergeType, RequestConfig, ResultModel } from './types'
  * @param config
  * @param type
  */
-export const handleMergeRequestConfig = <T1 = any,
+export function handleMergeRequestConfig<T1 = any,
   RESPONSE_TYPE1 = ResultModel<T1>,
   T2 = any,
   RESPONSE_TYPE2 = ResultModel<T2>,
   T3 = any,
   RESPONSE_TYPE3 = ResultModel<T3>,
-  >(
-    origin: RequestConfig<T1, RESPONSE_TYPE1>,
-    config: RequestConfig<T2, RESPONSE_TYPE2>,
-    type: MergeType = 'replace',
-  ): RequestConfig<T3, RESPONSE_TYPE3> => {
+  >(origin: RequestConfig<T1, RESPONSE_TYPE1>,
+  config: RequestConfig<T2, RESPONSE_TYPE2>,
+  type: MergeType = 'replace'): RequestConfig<T3, RESPONSE_TYPE3> {
   if (type === 'replace') {
     return {
       ...origin,
@@ -50,9 +48,7 @@ export const handleMergeRequestConfig = <T1 = any,
  * 合并处理继承配置信息
  * @param config
  */
-export const handleMergeExtendConfig = <T = any, RESPONSE_TYPE = ResultModel<T>>(
-  config?: RequestConfig<T, RESPONSE_TYPE>,
-): RequestConfig<T, RESPONSE_TYPE> => {
+export function handleMergeExtendConfig<T = any, RESPONSE_TYPE = ResultModel<T>>(config?: RequestConfig<T, RESPONSE_TYPE>): RequestConfig<T, RESPONSE_TYPE> {
   if (!config)
     return {} as any as RequestConfig<T, RESPONSE_TYPE>
   if (!config.extends || config.extends.length === 0)
@@ -75,13 +71,13 @@ let resultConfig: RequestConfig = DEFAULT_REQUEST_CONFIG
  * 设置请求配置信息
  * @param config 配置信息
  */
-export const setResultConfig = <T = any, RESPONSE_TYPE = ResultModel<T>>(config: RequestConfig<T, RESPONSE_TYPE>) => {
+export function setResultConfig<T = any, RESPONSE_TYPE = ResultModel<T>>(config: RequestConfig<T, RESPONSE_TYPE>) {
   resultConfig = config as any as RequestConfig
 }
 
 /**
  * 获取请求配置信息
  */
-export const getResultConfig = (): RequestConfig => {
+export function getResultConfig(): RequestConfig {
   return resultConfig
 }

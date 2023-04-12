@@ -10,7 +10,7 @@ import type { ResultModelConfirm } from '../types'
  * @param res 响应信息
  * @param model 请求对象
  */
-export const confirmMethod = (res: ResultModel, model: BaseRequestModel<any, ResultModel>) => {
+export function confirmMethod(res: ResultModel, model: BaseRequestModel<any, ResultModel>) {
   return new Promise<ResultModel>((resolve) => {
     const vo = res as ResultModelConfirm
     useMessage().confirm(vo.message, () => {

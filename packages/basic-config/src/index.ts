@@ -15,3 +15,8 @@ export * from './project/types'
 export * from './request'
 export * from './request/types'
 export { handleMergeRequestConfig } from './request/method'
+
+const test = 'test'
+export {
+  test,
+}

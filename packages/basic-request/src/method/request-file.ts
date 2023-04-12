@@ -29,13 +29,13 @@ export class RequestFileModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends R
    * @param config 请求信息
    * @param requestConfig 请求配置信息
    */
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   protected setCustomConfig(config: any, requestConfig: RequestConfig<T, RESPONSE_TYPE>) {
     config.method = METHOD_TYPE_POST
     // 设置请求头信息
     if (config.headers)
       config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
 
-    handleFormDataParams(this.data, config)
+    handleFormDataParams(this.data, requestConfig)
   }
 }

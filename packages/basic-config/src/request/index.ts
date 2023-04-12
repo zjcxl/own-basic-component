@@ -7,7 +7,7 @@ import type { RequestConfig, ResultModel } from './types'
  * 获取请求配置
  * @param config
  */
-export const getRequestConfig = <T = any, RESPONSE_TYPE = ResultModel<T>>(config?: RequestConfig<T, RESPONSE_TYPE>): RequestConfig<T, RESPONSE_TYPE> => {
+export function getRequestConfig<T = any, RESPONSE_TYPE = ResultModel<T>>(config?: RequestConfig<T, RESPONSE_TYPE>): RequestConfig<T, RESPONSE_TYPE> {
   const resultConfig = getResultConfig()
   return {
     // 获取到的配置信息可能是有其他继承信息的
