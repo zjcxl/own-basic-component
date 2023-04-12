@@ -14,6 +14,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "type": "module",
+  "module": "./dist/index.mjs",
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
   "exports": {
