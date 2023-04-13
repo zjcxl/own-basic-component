@@ -36,7 +36,11 @@ export default defineComponent({
     }
     return {
       // 刷新
-      refresh: (pageInit: number | boolean = false) => officialBaseTableHelper.value?.refresh(pageInit),
+      refresh: (pageInit: number | boolean = false) => {
+        console.log(officialBaseTableHelper)
+        console.log(officialBaseTableHelper.value?.refresh)
+        return  officialBaseTableHelper.value?.refresh(pageInit)
+      },
       // 获取数据
       getDataList: () => officialBaseTableHelper.value?.getDataList(),
       // 表格字段
