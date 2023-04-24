@@ -11,15 +11,15 @@
     "vue": "^3.2.47"
   },
   "devDependencies": {
-    "@antfu/eslint-config-vue": "^0.38.4",
+    "@antfu/eslint-config-vue": "^0.38.5",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/ui-naive": "workspace:*",
     "@own-basic-component/util": "workspace:*",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
-    "eslint": "^8.38.0",
+    "eslint": "^8.39.0",
     "typescript": "^5.0.4",
-    "vite": "^4.2.1"
+    "vite": "^4.3.1"
   }
 }

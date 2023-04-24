@@ -34,12 +34,12 @@
     "node": ">=16"
   },
   "devDependencies": {
-    "@antfu/eslint-config-vue": "^0.38.4",
-    "@types/node": "^18.15.11",
-    "eslint": "^8.38.0",
-    "pnpm": "^8.2.0",
+    "@antfu/eslint-config-vue": "^0.38.5",
+    "@types/node": "^18.16.0",
+    "eslint": "^8.39.0",
+    "pnpm": "^8.3.1",
     "typescript": "^5.0.4",
-    "unbuild": "^1.2.0"
+    "unbuild": "^1.2.1"
   },
   "gitHead": "847f386b3487f2e11b9297e44d5f67faf274f46f"
 }
