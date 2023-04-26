@@ -100,6 +100,10 @@ export interface RequestConfig<T = any, RESPONSE_TYPE = ResultModel<T>> {
    */
   after?: () => Array<(status: RequestStatus, extra: RequestExtra, data: RESPONSE_TYPE) => void>
   /**
+   * 请求结束后执行的操作（无论是否成功都会调用）
+   */
+  finally?: () => void
+  /**
    * 异常处理
    */
   exceptionHandleMap?: <R extends BaseRequestModel<T, RESPONSE_TYPE>>() => Record<CodeType, (res: RESPONSE_TYPE, model: R) => Promise<RESPONSE_TYPE | void>>

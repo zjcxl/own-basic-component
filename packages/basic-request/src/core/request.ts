@@ -124,6 +124,8 @@ class RequestModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends BaseRequestM
             // 后置处理
             resolve(this.after(useModel, uesConfig, result.response).response as RESPONSE_TYPE)
           }
+          // 请求最后处理的信息（无论是否成功都会调用）
+          config?.finally?.()
         })
       }
       else {

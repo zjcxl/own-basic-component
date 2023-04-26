@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.38.5",
-    "@types/node": "^18.16.0",
+    "@types/node": "^18.16.1",
     "eslint": "^8.39.0",
     "pnpm": "^8.3.1",
     "typescript": "^5.0.4",
