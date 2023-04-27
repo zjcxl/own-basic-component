@@ -122,10 +122,12 @@ class RequestModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends BaseRequestM
           else {
             afterArray.forEach(m => m('success', extra, result.response as RESPONSE_TYPE))
             // 后置处理
-            resolve(this.after(useModel, uesConfig, result.response).response as RESPONSE_TYPE)
+            const afterData = this.after(useModel, uesConfig, result.response).response as RESPONSE_TYPE
+            // 请求成功最后处理的信息
+            config?.successFinally?.(afterData)
+            // 返回数据
+            resolve(afterData)
           }
-          // 请求最后处理的信息（无论是否成功都会调用）
-          config?.finally?.()
         })
       }
       else {
