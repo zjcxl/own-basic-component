@@ -1,0 +1,45 @@
+{
+  "name": "@own-basic-component/buried",
+  "version": "0.0.16",
+  "packageManager": "pnpm@8.5.0",
+  "license": "MIT",
+  "author": "chenxueli",
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/chenxueli0109/own-basic-component.git",
+    "directory": "packages/basic-buried"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "unbuild",
+    "build:stub": "unbuild --stub"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config-vue": "^0.38.6",
+    "@types/node": "^20.1.3",
+    "eslint": "^8.40.0",
+    "pnpm": "^8.5.0",
+    "typescript": "^5.0.4",
+    "unbuild": "^1.2.1"
+  },
+  "gitHead": "847f386b3487f2e11b9297e44d5f67faf274f46f"
+}
