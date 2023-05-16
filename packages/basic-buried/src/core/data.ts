@@ -1,5 +1,7 @@
 'use strict'
 
+import type { EventType } from './types'
+
 /**
  * 基础的认证信息
  */
@@ -21,7 +23,11 @@ export const BASIC_INFO: { appKey: string } & Record<string, string> = {
 /**
  * 发送数据的地址
  */
-export const SEND_URLS: string[] = []
+export const SEND_URL_MAP: Record<EventType, string[]> = {
+  pv: [],
+  ae: [],
+  st: [],
+}
 
 /**
  * 获取默认的参数

@@ -1,6 +1,7 @@
 'use strict'
 
-import { AUTH_INFO, BASIC_INFO, SEND_URLS } from './data'
+import { AUTH_INFO, BASIC_INFO, SEND_URL_MAP } from './data'
+import type { EventType } from './types'
 
 /**
  * 初始化
@@ -17,10 +18,12 @@ export function core(appKey: string, params?: Record<string, string>) {
 
 /**
  * 初始化发送数据的地址
- * @param urls 发送数据的地址
+ * @param params 发送数据的地址
  */
-export function urls(urls: string[]) {
-  SEND_URLS.push(...urls)
+export function url(params: Record<EventType, string[]>) {
+  SEND_URL_MAP.pv = params.pv || []
+  SEND_URL_MAP.ae = params.ae || []
+  SEND_URL_MAP.st = params.st || []
 }
 
 /**

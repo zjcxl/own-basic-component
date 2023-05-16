@@ -1,13 +1,14 @@
 'use strict'
 
-import { AUTH_INFO, BASIC_INFO, SEND_URLS, getDefaultParams } from './data'
+import { AUTH_INFO, BASIC_INFO, SEND_URL_MAP, getDefaultParams } from './data'
+import type { EventType } from './types'
 
 /**
  * 发送数据包
  * @param type 类型 pv ae st
  * @param extra 扩展信息
  */
-export function preSend(type: string, extra: Record<string, string> = {}) {
+export function preSend(type: EventType, extra: Record<string, string> = {}) {
   // 构造参数列表
   const params = toParams({
     ...extra,
@@ -21,7 +22,7 @@ export function preSend(type: string, extra: Record<string, string> = {}) {
     ...getDefaultParams(),
   })
   // 执行发送请求
-  send(SEND_URLS, params.toString())
+  send(SEND_URL_MAP[type], params.toString())
 }
 
 /**
@@ -32,7 +33,7 @@ export function preSend(type: string, extra: Record<string, string> = {}) {
 function send(urls = ['/api'], params = '') {
   urls.forEach((url) => {
     // 执行发送请求
-    fetch(`${url}/?${params}`, {
+    fetch(`${url}?${params}`, {
       mode: 'cors',
     })
       .then()
