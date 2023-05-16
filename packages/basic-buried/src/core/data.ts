@@ -19,11 +19,6 @@ export const BASIC_INFO: { appKey: string } & Record<string, string> = {
 }
 
 /**
- * 扩展数据的对象
- */
-export const EXTRA_INFO: Record<string, string> = {}
-
-/**
  * 发送数据的地址
  */
 export const SEND_URLS: string[] = []
@@ -45,15 +40,17 @@ export function getDefaultParams(): Record<string, string> {
     // 页面大小
     width: `${document.documentElement.clientWidth}`,
     height: `${document.documentElement.clientHeight}`,
+    // 设备信息
+    devicePixelRatio: `${window.devicePixelRatio}`,
+    // 浏览器信息
+    userAgent: window.navigator.userAgent,
+    // 网络信息
+    online: `${window.navigator.onLine}`,
+    // 屏幕信息
+    screen: `${window.screen.width}x${window.screen.height}`,
+    screenColorDepth: `${window.screen.colorDepth}`,
+    screenPixelDepth: `${window.screen.pixelDepth}`,
   }
-}
-
-/**
- * 清空扩展信息
- */
-export function clearExtraInfo() {
-  for (const key in EXTRA_INFO)
-    delete EXTRA_INFO[key]
 }
 
 /**

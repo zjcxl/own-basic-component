@@ -1,6 +1,6 @@
 'use strict'
 
-import { AUTH_INFO, BASIC_INFO, SEND_URLS, clearExtraInfo, getDefaultParams } from './data'
+import { AUTH_INFO, BASIC_INFO, SEND_URLS, getDefaultParams } from './data'
 
 /**
  * 发送数据包
@@ -20,8 +20,6 @@ export function preSend(type: string, extra: Record<string, string> = {}) {
     // 默认基础信息
     ...getDefaultParams(),
   })
-  // 清除所有的扩展信息
-  clearExtraInfo()
   // 执行发送请求
   send(SEND_URLS, params.toString())
 }
