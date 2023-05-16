@@ -1,19 +1,31 @@
 'use strict'
 
-export {
+import {
   ae as sendAe,
   pv as sendPv,
   st as sendSt,
 } from './core/send'
 
-export {
+import {
   ae as pushAe,
   pv as pushPv,
   st as pushSt,
 } from './core/push'
 
-export {
+import {
   auth as initAuth,
   core as initCore,
   urls as initUrls,
 } from './core/init'
+
+export {
+  sendPv,
+  sendAe,
+  sendSt,
+  pushAe,
+  pushPv,
+  pushSt,
+  initCore,
+  initUrls,
+  initAuth,
+}
