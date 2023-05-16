@@ -6,11 +6,11 @@ import type { EventType } from './types'
  * 基础的认证信息
  */
 export const AUTH_INFO: {
-  id: string
-  name: string
+  userId: string
+  userName: string
 } & Record<string, string> = {
-  id: '',
-  name: '',
+  userId: '',
+  userName: '',
 }
 
 /**
