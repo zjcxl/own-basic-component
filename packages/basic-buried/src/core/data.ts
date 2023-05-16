@@ -14,14 +14,14 @@ export const AUTH_INFO: {
 /**
  * 基础数据的对象
  */
-export const BASIC_INFO: { appKey: string } & Record<string, any> = {
+export const BASIC_INFO: { appKey: string } & Record<string, string> = {
   appKey: '',
 }
 
 /**
  * 扩展数据的对象
  */
-export const EXTRA_INFO: Record<string, any> = {}
+export const EXTRA_INFO: Record<string, string> = {}
 
 /**
  * 发送数据的地址
@@ -31,7 +31,7 @@ export const SEND_URLS: string[] = []
 /**
  * 获取默认的参数
  */
-export function getDefaultParams() {
+export function getDefaultParams(): Record<string, string> {
   return {
     // 网页基础信息
     origin: window.location.origin,
@@ -41,10 +41,10 @@ export function getDefaultParams() {
     language: window.navigator.language.toLowerCase(),
     // 时区
     timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-    timeZoneOffset: new Date().getTimezoneOffset() / 60,
+    timeZoneOffset: `${new Date().getTimezoneOffset() / 60}`,
     // 页面大小
-    width: document.documentElement.clientWidth,
-    height: document.documentElement.clientHeight,
+    width: `${document.documentElement.clientWidth}`,
+    height: `${document.documentElement.clientHeight}`,
   }
 }
 

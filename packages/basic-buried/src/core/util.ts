@@ -7,7 +7,7 @@ import { AUTH_INFO, BASIC_INFO, SEND_URLS, clearExtraInfo, getDefaultParams } fr
  * @param type 类型 pv ae st
  * @param extra 扩展信息
  */
-export function preSend(type: string, extra: Record<string, any> = {}) {
+export function preSend(type: string, extra: Record<string, string> = {}) {
   // 构造参数列表
   const params = toParams({
     ...extra,
@@ -45,7 +45,7 @@ function send(urls = ['/api'], params = '') {
  * map转换成参数
  * @param map 参数map
  */
-function toParams(map: Record<string, any>) {
+function toParams(map: Record<string, string>) {
   const params = new URLSearchParams()
   for (const key in map)
     params.append(key, map[key])
