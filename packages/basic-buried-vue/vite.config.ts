@@ -14,17 +14,13 @@ export default defineConfig({
       skipDiagnostics: true,
     }),
   ],
-  // https://github.com/vitest-dev/vitest
-  test: {
-    environment: 'jsdom',
-  },
   build: {
     target: 'modules',
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/index.ts'),
       formats: ['es', 'cjs', 'umd'],
-      name: 'BasicUiNaive',
+      name: 'BasicBuriedVue',
       // the proper extensions will be added
       fileName: 'index',
     },

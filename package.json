@@ -8,18 +8,19 @@
     "build:stub": "pnpm -r run build:stub",
     "publish:beta": "lerna publish --dist-tag beta",
     "publish:release": "lerna publish --dist-tag latest",
-    "eslint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore ."
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .",
+    "up": "taze major -I"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "vue": "^3.3.2"
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.38.6",
-    "@types/node": "^20.1.5",
+    "@types/node": "^20.2.1",
     "@vitejs/plugin-vue": "^4.2.3",
     "eslint": "^8.40.0",
     "lerna": "^6.6.2",
@@ -27,7 +28,7 @@
     "taze": "^0.10.1",
     "typescript": "^5.0.4",
     "unbuild": "^1.2.1",
-    "vite": "^4.3.6",
+    "vite": "^4.3.8",
     "vue-tsc": "^1.6.5"
   },
   "eslintConfig": {
