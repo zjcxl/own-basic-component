@@ -1,6 +1,6 @@
 {
   "name": "@own-basic-component/config",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "packageManager": "pnpm@8.5.1",
   "license": "MIT",
   "author": "chenxueli",
