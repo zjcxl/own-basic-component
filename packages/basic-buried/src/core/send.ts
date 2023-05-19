@@ -5,24 +5,27 @@ import { preSend } from './util'
 
 /**
  * page view 页面浏览
+ * params 事件参数
  */
-export function pv() {
-  preSend('pv', { ...EXTRA_INFO.pv })
+export function pv(params: Record<string, string> = {}) {
+  preSend('pv', { ...EXTRA_INFO.pv, ...params })
   clearExtraInfo('pv')
 }
 
 /**
  * action event 点击事件
+ * params 事件参数
  */
-export function ae() {
-  preSend('ae', { ...EXTRA_INFO.ae })
+export function ae(params: Record<string, string> = {}) {
+  preSend('ae', { ...EXTRA_INFO.ae, ...params })
   clearExtraInfo('ae')
 }
 
 /**
  * stop time 停留时间
+ * params 事件参数
  */
-export function st() {
-  preSend('st', { ...EXTRA_INFO.st })
+export function st(params: Record<string, string> = {}) {
+  preSend('st', { ...EXTRA_INFO.st, ...params })
   clearExtraInfo('st')
 }
