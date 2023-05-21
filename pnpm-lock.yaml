@@ -92,6 +92,9 @@ importers:
       vue:
         specifier: ^3.3.2
         version: 3.3.2
+      vue-router:
+        specifier: ^4.2.0
+        version: 4.2.0(vue@3.3.2)
       vue-tsc:
         specifier: ^1.6.5
         version: 1.7.0(typescript@5.0.4)
@@ -2368,6 +2371,10 @@ packages:
       '@vue/compiler-dom': 3.3.4
       '@vue/shared': 3.3.4
 
+  /@vue/devtools-api@6.5.0:
+    resolution: {integrity: sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==}
+    dev: true
+
   /@vue/language-core@1.7.0:
     resolution: {integrity: sha512-gaf2ZzA7TbbNCpmCUyM3k6ApPUf1xVINH31g5SC0t2VBriBF6+io2e4tNAd0q4kIm0NLM/yhIezFs2281juBng==}
     dependencies:
@@ -2445,6 +2452,17 @@ packages:
       '@vue/shared': 3.3.2
       vue: 3.3.2
 
+  /@vue/server-renderer@3.3.4(vue@3.3.2):
+    resolution: {integrity: sha512-Q6jDDzR23ViIb67v+vM1Dqntu+HUexQcsWKhhQa4ARVzxOY2HbC7QRW/ggkDBd5BU+uM1sV6XOAP0b216o34JQ==}
+    peerDependencies:
+      vue: 3.3.4
+    dependencies:
+      '@vue/compiler-ssr': 3.3.4
+      '@vue/shared': 3.3.4
+      vue: 3.3.2
+    dev: true
+    optional: true
+
   /@vue/server-renderer@3.3.4(vue@3.3.4):
     resolution: {integrity: sha512-Q6jDDzR23ViIb67v+vM1Dqntu+HUexQcsWKhhQa4ARVzxOY2HbC7QRW/ggkDBd5BU+uM1sV6XOAP0b216o34JQ==}
     peerDependencies:
@@ -2468,8 +2486,8 @@ packages:
       js-beautify: 1.14.6
       vue: 3.3.2
     optionalDependencies:
-      '@vue/compiler-dom': 3.3.2
-      '@vue/server-renderer': 3.3.2(vue@3.3.2)
+      '@vue/compiler-dom': 3.3.4
+      '@vue/server-renderer': 3.3.4(vue@3.3.2)
     dev: true
 
   /@vue/typescript@1.7.0(typescript@5.0.4):
@@ -8753,6 +8771,15 @@ packages:
       semver: 7.5.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /vue-router@4.2.0(vue@3.3.2):
+    resolution: {integrity: sha512-c+usESa6ZoWsm4PPdzRSyenp5A4dsUtnDJnrI03fY1IpIihA9TK3x5ffgkFDpjhLJZewsXoKURapNLFdZjuqTg==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.5.0
+      vue: 3.3.2
     dev: true
 
   /vue-template-compiler@2.7.14:
