@@ -8,13 +8,10 @@ import type { Router } from 'vue-router'
 export function setRouterBuried(router: Router) {
   // 记录开始时间
   let startTimestamp = Date.now()
-  console.log('router init')
 
   router.beforeEach((to, from, next) => {
-    console.log('router beforeEach')
     // 发送停留时间
     const d = Date.now() - startTimestamp
-    console.log(d)
     // 如果时间大于2s才会发送
     if (d > 2000) {
       sendSt({
@@ -35,7 +32,6 @@ export function setRouterBuried(router: Router) {
 
   // 跳转页面的时候发送访问的pv
   router.afterEach(() => {
-    console.log('router afterEach')
     sendPv()
     startTimestamp = Date.now()
   })
