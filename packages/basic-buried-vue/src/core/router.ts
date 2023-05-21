@@ -1,11 +1,11 @@
 import { sendPv, sendSt } from '@own-basic-component/buried'
-import type { createRouter } from 'vue-router'
+import type { Router } from 'vue-router'
 
 /**
  * 初始化路由数据
  * @param router
  */
-export default function setRouterBuried(router: ReturnType<typeof createRouter>) {
+export function setRouterBuried(router: Router) {
   // 记录开始时间
   let startTimestamp = Date.now()
 
