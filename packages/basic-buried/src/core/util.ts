@@ -1,36 +1,15 @@
 'use strict'
 
-import { AUTH_INFO, BASIC_INFO, SEND_URL_MAP, getDefaultParams } from './data'
-import type { EventType } from './types'
-
-/**
- * 发送数据包
- * @param type 类型 pv ae st
- * @param extra 扩展信息
- */
-export function preSend(type: EventType, extra: Record<string, string> = {}) {
-  // 构造参数列表
-  const params = toParams({
-    ...extra,
-    // 埋点类型
-    type,
-    // 认证信息
-    ...AUTH_INFO,
-    // 基础信息
-    ...BASIC_INFO,
-    // 默认基础信息
-    ...getDefaultParams(),
-  })
-  // 执行发送请求
-  send(SEND_URL_MAP[type], params.toString())
-}
+import { getAuthInfo } from './auth'
+import { getBasicInfo, getDefaultParams } from './data'
+import type { BuriedModelType, EventType } from './type'
 
 /**
  * 发送数据
  * @param urls 发送数据的地址
  * @param params 发送的参数
  */
-function send(urls = ['/api'], params = '') {
+export function send(urls = ['/api'], params = '') {
   urls.forEach((url) => {
     // 执行发送请求
     fetch(`${url}?${params}`, {
@@ -42,11 +21,28 @@ function send(urls = ['/api'], params = '') {
 
 /**
  * map转换成参数
- * @param map 参数map
+ * @param type 推送事件类型
+ * @param extra 扩展信息
  */
-function toParams(map: Record<string, string>) {
+export function resolveToUrlSearchParams<T>(
+  type: EventType,
+  extra: Partial<T>,
+): URLSearchParams {
+  // 合并数据
+  const dataMap: BuriedModelType<Partial<T>> = {
+    ...extra,
+    // 埋点类型
+    type,
+    // 认证信息
+    ...getAuthInfo(),
+    // 基础信息
+    ...getBasicInfo(),
+    // 默认基础信息
+    ...getDefaultParams(),
+  }
+  // 转换信息
   const params = new URLSearchParams()
-  for (const key in map)
-    params.append(key, map[key])
+  for (const key in dataMap)
+    params.append(key, dataMap[key] || '')
   return params
 }

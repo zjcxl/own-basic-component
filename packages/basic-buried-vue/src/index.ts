@@ -4,9 +4,9 @@
 import buriedDirective from './core/directive-buried'
 
 // 路由的埋点
-import { setRouterBuried } from './core/router'
+export * from './core/router'
+export * from './core/core'
 
 export {
   buriedDirective,
-  setRouterBuried,
 }

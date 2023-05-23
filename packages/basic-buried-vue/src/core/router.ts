@@ -1,19 +1,22 @@
+'use strict'
+
 import { sendPv, sendSt } from '@own-basic-component/buried'
 import type { Router } from 'vue-router'
 
 /**
  * 初始化路由数据
  * @param router
+ * @param d 发送的间隔时间
  */
-export function setRouterBuried(router: Router) {
+function setRouterBuried(router: Router, d = 2000) {
   // 记录开始时间
   let startTimestamp = Date.now()
 
   router.beforeEach((to, from, next) => {
     // 发送停留时间
-    const d = Date.now() - startTimestamp
+    const stayTime = Date.now() - startTimestamp
     // 如果时间大于2s才会发送
-    if (d > 2000) {
+    if (stayTime > d) {
       sendSt({
         // 来源地址
         fromPagePath: from.path || '',
@@ -35,4 +38,8 @@ export function setRouterBuried(router: Router) {
     sendPv()
     startTimestamp = Date.now()
   })
+}
+
+export {
+  setRouterBuried,
 }
