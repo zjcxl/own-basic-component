@@ -27,7 +27,7 @@ function setRouterBuried(router: Router, d = 2000) {
         // 目的名称
         toPageName: to.name?.toString() || '',
         // 停留时间
-        d: `${d}`,
+        stayTime,
       })
     }
     next()
