@@ -1,6 +1,6 @@
 'use strict'
 
-import { SEND_URL_MAP } from '../../data'
+import { getUrl } from '../../data'
 import type { SimpleExtraInfoPvType } from '../../type'
 import { resolveToUrlSearchParams, send as resultSend } from '../../util'
 import { clear, getExtraInfo } from './push'
@@ -15,6 +15,6 @@ export function send(data?: Partial<SimpleExtraInfoPvType>) {
     ...data,
   })
   // 执行发送请求
-  resultSend(SEND_URL_MAP.pv, params.toString())
+  resultSend(getUrl('pv'), params.toString())
   clear()
 }

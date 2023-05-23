@@ -1,6 +1,6 @@
 import { initUrl, setAppKey } from '@own-basic-component/buried'
-import { setRouterBuried } from '@own-basic-component/buried-vue'
 import type { App } from 'vue'
+import { setRouterBuried } from './router'
 import type { Buried, BuriedOptions } from './types'
 
 import buriedDirective from './directive-buried'
