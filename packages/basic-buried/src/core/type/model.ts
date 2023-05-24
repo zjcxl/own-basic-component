@@ -1,6 +1,7 @@
 'use strict'
 
 import type { AuthInfoModel } from '../auth'
+import type { BowserInfo } from '../data'
 
 /**
  * 认证信息
@@ -15,7 +16,7 @@ export interface AppInfoModel {
 /**
  * 基础信息
  */
-export interface BaseInfoModel {
+export interface BaseInfoModel extends BowserInfo {
   /**
    * origin
    */

@@ -1,6 +1,22 @@
 'use strict'
 
+import platform from 'platform'
 import type { BaseInfoModel } from '../type'
+import type { BowserInfo } from './types'
+
+// 获取客户端的平台信息
+const clientPlatform = platform.parse(navigator.userAgent)
+
+/**
+ * 浏览器的基本信息
+ */
+const bowserInfo: BowserInfo = {
+  bowserDeviceType: clientPlatform.product || '',
+  bowserName: clientPlatform.name || '',
+  bowserOsFamily: clientPlatform.os?.family || '',
+  bowserOsVersion: clientPlatform.os?.version || '',
+  bowserVersion: clientPlatform.version || '',
+}
 
 /**
  * 获取默认的参数
@@ -27,5 +43,7 @@ export function getDefaultParams(): BaseInfoModel {
     online: `${window.navigator.onLine}`,
     // 屏幕信息
     screen: `${window.screen.width}x${window.screen.height}`,
+    // 浏览器信息
+    ...bowserInfo,
   }
 }
