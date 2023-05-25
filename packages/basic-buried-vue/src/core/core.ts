@@ -1,4 +1,4 @@
-import { initUrl, setAppKey } from '@own-basic-component/buried'
+import { initUrl, setAppKey, setGlobalInfo } from '@own-basic-component/buried'
 import type { App } from 'vue'
 import { setRouterBuried } from './router'
 import type { Buried, BuriedOptions } from './types'
@@ -14,6 +14,8 @@ function createBuried(options: BuriedOptions): Buried {
     install(app: App) {
       // 设置appKey
       setAppKey(options.appKey)
+      // 设置全局信息
+      setGlobalInfo(options.extra)
       // 设置路由的信息
       if (options.router)
         setRouterBuried(options.router, options.d)

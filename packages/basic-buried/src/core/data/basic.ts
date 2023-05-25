@@ -20,7 +20,7 @@ export function setAppKey(appKey: string): void {
 /**
  * 设置全局信息
  */
-export function setGlobalInfo(data: Omit<Record<string, string>, 'appKey'>): void {
+export function setGlobalInfo(data: Record<string, string> = {}): void {
   const appKey = BASIC_INFO.appKey
   BASIC_INFO = {
     ...data,

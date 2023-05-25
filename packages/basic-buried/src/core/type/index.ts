@@ -3,7 +3,7 @@
 /**
  * 事件类型
  */
-export type EventType = 'pv' | 'ae' | 'st'
+export type EventType = 'pv' | 'ae' | 'st' | 'op'
 
 // 导出所有的模型信息
 export * from './model'

@@ -9,7 +9,7 @@ import type { BuriedModelType, EventType } from './type'
  * @param urls 发送数据的地址
  * @param params 发送的参数
  */
-export function send(urls = ['/api'], params = '') {
+export function send(urls = [], params = '') {
   urls.forEach((url) => {
     // 执行发送请求
     fetch(`${url}?${params}`, {
@@ -30,13 +30,14 @@ export function resolveToUrlSearchParams<T>(
 ): URLSearchParams {
   // 合并数据
   const dataMap: BuriedModelType<Partial<T>> = {
+    // 基础信息
+    ...getBasicInfo(),
+    // 扩展信息
     ...extra,
     // 埋点类型
     type,
     // 认证信息
     ...getAuthInfo(),
-    // 基础信息
-    ...getBasicInfo(),
     // 默认基础信息
     ...getDefaultParams(),
   }

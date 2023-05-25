@@ -33,4 +33,8 @@ export interface BuriedOptions {
    * 发送页面停留数据的最小时间
    */
   d?: number
+  /**
+   * 其他信息（全局信息，层级最低）
+   */
+  extra?: Record<string, string>
 }

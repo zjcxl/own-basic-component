@@ -23,6 +23,7 @@ export function url(params: Record<EventType, string[]>) {
   setUrl('pv', ...params.pv || [])
   setUrl('ae', ...params.ae || [])
   setUrl('st', ...params.st || [])
+  setUrl('op', ...params.op || [])
 }
 
 /**
