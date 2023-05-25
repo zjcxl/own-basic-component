@@ -9,7 +9,7 @@ import type { BuriedModelType, EventType } from './type'
  * @param urls 发送数据的地址
  * @param params 发送的参数
  */
-export function send(urls = [], params = '') {
+export function send(urls: string[] = [], params = '') {
   urls.forEach((url) => {
     // 执行发送请求
     fetch(`${url}?${params}`, {
