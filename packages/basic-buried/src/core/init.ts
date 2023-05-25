@@ -1,7 +1,7 @@
 'use strict'
 
 import { setAuthInfo } from './auth'
-import { setAppKey, setGlobalInfo, setUrl } from './data'
+import { getEventTypeArray, setAppKey, setGlobalInfo, setUrl } from './data'
 import type { EventType } from './type'
 
 /**
@@ -19,11 +19,9 @@ export function core(appKey: string, params?: Record<string, string>) {
  * 初始化发送数据的地址
  * @param params 发送数据的地址
  */
-export function url(params: Record<EventType, string[]>) {
-  setUrl('pv', ...params.pv || [])
-  setUrl('ae', ...params.ae || [])
-  setUrl('st', ...params.st || [])
-  setUrl('op', ...params.op || [])
+export function url(params: Partial<Record<EventType, string[]>>) {
+  const array = getEventTypeArray()
+  array.forEach(type => setUrl(type, ...params[type] || []))
 }
 
 /**

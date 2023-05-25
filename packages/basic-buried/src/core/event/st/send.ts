@@ -1,20 +1,20 @@
 'use strict'
 
-import { getUrl } from '../../data'
+import { ST, getUrl } from '../../data'
 import type { SimpleExtraInfoStType } from '../../type'
 import { resolveToUrlSearchParams, send as resultSend } from '../../util'
 import { clear, getExtraInfo } from './push'
 
 /**
- * page view 页面浏览
+ * 页面停留
  * params 事件参数
  */
 export function send(data?: Partial<SimpleExtraInfoStType>) {
-  const params = resolveToUrlSearchParams<SimpleExtraInfoStType>('st', {
+  const params = resolveToUrlSearchParams<SimpleExtraInfoStType>(ST, {
     ...getExtraInfo(),
     ...data || {},
   })
   // 执行发送请求
-  resultSend(getUrl('st'), params.toString())
+  resultSend(getUrl(ST), params.toString())
   clear()
 }

@@ -10,6 +10,7 @@ const DEFAULT_SEND_URL_MAP: Record<EventType, string> = {
   ae: 'https://buried.base.log.dct99.com:2028/api/push/ae',
   st: 'https://buried.base.log.dct99.com:2028/api/push/st',
   op: 'https://buried.base.log.dct99.com:2028/api/push/op',
+  custom: 'https://buried.base.log.dct99.com:2028/api/push/custom',
 }
 
 /**
@@ -20,6 +21,7 @@ const SEND_URL_MAP: Record<EventType, string[]> = {
   ae: [],
   st: [],
   op: [],
+  custom: [],
 }
 
 /**

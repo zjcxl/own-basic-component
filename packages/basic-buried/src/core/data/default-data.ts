@@ -1,11 +1,22 @@
 'use strict'
 
 import platform from 'platform'
-import type { BaseInfoModel } from '../type'
+import type { BaseInfoModel, EventType } from '../type'
 import type { BowserInfo } from './types'
 
 // 获取客户端的平台信息
 const clientPlatform = platform.parse(navigator.userAgent)
+
+export const AE: EventType = 'ae'
+export const OP: EventType = 'op'
+export const PV: EventType = 'pv'
+export const ST: EventType = 'st'
+export const CUSTOM: EventType = 'custom'
+
+/**
+ * 事件类型数组
+ */
+const EVENT_TYPE_ARRAY: EventType[] = [AE, OP, PV, ST, CUSTOM]
 
 /**
  * 浏览器的基本信息
@@ -46,4 +57,11 @@ export function getDefaultParams(): BaseInfoModel {
     // 浏览器信息
     ...bowserInfo,
   }
+}
+
+/**
+ * 获取事件类型数组
+ */
+export function getEventTypeArray(): EventType[] {
+  return [...EVENT_TYPE_ARRAY]
 }

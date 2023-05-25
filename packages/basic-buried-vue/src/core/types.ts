@@ -28,7 +28,7 @@ export interface BuriedOptions {
   /**
    * 推送地址
    */
-  url?: Record<EventType, string[]>
+  url?: Partial<Record<EventType, string[]>>
   /**
    * 发送页面停留数据的最小时间
    */

@@ -12,17 +12,23 @@ import { send as sendSt } from './st/send'
 import { clear as clearOp, push as pushOp } from './op/push'
 import { send as sendOp } from './op/send'
 
+import { clear as clearCustom, push as pushCustom } from './custom/push'
+import { send as sendCustom } from './custom/send'
+
 export {
   sendPv,
   sendAe,
   sendSt,
   sendOp,
+  sendCustom,
   pushAe,
   pushPv,
   pushSt,
   pushOp,
+  pushCustom,
   clearAe,
   clearPv,
   clearSt,
   clearOp,
+  clearCustom,
 }
