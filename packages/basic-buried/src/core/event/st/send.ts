@@ -6,7 +6,7 @@ import { resolveToUrlSearchParams, send as resultSend } from '../../util'
 import { clear, getExtraInfo } from './push'
 
 /**
- * 页面停留
+ * stay time 页面停留
  * params 事件参数
  */
 export function send(data?: Partial<SimpleExtraInfoStType>) {
