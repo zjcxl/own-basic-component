@@ -2,6 +2,7 @@
 
 import { getAuthInfo } from './auth'
 import { getBasicInfo, getDefaultParams } from './data'
+import { getGeoPointInfo } from './geo-point'
 import type { BuriedModelType, EventType } from './type'
 
 /**
@@ -36,6 +37,8 @@ export function resolveToUrlSearchParams<T>(
     ...extra,
     // 埋点类型
     type,
+    // 地理位置信息
+    ...getGeoPointInfo(),
     // 认证信息
     ...getAuthInfo(),
     // 默认基础信息

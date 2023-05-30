@@ -33,7 +33,7 @@ export function getAuthInfo(): AuthInfoModelType {
 /**
  * 清除认证信息
  */
-export function clear() {
+export function clearAuthInfo() {
   AUTH_INFO = {
     userId: '',
     userName: '',
