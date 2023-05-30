@@ -14,6 +14,16 @@ export interface Buried {
 }
 
 /**
+ * 高德地图信息
+ */
+export interface AMapOptionType {
+  /**
+   * 接口地址
+   */
+  api: string
+}
+
+/**
  * 参数
  */
 export interface BuriedOptions {
@@ -37,4 +47,8 @@ export interface BuriedOptions {
    * 其他信息（全局信息，层级最低）
    */
   extra?: Record<string, string>
+  /**
+   * 高德地图参数信息
+   */
+  amap?: AMapOptionType
 }

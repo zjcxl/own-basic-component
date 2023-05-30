@@ -1,4 +1,4 @@
-import { initUrl, setAppKey, setGlobalInfo } from '@own-basic-component/buried'
+import { initUrl, setAMapApi, setAppKey, setGlobalInfo } from '@own-basic-component/buried'
 import type { App } from 'vue'
 import { setRouterBuried } from './router'
 import type { Buried, BuriedOptions } from './types'
@@ -24,6 +24,9 @@ function createBuried(options: BuriedOptions): Buried {
         initUrl(options.url)
       // 页面埋点信息事件
       app.use(buriedDirective)
+      // 是否使用高德地图api
+      if (options.amap?.api)
+        setAMapApi(options.amap.api)
     },
   }
 }
