@@ -8,18 +8,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.3.2"
+    "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config-vue": "^0.38.6",
+    "@antfu/eslint-config-vue": "^0.39.4",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/ui-naive": "workspace:*",
     "@own-basic-component/util": "workspace:*",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
-    "eslint": "^8.40.0",
-    "typescript": "^5.0.4",
-    "vite": "^4.3.6"
+    "eslint": "^8.41.0",
+    "typescript": "^5.1.3",
+    "vite": "^4.3.9"
   }
 }
