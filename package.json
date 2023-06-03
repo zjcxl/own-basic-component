@@ -22,7 +22,7 @@
     "@antfu/eslint-config-vue": "^0.39.4",
     "@types/node": "^20.2.5",
     "@vitejs/plugin-vue": "^4.2.3",
-    "eslint": "^8.41.0",
+    "eslint": "^8.42.0",
     "lerna": "^6.6.2",
     "pnpm": "^8.6.0",
     "taze": "^0.10.1",
