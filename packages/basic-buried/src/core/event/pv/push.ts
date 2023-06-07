@@ -12,7 +12,7 @@ let EXTRA_INFO = {} as SimpleExtraInfoPvType
  * @param key
  * @param value
  */
-export function push<T extends string>(key: T | SimpleExtraInfoPvType, value?: SimpleBuriedPvModelValue<T>): void {
+export function push<T = string>(key: T | SimpleExtraInfoPvType, value?: SimpleBuriedPvModelValue<T>): void {
   if (typeof key === 'string') {
     if (value !== undefined)
       EXTRA_INFO[key] = value

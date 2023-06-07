@@ -15,7 +15,7 @@ let EXTRA_INFO: SimpleExtraInfoAeType = {
  * @param key
  * @param value
  */
-export function push<T extends string>(key: T | SimpleExtraInfoAeType, value: SimpleBuriedAeModelValue<T>): void {
+export function push<T = string>(key: T | SimpleExtraInfoAeType, value?: SimpleBuriedAeModelValue<T>): void {
   if (typeof key === 'string') {
     if (value !== undefined)
       EXTRA_INFO[key] = value

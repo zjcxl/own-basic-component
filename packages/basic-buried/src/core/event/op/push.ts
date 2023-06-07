@@ -14,7 +14,7 @@ let EXTRA_INFO: SimpleExtraInfoOpType = {
  * @param key
  * @param value
  */
-export function push<T extends string>(key: T | SimpleExtraInfoOpType, value: SimpleBuriedOpModelValue<T>): void {
+export function push<T = string>(key: T | SimpleExtraInfoOpType, value?: SimpleBuriedOpModelValue<T>): void {
   if (typeof key === 'string') {
     if (value !== undefined)
       EXTRA_INFO[key] = value

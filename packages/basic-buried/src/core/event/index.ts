@@ -15,6 +15,29 @@ import { send as sendOp } from './op/send'
 import { clear as clearCustom, push as pushCustom } from './custom/push'
 import { send as sendCustom } from './custom/send'
 
+/**
+ * 注入参数到所有的事件
+ * @param data
+ */
+export function pushAll(data: Record<string, any>): void {
+  pushAe(data)
+  pushPv(data)
+  pushSt(data)
+  pushOp(data)
+  pushCustom(data)
+}
+
+/**
+ * 清空所有的事件参数
+ */
+export function clearAll(): void {
+  clearAe()
+  clearPv()
+  clearSt()
+  clearOp()
+  clearCustom()
+}
+
 export {
   sendPv,
   sendAe,
