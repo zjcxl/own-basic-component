@@ -11,7 +11,7 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config-vue": "^0.39.5",
+    "@antfu/eslint-config-vue": "^0.39.6",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/ui-naive": "workspace:*",
@@ -19,7 +19,7 @@
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
     "eslint": "^8.43.0",
-    "typescript": "^5.1.3",
+    "typescript": "^5.1.6",
     "vite": "^4.3.9"
   }
 }
