@@ -10,7 +10,7 @@ export default defineConfig({
     Vue({
       reactivityTransform: true,
     }),
-    ViteDts(),
+    ViteDts({}),
   ],
   build: {
     target: 'modules',
