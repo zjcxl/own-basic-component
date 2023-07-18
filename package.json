@@ -1,7 +1,7 @@
 {
   "name": "@own-team/base",
   "private": true,
-  "packageManager": "pnpm@8.6.7",
+  "packageManager": "pnpm@8.6.8",
   "version": "0.0.1",
   "scripts": {
     "build": "pnpm -r run build",
@@ -24,7 +24,7 @@
     "@vitejs/plugin-vue": "^4.2.3",
     "eslint": "^8.45.0",
     "lerna": "^7.1.4",
-    "pnpm": "^8.6.7",
+    "pnpm": "^8.6.8",
     "taze": "^0.11.2",
     "typescript": "^5.1.6",
     "unbuild": "^1.2.1",
