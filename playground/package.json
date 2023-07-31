@@ -18,8 +18,8 @@
     "@own-basic-component/util": "workspace:*",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
-    "eslint": "^8.45.0",
+    "eslint": "^8.46.0",
     "typescript": "^5.1.6",
-    "vite": "^4.4.5"
+    "vite": "^4.4.7"
   }
 }
