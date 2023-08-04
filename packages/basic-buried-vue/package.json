@@ -38,14 +38,14 @@
     "node": ">=16"
   },
   "devDependencies": {
-    "@antfu/eslint-config-vue": "^0.39.8",
+    "@antfu/eslint-config-vue": "^0.40.0",
     "@own-basic-component/buried": "workspace:*",
-    "@types/node": "^20.4.5",
+    "@types/node": "^20.4.7",
     "eslint": "^8.46.0",
     "pnpm": "^8.6.11",
     "typescript": "^5.1.6",
     "unbuild": "^1.2.1",
-    "vite": "^4.4.7",
+    "vite": "^4.4.8",
     "vite-plugin-dts": "^3.4.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4",
