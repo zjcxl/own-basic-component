@@ -37,7 +37,7 @@
     "node": ">=16"
   },
   "devDependencies": {
-    "@antfu/eslint-config-vue": "^0.41.0",
+    "@antfu/eslint-config-vue": "^0.42.0",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
