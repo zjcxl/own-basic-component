@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/config",
   "version": "0.2.21",
-  "packageManager": "pnpm@8.7.5",
+  "packageManager": "pnpm@8.7.6",
   "license": "MIT",
   "author": "chenxueli",
   "repository": {
@@ -35,9 +35,9 @@
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.42.0",
-    "@types/node": "^20.6.0",
+    "@types/node": "^20.6.2",
     "eslint": "^8.49.0",
-    "pnpm": "^8.7.5",
+    "pnpm": "^8.7.6",
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0"
   },

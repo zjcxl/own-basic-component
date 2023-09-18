@@ -1,7 +1,7 @@
 {
   "name": "@own-team/base",
   "private": true,
-  "packageManager": "pnpm@8.7.5",
+  "packageManager": "pnpm@8.7.6",
   "version": "0.0.1",
   "scripts": {
     "build": "pnpm -r run build",
@@ -20,11 +20,11 @@
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.42.0",
-    "@types/node": "^20.6.0",
+    "@types/node": "^20.6.2",
     "@vitejs/plugin-vue": "^4.3.4",
     "eslint": "^8.49.0",
     "lerna": "^7.3.0",
-    "pnpm": "^8.7.5",
+    "pnpm": "^8.7.6",
     "taze": "^0.11.2",
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0",
