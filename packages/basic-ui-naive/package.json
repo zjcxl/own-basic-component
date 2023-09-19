@@ -44,7 +44,7 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config-vue": "^0.42.0",
+    "@antfu/eslint-config-vue": "^0.42.1",
     "@iconify-json/carbon": "^1.1.21",
     "@iconify-json/ri": "^1.1.12",
     "@types/node": "^20.6.2",
