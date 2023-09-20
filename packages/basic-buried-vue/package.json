@@ -38,9 +38,9 @@
     "node": ">=16"
   },
   "devDependencies": {
-    "@antfu/eslint-config-vue": "^0.42.1",
+    "@antfu/eslint-config-vue": "^0.43.0",
     "@own-basic-component/buried": "workspace:*",
-    "@types/node": "^20.6.2",
+    "@types/node": "^20.6.3",
     "eslint": "^8.49.0",
     "pnpm": "^8.7.6",
     "typescript": "^5.2.2",

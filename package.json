@@ -19,8 +19,8 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config-vue": "^0.42.1",
-    "@types/node": "^20.6.2",
+    "@antfu/eslint-config-vue": "^0.43.0",
+    "@types/node": "^20.6.3",
     "@vitejs/plugin-vue": "^4.3.4",
     "eslint": "^8.49.0",
     "lerna": "^7.3.0",
