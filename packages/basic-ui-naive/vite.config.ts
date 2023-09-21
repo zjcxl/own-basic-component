@@ -1,10 +1,10 @@
 /// <reference types="vitest" />
 
+import { resolve } from 'node:path'
 import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
-import { resolve } from 'path'
-import Unocss from 'unocss/vite'
 import { defineConfig } from 'vite'
+import ViteDts from 'vite-plugin-dts'
 
 export default defineConfig({
   plugins: [

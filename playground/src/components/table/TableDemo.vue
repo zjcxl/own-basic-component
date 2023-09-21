@@ -12,7 +12,7 @@ const columns = [
   },
 ]
 
-const data = new Array(3).fill(false).map((item, index) => {
+const data = Array.from({ length: 3 }).fill(false).map((item, index) => {
   return {
     no: index,
     title: `title${index}`,
