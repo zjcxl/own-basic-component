@@ -1,6 +1,6 @@
 import { defineComponent, ref } from 'vue'
 import { baseTableProps } from '../common'
-import BaseTableHelper from './BaseTableHelper'
+import BaseRealTableHelper from './BaseRealTableHelper'
 
 export const tableListHelperProps = {
   // 自定义的表格属性
@@ -10,11 +10,11 @@ export const tableListHelperProps = {
 export default defineComponent({
   name: 'TableListHelper',
   components: {
-    BaseTableHelper,
+    BaseRealTableHelper,
   },
   props: tableListHelperProps,
   setup() {
-    const baseTableHelper = ref<InstanceType<typeof BaseTableHelper>>()
+    const baseTableHelper = ref<InstanceType<typeof BaseRealTableHelper>>()
     return {
       // 刷新
       refresh: (pageInit: number | boolean = false) => baseTableHelper.value?.refresh(pageInit),
@@ -26,11 +26,11 @@ export default defineComponent({
     console.log(this.$props)
     return (
       <>
-        <BaseTableHelper {...this.$props} ref='baseTableHelper' helper-type='list'>
+        <BaseRealTableHelper {...this.$props} ref='baseTableHelper' helper-type='list'>
           {{
             ...this.$slots,
           }}
-        </BaseTableHelper>
+        </BaseRealTableHelper>
       </>
     )
   },

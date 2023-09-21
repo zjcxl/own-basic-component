@@ -1,14 +1,14 @@
-import TableHelper from './TableHelper'
-import TableListHelper from './TableListHelper'
-import TableSearchHelper from './TableSearchHelper'
+import BaseTableHelper from './BaseTableHelper'
+import BaseTableListHelper from './BaseTableListHelper'
+import BaseTableSearchHelper from './BaseTableSearchHelper'
 
-type TableHelperType = InstanceType<typeof TableHelper>
-type TableListHelperType = InstanceType<typeof TableListHelper>
+type BaseTableHelperType = InstanceType<typeof BaseTableHelper>
+type BaseTableListHelperType = InstanceType<typeof BaseTableListHelper>
 
 export {
-  TableHelper as BaseTableHelper,
-  TableListHelper as BaseTableListHelper,
-  TableSearchHelper as BaseTableSearchHelper,
-  TableHelperType as BaseTableHelperType,
-  TableListHelperType as BaseTableListHelperType,
+  BaseTableHelper,
+  BaseTableListHelper,
+  BaseTableSearchHelper,
+  BaseTableHelperType,
+  BaseTableListHelperType,
 }
