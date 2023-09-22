@@ -106,12 +106,12 @@ export default defineComponent({
     }
 
     return {
-      ...exposeMethods,
       dataList: props.data || dataList,
       pageInfo,
       pageSizes,
       handleChangePage,
       handleChangePageSize,
+      ...exposeMethods,
     }
   },
   render() {
@@ -121,6 +121,13 @@ export default defineComponent({
       search,
       searchExtra,
     } = this.$props
+    const {
+      pageInfo,
+      dataList,
+      pageSizes,
+      handleChangePage,
+      handleChangePageSize,
+    } = this
     return (
       <div>
         {/* 搜索栏 */}
@@ -136,22 +143,22 @@ export default defineComponent({
         {/* 表格数据主体 */}
         {
           helperType === 'table'
-            ? <NDataTable {...this.$props } data={this.dataList} pagination={false} />
-            : <div>{this.$slots.data?.({ list: this.dataList })}</div>
+            ? <NDataTable {...this.$props } data={dataList} pagination={false} />
+            : <div>{this.$slots.data?.({ list: dataList })}</div>
         }
         {/* 分页组件 */}
         <br/>
         <NSpace justify="end">
           <NPagination
-            page={this.pageInfo.page}
-            pageSize={this.pageInfo.rows}
+            page={pageInfo.page}
+            pageSize={pageInfo.rows}
             size="medium"
-            page-sizes={this.pageSizes}
-            item-count={this.pageInfo.total}
+            page-sizes={pageSizes}
+            item-count={pageInfo.total}
             show-quick-jumper
             show-size-picker
-            on-update:page={this.handleChangePage}
-            on-update:page-size={this.handleChangePageSize}
+            on-update:page={handleChangePage}
+            on-update:page-size={handleChangePageSize}
           />
         </NSpace>
         <br/>

@@ -15,7 +15,7 @@ const RIGHT_BLANK_LENGTH = 16
 const MORE_BUTTON_LENGTH = RIGHT_BLANK_LENGTH + CHAR_LENGTH * 3
 
 // 计算是否需要操作栏等信息
-export const getOperationColumns = <T>(operations: OperationProps<T>[], extra: OperationExtra, key = FIELD_OPERATION): DataTableColumn<T> | undefined => {
+export function getOperationColumns<T>(operations: OperationProps<T>[], extra: OperationExtra, key = FIELD_OPERATION): DataTableColumn<T> | undefined {
   extra = extra || {}
   // 单个字符的长度是14，最小的宽度为60，每个留余为16
   // 计算宽度（如果只有4个或以下直接计算，如果大于4个只计算前三项）

@@ -4,6 +4,7 @@ import Pages from 'vite-plugin-pages'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
+import Unocss from 'unocss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,6 +12,7 @@ export default defineConfig({
     vue(),
     VueJsx(),
     Pages(),
+    Unocss(),
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: [
