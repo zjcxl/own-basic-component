@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const router = useRouter()
+router.push('/table')
 </script>
 
 <template>

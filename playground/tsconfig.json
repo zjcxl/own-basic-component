@@ -16,7 +16,10 @@
     "types": [
       "vite/client",
       "node"
-    ]
+    ],
+    "paths": {
+      "~/*": ["src/*"]
+    }
   },
   "exclude": ["dist", "node_modules"]
 }
