@@ -39,7 +39,7 @@
     "nanoid": "^5.0.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config-vue": "^0.43.0",
+    "@antfu/eslint-config-vue": "^0.43.1",
     "@own-basic-component/config": "workspace:*",
     "@types/node": "^20.6.3",
     "eslint": "^8.49.0",
