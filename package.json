@@ -19,7 +19,7 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config-vue": "^0.43.1",
+    "@antfu/eslint-config": "^0.43.1",
     "@types/node": "^20.8.2",
     "@vitejs/plugin-vue": "^4.4.0",
     "eslint": "^8.50.0",
@@ -32,7 +32,7 @@
     "vue-tsc": "^1.8.15"
   },
   "eslintConfig": {
-    "extends": "@antfu/eslint-config-vue",
+    "extends": "@antfu/eslint-config",
     "rules": {
       "indent": [
         "error",

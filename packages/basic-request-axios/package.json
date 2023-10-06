@@ -40,7 +40,7 @@
     "axios": "^1.5.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config-vue": "^0.43.1",
+    "@antfu/eslint-config": "^0.43.1",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
@@ -56,7 +56,7 @@
     "vue": "^3.3.4"
   },
   "eslintConfig": {
-    "extends": "@antfu/eslint-config-vue"
+    "extends": "@antfu/eslint-config"
   },
   "gitHead": "847f386b3487f2e11b9297e44d5f67faf274f46f"
 }
