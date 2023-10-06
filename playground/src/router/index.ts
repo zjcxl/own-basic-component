@@ -8,6 +8,11 @@ const routes: RouteRecordRaw[] = [
     name: 'table',
     component: () => import('~/pages/table/index.vue'),
   },
+  {
+    path: '/log-operation',
+    name: 'log-operation',
+    component: () => import('~/pages/log-operation/index.vue'),
+  },
 ]
 
 const router = createRouter({

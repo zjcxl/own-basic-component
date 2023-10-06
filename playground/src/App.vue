@@ -1,10 +1,11 @@
 <script setup lang="ts">
-const router = useRouter()
-router.push('/table')
+import { NConfigProvider, dateZhCN, zhCN } from 'naive-ui'
 </script>
 
 <template>
-  <div m2 p2 border-rd border="2 red solid">
-    <router-view />
-  </div>
+  <NConfigProvider :locale="zhCN" :date-locale="dateZhCN">
+    <div m3 p4 border-rd-4 border="~ gray-300 solid" shadow>
+      <router-view />
+    </div>
+  </NConfigProvider>
 </template>

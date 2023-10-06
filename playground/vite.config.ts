@@ -1,7 +1,6 @@
 import path from 'node:path'
 import vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
-import Pages from 'vite-plugin-pages'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
@@ -17,7 +16,6 @@ export default defineConfig({
   plugins: [
     vue(),
     VueJsx(),
-    Pages(),
     Unocss(),
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
@@ -38,4 +36,16 @@ export default defineConfig({
       dts: true,
     }),
   ],
+  server: {
+    host: '0.0.0.0',
+    cors: true,
+    proxy: {
+      '/api': {
+        target: 'https://api.bobaoge.com/',
+        changeOrigin: true,
+        ws: true,
+        rewrite: path => path.replace(/^\/api/, '/api/'),
+      },
+    },
+  },
 })

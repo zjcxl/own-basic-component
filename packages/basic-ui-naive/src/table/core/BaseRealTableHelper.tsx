@@ -106,7 +106,7 @@ export default defineComponent({
     }
 
     return {
-      dataList: props.data || dataList,
+      dataList: (!props.fetchMethod ? props.data : dataList) || [],
       pageInfo,
       pageSizes,
       handleChangePage,
@@ -143,7 +143,7 @@ export default defineComponent({
         {/* 表格数据主体 */}
         {
           helperType === 'table'
-            ? <NDataTable {...this.$props } data={dataList} pagination={false} />
+            ? <div style="overflow: auto"><NDataTable {...this.$props } data={unref(dataList)} pagination={false} /></div>
             : <div>{this.$slots.data?.({ list: dataList })}</div>
         }
         {/* 分页组件 */}

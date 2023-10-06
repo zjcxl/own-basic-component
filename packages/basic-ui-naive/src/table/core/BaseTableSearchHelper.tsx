@@ -31,8 +31,6 @@ export default defineComponent({
       searchExtra: extra = {},
       search,
     } = this.$props
-    const { operation } = this.$slots
-    const { needDivider } = this
     return (
       <NSpace align='center' justify='start'>
         {
@@ -49,9 +47,9 @@ export default defineComponent({
             icon: () => h(SearchOutline),
           }}
         </NButton>
-        { needDivider && <NDivider vertical/> }
+        { this.needDivider && <NDivider vertical/> }
         {/* 搜索栏操作区 */}
-        { operation?.() }
+        { this.$slots.operation?.() }
       </NSpace>
     )
   },
