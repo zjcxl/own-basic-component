@@ -37,7 +37,7 @@ export default defineComponent({
     return {
       // 刷新
       refresh: (pageInit: number | boolean = false) => {
-        return  officialBaseTableHelper.value?.refresh(pageInit)
+        return officialBaseTableHelper.value?.refresh(pageInit)
       },
       // 获取数据
       getDataList: () => officialBaseTableHelper.value?.getDataList(),

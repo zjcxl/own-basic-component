@@ -1,7 +1,8 @@
-import { computed, defineComponent, h } from 'vue'
-import { NButton, NDivider, NInput, NSpace } from 'naive-ui'
+import { computed, defineComponent, h, ref } from 'vue'
+import { NButton, NDivider, NSpace } from 'naive-ui'
 import { SearchOutline } from '@vicons/ionicons5'
-import { searchProps } from '../common'
+import type { SearchValueData } from '../common'
+import { calcSearchItems, searchProps } from '../common'
 
 export default defineComponent({
   name: 'TableSearchHelper',
@@ -12,15 +13,19 @@ export default defineComponent({
     const needSearch = computed<boolean>(() => !!slots.search)
     // 是否需要分隔竖线
     const needDivider = computed<boolean>(() => !!slots.operation)
-
-    /**
-     * 搜索的事件
-     */
+    // 搜索的事件
     const handleClickSearch = () => {
       emit('searchAction', {})
     }
-
+    // 创建值的收集对象
+    const values = ref<SearchValueData>({
+      data: {},
+    })
+    props.search.forEach((item) => {
+      values.value.data[item.field] = undefined
+    })
     return {
+      values,
       needSearch,
       needDivider,
       handleClickSearch,
@@ -33,13 +38,7 @@ export default defineComponent({
     } = this.$props
     return (
       <NSpace align='center' justify='start'>
-        {
-          search.map((item, index) => {
-            return h(NInput, {
-              key: index,
-            })
-          })
-        }
+        { calcSearchItems(search, this.values) }
         { this.$slots.search?.() }
         <NButton type='primary' onClick={() => this.handleClickSearch()}>
           {{
