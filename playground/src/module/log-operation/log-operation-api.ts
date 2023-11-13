@@ -5,7 +5,7 @@ import type { QueryType } from '@own-basic-component/config'
 import type { PageModel } from '~/base/page-model'
 import type { LogOperationVo } from '~/module/log-operation/log-operation-vo'
 
-const API_PREFIX = '/log/operation'
+const API_PREFIX = 'm/log/operation'
 
 export default {
 

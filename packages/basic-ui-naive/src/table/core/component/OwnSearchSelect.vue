@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<StateProps>(), {
   placeholder: '',
 })
 
-const value = defineModel<any>()
+const value = defineModel<string>()
 console.log(value)
 </script>
 

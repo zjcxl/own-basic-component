@@ -8,22 +8,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.3.7",
+    "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.43.1",
+    "@antfu/eslint-config": "^1.1.1",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/request-axios": "workspace:*",
     "@own-basic-component/ui-naive": "workspace:*",
     "@own-basic-component/util": "workspace:*",
-    "@unocss/reset": "^0.57.1",
-    "@vitejs/plugin-vue": "^4.4.0",
+    "@unocss/reset": "^0.57.3",
+    "@vitejs/plugin-vue": "^4.4.1",
     "@vitejs/plugin-vue-jsx": "^3.0.2",
-    "eslint": "^8.52.0",
+    "eslint": "^8.53.0",
     "typescript": "^5.2.2",
-    "unocss": "^0.57.1",
+    "unocss": "^0.57.3",
     "unplugin-auto-import": "^0.16.7",
     "unplugin-vue-components": "^0.25.2",
     "vite": "^4.5.0"

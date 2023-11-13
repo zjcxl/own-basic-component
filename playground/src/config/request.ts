@@ -11,7 +11,7 @@ export const requestConfig: RequestConfig = {
       return ''
     },
     // token
-    'authToken': () => 'd94a998b-83e9-4f40-bb80-8b04437c8713',
+    'authToken': () => '99b38a95-dbd8-4370-8a56-5daafcf84fa1',
     // 客户端类型
     'client': () => 'apifox',
   }),

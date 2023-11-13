@@ -6,6 +6,7 @@ import VueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
 import ViteDts from 'vite-plugin-dts'
+import ReactivityTransform from '@vue-macros/reactivity-transform/vite'
 
 export default defineConfig({
   plugins: [
@@ -15,6 +16,7 @@ export default defineConfig({
       },
       reactivityTransform: true,
     }),
+    ReactivityTransform(),
     VueJsx(),
     ViteDts(),
     AutoImport({

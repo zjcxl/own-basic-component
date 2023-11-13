@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/util",
   "version": "0.2.27",
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@8.10.3",
   "license": "MIT",
   "author": "chenxueli",
   "repository": {
@@ -36,14 +36,14 @@
   },
   "dependencies": {
     "clipboard": "^2.0.11",
-    "nanoid": "^5.0.2"
+    "nanoid": "^5.0.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.43.1",
+    "@antfu/eslint-config": "^1.1.1",
     "@own-basic-component/config": "workspace:*",
-    "@types/node": "^20.8.9",
-    "eslint": "^8.52.0",
-    "pnpm": "^8.9.2",
+    "@types/node": "^20.9.0",
+    "eslint": "^8.53.0",
+    "pnpm": "^8.10.3",
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0"
   },
