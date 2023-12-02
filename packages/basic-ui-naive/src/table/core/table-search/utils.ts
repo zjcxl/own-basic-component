@@ -1,11 +1,11 @@
 'use strict'
 
-import { NInput } from 'naive-ui'
 import type { VNode } from 'vue'
 import { h } from 'vue'
+import OwnInput from './component/OwnInput.vue'
 import OwnSearchSelect from './component/OwnSearchSelect.vue'
 import { SEARCH_PROP_TYPE_SELECT, SEARCH_PROP_TYPE_TEXT } from './search-props'
-import type { SearchProps, SearchValueData } from './search-props'
+import type { CustomSearchItem, SearchProps, SearchValueData } from './search-props'
 
 /**
  * 计算分页的大小信息
@@ -30,21 +30,23 @@ export function calcPageSizes(rows: number, max = 100) {
     .sort((a, b) => a - b)
 }
 
-const HANDLE_MAP: Map<string, (item: SearchProps, values: SearchValueData, index: number) => VNode > = new Map()
+const HANDLE_MAP: Map<string, (item: SearchProps, values: SearchValueData, index: number) => CustomSearchItem > = new Map()
 
 HANDLE_MAP.set(SEARCH_PROP_TYPE_TEXT, (item, values, index) => {
-  return encasementSearchItem(item, h(NInput, {
-    value: values.data[item.field],
-    key: index,
+  return encasementSearchItem(item, h(OwnInput, {
+    defaultValue: values.data[item.field],
+    index,
+    field: item.field,
     placeholder: item.placeholder,
   }))
 })
 
 HANDLE_MAP.set(SEARCH_PROP_TYPE_SELECT, (item, values, index) => {
   return encasementSearchItem(item, h(OwnSearchSelect, {
-    value: values.data[item.field],
+    defaultValue: values.data[item.field],
     index,
     placeholder: item.placeholder,
+    field: item.field,
     options: item.options,
   }))
 })
@@ -54,12 +56,12 @@ HANDLE_MAP.set(SEARCH_PROP_TYPE_SELECT, (item, values, index) => {
  * @param array 查询项
  * @param values 查询值
  */
-export function calcSearchItems(array: SearchProps[], values: SearchValueData) {
+export function calcSearchItems(array: SearchProps[], values: SearchValueData): CustomSearchItem[] {
   return array
     .map((item, index) => {
       return HANDLE_MAP.get(item.type)?.(item, values, index)
     })
-    .filter(item => !!item)
+    .filter(item => !!item) as CustomSearchItem[]
 }
 
 /**
@@ -67,11 +69,9 @@ export function calcSearchItems(array: SearchProps[], values: SearchValueData) {
  * @param item 查询项
  * @param node 节点
  */
-export function encasementSearchItem(item: SearchProps, node: VNode): VNode {
-  if (item.width && item.width > 0) {
-    return h('div', {
-      style: { width: `${item.width}rem` },
-    }, node)
+export function encasementSearchItem(item: SearchProps, node: VNode): CustomSearchItem {
+  return {
+    style: item.width && item.width > 0 ? { width: `${item.width}rem` } : undefined,
+    component: node,
   }
-  return node
 }

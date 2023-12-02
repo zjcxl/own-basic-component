@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { RendererElement, RendererNode, VNode } from 'vue'
+import type { QueryObjectType } from '@own-basic-component/config'
 import { computed, defineProps, onMounted, ref, useSlots } from 'vue'
 import { NButton, NDivider, NSpace } from 'naive-ui'
 import { SearchOutline } from '@vicons/ionicons5'
-import type { SearchExtra, SearchProps, SearchValueData } from '.'
+import type { CustomSearchItem, SearchExtra, SearchProps, SearchValueData } from '.'
 import { calcSearchItems } from '.'
 
 const props = defineProps<{
@@ -14,7 +14,7 @@ const props = defineProps<{
 }>()
 
 const emits = defineEmits<{
-  searchAction: []
+  searchAction: [QueryObjectType]
 }>()
 
 const values = ref<SearchValueData>({
@@ -23,12 +23,24 @@ const values = ref<SearchValueData>({
 
 const slots = useSlots()
 
+const componentItemList = ref<{
+  getParams?: () => QueryObjectType
+}[]>([])
+
+const testButton = ref<HTMLDivElement>()
+
 const needDivider = computed<boolean>(() => !!slots.operation)
 
-const itemList = computed<(VNode<RendererNode, RendererElement, { [p: string]: any }> | undefined)[]>(() => calcSearchItems(props.search, values.value))
-console.log(itemList.value)
+const itemList = computed<CustomSearchItem[]>(() => calcSearchItems(props.search, values.value))
 function handleClickSearch() {
-  emits('searchAction')
+  let params: QueryObjectType = {}
+  componentItemList.value.forEach((item) => {
+    params = {
+      ...params,
+      ...item.getParams?.(),
+    }
+  })
+  emits('searchAction', params)
 }
 
 onMounted(() => {
@@ -40,11 +52,11 @@ onMounted(() => {
 
 <template>
   <NSpace align="center" justify="start">
-    <div v-for="(item, index) in itemList" :key="index">
-      <component :is="item" />
+    <div v-for="(item, index) in itemList" :key="index" :style="item.style">
+      <component :is="item.component" ref="componentItemList" />
     </div>
     <slot name="search" />
-    <NButton type="primary" @click="handleClickSearch">
+    <NButton ref="testButton" type="primary" @click="handleClickSearch">
       <template #default>
         {{ searchExtra?.searchButtonText || '搜索' }}
       </template>

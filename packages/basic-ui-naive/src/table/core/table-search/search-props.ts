@@ -1,6 +1,7 @@
 'use strict'
 
 import type { SelectMixedOption } from 'naive-ui/es/select/src/interface'
+import type { CSSProperties, VNode } from 'vue'
 import type { QueryDataType } from '../../common'
 
 export const SEARCH_PROP_TYPE_TEXT = 'text'
@@ -94,4 +95,9 @@ export interface SearchExtra {
  */
 export interface SearchValueData {
   data: Record<string, any>
+}
+
+export interface CustomSearchItem {
+  style?: CSSProperties
+  component: VNode
 }

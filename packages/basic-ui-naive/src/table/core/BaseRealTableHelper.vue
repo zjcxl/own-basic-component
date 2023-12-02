@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { QueryObjectType } from '@own-basic-component/config'
 import { NDataTable, NDivider, NPagination, NSpace, dataTableProps } from 'naive-ui'
 import type { PropType } from 'vue'
 import { computed, onMounted, reactive, ref, unref } from 'vue'
@@ -38,14 +39,15 @@ const pageSizes = computed<Array<number>>(() => calcPageSizes(defaultRows, props
 /**
  * 获取数据的方法
  */
-async function fetchData() {
+async function fetchData(params: QueryObjectType = {}, page: number = pageInfo.page) {
   const beforeParams = await props.beforeFetch()
   // 混合请求参数
   props.fetchMethod?.({
     // 默认的参数
     ...props.defaultParams,
     ...beforeParams,
-    page: pageInfo.page,
+    ...params,
+    page,
     rows: pageInfo.rows,
   }).then(({ data }) => {
     pageInfo.page = data.page
@@ -111,7 +113,7 @@ const helperType = props.helperType
 
 <template>
   <div>
-    <BaseTableSearchHelper :search="search" :search-extra="searchExtra" @search-action="refresh(1)">
+    <BaseTableSearchHelper :search="search" :search-extra="searchExtra" @search-action="params => fetchData(params, 1)">
       <slot />
     </BaseTableSearchHelper>
     <NDivider title-placement="left">

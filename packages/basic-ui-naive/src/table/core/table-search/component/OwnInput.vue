@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { QueryType } from '@own-basic-component/config'
-import type { SelectMixedOption } from 'naive-ui/es/select/src/interface'
-import { NSelect } from 'naive-ui'
+import { NInput } from 'naive-ui'
 import { defineExpose, onMounted, ref } from 'vue'
 import type { QueryDataType } from '../../../common'
 
@@ -10,7 +9,6 @@ interface StateProps {
   index: number
   placeholder?: string
   field?: string
-  options?: Array<SelectMixedOption>
 }
 
 const props = withDefaults(defineProps<StateProps>(), {
@@ -29,11 +27,9 @@ defineExpose({
 </script>
 
 <template>
-  <NSelect
+  <NInput
     :key="props.index"
     v-model:value="value"
-    clearable
     :placeholder="props.placeholder"
-    :options="props.options"
   />
 </template>
