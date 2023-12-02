@@ -32,6 +32,6 @@ export default defineComponent({
 
 <template>
   <BaseRealTableHelper v-bind="$props" ref="baseTableHelper" helper-type="list">
-    {{ $slots }}
+    <slot />
   </BaseRealTableHelper>
 </template>
