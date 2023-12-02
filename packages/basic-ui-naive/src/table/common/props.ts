@@ -1,9 +1,10 @@
 'use strict'
 
+import { dataTableProps } from 'naive-ui'
 import type { PropType } from 'vue'
+import type { SearchExtra, SearchProps } from '../core/table-search/search-props'
 import type { OperationExtra, OperationProps } from './operation-props'
 import type { BeforeFetchMethodType, DefaultParamsType, FetchMethodType, RowDataType } from './types'
-import type { SearchExtra, SearchProps } from './search-props'
 
 export const searchProps = {
   // 搜索栏的配置
@@ -70,4 +71,5 @@ export const baseTableProps = {
     type: Function as PropType<BeforeFetchMethodType>,
     default: () => Promise.resolve({}),
   },
+  ...dataTableProps,
 } as const

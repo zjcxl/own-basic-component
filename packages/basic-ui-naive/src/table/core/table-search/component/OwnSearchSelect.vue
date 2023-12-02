@@ -14,7 +14,6 @@ const props = withDefaults(defineProps<StateProps>(), {
 })
 
 const value = defineModel<string>()
-console.log(value)
 </script>
 
 <template>

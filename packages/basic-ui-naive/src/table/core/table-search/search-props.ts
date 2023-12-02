@@ -1,7 +1,7 @@
 'use strict'
 
 import type { SelectMixedOption } from 'naive-ui/es/select/src/interface'
-import type { QueryDataType } from './types'
+import type { QueryDataType } from '../../common'
 
 export const SEARCH_PROP_TYPE_TEXT = 'text'
 export const SEARCH_PROP_TYPE_SELECT = 'select'
@@ -16,12 +16,12 @@ export const SEARCH_PROP_TYPE_AUTO_COMPLETE = 'auto-complete'
  */
 type SearchPropType =
   typeof SEARCH_PROP_TYPE_TEXT
-  | typeof SEARCH_PROP_TYPE_SELECT
-  | typeof SEARCH_PROP_TYPE_DATE_PICKER
-  | typeof SEARCH_PROP_TYPE_TIME_PICKER
-  | typeof SEARCH_PROP_TYPE_SORT
-  | typeof SEARCH_PROP_TYPE_NUMBER
-  | typeof SEARCH_PROP_TYPE_AUTO_COMPLETE
+    | typeof SEARCH_PROP_TYPE_SELECT
+    | typeof SEARCH_PROP_TYPE_DATE_PICKER
+    | typeof SEARCH_PROP_TYPE_TIME_PICKER
+    | typeof SEARCH_PROP_TYPE_SORT
+    | typeof SEARCH_PROP_TYPE_NUMBER
+    | typeof SEARCH_PROP_TYPE_AUTO_COMPLETE
 
 /**
  * 查询条件接口
@@ -84,7 +84,7 @@ export interface SearchProps<TYPE = any> {
  */
 export interface SearchExtra {
   /**
-   * 搜索的文本
+   * 搜索按钮的文本
    */
   searchButtonText?: string
 }

@@ -3,7 +3,7 @@
 import { NInput } from 'naive-ui'
 import type { VNode } from 'vue'
 import { h } from 'vue'
-import OwnSearchSelect from '../core/component/OwnSearchSelect.vue'
+import OwnSearchSelect from './component/OwnSearchSelect.vue'
 import { SEARCH_PROP_TYPE_SELECT, SEARCH_PROP_TYPE_TEXT } from './search-props'
 import type { SearchProps, SearchValueData } from './search-props'
 
