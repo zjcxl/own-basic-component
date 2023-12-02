@@ -8,8 +8,20 @@ export const search: SearchProps[] = [
     placeholder: '请输入查询的方法名（全限定名）',
   },
   {
+    type: 'text',
+    width: 20,
+    field: 'moduleName',
+    placeholder: '请输入查询的模块名称',
+  },
+  {
+    type: 'text',
+    width: 20,
+    field: 'operationName',
+    placeholder: '请输入查询的方法操作名称',
+  },
+  {
     type: 'select',
-    width: 15,
+    width: 10,
     field: 'status',
     placeholder: '请选择筛选的状态',
     options: [

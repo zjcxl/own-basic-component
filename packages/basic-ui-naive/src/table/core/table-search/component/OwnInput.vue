@@ -15,6 +15,10 @@ const props = withDefaults(defineProps<StateProps>(), {
   placeholder: '',
 })
 
+const emits = defineEmits<{
+  searchAction: []
+}>()
+
 const value = ref<QueryType>()
 
 onMounted(() => {
@@ -31,5 +35,6 @@ defineExpose({
     :key="props.index"
     v-model:value="value"
     :placeholder="props.placeholder"
+    @keydown.enter="emits('searchAction')"
   />
 </template>

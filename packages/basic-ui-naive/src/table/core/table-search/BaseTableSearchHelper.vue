@@ -53,7 +53,7 @@ onMounted(() => {
 <template>
   <NSpace align="center" justify="start">
     <div v-for="(item, index) in itemList" :key="index" :style="item.style">
-      <component :is="item.component" ref="componentItemList" />
+      <component :is="item.component" ref="componentItemList" @search-action="handleClickSearch" />
     </div>
     <slot name="search" />
     <NButton ref="testButton" type="primary" @click="handleClickSearch">
