@@ -2,7 +2,7 @@
 
 import { dataTableProps } from 'naive-ui'
 import type { PropType } from 'vue'
-import type { SearchExtra, SearchProps } from '../core/table-search/search-props'
+import type { SearchExtra, SearchProps } from '../core'
 import type { OperationExtra, OperationProps } from './operation-props'
 import type { BeforeFetchMethodType, DefaultParamsType, RowDataType } from './types'
 
