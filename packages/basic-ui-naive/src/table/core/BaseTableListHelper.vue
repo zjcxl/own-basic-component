@@ -29,6 +29,9 @@ defineExpose({ refresh, getDataList })
     <template #search>
       <slot name="search" />
     </template>
+    <template #operation>
+      <slot name="operation" />
+    </template>
     <template #data="{ list }">
       <slot name="data" :list="list as T[]" />
     </template>

@@ -49,5 +49,6 @@ export interface TableInstanceType<T = any> {
 export interface TableSlotsType<T = any> {
   default(): void
   search(): void
+  operation(): void
   data(params: { list: T[] }): void
 }
