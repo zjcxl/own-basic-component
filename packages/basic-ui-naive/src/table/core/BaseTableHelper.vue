@@ -1,15 +1,22 @@
-<script lang="ts" setup>
-import { ref } from 'vue'
+<script lang="ts" setup generic="T">
+import { type PropType, ref } from 'vue'
 import { getOperationColumns } from '../common/table-line-operation-check'
 import { baseTableProps } from '../common'
+import type { FetchMethodType, TableInstanceType, TableSlotsType } from '../common'
 import BaseRealTableHelper from './BaseRealTableHelper.vue'
 
-const props = defineProps(baseTableProps)
+const props = defineProps({
+  ...baseTableProps,
+  // 请求方法
+  fetchMethod: Function as PropType<FetchMethodType<T>>,
+})
+
+defineSlots<TableSlotsType<T>>()
 
 const TABLE_OPERATION_KEY = 'table-operation'
 
 // 基础的baseTableHelper
-const officialBaseTableHelper = ref<InstanceType<typeof BaseRealTableHelper>>()
+const baseTableHelper = ref<TableInstanceType<T>>()
 // 处理操作列信息
 const { columns } = props
 // 获取字数
@@ -22,20 +29,22 @@ if (!oldOperations) {
 }
 // 刷新的方法
 function refresh(pageInit: number | boolean = false): void {
-  officialBaseTableHelper.value?.refresh(pageInit)
+  baseTableHelper.value!.refresh(pageInit)
 }
 // 获取列表数据
-const getDataList = () => officialBaseTableHelper.value?.getDataList()
+const getDataList = () => baseTableHelper.value!.getDataList()
 
 // 暴露方法信息
-defineExpose({
+defineExpose<TableInstanceType<T>>({
   refresh,
   getDataList,
 })
 </script>
 
 <template>
-  <BaseRealTableHelper v-bind="$props" ref="officialBaseTableHelper" :columns="columns" helper-type="table">
-    <slot />
+  <BaseRealTableHelper v-bind="props" ref="baseTableHelper" :columns="columns" helper-type="table">
+    <template #search>
+      <slot name="search" />
+    </template>
   </BaseRealTableHelper>
 </template>

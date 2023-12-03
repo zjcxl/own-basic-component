@@ -35,3 +35,19 @@ export interface PageInfo {
  * 请求方法的类型
  */
 export type FetchMethodType<T = RowDataType> = (params?: QueryDataType) => Promise<PageResultModel<T>>
+
+/**
+ * 表格的默认实例对象
+ */
+export interface TableInstanceType<T = any> {
+  refresh(pageInit?: number | boolean): void
+  getDataList(): T[]
+}
+/**
+ * 表格的默认slots对象
+ */
+export interface TableSlotsType<T = any> {
+  default(): void
+  search(): void
+  data(params: { list: T[] }): void
+}

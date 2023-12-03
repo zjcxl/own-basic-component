@@ -13,6 +13,11 @@ const routes: RouteRecordRaw[] = [
     name: 'log-operation',
     component: () => import('~/pages/log-operation/index.vue'),
   },
+  {
+    path: '/log-operation-list',
+    name: 'log-operation-list',
+    component: () => import('~/pages/log-operation-list/list.vue'),
+  },
 ]
 
 const router = createRouter({

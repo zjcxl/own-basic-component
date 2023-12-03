@@ -4,7 +4,7 @@ import { dataTableProps } from 'naive-ui'
 import type { PropType } from 'vue'
 import type { SearchExtra, SearchProps } from '../core/table-search/search-props'
 import type { OperationExtra, OperationProps } from './operation-props'
-import type { BeforeFetchMethodType, DefaultParamsType, FetchMethodType, RowDataType } from './types'
+import type { BeforeFetchMethodType, DefaultParamsType, RowDataType } from './types'
 
 export const searchProps = {
   // 搜索栏的配置
@@ -35,8 +35,6 @@ export const operationProps = {
 
 // 基础的表格的属性
 export const baseTableProps = {
-  // 请求方法
-  fetchMethod: Function as PropType<FetchMethodType>,
   // 分隔栏名称
   dividerName: {
     type: String,

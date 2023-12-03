@@ -1,9 +1,9 @@
-<script lang="ts" setup>
+<script lang="ts" setup generic="T">
 import type { QueryObjectType } from '@own-basic-component/config'
 import { NDataTable, NDivider, NPagination, NSpace, dataTableProps } from 'naive-ui'
-import type { PropType } from 'vue'
-import { computed, onMounted, reactive, ref, unref } from 'vue'
-import type { PageInfo, RowDataType } from '../common'
+import type { PropType, UnwrapRef } from 'vue'
+import { computed, defineSlots, onMounted, reactive, ref, unref } from 'vue'
+import type { FetchMethodType, PageInfo, RowDataType, TableInstanceType, TableSlotsType } from '../common'
 import { baseTableProps } from '../common'
 import { calcPageSizes } from './table-search'
 import BaseTableSearchHelper from './table-search/BaseTableSearchHelper.vue'
@@ -13,12 +13,16 @@ const props = defineProps({
   ...dataTableProps,
   // 自定义的表格属性
   ...baseTableProps,
+  // 请求方法
+  fetchMethod: Function as PropType<FetchMethodType<T>>,
   // 列表还是表格
   helperType: {
     type: String as PropType<'table' | 'list'>,
     default: 'table',
   },
 })
+
+defineSlots<TableSlotsType<T>>()
 
 // 定义默认的rows
 const defaultRows = unref(props.defaultRows)
@@ -31,7 +35,7 @@ const pageInfo = reactive<PageInfo>({
 })
 
 // 定义数据列
-const dataList = ref<Array<RowDataType>>([])
+const dataList = ref<T[]>([])
 
 // 分页大小数组
 const pageSizes = computed<Array<number>>(() => calcPageSizes(defaultRows, props.maxRows))
@@ -53,7 +57,7 @@ async function fetchData(params: QueryObjectType = {}, page: number = pageInfo.p
     pageInfo.page = data.page
     pageInfo.rows = data.rows
     pageInfo.total = data.total
-    dataList.value = data.list
+    dataList.value.splice(0, dataList.value.length, ...data.list as UnwrapRef<T[]>)
   })
 }
 
@@ -96,11 +100,11 @@ function refresh(pageInit: number | boolean = false) {
 }
 
 // 暴露的接口
-defineExpose({
+defineExpose<TableInstanceType<T>>({
   // 刷新
   refresh,
   // 获取数据
-  getDataList: () => dataList.value,
+  getDataList: () => dataList.value as T[] || [],
 })
 
 onMounted(async () => {
@@ -114,16 +118,16 @@ const helperType = props.helperType
 <template>
   <div>
     <BaseTableSearchHelper :search="search" :search-extra="searchExtra" @search-action="params => fetchData(params, 1)">
-      <slot />
+      <slot name="search" />
     </BaseTableSearchHelper>
     <NDivider title-placement="left">
       {{ dividerName }}
     </NDivider>
     <div v-if="helperType === 'table'" style="overflow: auto">
-      <NDataTable v-bind="$props" :data="dataList" :pagination="false" />
+      <NDataTable v-bind="$props" :data="dataList as RowDataType[]" :pagination="false" />
     </div>
     <div v-else>
-      <slot name="data" :list="dataList" />
+      <slot name="data" :list="dataList as T[]" />
     </div>
     <br>
     <NSpace justify="end">

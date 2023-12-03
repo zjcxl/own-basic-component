@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { TableInstanceType } from '@own-basic-component/ui-naive'
-import { BaseTableHelper } from '@own-basic-component/ui-naive'
-import { search } from './search'
-import { columns } from './columns'
+import { BaseTableListHelper } from '@own-basic-component/ui-naive'
+import { search } from '../log-operation/search'
+import { columns } from '../log-operation/columns'
 import type { LogOperationVo } from '~/module/log-operation/log-operation-vo'
 import logOperationApiRequest from '~/module/log-operation/log-operation-api'
 
@@ -26,7 +26,7 @@ function beforeFetch() {
 </script>
 
 <template>
-  <BaseTableHelper
+  <BaseTableListHelper
     ref="baseTableHelper"
     :columns="columns"
     :search="search"
@@ -36,5 +36,11 @@ function beforeFetch() {
     :pagination="false"
     :bordered="false"
     :default-rows="25"
-  />
+  >
+    <template #data="{ list }">
+      <div v-for="(item, index) in list" :key="index">
+        {{ item }}
+      </div>
+    </template>
+  </BaseTableListHelper>
 </template>
