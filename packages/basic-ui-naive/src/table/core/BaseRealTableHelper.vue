@@ -118,7 +118,12 @@ const helperType = props.helperType
 <template>
   <div>
     <BaseTableSearchHelper :search="search" :search-extra="searchExtra" @search-action="params => fetchData(params, 1)">
-      <slot name="search" />
+      <template #search>
+        <slot name="search" />
+      </template>
+      <template #operation>
+        <slot name="operation" />
+      </template>
     </BaseTableSearchHelper>
     <NDivider title-placement="left">
       {{ dividerName }}
