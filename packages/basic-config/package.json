@@ -34,11 +34,11 @@
     "node": ">=16"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.1.2",
-    "@types/node": "^20.10.1",
-    "eslint": "^8.54.0",
+    "@antfu/eslint-config": "^2.4.2",
+    "@types/node": "^20.10.4",
+    "eslint": "^8.55.0",
     "pnpm": "^8.11.0",
-    "typescript": "^5.3.2",
+    "typescript": "^5.3.3",
     "unbuild": "^2.0.0"
   },
   "gitHead": "847f386b3487f2e11b9297e44d5f67faf274f46f"
