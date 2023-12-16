@@ -4,6 +4,12 @@ export const search: SearchProps[] = [
   {
     type: 'text',
     width: 20,
+    field: 'traceId',
+    placeholder: '请输入查询的链路追踪（右模糊）',
+  },
+  {
+    type: 'text',
+    width: 20,
     field: 'methodName',
     placeholder: '请输入查询的方法名（全限定名）',
   },

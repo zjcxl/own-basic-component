@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { OperationProps } from '@own-basic-component/ui-naive/src'
 import { ref } from 'vue'
 import type { TableInstanceType } from '@own-basic-component/ui-naive'
 import { BaseTableHelper } from '@own-basic-component/ui-naive'
@@ -23,6 +24,17 @@ function beforeFetch() {
     data.methodName = methodName.value
   return Promise.resolve(data)
 }
+
+// 操作列
+const operationColumn: OperationProps<LogOperationVo>[] = [
+  {
+    title: '详情',
+    action: (record) => {
+      // 打开详情面板
+      console.log(record)
+    },
+  },
+]
 </script>
 
 <template>
@@ -32,6 +44,7 @@ function beforeFetch() {
     :search="search"
     :fetch-method="logOperationApiRequest.page"
     :before-fetch="beforeFetch"
+    :operations="operationColumn"
     :row-key="row => row.id"
     :pagination="false"
     :bordered="false"

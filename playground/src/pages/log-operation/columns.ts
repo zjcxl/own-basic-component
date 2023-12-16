@@ -66,16 +66,14 @@ export const columns: DataTableColumns<LogOperationVo> = [
   //   },
   // },
   {
-    title: '模块名称',
+    title: '操作',
     key: 'moduleName',
-    width: 160,
-    align: 'center',
-  },
-  {
-    title: '操作名称',
-    key: 'operationName',
-    width: 160,
-    align: 'center',
+    width: 200,
+    align: 'left',
+    ellipsis: {
+      tooltip: true,
+    },
+    render: row => `${row.moduleName} - ${row.operationName}`,
   },
   {
     title: '请求时间',
