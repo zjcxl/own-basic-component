@@ -9,7 +9,7 @@
       "registry": "https://gitee.com/chenxueli0109/own-basic-component/"
     }
   },
-  "version": "0.4.2",
+  "version": "0.4.3",
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "useNx": false
 }
