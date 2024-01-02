@@ -3,7 +3,7 @@
 import { defaultMaskConfig as DEFAULT_CONFIG } from './default'
 import type { MaskConfig, MaskUtilConfig, MaskUtilMethodConfig } from './types'
 
-const DEFAULT_MASK_KEY = 'app-mask'
+const DEFAULT_MASK_KEY = 'a-mask'
 
 // 遮罩层工具最终配置
 let resultConfig: MaskUtilConfig<any> = DEFAULT_CONFIG
