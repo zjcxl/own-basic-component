@@ -27,6 +27,8 @@ defineSlots<TableSlotsType<T>>()
 // 定义默认的rows
 const defaultRows = unref(props.defaultRows)
 
+const baseTableSearchHelper = ref<InstanceType<typeof BaseTableSearchHelper>>()
+
 // 定义分页的参数信息
 const pageInfo = reactive<PageInfo>({
   page: unref(props.defaultPage),
@@ -43,7 +45,9 @@ const pageSizes = computed<Array<number>>(() => calcPageSizes(defaultRows, props
 /**
  * 获取数据的方法
  */
-async function fetchData(params: QueryObjectType = {}, page: number = pageInfo.page) {
+async function fetchData(params?: QueryObjectType, page: number = pageInfo.page) {
+  // 判断参数的来源信息
+  params = params || baseTableSearchHelper.value?.getParams() || {}
   const beforeParams = await props.beforeFetch()
   // 混合请求参数
   props.fetchMethod?.({
@@ -117,7 +121,7 @@ const helperType = props.helperType
 
 <template>
   <div>
-    <BaseTableSearchHelper :search="search" :search-extra="searchExtra" @search-action="params => fetchData(params, 1)">
+    <BaseTableSearchHelper ref="baseTableSearchHelper" :search="search" :search-extra="searchExtra" @search-action="params => fetchData(params, 1)">
       <template #search>
         <slot name="search" />
       </template>

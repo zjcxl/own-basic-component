@@ -32,7 +32,18 @@ const testButton = ref<HTMLDivElement>()
 const needDivider = computed<boolean>(() => !!slots.operation)
 
 const itemList = computed<CustomSearchItem[]>(() => calcSearchItems(props.search, values.value))
+
+/**
+ * 点击搜索按钮的事件
+ */
 function handleClickSearch() {
+  emits('searchAction', getParams())
+}
+
+/**
+ * 获取请求参数
+ */
+function getParams(): QueryObjectType {
   let params: QueryObjectType = {}
   componentItemList.value.forEach((item) => {
     params = {
@@ -40,8 +51,12 @@ function handleClickSearch() {
       ...item.getParams?.(),
     }
   })
-  emits('searchAction', params)
+  return params
 }
+
+defineExpose({
+  getParams,
+})
 
 onMounted(() => {
   props.search.forEach((item) => {
