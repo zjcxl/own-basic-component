@@ -9,11 +9,11 @@
   },
   "dependencies": {
     "@unocss/eslint-plugin": "^0.58.3",
-    "vue": "^3.4.3",
+    "vue": "^3.4.8",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.6.1",
+    "@antfu/eslint-config": "^2.6.2",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/request-axios": "workspace:*",
@@ -21,13 +21,13 @@
     "@own-basic-component/util": "workspace:*",
     "@unocss/eslint-config": "^0.58.3",
     "@unocss/reset": "^0.58.3",
-    "@vitejs/plugin-vue": "^4.6.2",
+    "@vitejs/plugin-vue": "^5.0.3",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "eslint": "^8.56.0",
     "typescript": "^5.3.3",
     "unocss": "^0.58.3",
     "unplugin-auto-import": "^0.17.3",
     "unplugin-vue-components": "^0.26.0",
-    "vite": "^5.0.10"
+    "vite": "^5.0.11"
   }
 }
