@@ -130,6 +130,44 @@ export function downloadBackupFile(path: string, fileName: string) {
   downloadFile(getBackupPath(path), fileName)
 }
 
+/**
+ * 获取文件的md5
+ * @param file 计算的文件
+ */
+export async function calculateFileMD5(file: File) {
+  const buffer = await readFileAsArrayBuffer(file)
+  const hashArray = await crypto.subtle.digest('SHA-256', buffer)
+  return Array.from(new Uint8Array(hashArray))
+    .map(byte => byte.toString(16).padStart(2, '0'))
+    .join('')
+}
+
+/**
+ * 获取文件的buffer
+ * @param file 计算的文件
+ */
+export async function readFileAsArrayBuffer(file: File): Promise<ArrayBuffer> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => resolve(reader.result as ArrayBuffer)
+    reader.onerror = reject
+    reader.readAsArrayBuffer(file)
+  })
+}
+
+/**
+ * 获取文件的字符串
+ * @param file 计算的文件
+ */
+export async function readFileAsString(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => resolve(reader.result as string)
+    reader.onerror = reject
+    reader.readAsText(file)
+  })
+}
+
 export {
   base64toBlob as fileBase64toBlob,
   blobToBase64 as fileBlobToBase64,

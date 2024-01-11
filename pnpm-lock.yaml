@@ -386,6 +386,79 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(typescript@5.3.3)
 
+  packages/basic-vue:
+    dependencies:
+      '@own-basic-component/config':
+        specifier: workspace:*
+        version: link:../basic-config
+      '@own-basic-component/request':
+        specifier: workspace:*
+        version: link:../basic-request
+      '@own-basic-component/util':
+        specifier: workspace:*
+        version: link:../basic-util
+      '@vueuse/core':
+        specifier: ^10.7.1
+        version: 10.7.1(vue@3.4.3)
+      vue:
+        specifier: ^3.4.3
+        version: 3.4.3(typescript@5.3.3)
+    devDependencies:
+      '@antfu/eslint-config':
+        specifier: ^2.6.1
+        version: 2.6.1(@vue/compiler-sfc@3.4.3)(eslint@8.56.0)(typescript@5.3.3)(vitest@1.1.1)
+      '@types/node':
+        specifier: ^20.10.6
+        version: 20.10.6
+      '@vitejs/plugin-vue':
+        specifier: ^4.6.2
+        version: 4.6.2(vite@5.0.10)(vue@3.4.3)
+      '@vitejs/plugin-vue-jsx':
+        specifier: ^3.1.0
+        version: 3.1.0(vite@5.0.10)(vue@3.4.3)
+      '@vue-macros/reactivity-transform':
+        specifier: ^0.4.1
+        version: 0.4.1(rollup@3.28.1)(vue@3.4.3)
+      '@vue/test-utils':
+        specifier: ^2.4.3
+        version: 2.4.3(vue@3.4.3)
+      eslint:
+        specifier: ^8.56.0
+        version: 8.56.0
+      jsdom:
+        specifier: ^23.0.1
+        version: 23.0.1
+      less:
+        specifier: ^4.2.0
+        version: 4.2.0
+      pnpm:
+        specifier: ^8.13.1
+        version: 8.13.1
+      taze:
+        specifier: ^0.13.1
+        version: 0.13.1
+      typescript:
+        specifier: ^5.3.3
+        version: 5.3.3
+      unplugin-auto-import:
+        specifier: ^0.17.3
+        version: 0.17.3(@vueuse/core@10.7.1)(rollup@3.28.1)
+      vfonts:
+        specifier: ^0.0.3
+        version: 0.0.3
+      vite:
+        specifier: ^5.0.10
+        version: 5.0.10(@types/node@20.10.6)(less@4.2.0)
+      vite-plugin-dts:
+        specifier: ^3.7.0
+        version: 3.7.0(@types/node@20.10.6)(rollup@3.28.1)(typescript@5.3.3)(vite@5.0.10)
+      vitest:
+        specifier: ^1.1.1
+        version: 1.1.1(@types/node@20.10.6)(jsdom@23.0.1)(less@4.2.0)
+      vue-tsc:
+        specifier: ^1.8.27
+        version: 1.8.27(typescript@5.3.3)
+
   playground:
     dependencies:
       '@unocss/eslint-plugin':
@@ -883,7 +956,7 @@ packages:
     resolution: {integrity: sha512-wGjk9QZVzvknA6yKIUURb8zY3grXCcOZt+/7Wcy8O2uctxhplmUPkOdlgoNhmdVee2c92JXbf1xpMtVNbfoxRw==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.22.10
+      '@babel/types': 7.23.6
     dev: true
 
   /@babel/helper-member-expression-to-functions@7.23.0:
@@ -1136,7 +1209,7 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
-      '@babel/types': 7.23.5
+      '@babel/types': 7.23.6
 
   /@babel/plugin-syntax-jsx@7.22.5(@babel/core@7.23.3):
     resolution: {integrity: sha512-gvyP4hZrgrs/wWMaocvxZ44Hw0b3W8Pe+cMxc8V1ULQ07oh8VNbIRaoD1LRZVTvD+0nieDKjfgKg89sD7rrKrg==}
@@ -1348,6 +1421,7 @@ packages:
       '@babel/helper-string-parser': 7.23.4
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
+    dev: true
 
   /@babel/types@7.23.6:
     resolution: {integrity: sha512-+uarb83brBzPKN38NX1MkB6vb6+mwvR6amUulqAE7ccQw1pEl+bCia9TbdG1lsnFP7lZySvUn37CHyXQdfTwzg==}
@@ -1356,7 +1430,6 @@ packages:
       '@babel/helper-string-parser': 7.23.4
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
-    dev: true
 
   /@css-render/plugin-bem@0.15.12(css-render@0.15.12):
     resolution: {integrity: sha512-Lq2jSOZn+wYQtsyaFj6QRz2EzAnd3iW5fZeHO1WSXQdVYwvwGX0ZiH3X2JQgtgYLT1yeGtrwrqJdNdMEUD2xTw==}
@@ -2013,7 +2086,7 @@ packages:
       ajv: 6.12.6
       debug: 4.3.4
       espree: 9.6.1
-      globals: 13.23.0
+      globals: 13.24.0
       ignore: 5.2.4
       import-fresh: 3.3.0
       js-yaml: 4.1.0
@@ -3702,7 +3775,7 @@ packages:
   /@vue/compiler-core@3.3.11:
     resolution: {integrity: sha512-h97/TGWBilnLuRaj58sxNrsUU66fwdRKLOLQ9N/5iNDfp+DZhYH9Obhe0bXxhedl8fjAgpRANpiZfbgWyruQ0w==}
     dependencies:
-      '@babel/parser': 7.23.5
+      '@babel/parser': 7.23.6
       '@vue/shared': 3.3.11
       estree-walker: 2.0.2
       source-map-js: 1.0.2
@@ -3804,7 +3877,7 @@ packages:
   /@vue/reactivity-transform@3.3.10:
     resolution: {integrity: sha512-0xBdk+CKHWT+Gev8oZ63Tc0qFfj935YZx+UAynlutnrDZ4diFCVFMWixn65HzjE3S1iJppWOo6Tt1OzASH7VEg==}
     dependencies:
-      '@babel/parser': 7.23.5
+      '@babel/parser': 7.23.6
       '@vue/compiler-core': 3.3.10
       '@vue/shared': 3.3.10
       estree-walker: 2.0.2
@@ -4242,7 +4315,7 @@ packages:
     dependencies:
       '@npmcli/fs': 3.1.0
       fs-minipass: 3.0.2
-      glob: 10.2.6
+      glob: 10.3.10
       lru-cache: 7.18.3
       minipass: 5.0.0
       minipass-collect: 1.0.2
@@ -6032,7 +6105,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       type-fest: 0.20.2
-    dev: true
 
   /globby@11.1.0:
     resolution: {integrity: sha512-jhIXaOzy1sb8IyocaruWSn1TjmnBVs8Ayhcy83rmxNJ8q2uWKCAj3CnJY+KpGSXCueAPc0i05kVvVKtP1t9S3g==}

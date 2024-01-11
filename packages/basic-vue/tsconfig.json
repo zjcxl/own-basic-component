@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "types": ["@vue-macros/reactivity-transform/macros-global"]
+  },
+  "extends": "../../tsconfig.json",
+  "include": [
+    "./src/**/*"
+  ]
+}
