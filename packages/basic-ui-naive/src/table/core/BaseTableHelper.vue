@@ -11,7 +11,7 @@ const props = defineProps({
   fetchMethod: Function as PropType<FetchMethodType<T>>,
 })
 
-defineSlots<TableSlotsType<T>>()
+const slots = defineSlots<TableSlotsType<T>>()
 
 const TABLE_OPERATION_KEY = 'table-operation'
 
@@ -43,8 +43,11 @@ defineExpose<TableInstanceType<T>>({
 
 <template>
   <BaseRealTableHelper v-bind="props" ref="baseTableHelper" :columns="columns" helper-type="table">
-    <template #search>
+    <template v-if="slots.search" #search>
       <slot name="search" />
+    </template>
+    <template v-if="slots.operation" #operation>
+      <slot name="operation" />
     </template>
   </BaseRealTableHelper>
 </template>

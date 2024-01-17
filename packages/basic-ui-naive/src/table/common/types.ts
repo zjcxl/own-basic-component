@@ -47,8 +47,8 @@ export interface TableInstanceType<T = any> {
  * 表格的默认slots对象
  */
 export interface TableSlotsType<T = any> {
-  default(): void
-  search(): void
-  operation(): void
-  data(params: { list: T[] }): void
+  default?: () => void
+  search?: () => void
+  operation?: () => void
+  data?: (params: { list: T[] }) => void
 }

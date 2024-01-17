@@ -22,7 +22,7 @@ const props = defineProps({
   },
 })
 
-defineSlots<TableSlotsType<T>>()
+const slots = defineSlots<TableSlotsType<T>>()
 
 // 定义默认的rows
 const defaultRows = unref(props.defaultRows)
@@ -122,10 +122,10 @@ const helperType = props.helperType
 <template>
   <div>
     <BaseTableSearchHelper ref="baseTableSearchHelper" :search="search" :search-extra="searchExtra" @search-action="params => fetchData(params, 1)">
-      <template #search>
+      <template v-if="slots.search" #search>
         <slot name="search" />
       </template>
-      <template #operation>
+      <template v-if="slots.operation" #operation>
         <slot name="operation" />
       </template>
     </BaseTableSearchHelper>
@@ -136,7 +136,9 @@ const helperType = props.helperType
       <NDataTable v-bind="$props" :data="dataList as RowDataType[]" :pagination="false" />
     </div>
     <div v-else>
-      <slot name="data" :list="dataList as T[]" />
+      <template v-if="slots.data">
+        <slot name="data" :list="dataList as T[]" />
+      </template>
     </div>
     <br>
     <NSpace justify="end">

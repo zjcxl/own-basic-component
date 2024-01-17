@@ -10,7 +10,7 @@ const props = defineProps({
   fetchMethod: Function as PropType<FetchMethodType<T>>,
 })
 
-defineSlots<TableSlotsType<T>>()
+const slots = defineSlots<TableSlotsType<T>>()
 
 const baseTableHelper = ref<TableInstanceType<T>>()
 
@@ -26,13 +26,13 @@ defineExpose({ refresh, getDataList })
 
 <template>
   <BaseRealTableHelper v-bind="props" ref="baseTableHelper" helper-type="list">
-    <template #search>
+    <template v-if="slots.search" #search>
       <slot name="search" />
     </template>
-    <template #operation>
+    <template v-if="slots.operation" #operation>
       <slot name="operation" />
     </template>
-    <template #data="{ list }">
+    <template v-if="slots.data" #data="{ list }">
       <slot name="data" :list="list as T[]" />
     </template>
   </BaseRealTableHelper>

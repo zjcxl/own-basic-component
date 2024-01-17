@@ -18,8 +18,8 @@ const emits = defineEmits<{
 }>()
 
 const slots = defineSlots<{
-  search?: any
-  operation?: any
+  search?: () => any
+  operation?: () => any
 }>()
 
 const values = ref<SearchValueData>({
@@ -29,8 +29,6 @@ const values = ref<SearchValueData>({
 const componentItemList = ref<{
   getParams?: () => QueryObjectType
 }[]>([])
-
-const hasOperation = computed<boolean>(() => !!slots.operation)
 
 const itemList = computed<CustomSearchItem[]>(() => calcSearchItems(props.search, values.value))
 
@@ -71,7 +69,9 @@ onMounted(() => {
     <div v-for="(item, index) in itemList" :key="index" :style="item.style">
       <component :is="item.component" ref="componentItemList" @search-action="handleClickSearch" />
     </div>
-    <slot name="search" />
+    <template v-if="slots.search">
+      <slot name="search" />
+    </template>
     <NButton type="primary" @click="handleClickSearch">
       <template #default>
         {{ searchExtra?.searchButtonText || '搜索' }}
@@ -80,7 +80,7 @@ onMounted(() => {
         <SearchOutline />
       </template>
     </NButton>
-    <template v-if="hasOperation">
+    <template v-if="slots.operation">
       <NDivider vertical />
       <slot name="operation" />
     </template>
