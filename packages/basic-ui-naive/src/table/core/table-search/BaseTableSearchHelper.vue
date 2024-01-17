@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { QueryObjectType } from '@own-basic-component/config'
-import { computed, defineProps, onMounted, ref, useSlots } from 'vue'
+import { computed, defineProps, onMounted, ref } from 'vue'
 import { NButton, NDivider, NSpace } from 'naive-ui'
 import { SearchOutline } from '@vicons/ionicons5'
 import type { CustomSearchItem, SearchExtra, SearchProps, SearchValueData } from '.'
@@ -17,19 +17,20 @@ const emits = defineEmits<{
   searchAction: [QueryObjectType]
 }>()
 
+const slots = defineSlots<{
+  search?: any
+  operation?: any
+}>()
+
 const values = ref<SearchValueData>({
   data: {},
 })
-
-const slots = useSlots()
 
 const componentItemList = ref<{
   getParams?: () => QueryObjectType
 }[]>([])
 
-const testButton = ref<HTMLDivElement>()
-
-const needDivider = computed<boolean>(() => !!slots.operation)
+const hasOperation = computed<boolean>(() => !!slots.operation)
 
 const itemList = computed<CustomSearchItem[]>(() => calcSearchItems(props.search, values.value))
 
@@ -71,7 +72,7 @@ onMounted(() => {
       <component :is="item.component" ref="componentItemList" @search-action="handleClickSearch" />
     </div>
     <slot name="search" />
-    <NButton ref="testButton" type="primary" @click="handleClickSearch">
+    <NButton type="primary" @click="handleClickSearch">
       <template #default>
         {{ searchExtra?.searchButtonText || '搜索' }}
       </template>
@@ -79,7 +80,9 @@ onMounted(() => {
         <SearchOutline />
       </template>
     </NButton>
-    <NDivider v-if="needDivider" vertical />
-    <slot name="operation" />
+    <template v-if="hasOperation">
+      <NDivider vertical />
+      <slot name="operation" />
+    </template>
   </NSpace>
 </template>
