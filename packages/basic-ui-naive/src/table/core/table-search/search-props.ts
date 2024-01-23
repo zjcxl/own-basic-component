@@ -1,5 +1,6 @@
 'use strict'
 
+import type { QueryObjectType } from '@own-basic-component/config'
 import type { CSSProperties, VNode } from 'vue'
 import type { SelectMixedOption } from 'naive-ui/es/select/src/interface'
 import type { QueryDataType } from '../../common'
@@ -42,7 +43,7 @@ export interface SearchOptionProps {
 /**
  * 基础的类型信息
  */
-export interface BaseSearchProps<VALUE_TYPE = QueryDataType > {
+export interface BaseSearchProps {
   /**
    * 自定义宽度，不确定可以不填写，目前最小宽度15rem
    * @default undefined
@@ -67,63 +68,62 @@ export interface BaseSearchProps<VALUE_TYPE = QueryDataType > {
    * @default undefined
    */
   placeholder?: string
-  /**
-   * 默认值
-   * @default undefined
-   */
-  defaultValue?: VALUE_TYPE
-  /**
-   * 格式化提交的内容
-   * @param value
-   * @default undefined
-   */
-  formatValue?: (value: VALUE_TYPE) => QueryDataType
 }
 
-export type textSearchPropsType = (BaseSearchProps & {
+export type textSearchPropsType<VALUE_TYPE = QueryObjectType> = (BaseSearchProps & {
   type: typeof SEARCH_PROP_TYPE_TEXT
+  defaultValue?: VALUE_TYPE
 })
 
-export type selectSearchPropsType = (BaseSearchProps & {
+export type selectSearchPropsType<VALUE_TYPE = QueryObjectType> = (BaseSearchProps & {
   type: typeof SEARCH_PROP_TYPE_SELECT
+  defaultValue?: VALUE_TYPE
   options: SelectMixedOption[]
 })
 
 export type datePickerSearchPropsType = (BaseSearchProps & {
   type: typeof SEARCH_PROP_TYPE_DATE_PICKER
+  defaultValue?: number
   options: DatePicker
 })
 
 export type dateRangePickerSearchPropsType = (BaseSearchProps & {
   type: typeof SEARCH_PROP_TYPE_DATE_RANGE_PICKER
+  defaultValue?: [number, number]
   options: DateRangePicker
 })
 
 export type dateTimePickerSearchPropsType = (BaseSearchProps & {
   type: typeof SEARCH_PROP_TYPE_DATE_TIME_PICKER
+  defaultValue?: number
   options: DatePicker
 })
 
 export type dateTimeRangePickerSearchPropsType = (BaseSearchProps & {
   type: typeof SEARCH_PROP_TYPE_DATE_TIME_RANGE_PICKER
+  defaultValue?: [number, number]
   options: DateTimeRangePicker
 })
 
-export type timePickerSearchPropsType = (BaseSearchProps & {
+export type timePickerSearchPropsType<VALUE_TYPE = QueryObjectType> = (BaseSearchProps & {
   type: typeof SEARCH_PROP_TYPE_TIME_PICKER
+  defaultValue?: VALUE_TYPE
   options: DatePicker
 })
 
-export type sortPickerSearchPropsType = (BaseSearchProps & {
+export type sortPickerSearchPropsType<VALUE_TYPE = QueryObjectType> = (BaseSearchProps & {
   type: typeof SEARCH_PROP_TYPE_SORT
+  defaultValue?: VALUE_TYPE
 })
 
-export type numberPickerSearchPropsType = (BaseSearchProps & {
+export type numberPickerSearchPropsType<VALUE_TYPE = QueryObjectType> = (BaseSearchProps & {
   type: typeof SEARCH_PROP_TYPE_NUMBER
+  defaultValue?: VALUE_TYPE
 })
 
-export type autoCompletePickerSearchPropsType = (BaseSearchProps & {
+export type autoCompletePickerSearchPropsType<VALUE_TYPE = QueryObjectType> = (BaseSearchProps & {
   type: typeof SEARCH_PROP_TYPE_AUTO_COMPLETE
+  defaultValue?: VALUE_TYPE
 })
 
 /**

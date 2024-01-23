@@ -28,8 +28,8 @@ importers:
         specifier: ^8.0.2
         version: 8.0.2
       pnpm:
-        specifier: ^8.14.2
-        version: 8.14.2
+        specifier: ^8.14.3
+        version: 8.14.3
       taze:
         specifier: ^0.13.1
         version: 0.13.1
@@ -65,8 +65,8 @@ importers:
         specifier: ^8.56.0
         version: 8.56.0
       pnpm:
-        specifier: ^8.14.2
-        version: 8.14.2
+        specifier: ^8.14.3
+        version: 8.14.3
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -89,8 +89,8 @@ importers:
         specifier: ^8.56.0
         version: 8.56.0
       pnpm:
-        specifier: ^8.14.2
-        version: 8.14.2
+        specifier: ^8.14.3
+        version: 8.14.3
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -125,8 +125,8 @@ importers:
         specifier: ^8.56.0
         version: 8.56.0
       pnpm:
-        specifier: ^8.14.2
-        version: 8.14.2
+        specifier: ^8.14.3
+        version: 8.14.3
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -155,8 +155,8 @@ importers:
         specifier: ^8.56.0
         version: 8.56.0
       pnpm:
-        specifier: ^8.14.2
-        version: 8.14.2
+        specifier: ^8.14.3
+        version: 8.14.3
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -204,8 +204,8 @@ importers:
         specifier: ^8.56.0
         version: 8.56.0
       pnpm:
-        specifier: ^8.14.2
-        version: 8.14.2
+        specifier: ^8.14.3
+        version: 8.14.3
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -249,8 +249,8 @@ importers:
         specifier: ^8.56.0
         version: 8.56.0
       pnpm:
-        specifier: ^8.14.2
-        version: 8.14.2
+        specifier: ^8.14.3
+        version: 8.14.3
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -331,8 +331,8 @@ importers:
         specifier: ^2.37.3
         version: 2.37.3(vue@3.4.15)
       pnpm:
-        specifier: ^8.14.2
-        version: 8.14.2
+        specifier: ^8.14.3
+        version: 8.14.3
       taze:
         specifier: ^0.13.1
         version: 0.13.1
@@ -380,8 +380,8 @@ importers:
         specifier: ^8.56.0
         version: 8.56.0
       pnpm:
-        specifier: ^8.14.2
-        version: 8.14.2
+        specifier: ^8.14.3
+        version: 8.14.3
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -435,8 +435,8 @@ importers:
         specifier: ^4.2.0
         version: 4.2.0
       pnpm:
-        specifier: ^8.14.2
-        version: 8.14.2
+        specifier: ^8.14.3
+        version: 8.14.3
       taze:
         specifier: ^0.13.1
         version: 0.13.1
@@ -8305,8 +8305,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm@8.14.2:
-    resolution: {integrity: sha512-enyyRtKg4kQSBglRHotK2uJLIkrEWS58DaXraUiRtDU3YZECK/u475wDMkDuihoBk7Xg/gtxLgTpLzotcXC4nA==}
+  /pnpm@8.14.3:
+    resolution: {integrity: sha512-w+2A61g74+K37zHrlri5z6oFA+XUTscXUUEgtRh7L5M3NukDjFGlojrVgnkLpB1Kt4RhjIn6fiNl9mZWhdYS7g==}
     engines: {node: '>=16.14'}
     hasBin: true
     dev: true

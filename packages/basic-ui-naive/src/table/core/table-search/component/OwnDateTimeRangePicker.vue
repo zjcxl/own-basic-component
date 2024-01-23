@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { QueryType } from '@own-basic-component/config'
 import type { DateTimeRangeFieldFormatType, DateTimeRangePicker, QueryDataType } from '@own-basic-component/ui-naive'
 import { computed, defineExpose, onMounted, ref } from 'vue'
 import { NDatePicker } from 'naive-ui'
@@ -7,7 +6,7 @@ import { NDatePicker } from 'naive-ui'
 import { format } from 'date-fns'
 
 interface StateProps {
-  defaultValue?: QueryType
+  defaultValue?: [number, number] | undefined
   index: number
   placeholder?: string
   field: string

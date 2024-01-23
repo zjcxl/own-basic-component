@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/util",
   "version": "0.6.5",
-  "packageManager": "pnpm@8.14.2",
+  "packageManager": "pnpm@8.14.3",
   "license": "MIT",
   "author": "chenxueli",
   "repository": {
@@ -43,7 +43,7 @@
     "@own-basic-component/config": "workspace:*",
     "@types/node": "^20.11.5",
     "eslint": "^8.56.0",
-    "pnpm": "^8.14.2",
+    "pnpm": "^8.14.3",
     "typescript": "^5.3.3",
     "unbuild": "^2.0.0"
   },
