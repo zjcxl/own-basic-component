@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/vue",
   "version": "0.6.3",
-  "packageManager": "pnpm@8.14.1",
+  "packageManager": "pnpm@8.14.2",
   "license": "MIT",
   "author": "chenxueli",
   "repository": {
@@ -41,26 +41,26 @@
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
     "@vueuse/core": "^10.7.2",
-    "vue": "^3.4.14"
+    "vue": "^3.4.15"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.3",
     "@types/node": "^20.11.5",
     "@vitejs/plugin-vue": "^5.0.3",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "@vue-macros/reactivity-transform": "^0.4.2",
+    "@vue-macros/reactivity-transform": "^0.4.3",
     "@vue/test-utils": "^2.4.3",
     "eslint": "^8.56.0",
-    "jsdom": "^23.2.0",
+    "jsdom": "^24.0.0",
     "less": "^4.2.0",
-    "pnpm": "^8.14.1",
+    "pnpm": "^8.14.2",
     "taze": "^0.13.1",
     "typescript": "^5.3.3",
     "unplugin-auto-import": "^0.17.3",
     "vfonts": "^0.0.3",
-    "vite": "^5.0.11",
+    "vite": "^5.0.12",
     "vite-plugin-dts": "^3.7.1",
-    "vitest": "^1.2.0",
+    "vitest": "^1.2.1",
     "vue-tsc": "^1.8.27"
   }
 }
