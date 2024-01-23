@@ -1,4 +1,4 @@
-import type { SearchProps } from '@own-basic-component/ui-naive'
+import type { SearchProps } from '@own-basic-component/ui-naive/src'
 
 export const search: SearchProps[] = [
   {
@@ -26,11 +26,13 @@ export const search: SearchProps[] = [
     placeholder: '请输入查询的方法操作名称',
   },
   {
-    type: 'date-picker',
+    type: 'date-time-range-picker',
     width: 20,
     field: 'requestTime',
     placeholder: '请输入查询的方法操作名称',
-    options: {},
+    options: {
+      format: 'yyyy-MM-dd HH:mm',
+    },
   },
   {
     type: 'select',

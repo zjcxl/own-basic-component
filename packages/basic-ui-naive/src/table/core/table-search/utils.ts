@@ -3,15 +3,36 @@
 import type { VNode } from 'vue'
 import { h } from 'vue'
 import OwnDatePicker from './component/OwnDatePicker.vue'
+import OwnDateRangePicker from './component/OwnDateRangePicker.vue'
+import OwnDateTimePicker from './component/OwnDateTimePicker.vue'
+import OwnDateTimeRangePicker from './component/OwnDateTimeRangePicker.vue'
 import OwnInput from './component/OwnInput.vue'
 import OwnSearchSelect from './component/OwnSearchSelect.vue'
-import type { CustomSearchItem, SearchProps, SearchValueData } from './search-props'
-import { SEARCH_PROP_TYPE_DATE_PICKER, SEARCH_PROP_TYPE_SELECT, SEARCH_PROP_TYPE_TEXT } from './search-props'
+import type {
+  CustomSearchItem,
+  SearchPropType,
+  SearchProps,
+  SearchValueData,
+  datePickerSearchPropsType,
+  dateRangePickerSearchPropsType,
+  dateTimePickerSearchPropsType,
+  dateTimeRangePickerSearchPropsType,
+  selectSearchPropsType,
+} from './search-props'
+import {
+  SEARCH_PROP_TYPE_DATE_PICKER,
+
+  SEARCH_PROP_TYPE_DATE_RANGE_PICKER,
+  SEARCH_PROP_TYPE_DATE_TIME_PICKER,
+  SEARCH_PROP_TYPE_DATE_TIME_RANGE_PICKER,
+  SEARCH_PROP_TYPE_SELECT,
+  SEARCH_PROP_TYPE_TEXT,
+} from './search-props'
 
 /**
  * 搜索列表的map
  */
-const HANDLE_MAP: Map<string, (item: SearchProps, values: SearchValueData, index: number) => CustomSearchItem> = new Map()
+const HANDLE_MAP: Map<SearchPropType, (item: SearchProps, values: SearchValueData, index: number) => CustomSearchItem> = new Map()
 
 /**
  * 计算分页的大小信息
@@ -51,26 +72,53 @@ HANDLE_MAP.set(SEARCH_PROP_TYPE_TEXT, (item, values, index) => {
 /**
  * 添加下拉搜索的模板
  */
-HANDLE_MAP.set(SEARCH_PROP_TYPE_SELECT, (item, values, index) => {
+HANDLE_MAP.set(SEARCH_PROP_TYPE_SELECT, (item: SearchProps, values, index) => {
   return encasementSearchItem(item, h(OwnSearchSelect, {
     defaultValue: values.data[item.field],
     index,
     placeholder: item.placeholder,
     field: item.field,
-    options: item.options,
+    options: (item as selectSearchPropsType).options,
   }))
 })
 
 /**
  * 添加日期的模板
  */
-HANDLE_MAP.set(SEARCH_PROP_TYPE_DATE_PICKER, (item, values, index) => {
+HANDLE_MAP.set(SEARCH_PROP_TYPE_DATE_PICKER, (item: SearchProps, values, index) => {
   return encasementSearchItem(item, h(OwnDatePicker, {
     defaultValue: values.data[item.field],
     index,
     placeholder: item.placeholder,
     field: item.field,
-    options: item.options,
+    options: (item as datePickerSearchPropsType).options,
+  }))
+})
+HANDLE_MAP.set(SEARCH_PROP_TYPE_DATE_RANGE_PICKER, (item: SearchProps, values, index) => {
+  return encasementSearchItem(item, h(OwnDateRangePicker, {
+    defaultValue: values.data[item.field],
+    index,
+    placeholder: item.placeholder,
+    field: item.field,
+    options: (item as dateRangePickerSearchPropsType).options,
+  }))
+})
+HANDLE_MAP.set(SEARCH_PROP_TYPE_DATE_TIME_PICKER, (item: SearchProps, values, index) => {
+  return encasementSearchItem(item, h(OwnDateTimePicker, {
+    defaultValue: values.data[item.field],
+    index,
+    placeholder: item.placeholder,
+    field: item.field,
+    options: (item as dateTimePickerSearchPropsType).options,
+  }))
+})
+HANDLE_MAP.set(SEARCH_PROP_TYPE_DATE_TIME_RANGE_PICKER, (item: SearchProps, values, index) => {
+  return encasementSearchItem(item, h(OwnDateTimeRangePicker, {
+    defaultValue: values.data[item.field],
+    index,
+    placeholder: item.placeholder,
+    field: item.field,
+    options: (item as dateTimeRangePickerSearchPropsType).options,
   }))
 })
 

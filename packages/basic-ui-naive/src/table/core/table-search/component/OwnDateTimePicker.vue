@@ -23,7 +23,7 @@ const value = ref<number | null>()
 /**
  * 格式化的内容
  */
-const formatter = computed<string>(() => props.options?.format || 'yyyy-MM-dd')
+const formatter = computed<string>(() => props.options?.format || 'yyyy-MM-dd HH:mm:ss')
 
 onMounted(() => {
   value.value = props.defaultValue
@@ -43,7 +43,7 @@ defineExpose({
     v-model:value="value"
     :default-value="props.defaultValue"
     :format="formatter"
-    type="date"
+    type="datetime"
     clearable
   />
 </template>
