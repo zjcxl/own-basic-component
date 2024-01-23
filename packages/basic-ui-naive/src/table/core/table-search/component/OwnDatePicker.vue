@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import type { QueryType } from '@own-basic-component/config'
-import { NInput } from 'naive-ui'
+import type { QueryDataType } from '@own-basic-component/ui-naive'
 import { defineExpose, onMounted, ref } from 'vue'
-import type { QueryDataType } from '../../../common'
 
 interface StateProps {
   defaultValue?: QueryType
@@ -14,10 +13,6 @@ interface StateProps {
 const props = withDefaults(defineProps<StateProps>(), {
   placeholder: '',
 })
-
-const emits = defineEmits<{
-  searchAction: []
-}>()
 
 const value = ref<QueryType>()
 
@@ -31,11 +26,10 @@ defineExpose({
 </script>
 
 <template>
-  <NInput
-    :key="props.index"
+  <n-date-picker
     v-model:value="value"
+    :default-value="props.defaultValue"
+    type="datetime"
     clearable
-    :placeholder="props.placeholder"
-    @keydown.enter="emits('searchAction')"
   />
 </template>
