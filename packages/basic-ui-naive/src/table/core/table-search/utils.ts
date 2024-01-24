@@ -43,15 +43,14 @@ export function calcPageSizes(normalRows: number, max = 300): Array<number> {
   const rows = Math.max(normalRows, 1)
   // 计算
   return [...new Set([
-    Math.ceil(rows / 2),
-    rows,
-    Math.ceil(rows * 1.5),
-    Math.ceil(rows * 2),
-    Math.ceil(rows * 3),
-    Math.ceil(rows * 5),
-    Math.ceil(rows * 10),
+    Math.min(Math.ceil(rows / 2), max),
+    Math.min(rows, max),
+    Math.min(Math.ceil(rows * 1.5), max),
+    Math.min(Math.ceil(rows * 2), max),
+    Math.min(Math.ceil(rows * 3), max),
+    Math.min(Math.ceil(rows * 5), max),
+    Math.min(Math.ceil(rows * 10), max),
   ])]
-    .map(item => Math.min(item, max))
     .filter(item => item > 0)
     .sort((a, b) => a - b)
 }
