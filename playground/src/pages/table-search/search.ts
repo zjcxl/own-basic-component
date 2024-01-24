@@ -1,6 +1,6 @@
-import type { DefaultSearchPropsType } from '@own-basic-component/ui-naive'
+import type { DefaultSearchPropsValueType } from '@own-basic-component/ui-naive'
 
-export const search: DefaultSearchPropsType[] = [
+export const search: DefaultSearchPropsValueType[] = [
   {
     type: 'input',
     width: 20,

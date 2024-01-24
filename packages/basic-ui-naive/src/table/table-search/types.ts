@@ -14,6 +14,7 @@ import type {
   SEARCH_TYPE_SELECT,
   SEARCH_TYPE_TEXT_PICKER,
   SelectSearchPropsType,
+  TextSearchPropsType,
 } from './component'
 
 /**
@@ -21,7 +22,7 @@ import type {
  */
 export interface SearchPropsType {
   [SEARCH_TYPE_INPUT_PICKER]: InputSearchPropsType
-  [SEARCH_TYPE_TEXT_PICKER]: InputSearchPropsType
+  [SEARCH_TYPE_TEXT_PICKER]: TextSearchPropsType
   [SEARCH_TYPE_DATE_PICKER]: DatePickerSearchPropsType
   [SEARCH_TYPE_DATE_RANGE_PICKER]: DateRangePickerSearchPropsType
   [SEARCH_TYPE_DATE_TIME_PICKER]: DateTimePickerSearchPropsType
@@ -30,12 +31,12 @@ export interface SearchPropsType {
 }
 
 /**
- * 类型信息
+ * 类型key信息
  */
 export type DefaultSearchPropsKeyType = keyof SearchPropsType
 
 /**
- * 默认的搜索参数
+ * 类型value信息
  */
 export type DefaultSearchPropsValueType = SearchPropsType[keyof SearchPropsType]
 
