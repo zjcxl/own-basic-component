@@ -5,8 +5,7 @@ import type { PropType, UnwrapRef } from 'vue'
 import { computed, defineSlots, onMounted, reactive, ref, unref } from 'vue'
 import type { FetchMethodType, PageInfo, RowDataType, TableInstanceType, TableSlotsType } from '../common'
 import { baseTableProps } from '../common'
-import { calcPageSizes } from '../table-search'
-import BaseTableSearchHelper from './table-search/BaseTableSearchHelper.vue'
+import { BaseTableSearchHelper, calcPageSizes } from '../table-search'
 
 const props = defineProps({
   // naive表格的基础属性
