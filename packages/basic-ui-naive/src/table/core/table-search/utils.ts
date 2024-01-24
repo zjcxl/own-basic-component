@@ -51,7 +51,7 @@ export function calcPageSizes(normalRows: number, max = 300): Array<number> {
     Math.ceil(rows * 5),
     Math.ceil(rows * 10),
   ])]
-    .map(item => Math.max(item, max))
+    .map(item => Math.min(item, max))
     .filter(item => item > 0)
     .sort((a, b) => a - b)
 }
