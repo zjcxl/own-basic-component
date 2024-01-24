@@ -1,12 +1,13 @@
 import { h } from 'vue'
-import { encasementSearchItem, putComponentHandler } from '../../utils'
+import { encasementSearchItem } from '../../utils'
+import { componentHandlerInstance } from '../utils'
 import OwnSearchSelect from './OwnSearchSelect.vue'
 import type { SelectSearchPropsType } from './types'
 import { SEARCH_TYPE_SELECT } from './types'
 
 export * from './types'
 
-putComponentHandler(SEARCH_TYPE_SELECT, (item: SelectSearchPropsType, index) => {
+componentHandlerInstance.put(SEARCH_TYPE_SELECT, (item: SelectSearchPropsType, index) => {
   return encasementSearchItem(item, h(OwnSearchSelect, {
     defaultValue: item.defaultValue,
     index,

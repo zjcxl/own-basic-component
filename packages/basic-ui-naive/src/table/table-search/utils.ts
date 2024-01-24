@@ -1,28 +1,6 @@
 import type { VNode } from 'vue'
-import type { BaseSearchProps, CustomSearchItem, DefaultSearchPropsType, SearchPropType } from './types'
-
-/**
- * 搜索列表的map
- */
-const HANDLE_MAP: Map<SearchPropType, (item: DefaultSearchPropsType, index: number) => CustomSearchItem> = new Map()
-
-/**
- * 注入handler
- * @param type
- * @param method
- */
-export function putComponentHandler<TYPE extends SearchPropType, VALUE_TYPE = string, OPTIONS_TYPE = void>(
-  type: TYPE | TYPE[],
-  method: (item: BaseSearchProps<TYPE, VALUE_TYPE, OPTIONS_TYPE>, index: number) => CustomSearchItem,
-) {
-  if (Array.isArray(type)) {
-    type.forEach((item) => {
-      HANDLE_MAP.set(item, method)
-    })
-    return
-  }
-  HANDLE_MAP.set(type, method)
-}
+import { componentHandlerInstance } from './component'
+import type { CustomSearchItem, DefaultSearchPropsValueType } from './types'
 
 /**
  * 计算分页的大小信息
@@ -50,10 +28,10 @@ export function calcPageSizes(normalRows: number, max = 300): Array<number> {
  * 计算查询项
  * @param array 查询项
  */
-export function calcSearchItems(array: DefaultSearchPropsType[]): CustomSearchItem[] {
+export function calcSearchItems(array: Array<DefaultSearchPropsValueType>): CustomSearchItem[] {
   return array
     .map((item, index) => {
-      return HANDLE_MAP.get(item.type)?.(item, index)
+      return componentHandlerInstance.get(item.type)?.(item, index)
     })
     .filter(item => !!item) as CustomSearchItem[]
 }
@@ -63,7 +41,7 @@ export function calcSearchItems(array: DefaultSearchPropsType[]): CustomSearchIt
  * @param item 查询项
  * @param node 节点
  */
-export function encasementSearchItem(item: DefaultSearchPropsType, node: VNode): CustomSearchItem {
+export function encasementSearchItem(item: DefaultSearchPropsValueType, node: VNode): CustomSearchItem {
   return {
     style: item.width && item.width > 0 ? { width: `${item.width}rem` } : undefined,
     component: node,

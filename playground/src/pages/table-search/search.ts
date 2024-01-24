@@ -1,26 +1,26 @@
-import type { SearchProps } from '@own-basic-component/ui-naive/src'
+import type { DefaultSearchPropsType } from '@own-basic-component/ui-naive'
 
-export const search: SearchProps[] = [
+export const search: DefaultSearchPropsType[] = [
   {
-    type: 'text',
+    type: 'input',
     width: 20,
     field: 'traceId',
     placeholder: '请输入查询的链路追踪（右模糊）',
   },
   {
-    type: 'text',
+    type: 'input',
     width: 20,
     field: 'methodName',
     placeholder: '请输入查询的方法名（全限定名）',
   },
   {
-    type: 'text',
+    type: 'input',
     width: 20,
     field: 'moduleName',
     placeholder: '请输入查询的模块名称',
   },
   {
-    type: 'text',
+    type: 'input',
     width: 20,
     field: 'operationName',
     placeholder: '请输入查询的方法操作名称',

@@ -1,13 +1,13 @@
 import { dataTableProps } from 'naive-ui'
 import type { PropType } from 'vue'
-import type { DefaultSearchPropsType, SearchExtra } from '../core'
+import type { DefaultSearchPropsValueType, SearchExtra } from '../table-search'
 import type { OperationExtra, OperationProps } from './operation-props'
 import type { BeforeFetchMethodType, DefaultParamsType, RowDataType } from './types'
 
 export const searchProps = {
   // 搜索栏的配置
   search: {
-    type: Array as PropType<Array<DefaultSearchPropsType>>,
+    type: Array as PropType<Array<DefaultSearchPropsValueType>>,
     default: () => [],
   },
   // 搜索栏的额外参数

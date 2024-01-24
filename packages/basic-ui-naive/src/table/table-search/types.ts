@@ -1,30 +1,48 @@
 import type { CSSProperties, VNode } from 'vue'
 import type { QueryDataType } from '../common'
 import type {
+  DatePickerSearchPropsType,
+  DateRangePickerSearchPropsType,
+  DateTimePickerSearchPropsType,
+  DateTimeRangePickerSearchPropsType,
+  InputSearchPropsType,
   SEARCH_TYPE_DATE_PICKER,
   SEARCH_TYPE_DATE_RANGE_PICKER,
   SEARCH_TYPE_DATE_TIME_PICKER,
   SEARCH_TYPE_DATE_TIME_RANGE_PICKER,
   SEARCH_TYPE_INPUT_PICKER,
   SEARCH_TYPE_SELECT,
+  SEARCH_TYPE_TEXT_PICKER,
+  SelectSearchPropsType,
 } from './component'
 
 /**
  * 类型信息
  */
-export type SearchPropType =
-  typeof SEARCH_TYPE_INPUT_PICKER
-  | typeof SEARCH_TYPE_DATE_PICKER
-  | typeof SEARCH_TYPE_SELECT
-  | typeof SEARCH_TYPE_DATE_PICKER
-  | typeof SEARCH_TYPE_DATE_RANGE_PICKER
-  | typeof SEARCH_TYPE_DATE_TIME_PICKER
-  | typeof SEARCH_TYPE_DATE_TIME_RANGE_PICKER
+export interface SearchPropsType {
+  [SEARCH_TYPE_INPUT_PICKER]: InputSearchPropsType
+  [SEARCH_TYPE_TEXT_PICKER]: InputSearchPropsType
+  [SEARCH_TYPE_DATE_PICKER]: DatePickerSearchPropsType
+  [SEARCH_TYPE_DATE_RANGE_PICKER]: DateRangePickerSearchPropsType
+  [SEARCH_TYPE_DATE_TIME_PICKER]: DateTimePickerSearchPropsType
+  [SEARCH_TYPE_DATE_TIME_RANGE_PICKER]: DateTimeRangePickerSearchPropsType
+  [SEARCH_TYPE_SELECT]: SelectSearchPropsType
+}
+
+/**
+ * 类型信息
+ */
+export type DefaultSearchPropsKeyType = keyof SearchPropsType
+
+/**
+ * 默认的搜索参数
+ */
+export type DefaultSearchPropsValueType = SearchPropsType[keyof SearchPropsType]
 
 /**
  * 基础的类型信息
  */
-export interface BaseSearchProps<TYPE extends SearchPropType, VALUE_TYPE = string, OPTIONS_TYPE = void> {
+export interface BaseSearchProps<TYPE extends DefaultSearchPropsKeyType, VALUE_TYPE = string, OPTIONS_TYPE = void> {
   /**
    * 类型
    */
@@ -36,7 +54,7 @@ export interface BaseSearchProps<TYPE extends SearchPropType, VALUE_TYPE = strin
   /**
    * 其他参数
    */
-  options: OPTIONS_TYPE
+  options?: OPTIONS_TYPE
   /**
    * 自定义宽度，不确定可以不填写，目前最小宽度15rem
    * @default undefined
@@ -62,11 +80,6 @@ export interface BaseSearchProps<TYPE extends SearchPropType, VALUE_TYPE = strin
    */
   placeholder?: string
 }
-
-/**
- * 默认的搜索参数
- */
-export type DefaultSearchPropsType = BaseSearchProps<any, any, any>
 
 /**
  * 搜索的额外参数
