@@ -12,7 +12,6 @@ import type {
   CustomSearchItem,
   SearchPropType,
   SearchProps,
-  SearchValueData,
   datePickerSearchPropsType,
   dateRangePickerSearchPropsType,
   dateTimePickerSearchPropsType,
@@ -32,7 +31,7 @@ import {
 /**
  * 搜索列表的map
  */
-const HANDLE_MAP: Map<SearchPropType, (item: SearchProps, values: SearchValueData, index: number) => CustomSearchItem> = new Map()
+const HANDLE_MAP: Map<SearchPropType, (item: SearchProps, index: number) => CustomSearchItem> = new Map()
 
 /**
  * 计算分页的大小信息
@@ -60,9 +59,9 @@ export function calcPageSizes(normalRows: number, max = 300): Array<number> {
 /**
  * 注入文字搜索的模板
  */
-HANDLE_MAP.set(SEARCH_PROP_TYPE_TEXT, (item, values, index) => {
+HANDLE_MAP.set(SEARCH_PROP_TYPE_TEXT, (item, index) => {
   return encasementSearchItem(item, h(OwnInput, {
-    defaultValue: values.data[item.field],
+    defaultValue: item.defaultValue,
     index,
     field: item.field,
     placeholder: item.placeholder,
@@ -72,9 +71,9 @@ HANDLE_MAP.set(SEARCH_PROP_TYPE_TEXT, (item, values, index) => {
 /**
  * 添加下拉搜索的模板
  */
-HANDLE_MAP.set(SEARCH_PROP_TYPE_SELECT, (item: SearchProps, values, index) => {
+HANDLE_MAP.set(SEARCH_PROP_TYPE_SELECT, (item: SearchProps, index) => {
   return encasementSearchItem(item, h(OwnSearchSelect, {
-    defaultValue: values.data[item.field],
+    defaultValue: item.defaultValue,
     index,
     placeholder: item.placeholder,
     field: item.field,
@@ -85,36 +84,36 @@ HANDLE_MAP.set(SEARCH_PROP_TYPE_SELECT, (item: SearchProps, values, index) => {
 /**
  * 添加日期的模板
  */
-HANDLE_MAP.set(SEARCH_PROP_TYPE_DATE_PICKER, (item: SearchProps, values, index) => {
+HANDLE_MAP.set(SEARCH_PROP_TYPE_DATE_PICKER, (item: SearchProps, index) => {
   return encasementSearchItem(item, h(OwnDatePicker, {
-    defaultValue: values.data[item.field],
+    defaultValue: item.defaultValue,
     index,
     placeholder: item.placeholder,
     field: item.field,
     options: (item as datePickerSearchPropsType).options,
   }))
 })
-HANDLE_MAP.set(SEARCH_PROP_TYPE_DATE_RANGE_PICKER, (item: SearchProps, values, index) => {
+HANDLE_MAP.set(SEARCH_PROP_TYPE_DATE_RANGE_PICKER, (item: SearchProps, index) => {
   return encasementSearchItem(item, h(OwnDateRangePicker, {
-    defaultValue: values.data[item.field],
+    defaultValue: item.defaultValue,
     index,
     placeholder: item.placeholder,
     field: item.field,
     options: (item as dateRangePickerSearchPropsType).options,
   }))
 })
-HANDLE_MAP.set(SEARCH_PROP_TYPE_DATE_TIME_PICKER, (item: SearchProps, values, index) => {
+HANDLE_MAP.set(SEARCH_PROP_TYPE_DATE_TIME_PICKER, (item: SearchProps, index) => {
   return encasementSearchItem(item, h(OwnDateTimePicker, {
-    defaultValue: values.data[item.field],
+    defaultValue: item.defaultValue,
     index,
     placeholder: item.placeholder,
     field: item.field,
     options: (item as dateTimePickerSearchPropsType).options,
   }))
 })
-HANDLE_MAP.set(SEARCH_PROP_TYPE_DATE_TIME_RANGE_PICKER, (item: SearchProps, values, index) => {
+HANDLE_MAP.set(SEARCH_PROP_TYPE_DATE_TIME_RANGE_PICKER, (item: SearchProps, index) => {
   return encasementSearchItem(item, h(OwnDateTimeRangePicker, {
-    defaultValue: values.data[item.field],
+    defaultValue: (item as dateTimeRangePickerSearchPropsType).defaultValue,
     index,
     placeholder: item.placeholder,
     field: item.field,
@@ -127,10 +126,10 @@ HANDLE_MAP.set(SEARCH_PROP_TYPE_DATE_TIME_RANGE_PICKER, (item: SearchProps, valu
  * @param array 查询项
  * @param values 查询值
  */
-export function calcSearchItems(array: SearchProps[], values: SearchValueData): CustomSearchItem[] {
+export function calcSearchItems(array: SearchProps[]): CustomSearchItem[] {
   return array
     .map((item, index) => {
-      return HANDLE_MAP.get(item.type)?.(item, values, index)
+      return HANDLE_MAP.get(item.type)?.(item, index)
     })
     .filter(item => !!item) as CustomSearchItem[]
 }

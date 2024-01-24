@@ -29,6 +29,7 @@ export const search: SearchProps[] = [
     type: 'date-time-range-picker',
     width: 20,
     field: 'requestTime',
+    defaultValue: [1706058267000, 1706058267000],
     placeholder: '请输入查询的方法操作名称',
     options: {
       format: 'yyyy-MM-dd HH:mm',

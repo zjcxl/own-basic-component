@@ -41,7 +41,6 @@ defineExpose({
 <template>
   <NDatePicker
     v-model:value="value"
-    :default-value="props.defaultValue"
     :format="formatter"
     type="datetime"
     clearable

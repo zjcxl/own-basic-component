@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import type { QueryObjectType } from '@own-basic-component/config'
-import { computed, defineProps, onMounted, ref } from 'vue'
+import { computed, defineProps, ref } from 'vue'
 import { NButton, NDivider, NSpace } from 'naive-ui'
 import { SearchOutline } from '@vicons/ionicons5'
-import type { CustomSearchItem, SearchExtra, SearchProps, SearchValueData } from '.'
+import type { CustomSearchItem, SearchExtra, SearchProps } from '.'
 import { calcSearchItems } from '.'
 
 const props = defineProps<{
@@ -22,15 +22,11 @@ const slots = defineSlots<{
   operation?: () => any
 }>()
 
-const values = ref<SearchValueData>({
-  data: {},
-})
-
 const componentItemList = ref<{
   getParams?: () => QueryObjectType
 }[]>([])
 
-const itemList = computed<CustomSearchItem[]>(() => calcSearchItems(props.search, values.value))
+const itemList = computed<CustomSearchItem[]>(() => calcSearchItems(props.search))
 
 /**
  * 点击搜索按钮的事件
@@ -55,12 +51,6 @@ function getParams(): QueryObjectType {
 
 defineExpose({
   getParams,
-})
-
-onMounted(() => {
-  props.search.forEach((item) => {
-    values.value.data[item.field] = undefined
-  })
 })
 </script>
 
