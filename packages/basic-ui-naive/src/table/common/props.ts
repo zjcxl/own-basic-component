@@ -1,21 +1,20 @@
-'use strict'
-
 import { dataTableProps } from 'naive-ui'
 import type { PropType } from 'vue'
-import type { SearchExtra, SearchProps } from '../core'
+import type { DefaultSearchPropsType, SearchExtra } from '../core'
 import type { OperationExtra, OperationProps } from './operation-props'
 import type { BeforeFetchMethodType, DefaultParamsType, RowDataType } from './types'
 
 export const searchProps = {
   // 搜索栏的配置
   search: {
-    type: Array as PropType<Array<SearchProps>>,
+    type: Array as PropType<Array<DefaultSearchPropsType>>,
     default: () => [],
   },
   // 搜索栏的额外参数
   searchExtra: {
     type: Object as PropType<SearchExtra>,
-    default: () => {},
+    default: () => {
+    },
   },
 } as const
 
@@ -29,7 +28,8 @@ export const operationProps = {
   // 操作列额外参数
   operationExtra: {
     type: Object as PropType<OperationExtra>,
-    default: () => {},
+    default: () => {
+    },
   },
 } as const
 

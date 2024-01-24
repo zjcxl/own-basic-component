@@ -1,7 +1,6 @@
 <script lang="ts" setup generic="T">
 import { type PropType, ref } from 'vue'
-import { getOperationColumns } from '../common/table-line-operation-check'
-import { baseTableProps } from '../common'
+import { baseTableProps, getOperationColumns } from '../common'
 import type { FetchMethodType, TableInstanceType, TableSlotsType } from '../common'
 import BaseRealTableHelper from './BaseRealTableHelper.vue'
 

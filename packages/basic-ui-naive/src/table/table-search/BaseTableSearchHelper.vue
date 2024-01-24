@@ -3,12 +3,12 @@ import type { QueryObjectType } from '@own-basic-component/config'
 import { computed, defineProps, ref } from 'vue'
 import { NButton, NDivider, NSpace } from 'naive-ui'
 import { SearchOutline } from '@vicons/ionicons5'
-import type { CustomSearchItem, SearchExtra, SearchProps } from '.'
+import type { CustomSearchItem, DefaultSearchPropsType, SearchExtra } from '.'
 import { calcSearchItems } from '.'
 
 const props = defineProps<{
   // 搜索栏的配置
-  search: Array<SearchProps>
+  search: Array<DefaultSearchPropsType>
   // 搜索栏的额外参数
   searchExtra: SearchExtra
 }>()

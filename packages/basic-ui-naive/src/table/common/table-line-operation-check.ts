@@ -1,5 +1,5 @@
-import { NButton, NSpace } from 'naive-ui'
 import type { DataTableColumn } from 'naive-ui'
+import { NButton, NSpace } from 'naive-ui'
 import { h } from 'vue'
 import type { OperationExtra, OperationProps } from './operation-props'
 
@@ -21,6 +21,7 @@ export function getOperationColumns<T>(operations: OperationProps<T>[], extra: O
   // 计算宽度（如果只有4个或以下直接计算，如果大于4个只计算前三项）
   if (!operations || operations.length === 0)
     return undefined
+
   const maxCount = Math.max(extra.max ? extra.max : 4, 2)
   // 如果大于最大的个数，会筛选出长度最长的三个进行计算
   let width: number

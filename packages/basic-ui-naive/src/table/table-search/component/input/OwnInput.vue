@@ -1,17 +1,10 @@
 <script setup lang="ts">
-import type { QueryType } from '@own-basic-component/config'
 import { NInput } from 'naive-ui'
 import { defineExpose, onMounted, ref } from 'vue'
 import type { QueryDataType } from '../../../common'
+import type { BaseComponentStateProps } from '../../types'
 
-interface StateProps {
-  defaultValue?: QueryType
-  index: number
-  placeholder?: string
-  field?: string
-}
-
-const props = withDefaults(defineProps<StateProps>(), {
+const props = withDefaults(defineProps<BaseComponentStateProps<string>>(), {
   placeholder: '',
 })
 
@@ -19,14 +12,17 @@ const emits = defineEmits<{
   searchAction: []
 }>()
 
-const value = ref<QueryType>()
+/**
+ * 具体的值
+ */
+const value = ref<string | undefined>()
 
 onMounted(() => {
   value.value = props.defaultValue
 })
 
 defineExpose({
-  getParams: (): QueryDataType => props.field ? { [props.field]: value.value } : {},
+  getParams: (): QueryDataType => ({ [props.field]: value.value }),
 })
 </script>
 

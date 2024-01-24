@@ -1,30 +1,28 @@
 <script setup lang="ts">
-import type { QueryType } from '@own-basic-component/config'
-import type { DateRangeFieldFormatType, DateRangePicker, QueryDataType } from '@own-basic-component/ui-naive'
-import { computed, defineExpose, onMounted, ref } from 'vue'
-import { NDatePicker } from 'naive-ui'
-
 import { format } from 'date-fns'
+import { NDatePicker } from 'naive-ui'
+import { computed, defineExpose, onMounted, ref } from 'vue'
+import type { QueryDataType } from '../../../common'
+import type { BaseComponentStateProps } from '../../types'
+import type { DateRangeFieldFormatType, DateRangePicker } from './types'
 
-interface StateProps {
-  defaultValue?: QueryType
-  index: number
-  placeholder?: string
-  field: string
-  options?: DateRangePicker
-}
-
-const props = withDefaults(defineProps<StateProps>(), {
+const props = withDefaults(defineProps<BaseComponentStateProps<[number, number], DateRangePicker>>(), {
   placeholder: '',
 })
 
-const value = ref<[number, number] | null>()
+/**
+ * 具体的时间值（时间戳）
+ */
+const value = ref<[number, number] | undefined>()
 
 /**
  * 格式化的内容
  */
 const formatter = computed<string>(() => props.options?.format || 'yyyy-MM-dd')
 
+/**
+ * 默认的字段格式化数组
+ */
 const defaultDateTimeRangeFieldFormat: DateRangeFieldFormatType = [
   (field: string) => `${field}Start`,
   (field: string) => `${field}End`,
@@ -53,7 +51,6 @@ defineExpose({
 <template>
   <NDatePicker
     v-model:value="value"
-    :default-value="props.defaultValue"
     :format="formatter"
     type="daterange"
     clearable

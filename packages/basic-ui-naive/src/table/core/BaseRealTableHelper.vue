@@ -5,7 +5,7 @@ import type { PropType, UnwrapRef } from 'vue'
 import { computed, defineSlots, onMounted, reactive, ref, unref } from 'vue'
 import type { FetchMethodType, PageInfo, RowDataType, TableInstanceType, TableSlotsType } from '../common'
 import { baseTableProps } from '../common'
-import { calcPageSizes } from './table-search'
+import { calcPageSizes } from '../table-search'
 import BaseTableSearchHelper from './table-search/BaseTableSearchHelper.vue'
 
 const props = defineProps({
@@ -94,6 +94,7 @@ function refresh(pageInit: number | boolean = false) {
     // 需要初始化页面，回到第一页
     if (pageInit)
       pageInfo.page = 1
+
     fetchData()
   }
   // 直接跳转到对应的页数
@@ -121,7 +122,10 @@ const helperType = props.helperType
 
 <template>
   <div>
-    <BaseTableSearchHelper ref="baseTableSearchHelper" :search="search" :search-extra="searchExtra" @search-action="params => fetchData(params, 1)">
+    <BaseTableSearchHelper
+      ref="baseTableSearchHelper" :search="search" :search-extra="searchExtra"
+      @search-action="params => fetchData(params, 1)"
+    >
       <template v-if="slots.search" #search>
         <slot name="search" />
       </template>
