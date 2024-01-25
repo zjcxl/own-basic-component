@@ -13,7 +13,7 @@ componentHandlerInstance.put(SEARCH_TYPE_SELECT, (item: SelectSearchPropsType, i
     index,
     placeholder: item.placeholder,
     field: item.field,
-    options: item.options,
+    extra: item.extra,
   }))
 })
 

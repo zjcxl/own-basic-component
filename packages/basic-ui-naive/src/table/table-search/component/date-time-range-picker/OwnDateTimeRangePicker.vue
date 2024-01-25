@@ -18,7 +18,7 @@ const value = ref<[number, number] | undefined>()
 /**
  * 格式化的内容
  */
-const formatter = computed<string>(() => props.options?.format || 'yyyy-MM-dd HH:mm:ss')
+const formatter = computed<string>(() => props.extra?.format || 'yyyy-MM-dd HH:mm:ss')
 
 /**
  * 默认的字段格式化数组
@@ -31,7 +31,7 @@ const defaultDateTimeRangeFieldFormat: DateTimeRangeFieldFormatType = [
 /**
  * 字段格式化数组
  */
-const fieldFormatArray = computed<DateTimeRangeFieldFormatType>(() => props.options?.fieldFormat || defaultDateTimeRangeFieldFormat)
+const fieldFormatArray = computed<DateTimeRangeFieldFormatType>(() => props.extra?.fieldFormat || defaultDateTimeRangeFieldFormat)
 
 onMounted(() => {
   value.value = props.defaultValue

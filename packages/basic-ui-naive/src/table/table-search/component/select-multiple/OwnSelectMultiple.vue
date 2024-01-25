@@ -5,14 +5,17 @@ import { computed, defineExpose, onMounted, ref } from 'vue'
 import type { QueryDataType } from '../../../common'
 import type { BaseComponentStateProps } from '../../types'
 
-const props = withDefaults(defineProps<BaseComponentStateProps<string | number | undefined, SelectAdvancedOption>>(), {
+const props = withDefaults(defineProps<BaseComponentStateProps<
+  Array<string | number | undefined>,
+  SelectAdvancedOption
+>>(), {
   placeholder: '',
 })
 
 /**
  * 具体的值
  */
-const value = ref<string | number | undefined>()
+const value = ref<Array<string | number | undefined>>()
 
 /**
  * 是否允许动态添加

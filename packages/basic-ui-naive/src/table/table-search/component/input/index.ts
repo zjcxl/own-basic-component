@@ -15,7 +15,7 @@ componentHandlerInstance.put(
       index,
       placeholder: item.placeholder,
       field: item.field,
-      options: item.options,
+      extra: item.extra,
     }))
   },
 )
@@ -28,7 +28,7 @@ componentHandlerInstance.put(
       index,
       placeholder: item.placeholder,
       field: item.field,
-      options: item.options,
+      extra: item.extra,
     }))
   },
 )

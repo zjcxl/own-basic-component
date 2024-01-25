@@ -16,6 +16,7 @@ import type {
   SelectSearchPropsType,
   TextSearchPropsType,
 } from './component'
+import type { SEARCH_TYPE_SELECT_MULTIPLE, SelectMultiplePropsType } from './component/select-multiple'
 
 /**
  * 类型信息
@@ -28,6 +29,7 @@ export interface SearchPropsType {
   [SEARCH_TYPE_DATE_TIME_PICKER]: DateTimePickerSearchPropsType
   [SEARCH_TYPE_DATE_TIME_RANGE_PICKER]: DateTimeRangePickerSearchPropsType
   [SEARCH_TYPE_SELECT]: SelectSearchPropsType
+  [SEARCH_TYPE_SELECT_MULTIPLE]: SelectMultiplePropsType
 }
 
 /**
@@ -53,9 +55,9 @@ export interface BaseSearchProps<TYPE extends DefaultSearchPropsKeyType, VALUE_T
    */
   defaultValue?: VALUE_TYPE
   /**
-   * 其他参数
+   * 其他额外参数
    */
-  options?: OPTIONS_TYPE
+  extra?: OPTIONS_TYPE
   /**
    * 自定义宽度，不确定可以不填写，目前最小宽度15rem
    * @default undefined
@@ -115,7 +117,7 @@ export interface BaseComponentStateProps<T1, T2 = void> {
   /**
    * 其他参数信息
    */
-  options?: T2
+  extra?: T2
 }
 
 /**

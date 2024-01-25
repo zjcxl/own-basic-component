@@ -18,7 +18,7 @@ const value = ref<number | undefined>()
 /**
  * 格式化的内容
  */
-const formatter = computed<string>(() => props.options?.format || 'yyyy-MM-dd')
+const formatter = computed<string>(() => props.extra?.format || 'yyyy-MM-dd')
 
 onMounted(() => {
   value.value = props.defaultValue

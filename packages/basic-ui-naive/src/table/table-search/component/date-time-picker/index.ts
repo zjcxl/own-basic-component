@@ -13,7 +13,7 @@ componentHandlerInstance.put(SEARCH_TYPE_DATE_TIME_PICKER, (item: DateTimePicker
     index,
     placeholder: item.placeholder,
     field: item.field,
-    options: item.options,
+    extra: item.extra,
   }))
 })
 
