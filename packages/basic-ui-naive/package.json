@@ -1,6 +1,6 @@
 {
   "name": "@own-basic-component/ui-naive",
-  "version": "0.6.13",
+  "version": "0.6.14",
   "packageManager": "pnpm@8.14.3",
   "license": "MIT",
   "author": "chenxueli",
