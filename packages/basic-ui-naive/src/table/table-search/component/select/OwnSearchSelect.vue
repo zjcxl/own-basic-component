@@ -9,6 +9,10 @@ const props = withDefaults(defineProps<BaseComponentStateProps<string | number |
   placeholder: '',
 })
 
+const emits = defineEmits<{
+  searchAction: []
+}>()
+
 /**
  * 具体的值
  */
@@ -46,5 +50,6 @@ defineExpose({
     :filterable="filterable"
     :placeholder="props.placeholder"
     :options="props.extra?.options"
+    @update:value="() => emits('searchAction')"
   />
 </template>

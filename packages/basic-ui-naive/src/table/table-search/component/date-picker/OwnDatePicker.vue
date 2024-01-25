@@ -10,6 +10,10 @@ const props = withDefaults(defineProps<BaseComponentStateProps<number, DatePicke
   placeholder: '',
 })
 
+const emits = defineEmits<{
+  searchAction: []
+}>()
+
 /**
  * 具体的时间值（时间戳）
  */
@@ -37,5 +41,6 @@ defineExpose({
     :format="formatter"
     type="date"
     clearable
+    @update:value="() => emits('searchAction')"
   />
 </template>
