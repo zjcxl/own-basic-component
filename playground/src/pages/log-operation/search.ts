@@ -30,16 +30,17 @@ export const search: DefaultSearchPropsValueType[] = [
     width: 20,
     field: 'requestTime',
     placeholder: '请输入查询的方法操作名称',
-    options: {},
   },
   {
     type: 'select',
     width: 10,
     field: 'status',
     placeholder: '请选择筛选的状态',
-    options: [
-      { key: 1, value: 1, label: '成功' },
-      { key: 2, value: 2, label: '失败' },
-    ],
+    extra: {
+      options: [
+        { key: 1, value: 1, label: '成功' },
+        { key: 2, value: 2, label: '失败' },
+      ],
+    },
   },
 ]
