@@ -1,5 +1,5 @@
 import type { SelectMixedOption } from 'naive-ui/es/select/src/interface'
-import type { BaseSearchProps } from '../../types'
+import type { BaseSearchProps, RequiredField } from '../../types'
 
 /**
  * 日期时间选择器的参数
@@ -32,8 +32,11 @@ export interface SelectAdvancedOption {
 /**
  * 日期时间选择器的参数
  */
-export type SelectSearchPropsType = BaseSearchProps<
-  typeof SEARCH_TYPE_SELECT,
-  string | number,
-  SelectAdvancedOption
+export type SelectSearchPropsType = RequiredField<
+  BaseSearchProps<
+    typeof SEARCH_TYPE_SELECT,
+    string | number,
+    SelectAdvancedOption
+  >,
+  'extra'
 >

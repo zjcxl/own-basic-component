@@ -1,5 +1,4 @@
 import type { CSSProperties, VNode } from 'vue'
-import type { QueryDataType } from '../common'
 import type {
   DatePickerSearchPropsType,
   DateRangePickerSearchPropsType,
@@ -33,6 +32,16 @@ export interface SearchPropsType {
 }
 
 /**
+ * 将某个字段改为必填
+ */
+export type RequiredField<T, K extends keyof T> = Omit<T, K> & Required<Pick<T, K>>
+
+/**
+ * 将多个字段改为必填
+ */
+export type RequiredFields<T, K extends (keyof T)[]> = Omit<T, K[number]> & Required<Pick<T, K[number]>>
+
+/**
  * 类型key信息
  */
 export type DefaultSearchPropsKeyType = keyof SearchPropsType
@@ -50,6 +59,10 @@ export interface BaseSearchProps<TYPE extends DefaultSearchPropsKeyType, VALUE_T
    * 类型
    */
   type: TYPE
+  /**
+   * 字段名称
+   */
+  field: string
   /**
    * 默认值
    */
@@ -72,11 +85,7 @@ export interface BaseSearchProps<TYPE extends DefaultSearchPropsKeyType, VALUE_T
    * 是否隐藏
    * @default false
    */
-  hidden?: boolean | ((params: QueryDataType) => boolean)
-  /**
-   * 字段名称
-   */
-  field: string
+  hidden?: boolean
   /**
    * 占位符
    * @default undefined
@@ -124,6 +133,12 @@ export interface BaseComponentStateProps<T1, T2 = void> {
  * 自定义搜索项的内容
  */
 export interface CustomSearchItem {
+  /**
+   * 样式信息
+   */
   style?: CSSProperties
+  /**
+   * 组件信息
+   */
   component: VNode
 }

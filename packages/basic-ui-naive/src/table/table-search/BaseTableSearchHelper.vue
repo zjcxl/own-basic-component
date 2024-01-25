@@ -26,6 +26,7 @@ const componentItemList = ref<{
   getParams?: () => QueryObjectType
 }[]>([])
 
+// 所有渲染项
 const itemList = computed<CustomSearchItem[]>(() => calcSearchItems(props.search))
 
 /**
