@@ -49,6 +49,7 @@ defineExpose({
     :key="props.index"
     v-model:value="value"
     clearable
+    multiple
     :tag="tag"
     :filterable="filterable"
     :placeholder="props.placeholder"
