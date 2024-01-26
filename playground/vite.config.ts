@@ -50,7 +50,9 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-components
     Components({
       dts: true,
-      resolvers: [NaiveUiResolver()],
+      resolvers: [
+        NaiveUiResolver(),
+      ],
     }),
     // https://github.com/antfu/unocss
     // see uno.config.ts for config

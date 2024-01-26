@@ -2,6 +2,15 @@ import type { DefaultSearchPropsValueType } from '@own-basic-component/ui-naive'
 
 export const search: DefaultSearchPropsValueType[] = [
   {
+    type: 'date-time-picker',
+    width: 15,
+    field: 'requestTime',
+    placeholder: '请输入查询的时间',
+    extra: {
+      format: 'yyyy-MM-dd HH:mm:ss',
+    },
+  },
+  {
     type: 'date-time-range-picker',
     width: 25,
     field: 'requestTime',

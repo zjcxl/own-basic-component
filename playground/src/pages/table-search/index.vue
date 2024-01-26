@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import type { QueryObjectType } from '@own-basic-component/config'
 import { BaseTableSearchHelper } from '@own-basic-component/ui-naive'
-
-import { computed } from 'vue'
-import { NCode } from 'naive-ui'
 import { search } from './search'
 
 const queryParams = ref<QueryObjectType>({})
