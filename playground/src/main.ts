@@ -2,13 +2,13 @@ import { defineProjectConfig } from '@own-basic-component/config'
 import { axiosRequestMethod } from '@own-basic-component/request-axios'
 import { createSSRApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router/auto'
+import App from './App.vue'
 import { loadingBarConfig, messageConfig } from '~/config/message'
 import { requestConfig } from '~/config/request'
 
 import './styles/reset.css'
 import './styles/main.css'
 import 'uno.css'
-import App from './App.vue'
 
 const app = createSSRApp(App)
 

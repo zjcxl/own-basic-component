@@ -37,7 +37,3 @@ onMounted(() => {
   <BaseTableHelper :columns="columns" :data="dataList" />
   <br>
 </template>
-
-<style scoped>
-
-</style>
