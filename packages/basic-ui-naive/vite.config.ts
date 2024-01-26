@@ -6,28 +6,33 @@ import VueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
 import ViteDts from 'vite-plugin-dts'
-import ReactivityTransform from '@vue-macros/reactivity-transform/vite'
+import VueMacros from 'unplugin-vue-macros/vite'
 
 export default defineConfig({
   plugins: [
-    Vue({
-      script: {
-        defineModel: true,
+    VueMacros({
+      defineOptions: false,
+      defineModels: false,
+      plugins: {
+        vue: Vue({
+          script: {
+            propsDestructure: true,
+            defineModel: true,
+          },
+        }),
       },
-      reactivityTransform: true,
     }),
-    ReactivityTransform(),
-    VueJsx(),
-    ViteDts(),
+    // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: [
         'vue',
-        'vue-router',
         '@vueuse/core',
       ],
       dts: true,
       vueTemplate: true,
     }),
+    VueJsx(),
+    ViteDts(),
   ],
   css: {
     preprocessorOptions: {
@@ -52,11 +57,12 @@ export default defineConfig({
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
-      external: ['vue'],
+      external: ['vue', 'naive-ui'],
       output: {
         // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
         globals: {
-          vue: 'Vue',
+          'vue': 'Vue',
+          'naive-ui': 'NaiveUi',
         },
       },
     },
