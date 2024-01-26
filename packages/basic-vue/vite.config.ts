@@ -6,27 +6,33 @@ import VueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
 import ViteDts from 'vite-plugin-dts'
-import ReactivityTransform from '@vue-macros/reactivity-transform/vite'
+import VueMacros from 'unplugin-vue-macros/vite'
 
 export default defineConfig({
   plugins: [
-    Vue({
-      script: {
-        defineModel: true,
+    VueMacros({
+      defineOptions: false,
+      defineModels: false,
+      plugins: {
+        vue: Vue({
+          script: {
+            propsDestructure: true,
+            defineModel: true,
+          },
+        }),
       },
     }),
-    ReactivityTransform(),
-    VueJsx(),
-    ViteDts(),
+    // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: [
         'vue',
-        'vue-router',
         '@vueuse/core',
       ],
       dts: true,
       vueTemplate: true,
     }),
+    VueJsx(),
+    ViteDts(),
   ],
   css: {
     preprocessorOptions: {
