@@ -5,17 +5,20 @@ import type {
   DateTimePickerSearchPropsType,
   DateTimeRangePickerSearchPropsType,
   InputSearchPropsType,
+  NumberPropsType,
   SEARCH_TYPE_DATE_PICKER,
   SEARCH_TYPE_DATE_RANGE_PICKER,
   SEARCH_TYPE_DATE_TIME_PICKER,
   SEARCH_TYPE_DATE_TIME_RANGE_PICKER,
   SEARCH_TYPE_INPUT_PICKER,
+  SEARCH_TYPE_NUMBER,
   SEARCH_TYPE_SELECT,
+  SEARCH_TYPE_SELECT_MULTIPLE,
   SEARCH_TYPE_TEXT_PICKER,
+  SelectMultiplePropsType,
   SelectSearchPropsType,
   TextSearchPropsType,
 } from './component'
-import type { SEARCH_TYPE_SELECT_MULTIPLE, SelectMultiplePropsType } from './component/select-multiple'
 
 /**
  * 类型信息
@@ -29,6 +32,7 @@ export interface SearchPropsType {
   [SEARCH_TYPE_DATE_TIME_RANGE_PICKER]: DateTimeRangePickerSearchPropsType
   [SEARCH_TYPE_SELECT]: SelectSearchPropsType
   [SEARCH_TYPE_SELECT_MULTIPLE]: SelectMultiplePropsType
+  [SEARCH_TYPE_NUMBER]: NumberPropsType
 }
 
 /**

@@ -27,8 +27,16 @@ export const search: DefaultSearchPropsValueType[] = [
     placeholder: '请选择筛选的状态',
     extra: {
       options: [
-        { key: 1, value: 1, label: '成功' },
-        { key: 2, value: 2, label: '失败' },
+        {
+          key: 1,
+          value: 1,
+          label: '成功',
+        },
+        {
+          key: 2,
+          value: 2,
+          label: '失败',
+        },
       ],
     },
   },
@@ -40,9 +48,21 @@ export const search: DefaultSearchPropsValueType[] = [
     extra: {
       allowDynamicAdd: true,
       options: [
-        { key: 1, value: 'apifox', label: 'apifox' },
-        { key: 2, value: 'client1', label: 'client1' },
-        { key: 3, value: 'client2', label: 'client2' },
+        {
+          key: 1,
+          value: 'apifox',
+          label: 'apifox',
+        },
+        {
+          key: 2,
+          value: 'client1',
+          label: 'client1',
+        },
+        {
+          key: 3,
+          value: 'client2',
+          label: 'client2',
+        },
       ],
     },
   },
@@ -57,6 +77,13 @@ export const search: DefaultSearchPropsValueType[] = [
     width: 20,
     hidden: true,
     field: 'keyword2',
+    placeholder: '请输入查询的关键字',
+  },
+  {
+    type: 'number',
+    width: 20,
+    hidden: true,
+    field: 'keyword3',
     placeholder: '请输入查询的关键字',
   },
 ]
