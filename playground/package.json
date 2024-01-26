@@ -4,7 +4,6 @@
   "version": "0.2.6",
   "type": "module",
   "scripts": {
-    "build": "vite build",
     "dev": "vite --open",
     "lint": "eslint .",
     "typecheck": "vue-tsc --noEmit",

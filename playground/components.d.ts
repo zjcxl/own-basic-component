@@ -13,6 +13,5 @@ declare module 'vue' {
     NCode: typeof import('naive-ui')['NCode']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TableDemo: typeof import('./src/pages/table/TableDemo.vue')['default']
   }
 }
