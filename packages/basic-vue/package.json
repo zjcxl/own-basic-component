@@ -1,6 +1,6 @@
 {
   "name": "@own-basic-component/vue",
-  "version": "0.6.19",
+  "version": "0.6.20",
   "packageManager": "pnpm@8.14.3",
   "license": "MIT",
   "author": "chenxueli",
@@ -48,7 +48,6 @@
     "@types/node": "^20.11.6",
     "@vitejs/plugin-vue": "^5.0.3",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "unplugin-vue-macros": "^2.7.10",
     "@vue/test-utils": "^2.4.4",
     "eslint": "^8.56.0",
     "jsdom": "^24.0.0",
@@ -57,6 +56,7 @@
     "taze": "^0.13.1",
     "typescript": "^5.3.3",
     "unplugin-auto-import": "^0.17.5",
+    "unplugin-vue-macros": "^2.7.10",
     "vfonts": "^0.0.3",
     "vite": "^5.0.12",
     "vite-plugin-dts": "^3.7.2",
