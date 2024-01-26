@@ -30,7 +30,6 @@ export function calcPageSizes(normalRows: number, max = 300): Array<number> {
  */
 export function calcSearchItems(array: Array<DefaultSearchPropsValueType>): CustomSearchItem[] {
   return array
-    .filter(item => !item?.hidden)
     .map((item, index) => {
       return componentHandlerInstance.get(item.type)?.(item, index)
     })

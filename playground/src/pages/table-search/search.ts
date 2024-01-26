@@ -52,4 +52,11 @@ export const search: DefaultSearchPropsValueType[] = [
     field: 'keyword',
     placeholder: '请输入查询的关键字',
   },
+  {
+    type: 'input',
+    width: 20,
+    hidden: true,
+    field: 'keyword2',
+    placeholder: '请输入查询的关键字',
+  },
 ]

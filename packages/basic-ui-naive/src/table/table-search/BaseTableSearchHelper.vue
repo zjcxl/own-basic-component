@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import type { QueryObjectType } from '@own-basic-component/config'
-import { computed, defineProps, ref } from 'vue'
-import { NButton, NDivider, NSpace } from 'naive-ui'
 import { SearchOutline } from '@vicons/ionicons5'
+import { NButton, NDivider, NSpace } from 'naive-ui'
+import { computed, defineProps, ref } from 'vue'
 import type { CustomSearchItem, DefaultSearchPropsValueType, SearchExtra } from '.'
 import { calcSearchItems } from '.'
 
@@ -22,12 +22,24 @@ const slots = defineSlots<{
   operation?: () => any
 }>()
 
-const componentItemList = ref<{
+const componentItemMainList = ref<{
   getParams?: () => QueryObjectType
 }[]>([])
 
-// 所有渲染项
-const itemList = computed<CustomSearchItem[]>(() => calcSearchItems(props.search))
+const componentItemMinorList = ref<{
+  getParams?: () => QueryObjectType
+}[]>([])
+
+const visibleMinorList = ref<boolean>(false)
+
+/**
+ * 主要信息的渲染项
+ */
+const itemMainList = computed<CustomSearchItem[]>(() => calcSearchItems(props.search.filter(item => !item.hidden)))
+/**
+ * 次要信息的渲染项
+ */
+const itemMinorList = computed<CustomSearchItem[]>(() => calcSearchItems(props.search.filter(item => item.hidden)))
 
 /**
  * 点击搜索按钮的事件
@@ -41,7 +53,13 @@ function handleClickSearch() {
  */
 function getParams(): QueryObjectType {
   let params: QueryObjectType = {}
-  componentItemList.value.forEach((item) => {
+  componentItemMainList.value.forEach((item) => {
+    params = {
+      ...params,
+      ...item.getParams?.(),
+    }
+  })
+  componentItemMinorList.value?.forEach((item) => {
     params = {
       ...params,
       ...item.getParams?.(),
@@ -57,8 +75,8 @@ defineExpose({
 
 <template>
   <NSpace align="center" justify="start">
-    <div v-for="(item, index) in itemList" :key="index" :style="item.style">
-      <component :is="item.component" ref="componentItemList" @search-action="handleClickSearch" />
+    <div v-for="(item, index) in itemMainList" :key="index" :style="item.style">
+      <component :is="item.component" ref="componentItemMainList" @search-action="handleClickSearch" />
     </div>
     <template v-if="slots.search">
       <slot name="search" />
@@ -71,9 +89,20 @@ defineExpose({
         <SearchOutline />
       </template>
     </NButton>
+    <NButton v-if="itemMinorList.length > 0" quaternary type="success" @click="visibleMinorList = !visibleMinorList">
+      {{ visibleMinorList ? '收起更多' : '展开更多' }}
+    </NButton>
     <template v-if="slots.operation">
       <NDivider vertical />
       <slot name="operation" />
     </template>
   </NSpace>
+  <template v-if="visibleMinorList && itemMinorList.length > 0">
+    <br>
+    <NSpace align="center" justify="start">
+      <div v-for="(item, index) in itemMinorList" :key="index" :style="item.style">
+        <component :is="item.component" ref="componentItemMinorList" @search-action="handleClickSearch" />
+      </div>
+    </NSpace>
+  </template>
 </template>
