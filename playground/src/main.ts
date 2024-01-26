@@ -1,16 +1,20 @@
 import { defineProjectConfig } from '@own-basic-component/config'
-import { createSSRApp } from 'vue'
 import { axiosRequestMethod } from '@own-basic-component/request-axios'
-import App from './App.vue'
-import { router } from '~/router'
+import { createSSRApp } from 'vue'
+import { createRouter, createWebHistory } from 'vue-router/auto'
+import { loadingBarConfig, messageConfig } from '~/config/message'
+import { requestConfig } from '~/config/request'
 
 import './styles/reset.css'
 import './styles/main.css'
 import 'uno.css'
-import { loadingBarConfig, messageConfig } from '~/config/message'
-import { requestConfig } from '~/config/request'
+import App from './App.vue'
 
 const app = createSSRApp(App)
+
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+})
 
 // 设置请求信息
 defineProjectConfig({

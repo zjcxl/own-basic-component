@@ -1,10 +1,15 @@
+/// <reference types="vitest" />
+
 import path from 'node:path'
-import vue from '@vitejs/plugin-vue'
-import VueJsx from '@vitejs/plugin-vue-jsx'
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
-import Unocss from 'unocss/vite'
+import Vue from '@vitejs/plugin-vue'
+import Components from 'unplugin-vue-components/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import UnoCSS from 'unocss/vite'
+import VueMacros from 'unplugin-vue-macros/vite'
+import VueRouter from 'unplugin-vue-router/vite'
+import { VueRouterAutoImports } from 'unplugin-vue-router'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,38 +19,52 @@ export default defineConfig({
     },
   },
   plugins: [
-    vue(),
-    VueJsx(),
-    Unocss(),
+    VueMacros({
+      defineOptions: false,
+      defineModels: false,
+      plugins: {
+        vue: Vue({
+          script: {
+            propsDestructure: true,
+            defineModel: true,
+          },
+        }),
+      },
+    }),
+    // https://github.com/posva/unplugin-vue-router
+    VueRouter(),
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: [
         'vue',
-        'vue-router',
         '@vueuse/core',
+        VueRouterAutoImports,
+        {
+          // add any other imports you were relying on
+          'vue-router/auto': ['useLink'],
+        },
       ],
       dts: true,
-      dirs: [
-        './src/composables',
-      ],
       vueTemplate: true,
     }),
-
     // https://github.com/antfu/vite-plugin-components
     Components({
       dts: true,
+      resolvers: [NaiveUiResolver()],
     }),
+    // https://github.com/antfu/unocss
+    // see uno.config.ts for config
+    UnoCSS(),
   ],
-  server: {
-    host: '0.0.0.0',
-    cors: true,
-    proxy: {
-      '/api': {
-        target: 'https://api.bobaoge.com/',
-        changeOrigin: true,
-        ws: true,
-        rewrite: path => path.replace(/^\/api/, '/api/'),
+  css: {
+    preprocessorOptions: {
+      less: {
+        javascriptEnabled: true,
       },
     },
+  },
+  // https://github.com/vitest-dev/vitest
+  test: {
+    environment: 'jsdom',
   },
 })
