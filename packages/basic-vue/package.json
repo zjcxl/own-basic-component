@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/vue",
   "version": "0.6.23",
-  "packageManager": "pnpm@8.14.3",
+  "packageManager": "pnpm@8.15.1",
   "license": "MIT",
   "author": "chenxueli",
   "repository": {
@@ -45,14 +45,14 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.3",
-    "@types/node": "^20.11.7",
+    "@types/node": "^20.11.10",
     "@vitejs/plugin-vue": "^5.0.3",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/test-utils": "^2.4.4",
     "eslint": "^8.56.0",
     "jsdom": "^24.0.0",
     "less": "^4.2.0",
-    "pnpm": "^8.14.3",
+    "pnpm": "^8.15.1",
     "taze": "^0.13.1",
     "typescript": "^5.3.3",
     "unplugin-auto-import": "^0.17.5",
