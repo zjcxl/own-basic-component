@@ -15,7 +15,6 @@
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/request-axios": "workspace:*",
     "@own-basic-component/ui-naive": "workspace:*",
-    "@own-basic-component/ui-naive-layout": "workspace:*",
     "@own-basic-component/util": "workspace:*",
     "@own-basic-component/vue": "workspace:*",
     "@vueuse/core": "^10.7.2",
