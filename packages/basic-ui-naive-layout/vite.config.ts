@@ -1,9 +1,8 @@
 import { resolve } from 'node:path'
-import Vue from '@vitejs/plugin-vue'
-import VueJsx from '@vitejs/plugin-vue-jsx'
-import AutoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
-import ViteDts from 'vite-plugin-dts'
+import Vue from '@vitejs/plugin-vue'
+import AutoImport from 'unplugin-auto-import/vite'
+import UnoCSS from 'unocss/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 
 export default defineConfig({
@@ -29,23 +28,17 @@ export default defineConfig({
       dts: true,
       vueTemplate: true,
     }),
-    VueJsx(),
-    ViteDts(),
+    // https://github.com/antfu/unocss
+    // see uno.config.ts for config
+    UnoCSS(),
   ],
-  css: {
-    preprocessorOptions: {
-      less: {
-        javascriptEnabled: true,
-      },
-    },
-  },
   build: {
     target: 'modules',
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/index.ts'),
       formats: ['es', 'cjs', 'umd'],
-      name: 'BasicUiNaive',
+      name: 'BasicUiNaiveLayout',
       // the proper extensions will be added
       fileName: 'index',
     },
