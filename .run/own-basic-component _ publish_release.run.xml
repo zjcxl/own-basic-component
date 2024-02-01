@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="up" type="js.build_tools.npm" nameIsGenerated="true">
+  <configuration default="false" name="own-basic-component &gt; publish:release" type="js.build_tools.npm" nameIsGenerated="true">
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="run" />
     <scripts>
-      <script value="up" />
+      <script value="publish:release" />
     </scripts>
     <node-interpreter value="project" />
     <envs />

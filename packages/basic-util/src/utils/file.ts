@@ -107,7 +107,7 @@ export function downloadFile(path: string, fileName: string): void {
  * 下载上传文件
  * @param file 文件对象
  */
-export function downloadUploadFile(file: { uploadPath: string; oldFileName: string }) {
+export function downloadUploadFile(file: { uploadPath: string, oldFileName: string }) {
   const downPath = getUploadPath(file.uploadPath)
   downloadFile(downPath, file.oldFileName || '文件')
 }

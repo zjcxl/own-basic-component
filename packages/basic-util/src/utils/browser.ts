@@ -177,7 +177,8 @@ function browserType(lang: 'zh-cn' | 'en' = 'en') {
 
   // 系统版本
   const systemVs = new Map([[
-    'windows', new Map([
+    'windows',
+    new Map([
       [testUa(/windows nt 5.0|windows 2000/g), '2000'],
       [testUa(/windows nt 5.1|windows xp/g), 'xp'],
       [testUa(/windows nt 5.2|windows 2003/g), '2003'],
@@ -187,11 +188,7 @@ function browserType(lang: 'zh-cn' | 'en' = 'en') {
       [testUa(/windows nt 6.3|windows 8.1/g), '8.1'],
       [testUa(/windows nt 10.0|windows 10/g), '10'],
     ]).get(true),
-  ],
-  ['macos', testVs(/os x [\d._]+/g)],
-  ['android', testVs(/android [\d._]+/g)],
-  ['ios', testVs(/os [\d._]+/g)],
-  ]).get(system) || 'unknown'
+  ], ['macos', testVs(/os x [\d._]+/g)], ['android', testVs(/android [\d._]+/g)], ['ios', testVs(/os [\d._]+/g)]]).get(system) || 'unknown'
 
   // 平台
   let platform = 'unknown'

@@ -86,7 +86,7 @@ export interface RequestConfig<T = any, RESPONSE_TYPE = ResultModel<T>> {
   /**
    * 请求头对象
    */
-  header?: () => Record<string, (extra: RequestExtra) => string>
+  header?: () => Record<string, (extra?: RequestExtra) => string>
   /**
    * 预处理
    * @param data
