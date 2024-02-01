@@ -171,7 +171,7 @@ importers:
         version: 3.7.2(@types/node@20.11.15)(rollup@3.28.1)(typescript@5.3.3)(vite@5.0.12)
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.15)(jsdom@24.0.0)
+        version: 1.2.2(@types/node@20.11.15)(jsdom@24.0.0)(less@4.2.0)
       vue:
         specifier: ^3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -220,7 +220,7 @@ importers:
         version: 3.7.2(@types/node@20.11.15)(rollup@3.28.1)(typescript@5.3.3)(vite@5.0.12)
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.15)(jsdom@24.0.0)
+        version: 1.2.2(@types/node@20.11.15)(jsdom@24.0.0)(less@4.2.0)
       vue:
         specifier: ^3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -265,7 +265,7 @@ importers:
         version: 3.7.2(@types/node@20.11.15)(rollup@3.28.1)(typescript@5.3.3)(vite@5.0.12)
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.15)(jsdom@24.0.0)
+        version: 1.2.2(@types/node@20.11.15)(jsdom@24.0.0)(less@4.2.0)
       vue:
         specifier: ^3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -351,103 +351,6 @@ importers:
       vitest:
         specifier: ^1.2.2
         version: 1.2.2(@types/node@20.11.15)(jsdom@24.0.0)(less@4.2.0)
-      vue-tsc:
-        specifier: ^1.8.27
-        version: 1.8.27(typescript@5.3.3)
-
-  packages/basic-ui-naive-layout:
-    dependencies:
-      '@own-basic-component/config':
-        specifier: workspace:*
-        version: link:../basic-config
-      '@own-basic-component/util':
-        specifier: workspace:*
-        version: link:../basic-util
-      '@vueuse/core':
-        specifier: ^10.7.2
-        version: 10.7.2(vue@3.4.15)
-      vue:
-        specifier: ^3.4.15
-        version: 3.4.15(typescript@5.3.3)
-    devDependencies:
-      '@antfu/eslint-config':
-        specifier: ^2.6.3
-        version: 2.6.3(@unocss/eslint-plugin@0.58.4)(@vue/compiler-sfc@3.4.15)(eslint@8.56.0)(typescript@5.3.3)(vitest@1.2.2)
-      '@iconify-json/carbon':
-        specifier: ^1.1.28
-        version: 1.1.28
-      '@iconify-json/ri':
-        specifier: ^1.1.19
-        version: 1.1.19
-      '@types/node':
-        specifier: ^20.11.15
-        version: 20.11.15
-      '@unocss/eslint-config':
-        specifier: ^0.58.4
-        version: 0.58.4(eslint@8.56.0)(typescript@5.3.3)
-      '@unocss/eslint-plugin':
-        specifier: ^0.58.4
-        version: 0.58.4(eslint@8.56.0)(typescript@5.3.3)
-      '@unocss/reset':
-        specifier: ^0.58.4
-        version: 0.58.4
-      '@vicons/ionicons5':
-        specifier: ^0.12.0
-        version: 0.12.0
-      '@vitejs/plugin-vue':
-        specifier: ^5.0.3
-        version: 5.0.3(vite@5.0.12)(vue@3.4.15)
-      '@vue-macros/volar':
-        specifier: ^0.18.11
-        version: 0.18.11(@vue-macros/reactivity-transform@0.4.3)(rollup@3.28.1)(typescript@5.3.3)(vue-tsc@1.8.27)(vue@3.4.15)
-      '@vue/test-utils':
-        specifier: ^2.4.4
-        version: 2.4.4(vue@3.4.15)
-      date-fns:
-        specifier: ^3.3.1
-        version: 3.3.1
-      eslint:
-        specifier: ^8.56.0
-        version: 8.56.0
-      jsdom:
-        specifier: ^24.0.0
-        version: 24.0.0
-      naive-ui:
-        specifier: ^2.37.3
-        version: 2.37.3(vue@3.4.15)
-      pnpm:
-        specifier: ^8.15.1
-        version: 8.15.1
-      taze:
-        specifier: ^0.13.2
-        version: 0.13.2
-      typescript:
-        specifier: ^5.3.3
-        version: 5.3.3
-      unocss:
-        specifier: ^0.58.4
-        version: 0.58.4(postcss@8.4.33)(rollup@3.28.1)(vite@5.0.12)
-      unplugin-auto-import:
-        specifier: ^0.17.5
-        version: 0.17.5(@vueuse/core@10.7.2)(rollup@3.28.1)
-      unplugin-vue-macros:
-        specifier: ^2.7.10
-        version: 2.7.10(@vueuse/core@10.7.2)(rollup@3.28.1)(typescript@5.3.3)(vite@5.0.12)(vue@3.4.15)
-      vfonts:
-        specifier: ^0.0.3
-        version: 0.0.3
-      vite:
-        specifier: ^5.0.12
-        version: 5.0.12(@types/node@20.11.15)(less@4.2.0)
-      vite-plugin-dts:
-        specifier: ^3.7.2
-        version: 3.7.2(@types/node@20.11.15)(rollup@3.28.1)(typescript@5.3.3)(vite@5.0.12)
-      vitest:
-        specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.15)(jsdom@24.0.0)
-      vue-router:
-        specifier: ^4.2.5
-        version: 4.2.5(vue@3.4.15)
       vue-tsc:
         specifier: ^1.8.27
         version: 1.8.27(typescript@5.3.3)
@@ -570,9 +473,6 @@ importers:
       '@own-basic-component/ui-naive':
         specifier: workspace:*
         version: link:../packages/basic-ui-naive
-      '@own-basic-component/ui-naive-layout':
-        specifier: workspace:*
-        version: link:../packages/basic-ui-naive-layout
       '@own-basic-component/util':
         specifier: workspace:*
         version: link:../packages/basic-util
@@ -6084,7 +5984,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 6.19.0(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)(typescript@5.3.3)
       '@typescript-eslint/utils': 6.19.1(eslint@8.56.0)(typescript@5.3.3)
       eslint: 8.56.0
-      vitest: 1.2.2(@types/node@20.11.15)(jsdom@24.0.0)
+      vitest: 1.2.2(@types/node@20.11.15)(jsdom@24.0.0)(less@4.2.0)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -10622,64 +10522,6 @@ packages:
       rollup: 4.5.0
     optionalDependencies:
       fsevents: 2.3.3
-    dev: true
-
-  /vitest@1.2.2(@types/node@20.11.15)(jsdom@24.0.0):
-    resolution: {integrity: sha512-d5Ouvrnms3GD9USIK36KG8OZ5bEvKEkITFtnGv56HFaSlbItJuYr7hv2Lkn903+AvRAgSixiamozUVfORUekjw==}
-    engines: {node: ^18.0.0 || >=20.0.0}
-    hasBin: true
-    peerDependencies:
-      '@edge-runtime/vm': '*'
-      '@types/node': ^18.0.0 || >=20.0.0
-      '@vitest/browser': ^1.0.0
-      '@vitest/ui': ^1.0.0
-      happy-dom: '*'
-      jsdom: '*'
-    peerDependenciesMeta:
-      '@edge-runtime/vm':
-        optional: true
-      '@types/node':
-        optional: true
-      '@vitest/browser':
-        optional: true
-      '@vitest/ui':
-        optional: true
-      happy-dom:
-        optional: true
-      jsdom:
-        optional: true
-    dependencies:
-      '@types/node': 20.11.15
-      '@vitest/expect': 1.2.2
-      '@vitest/runner': 1.2.2
-      '@vitest/snapshot': 1.2.2
-      '@vitest/spy': 1.2.2
-      '@vitest/utils': 1.2.2
-      acorn-walk: 8.3.2
-      cac: 6.7.14
-      chai: 4.3.10
-      debug: 4.3.4
-      execa: 8.0.1
-      jsdom: 24.0.0
-      local-pkg: 0.5.0
-      magic-string: 0.30.5
-      pathe: 1.1.2
-      picocolors: 1.0.0
-      std-env: 3.6.0
-      strip-literal: 1.3.0
-      tinybench: 2.5.1
-      tinypool: 0.8.2
-      vite: 5.0.12(@types/node@20.11.15)(less@4.2.0)
-      vite-node: 1.2.2(@types/node@20.11.15)(less@4.2.0)
-      why-is-node-running: 2.2.2
-    transitivePeerDependencies:
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
     dev: true
 
   /vitest@1.2.2(@types/node@20.11.15)(jsdom@24.0.0)(less@4.2.0):
