@@ -28,7 +28,7 @@ const requestConfigText = computed<string>(() => JSON.stringify(requestConfig.va
 </script>
 
 <template>
-  <div flex flex-col gap-2>
+  <div class="flex flex-col gap-2">
     <n-card title="项目配置参数">
       <NCode :code="projectConfigText" language="json" show-line-numbers />
     </n-card>

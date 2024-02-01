@@ -543,12 +543,6 @@ importers:
       less:
         specifier: ^4.2.0
         version: 4.2.0
-      lossless-json:
-        specifier: ^4.0.1
-        version: 4.0.1
-      monaco-editor:
-        specifier: ^0.45.0
-        version: 0.45.0
       naive-ui:
         specifier: ^2.37.3
         version: 2.37.3(vue@3.4.15)
@@ -585,9 +579,6 @@ importers:
       vite:
         specifier: ^5.0.12
         version: 5.0.12(@types/node@20.11.14)(less@4.2.0)
-      vite-plugin-monaco-editor:
-        specifier: ^1.1.0
-        version: 1.1.0(monaco-editor@0.45.0)
       vitest:
         specifier: ^1.2.2
         version: 1.2.2(@types/node@20.11.14)(jsdom@24.0.0)(less@4.2.0)
@@ -7625,10 +7616,6 @@ packages:
       is-unicode-supported: 0.1.0
     dev: true
 
-  /lossless-json@4.0.1:
-    resolution: {integrity: sha512-l0L+ppmgPDnb+JGxNLndPtJZGNf6+ZmVaQzoxQm3u6TXmhdnsA+YtdVR8DjzZd/em58686CQhOFDPewfJ4l7MA==}
-    dev: true
-
   /loupe@2.3.7:
     resolution: {integrity: sha512-zSMINGVYkdpYSOBmLi0D1Uo7JU9nVdQKrHxC8eYlV+9YKK9WePqAlL7lSlorG/U2Fw1w0hTBmaa/jrQ3UbPHtA==}
     dependencies:
@@ -8038,10 +8025,6 @@ packages:
   /modify-values@1.0.1:
     resolution: {integrity: sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==}
     engines: {node: '>=0.10.0'}
-    dev: true
-
-  /monaco-editor@0.45.0:
-    resolution: {integrity: sha512-mjv1G1ZzfEE3k9HZN0dQ2olMdwIfaeAAjFiwNprLfYNRSz7ctv9XuCT7gPtBGrMUeV1/iZzYKj17Khu1hxoHOA==}
     dev: true
 
   /mri@1.2.0:
@@ -10512,14 +10495,6 @@ packages:
       - '@types/node'
       - rollup
       - supports-color
-    dev: true
-
-  /vite-plugin-monaco-editor@1.1.0(monaco-editor@0.45.0):
-    resolution: {integrity: sha512-IvtUqZotrRoVqwT0PBBDIZPNraya3BxN/bfcNfnxZ5rkJiGcNtO5eAOWWSgT7zullIAEqQwxMU83yL9J5k7gww==}
-    peerDependencies:
-      monaco-editor: '>=0.33.0'
-    dependencies:
-      monaco-editor: 0.45.0
     dev: true
 
   /vite@5.0.12(@types/node@20.11.14)(less@4.2.0):
