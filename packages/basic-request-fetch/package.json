@@ -41,7 +41,7 @@
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
-    "@types/node": "^20.11.10",
+    "@types/node": "^20.11.14",
     "@vueuse/core": "^10.7.2",
     "eslint": "^8.56.0",
     "pnpm": "^8.15.1",
