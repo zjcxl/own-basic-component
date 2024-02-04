@@ -35,6 +35,7 @@ defineExpose({
     :min="props.extra?.min"
     :step="props.extra?.step || 1"
     clearable
+    :disabled="props.disabled"
     :placeholder="props.placeholder"
     @update:value="() => emits('searchAction')"
   />

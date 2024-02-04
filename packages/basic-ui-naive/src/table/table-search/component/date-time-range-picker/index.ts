@@ -13,6 +13,7 @@ componentHandlerInstance.put(
     return encasementSearchItem(item, h(OwnDateTimeRangePicker, {
       defaultValue: item.defaultValue,
       index,
+      disabled: item.disabled,
       placeholder: item.placeholder,
       field: item.field,
       extra: item.extra,

@@ -31,6 +31,7 @@ defineExpose({
     :key="props.index"
     v-model:value="value"
     clearable
+    :disabled="props.disabled"
     :placeholder="props.placeholder"
     @keydown.enter="emits('searchAction')"
   />

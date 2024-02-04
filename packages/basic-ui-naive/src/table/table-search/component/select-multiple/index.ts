@@ -11,6 +11,7 @@ componentHandlerInstance.put(SEARCH_TYPE_SELECT_MULTIPLE, (item: SelectMultipleP
   return encasementSearchItem(item, h(OwnSelectMultiple, {
     defaultValue: item.defaultValue,
     index,
+    disabled: item.disabled,
     placeholder: item.placeholder,
     field: item.field,
     extra: item.extra,

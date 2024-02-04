@@ -95,6 +95,10 @@ export interface BaseSearchProps<TYPE extends DefaultSearchPropsKeyType, VALUE_T
    * @default undefined
    */
   placeholder?: string
+  /**
+   * 是否禁用
+   */
+  disabled?: boolean
 }
 
 /**
@@ -127,6 +131,10 @@ export interface BaseComponentStateProps<T1, T2 = void> {
    * 字段信息
    */
   field: string
+  /**
+   * 是否禁用
+   */
+  disabled?: boolean
   /**
    * 其他参数信息
    */

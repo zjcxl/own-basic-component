@@ -11,6 +11,7 @@ componentHandlerInstance.put(SEARCH_TYPE_DATE_TIME_PICKER, (item: DateTimePicker
   return encasementSearchItem(item, h(OwnDateTimePicker, {
     defaultValue: item.defaultValue,
     index,
+    disabled: item.disabled,
     placeholder: item.placeholder,
     field: item.field,
     extra: item.extra,

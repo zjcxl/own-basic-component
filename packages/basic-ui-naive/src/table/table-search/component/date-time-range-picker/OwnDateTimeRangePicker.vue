@@ -58,6 +58,7 @@ defineExpose({
     :format="formatter"
     type="datetimerange"
     clearable
+    :disabled="props.disabled"
     @update:value="() => emits('searchAction')"
   />
 </template>

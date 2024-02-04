@@ -50,6 +50,7 @@ defineExpose({
     v-model:value="value"
     clearable
     multiple
+    :disabled="props.disabled"
     :tag="tag"
     :filterable="filterable"
     :placeholder="props.placeholder"

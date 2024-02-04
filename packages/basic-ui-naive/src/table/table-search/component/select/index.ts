@@ -11,6 +11,7 @@ componentHandlerInstance.put(SEARCH_TYPE_SELECT, (item: SelectSearchPropsType, i
   return encasementSearchItem(item, h(OwnSearchSelect, {
     defaultValue: item.defaultValue,
     index,
+    disabled: item.disabled,
     placeholder: item.placeholder,
     field: item.field,
     extra: item.extra,
