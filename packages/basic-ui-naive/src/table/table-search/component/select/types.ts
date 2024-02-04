@@ -1,5 +1,6 @@
 import type { SelectMixedOption } from 'naive-ui/es/select/src/interface'
-import type { BaseSearchProps, RequiredField } from '../../types'
+import type { RequiredField } from '@own-basic-component/config'
+import type { BaseSearchProps } from '../../types'
 
 /**
  * 日期时间选择器的参数

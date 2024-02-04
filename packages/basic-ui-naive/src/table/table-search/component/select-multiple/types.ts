@@ -1,5 +1,6 @@
+import type { RequiredField } from '@own-basic-component/config'
 import type { SelectAdvancedOption } from '../select'
-import type { BaseSearchProps, RequiredField } from '../../types'
+import type { BaseSearchProps } from '../../types'
 
 export const SEARCH_TYPE_SELECT_MULTIPLE = 'select-multiple'
 

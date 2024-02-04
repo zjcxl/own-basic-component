@@ -15,3 +15,5 @@ export * from './project/types'
 export * from './request'
 export * from './request/types'
 export { handleMergeRequestConfig } from './request/method'
+
+export * from './types'
