@@ -44,8 +44,8 @@
     "vue": "^3.4.15"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.6.3",
-    "@types/node": "^20.11.15",
+    "@antfu/eslint-config": "^2.6.4",
+    "@types/node": "^20.11.16",
     "@vitejs/plugin-vue": "^5.0.3",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/test-utils": "^2.4.4",
