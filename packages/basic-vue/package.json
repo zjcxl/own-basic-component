@@ -53,7 +53,7 @@
     "jsdom": "^24.0.0",
     "less": "^4.2.0",
     "pnpm": "^8.15.1",
-    "taze": "^0.13.2",
+    "taze": "^0.13.3",
     "typescript": "^5.3.3",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-macros": "^2.7.10",
