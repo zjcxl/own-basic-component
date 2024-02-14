@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { format } from 'date-fns'
 import { NDatePicker } from 'naive-ui'
 import { computed, defineExpose, onMounted, ref } from 'vue'
 import type { QueryDataType } from '../../../common'
 import type { BaseComponentStateProps } from '../../types'
+import { getDateTimePickerParams, getFinalDateTimePickerFormatter } from './utils'
 import type { DateTimePicker } from './types'
 
 const props = withDefaults(defineProps<BaseComponentStateProps<number, DateTimePicker>>(), {
@@ -22,16 +22,14 @@ const value = ref<number | undefined>()
 /**
  * 格式化的内容
  */
-const formatter = computed<string>(() => props.extra?.format || 'yyyy-MM-dd HH:mm:ss')
+const formatter = computed<string>(() => getFinalDateTimePickerFormatter(props.extra?.format))
 
 onMounted(() => {
   value.value = props.defaultValue
 })
 
 defineExpose({
-  getParams: (): QueryDataType => ({
-    [props.field]: value.value ? format(new Date(value.value), formatter.value) : undefined,
-  }),
+  getParams: (): QueryDataType => getDateTimePickerParams(formatter.value, props.field, value.value),
 })
 </script>
 

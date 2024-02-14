@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { QueryObjectType } from '@own-basic-component/config'
-import { BaseTableSearchHelper } from '@own-basic-component/ui-naive'
+import { BaseTableSearchHelper, getDefaultSearchParams } from '@own-basic-component/ui-naive'
 import { search } from './search'
 
 const queryParams = ref<QueryObjectType>({})
@@ -18,7 +18,7 @@ function consoleLogParams(query: QueryObjectType) {
 }
 
 onMounted(() => {
-  queryParams.value = baseTableSearchHelper.value?.getParams?.() || {}
+  queryParams.value = getDefaultSearchParams(search)
 })
 </script>
 

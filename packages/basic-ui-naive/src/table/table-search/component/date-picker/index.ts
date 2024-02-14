@@ -6,6 +6,7 @@ import type { DatePickerSearchPropsType } from './types'
 import { SEARCH_TYPE_DATE_PICKER } from './types'
 
 export * from './types'
+export * from './utils'
 
 componentHandlerInstance.put(
   SEARCH_TYPE_DATE_PICKER,

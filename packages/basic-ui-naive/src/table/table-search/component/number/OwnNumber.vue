@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { NumberAdvancedExtra } from '@own-basic-component/ui-naive'
 import { NInputNumber } from 'naive-ui'
 import { defineExpose, onMounted, ref } from 'vue'
 import type { QueryDataType } from '../../../common'
 import type { BaseComponentStateProps } from '../../types'
+import type { NumberAdvancedExtra } from './types'
 
 const props = withDefaults(defineProps<BaseComponentStateProps<number | undefined, NumberAdvancedExtra>>(), {
   placeholder: '',

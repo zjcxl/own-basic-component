@@ -6,6 +6,7 @@ import type { DateTimeRangePickerSearchPropsType } from './types'
 import { SEARCH_TYPE_DATE_TIME_RANGE_PICKER } from './types'
 
 export * from './types'
+export * from './utils'
 
 componentHandlerInstance.put(
   SEARCH_TYPE_DATE_TIME_RANGE_PICKER,

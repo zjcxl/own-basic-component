@@ -5,7 +5,7 @@ import type { PropType, UnwrapRef } from 'vue'
 import { computed, defineSlots, onMounted, reactive, ref, unref } from 'vue'
 import type { FetchMethodType, PageInfo, RowDataType, TableInstanceType, TableSlotsType } from '../common'
 import { baseTableProps } from '../common'
-import { BaseTableSearchHelper, calcPageSizes } from '../table-search'
+import { BaseTableSearchHelper, calcPageSizes, getDefaultSearchParams } from '../table-search'
 
 const props = defineProps({
   // naive表格的基础属性
@@ -112,7 +112,7 @@ defineExpose<TableInstanceType<T>>({
 })
 
 onMounted(async () => {
-  await fetchData()
+  await fetchData(getDefaultSearchParams(props.search))
 })
 
 const dividerName = props.dividerName

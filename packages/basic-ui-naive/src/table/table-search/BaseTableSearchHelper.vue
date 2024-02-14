@@ -97,12 +97,10 @@ defineExpose({
       <slot name="operation" />
     </template>
   </NSpace>
-  <template v-if="visibleMinorList && itemMinorList.length > 0">
-    <br>
-    <NSpace align="center" justify="start">
-      <div v-for="(item, index) in itemMinorList" :key="index" :style="item.style">
-        <component :is="item.component" ref="componentItemMinorList" @search-action="handleClickSearch" />
-      </div>
-    </NSpace>
-  </template>
+  <br v-show="visibleMinorList && itemMinorList.length > 0">
+  <NSpace v-show="visibleMinorList && itemMinorList.length > 0" align="center" justify="start">
+    <div v-for="(item, index) in itemMinorList" :key="index" :style="item.style">
+      <component :is="item.component" ref="componentItemMinorList" @search-action="handleClickSearch" />
+    </div>
+  </NSpace>
 </template>

@@ -6,6 +6,7 @@ import type { DateTimePickerSearchPropsType } from './types'
 import { SEARCH_TYPE_DATE_TIME_PICKER } from './types'
 
 export * from './types'
+export * from './utils'
 
 componentHandlerInstance.put(SEARCH_TYPE_DATE_TIME_PICKER, (item: DateTimePickerSearchPropsType, index) => {
   return encasementSearchItem(item, h(OwnDateTimePicker, {

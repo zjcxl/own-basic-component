@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { SelectAdvancedOption } from '@own-basic-component/ui-naive'
 import { NSelect } from 'naive-ui'
 import { computed, defineExpose, onMounted, ref } from 'vue'
 import type { QueryDataType } from '../../../common'
 import type { BaseComponentStateProps } from '../../types'
+import type { SelectAdvancedOption } from './types'
 
 const props = withDefaults(defineProps<BaseComponentStateProps<string | number | undefined, SelectAdvancedOption>>(), {
   placeholder: '',

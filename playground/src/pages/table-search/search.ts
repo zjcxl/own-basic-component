@@ -76,6 +76,7 @@ export const search: DefaultSearchPropsValueType[] = [
     type: 'input',
     width: 20,
     hidden: true,
+    defaultValue: '12345',
     field: 'keyword2',
     placeholder: '请输入查询的关键字',
   },

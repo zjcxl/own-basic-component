@@ -1,5 +1,12 @@
 import type { VNode } from 'vue'
-import { componentHandlerInstance } from './component'
+import type { QueryDataType } from '../common'
+import {
+  componentHandlerInstance,
+  getDatePickerDefaultParams,
+  getDateRangePickerDefaultParams,
+  getDateTimePickerDefaultParams,
+  getDateTimeRangePickerDefaultParams,
+} from './component'
 import type { CustomSearchItem, DefaultSearchPropsValueType } from './types'
 
 /**
@@ -46,4 +53,27 @@ export function encasementSearchItem(item: DefaultSearchPropsValueType, node: VN
     style: item.width && item.width > 0 ? { width: `${item.width}rem` } : undefined,
     component: node,
   }
+}
+
+/**
+ * 获取默认的查询参数
+ * @param array 查询项
+ */
+export function getDefaultSearchParams(array: Array<DefaultSearchPropsValueType>): QueryDataType {
+  const map: QueryDataType = {}
+  array.forEach((item) => {
+    if (item.defaultValue !== undefined) {
+      if (item.type === 'date-picker')
+        Object.assign(map, getDatePickerDefaultParams(item))
+      else if (item.type === 'date-range-picker')
+        Object.assign(map, getDateRangePickerDefaultParams(item))
+      else if (item.type === 'date-time-picker')
+        Object.assign(map, getDateTimePickerDefaultParams(item))
+      else if (item.type === 'date-time-range-picker')
+        Object.assign(map, getDateTimeRangePickerDefaultParams(item))
+      else
+        map[item.field] = item.defaultValue
+    }
+  })
+  return map
 }

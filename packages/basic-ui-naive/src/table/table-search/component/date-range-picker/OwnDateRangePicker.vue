@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { format } from 'date-fns'
 import { NDatePicker } from 'naive-ui'
 import { computed, defineExpose, onMounted, ref } from 'vue'
 import type { QueryDataType } from '../../../common'
 import type { BaseComponentStateProps } from '../../types'
+import { getDateRangePickerParams, getFinalDateRangePickerFieldFormatArray, getFinalDateRangePickerFormatter } from './utils'
 import type { DateRangeFieldFormatType, DateRangePicker } from './types'
 
 const props = withDefaults(defineProps<BaseComponentStateProps<[number, number], DateRangePicker>>(), {
@@ -22,33 +22,19 @@ const value = ref<[number, number] | undefined>()
 /**
  * 格式化的内容
  */
-const formatter = computed<string>(() => props.extra?.format || 'yyyy-MM-dd')
-
-/**
- * 默认的字段格式化数组
- */
-const defaultDateTimeRangeFieldFormat: DateRangeFieldFormatType = [
-  (field: string) => `${field}Start`,
-  (field: string) => `${field}End`,
-]
+const formatter = computed<string>(() => getFinalDateRangePickerFormatter(props.extra?.format))
 
 /**
  * 字段格式化数组
  */
-const fieldFormatArray = computed<DateRangeFieldFormatType>(() => props.extra?.fieldFormat || defaultDateTimeRangeFieldFormat)
+const fieldFormatArray = computed<DateRangeFieldFormatType>(() => getFinalDateRangePickerFieldFormatArray(props.extra?.fieldFormat))
 
 onMounted(() => {
   value.value = props.defaultValue
 })
 
 defineExpose({
-  getParams: (): QueryDataType => {
-    const result = {} as QueryDataType
-    fieldFormatArray.value.forEach((method, index) => {
-      result[method(props.field)] = value.value?.[index] ? format(new Date(value.value[index]), formatter.value) : undefined
-    })
-    return result
-  },
+  getParams: (): QueryDataType => getDateRangePickerParams(formatter.value, fieldFormatArray.value, props.field, value.value),
 })
 </script>
 
