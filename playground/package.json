@@ -18,12 +18,12 @@
     "@own-basic-component/util": "workspace:*",
     "@own-basic-component/vue": "workspace:*",
     "@vueuse/core": "^10.7.2",
-    "vue": "^3.4.18",
+    "vue": "^3.4.19",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",
-    "@iconify-json/carbon": "^1.1.29",
+    "@iconify-json/carbon": "^1.1.30",
     "@iconify-json/ri": "^1.1.19",
     "@types/node": "^20.11.17",
     "@unocss/eslint-config": "^0.58.5",
@@ -41,7 +41,7 @@
     "less": "^4.2.0",
     "naive-ui": "^2.37.3",
     "pinia": "^2.1.7",
-    "pnpm": "^8.15.1",
+    "pnpm": "^8.15.2",
     "taze": "^0.13.3",
     "typescript": "^5.3.3",
     "unocss": "^0.58.5",

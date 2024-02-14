@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/ui-naive",
   "version": "0.6.33",
-  "packageManager": "pnpm@8.15.1",
+  "packageManager": "pnpm@8.15.2",
   "license": "MIT",
   "author": "chenxueli",
   "repository": {
@@ -40,11 +40,11 @@
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/util": "workspace:*",
     "@vueuse/core": "^10.7.2",
-    "vue": "^3.4.18"
+    "vue": "^3.4.19"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",
-    "@iconify-json/carbon": "^1.1.29",
+    "@iconify-json/carbon": "^1.1.30",
     "@iconify-json/ri": "^1.1.19",
     "@types/node": "^20.11.17",
     "@vicons/ionicons5": "^0.12.0",
@@ -56,7 +56,7 @@
     "jsdom": "^24.0.0",
     "less": "^4.2.0",
     "naive-ui": "^2.37.3",
-    "pnpm": "^8.15.1",
+    "pnpm": "^8.15.2",
     "taze": "^0.13.3",
     "typescript": "^5.3.3",
     "unplugin-auto-import": "^0.17.5",

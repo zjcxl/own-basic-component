@@ -1,7 +1,7 @@
 {
   "name": "@own-team/base",
   "private": true,
-  "packageManager": "pnpm@8.15.1",
+  "packageManager": "pnpm@8.15.2",
   "version": "0.0.1",
   "scripts": {
     "build": "pnpm -r run build",
@@ -16,7 +16,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "vue": "^3.4.18"
+    "vue": "^3.4.19"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",
@@ -24,7 +24,7 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "eslint": "^8.56.0",
     "lerna": "^8.1.2",
-    "pnpm": "^8.15.1",
+    "pnpm": "^8.15.2",
     "taze": "^0.13.3",
     "typescript": "^5.3.3",
     "unbuild": "^2.0.0",
