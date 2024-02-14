@@ -45,20 +45,20 @@ export interface OperationProps<T> {
    * 渲染操作名称
    * @param record
    */
-  titleRender?(record: T): string
+  titleRender?: (record: T) => string
 
   /**
    * 数据验证判断是否显示该-操作按钮，如果为true显示
    * @param record
    */
-  check?(record: T): boolean
+  check?: (record: T) => boolean
 
   /**
    * 点击后调用的方法
    * @param record 当前行的记录
    * @param el 当前行的元素
    */
-  action(record: T, el?: HTMLElement | null): void
+  action: (record: T, el?: HTMLElement | null) => void
 }
 
 /**
