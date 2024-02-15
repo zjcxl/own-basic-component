@@ -1,11 +1,16 @@
 <script lang="ts" setup generic="T">
 import { type PropType, ref } from 'vue'
 import { baseTableProps } from '../common'
-import type { FetchMethodType, TableInstanceType, TableSlotsType } from '../common'
+import type { FetchMethodType, type OperationProps, TableInstanceType, TableSlotsType } from '../common'
 import BaseRealTableHelper from './BaseRealTableHelper.vue'
 
 const props = defineProps({
   ...baseTableProps,
+  // 操作列
+  operations: {
+    type: Array as PropType<Array<OperationProps<T>>>,
+    default: () => [],
+  },
   // 请求方法
   fetchMethod: Function as PropType<FetchMethodType<T>>,
 })

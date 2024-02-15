@@ -3,7 +3,7 @@ import type { QueryObjectType } from '@own-basic-component/config'
 import { NDataTable, NDivider, NPagination, NSpace, dataTableProps } from 'naive-ui'
 import type { PropType, UnwrapRef } from 'vue'
 import { computed, defineSlots, onMounted, reactive, ref, unref } from 'vue'
-import type { FetchMethodType, PageInfo, RowDataType, TableInstanceType, TableSlotsType } from '../common'
+import type { FetchMethodType, OperationProps, PageInfo, RowDataType, TableInstanceType, TableSlotsType } from '../common'
 import { baseTableProps } from '../common'
 import { BaseTableSearchHelper, calcPageSizes } from '../table-search'
 
@@ -14,6 +14,11 @@ const props = defineProps({
   ...baseTableProps,
   // 请求方法
   fetchMethod: Function as PropType<FetchMethodType<T>>,
+  // 操作列
+  operations: {
+    type: Array as PropType<Array<OperationProps<T>>>,
+    default: () => [],
+  },
   // 列表还是表格
   helperType: {
     type: String as PropType<'table' | 'list'>,
