@@ -1,6 +1,6 @@
 {
   "name": "@own-basic-component/buried-vue",
-  "version": "0.6.34",
+  "version": "0.6.35",
   "packageManager": "pnpm@8.15.2",
   "license": "MIT",
   "author": "chenxueli",
