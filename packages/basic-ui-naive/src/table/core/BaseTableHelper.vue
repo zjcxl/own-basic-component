@@ -1,7 +1,7 @@
 <script lang="ts" setup generic="T">
 import { type PropType, ref } from 'vue'
 import { baseTableProps, getOperationColumns } from '../common'
-import type { FetchMethodType, type OperationProps, TableInstanceType, TableSlotsType } from '../common'
+import type { FetchMethodType, OperationProps, TableInstanceType, TableSlotsType } from '../common'
 import BaseRealTableHelper from './BaseRealTableHelper.vue'
 
 const props = defineProps({
