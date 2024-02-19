@@ -1,6 +1,6 @@
 {
   "name": "@own-basic-component/request-axios",
-  "version": "0.6.35",
+  "version": "0.6.37",
   "packageManager": "pnpm@8.15.3",
   "license": "MIT",
   "author": "chenxueli",
