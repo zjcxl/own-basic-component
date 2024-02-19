@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/buried-vue",
   "version": "0.6.35",
-  "packageManager": "pnpm@8.15.2",
+  "packageManager": "pnpm@8.15.3",
   "license": "MIT",
   "author": "chenxueli",
   "repository": {
@@ -40,12 +40,12 @@
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",
     "@own-basic-component/buried": "workspace:*",
-    "@types/node": "^20.11.17",
+    "@types/node": "^20.11.19",
     "eslint": "^8.56.0",
-    "pnpm": "^8.15.2",
+    "pnpm": "^8.15.3",
     "typescript": "^5.3.3",
     "unbuild": "^2.0.0",
-    "vite": "^5.1.2",
+    "vite": "^5.1.3",
     "vite-plugin-dts": "^3.7.2",
     "vue": "^3.4.19",
     "vue-router": "^4.2.5",
