@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { QueryObjectType } from '@own-basic-component/config'
-import { SearchOutline } from '@vicons/ionicons5'
+import { RefreshOutline, SearchOutline } from '@vicons/ionicons5'
 import { NButton, NDivider, NSpace } from 'naive-ui'
 import { computed, defineProps, nextTick, ref } from 'vue'
 import type { CustomSearchItem, DefaultSearchPropsValueType, SearchExtra } from '.'
@@ -77,7 +77,9 @@ function handleReset() {
   visible.value = false
   nextTick(() => {
     visible.value = true
-    handleClickSearch()
+    nextTick(() => {
+      handleClickSearch()
+    })
   })
 }
 
@@ -106,6 +108,9 @@ defineExpose({
       <NButton type="primary" @click="handleReset">
         <template #default>
           重置
+        </template>
+        <template #icon>
+          <RefreshOutline />
         </template>
       </NButton>
       <NButton v-if="itemMinorList.length > 0" quaternary type="success" @click="visibleMinorList = !visibleMinorList">
