@@ -2,7 +2,7 @@
 import type { QueryObjectType } from '@own-basic-component/config'
 import { SearchOutline } from '@vicons/ionicons5'
 import { NButton, NDivider, NSpace } from 'naive-ui'
-import { computed, defineProps, ref } from 'vue'
+import { computed, defineProps, nextTick, ref } from 'vue'
 import type { CustomSearchItem, DefaultSearchPropsValueType, SearchExtra } from '.'
 import { calcSearchItems } from '.'
 
@@ -68,39 +68,59 @@ function getParams(): QueryObjectType {
   return params
 }
 
+const visible = ref<boolean>(true)
+
+/**
+ * 重置搜索栏
+ */
+function handleReset() {
+  visible.value = false
+  nextTick(() => {
+    visible.value = true
+    handleClickSearch()
+  })
+}
+
 defineExpose({
   getParams,
 })
 </script>
 
 <template>
-  <NSpace align="center" justify="start">
-    <div v-for="(item, index) in itemMainList" :key="index" :style="item.style">
-      <component :is="item.component" ref="componentItemMainList" @search-action="handleClickSearch" />
-    </div>
-    <template v-if="slots.search">
-      <slot name="search" />
-    </template>
-    <NButton type="primary" @click="handleClickSearch">
-      <template #default>
-        {{ searchExtra?.searchButtonText || '搜索' }}
+  <template v-if="visible">
+    <NSpace align="center" justify="start">
+      <div v-for="(item, index) in itemMainList" :key="index" :style="item.style">
+        <component :is="item.component" ref="componentItemMainList" @search-action="handleClickSearch" />
+      </div>
+      <template v-if="slots.search">
+        <slot name="search" />
       </template>
-      <template #icon>
-        <SearchOutline />
+      <NButton type="primary" @click="handleClickSearch">
+        <template #default>
+          {{ searchExtra?.searchButtonText || '搜索' }}
+        </template>
+        <template #icon>
+          <SearchOutline />
+        </template>
+      </NButton>
+      <NButton type="primary" @click="handleReset">
+        <template #default>
+          重置
+        </template>
+      </NButton>
+      <NButton v-if="itemMinorList.length > 0" quaternary type="success" @click="visibleMinorList = !visibleMinorList">
+        {{ visibleMinorList ? '收起更多' : '展开更多' }}
+      </NButton>
+      <template v-if="slots.operation">
+        <NDivider vertical />
+        <slot name="operation" />
       </template>
-    </NButton>
-    <NButton v-if="itemMinorList.length > 0" quaternary type="success" @click="visibleMinorList = !visibleMinorList">
-      {{ visibleMinorList ? '收起更多' : '展开更多' }}
-    </NButton>
-    <template v-if="slots.operation">
-      <NDivider vertical />
-      <slot name="operation" />
-    </template>
-  </NSpace>
-  <br v-show="visibleMinorList && itemMinorList.length > 0">
-  <NSpace v-show="visibleMinorList && itemMinorList.length > 0" align="center" justify="start">
-    <div v-for="(item, index) in itemMinorList" :key="index" :style="item.style">
-      <component :is="item.component" ref="componentItemMinorList" @search-action="handleClickSearch" />
-    </div>
-  </NSpace>
+    </NSpace>
+    <br v-show="visibleMinorList && itemMinorList.length > 0">
+    <NSpace v-show="visibleMinorList && itemMinorList.length > 0" align="center" justify="start">
+      <div v-for="(item, index) in itemMinorList" :key="index" :style="item.style">
+        <component :is="item.component" ref="componentItemMinorList" @search-action="handleClickSearch" />
+      </div>
+    </NSpace>
+  </template>
 </template>
