@@ -1,5 +1,5 @@
 import type { DataTableColumn } from 'naive-ui'
-import { NButton, NSpace } from 'naive-ui'
+import { NButton } from 'naive-ui'
 import { h } from 'vue'
 import type { OperationExtra, OperationProps } from './operation-props'
 
@@ -36,17 +36,20 @@ export function getOperationColumns<T>(operations: OperationProps<T>[], extra: O
         .slice(0, maxCount - 1)
         .reduce((total, value) => total + value * CHAR_LENGTH + RIGHT_BLANK_LENGTH, 0) + MORE_BUTTON_LENGTH
   }
+  const finalWidth = extra.width || Math.max(width + LEFT_BLANK_LENGTH, MIN_WIDTH_LENGTH * 2)
   return <DataTableColumn<T>>{
     title: '操作',
     key,
     dataIndex: key,
-    width: extra.width || Math.max(width + LEFT_BLANK_LENGTH, MIN_WIDTH_LENGTH * 2),
+    width: finalWidth,
+    maxWidth: finalWidth,
+    minWidth: finalWidth,
     align: 'center',
     fixed: extra.fixed || '',
     // 保存所有的render信息
     render(row) {
-      return h(NSpace, {
-        justify: 'space-around',
+      return h('div', {
+        style: 'display: flex;flex-flow: wrap;justify-content: space-around;align-items: center;',
       }, {
         default: () => operations.map((item) => {
           return h(NButton, {
