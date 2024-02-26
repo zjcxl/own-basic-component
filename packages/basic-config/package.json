@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/config",
   "version": "0.6.37",
-  "packageManager": "pnpm@8.15.3",
+  "packageManager": "pnpm@8.15.4",
   "license": "MIT",
   "author": "chenxueli",
   "repository": {
@@ -35,9 +35,9 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",
-    "@types/node": "^20.11.19",
-    "eslint": "^8.56.0",
-    "pnpm": "^8.15.3",
+    "@types/node": "^20.11.20",
+    "eslint": "^8.57.0",
+    "pnpm": "^8.15.4",
     "typescript": "^5.3.3",
     "unbuild": "^2.0.0"
   },
