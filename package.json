@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",
-    "@types/node": "^20.11.20",
+    "@types/node": "^20.11.21",
     "@vitejs/plugin-vue": "^5.0.4",
     "eslint": "^8.57.0",
     "lerna": "^8.1.2",

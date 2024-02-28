@@ -39,14 +39,14 @@
   "dependencies": {
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/util": "workspace:*",
-    "@vueuse/core": "^10.8.0",
+    "@vueuse/core": "^10.9.0",
     "vue": "^3.4.20"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",
     "@iconify-json/carbon": "^1.1.30",
     "@iconify-json/ri": "^1.1.20",
-    "@types/node": "^20.11.20",
+    "@types/node": "^20.11.21",
     "@vicons/ionicons5": "^0.12.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",

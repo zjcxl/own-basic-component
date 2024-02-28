@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",
-    "@types/node": "^20.11.20",
+    "@types/node": "^20.11.21",
     "@types/platform": "^1.3.6",
     "eslint": "^8.57.0",
     "pnpm": "^8.15.4",
