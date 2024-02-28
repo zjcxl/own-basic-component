@@ -27,7 +27,19 @@ const formatter = computed<string>(() => props.extra?.format || 'yyyy-MM-dd')
 /**
  * 快捷操作
  */
-const finalShortcuts = computed<DateRangeShortcutsType>(() => props.extra?.shortcuts || {})
+const finalShortcuts = computed<DateRangeShortcutsType>(() => {
+  if (props.extra?.shortcuts && props.extra?.shortcutsSetting?.second) {
+    // 元组第二位的值减second
+    const t = props.extra?.shortcutsSetting?.second
+    const resultMap: DateRangeShortcutsType = {}
+    Object.keys(props.extra?.shortcuts).forEach((key) => {
+      const [time1, time2] = props.extra?.shortcuts?.[key] || [0, 0]
+      resultMap[key] = [time1, time2 - t]
+    })
+    return resultMap
+  }
+  return props.extra?.shortcuts || {}
+})
 
 /**
  * 默认的字段格式化数组

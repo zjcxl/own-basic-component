@@ -1,4 +1,5 @@
 import type { DefaultSearchPropsValueType } from '@own-basic-component/ui-naive'
+import { DEFAULT_DATETIME_SHORTCUTS } from '@own-basic-component/ui-naive'
 
 export const search: DefaultSearchPropsValueType[] = [
   {
@@ -17,7 +18,11 @@ export const search: DefaultSearchPropsValueType[] = [
     defaultValue: [1706058267000, 1706058267000],
     placeholder: '请输入查询的时间',
     extra: {
-      format: 'yyyy-MM-dd HH:mm',
+      format: 'yyyy-MM-dd HH:mm:ss',
+      shortcuts: DEFAULT_DATETIME_SHORTCUTS,
+      shortcutsSetting: {
+        second: 1,
+      },
     },
   },
   {

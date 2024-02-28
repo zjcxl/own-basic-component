@@ -20,6 +20,13 @@ export type DateRangeFieldFormatType = [
 export type DateRangeShortcutsValueType = [number, number]
 export type DateRangeShortcutsType = Record<string, DateRangeShortcutsValueType>
 
+export interface DateRangeShortcutsSettingType {
+  /**
+   * 第二位的显示回拨
+   */
+  second?: number
+}
+
 /**
  * 日期选择器的参数
  */
@@ -32,6 +39,10 @@ export interface DateRangePicker extends DatePicker {
    * 快捷操作
    */
   shortcuts?: DateRangeShortcutsType
+  /**
+   * 二级快捷操作
+   */
+  shortcutsSetting?: DateRangeShortcutsSettingType
 }
 
 /**

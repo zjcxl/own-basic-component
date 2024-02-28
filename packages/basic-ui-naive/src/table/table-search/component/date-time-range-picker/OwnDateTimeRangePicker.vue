@@ -40,7 +40,19 @@ const fieldFormatArray = computed<DateTimeRangeFieldFormatType>(() => props.extr
 /**
  * 快捷操作
  */
-const finalShortcuts = computed<DateTimeRangeShortcutsType>(() => props.extra?.shortcuts || {})
+const finalShortcuts = computed<DateTimeRangeShortcutsType>(() => {
+  if (props.extra?.shortcuts && props.extra?.shortcutsSetting?.second) {
+    // 元组第二位的值减second
+    const t = props.extra?.shortcutsSetting?.second
+    const resultMap: DateTimeRangeShortcutsType = {}
+    Object.keys(props.extra?.shortcuts).forEach((key) => {
+      const [time1, time2] = props.extra?.shortcuts?.[key] || [0, 0]
+      resultMap[key] = [time1, time2 - t]
+    })
+    return resultMap
+  }
+  return props.extra?.shortcuts || {}
+})
 
 onMounted(() => {
   value.value = props.defaultValue

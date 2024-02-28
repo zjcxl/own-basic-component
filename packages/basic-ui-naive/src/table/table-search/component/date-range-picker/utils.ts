@@ -3,7 +3,7 @@ import type { DateRangeShortcutsType } from './types'
 /**
  * 今天的时间范围
  */
-export function today(): DateRangeShortcutsType {
+export function todayDate(): DateRangeShortcutsType {
   const now = new Date()
   const nowTimestamp = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime()
   return {
@@ -14,7 +14,7 @@ export function today(): DateRangeShortcutsType {
 /**
  * 昨天
  */
-export function yesterday(): DateRangeShortcutsType {
+export function yesterdayDate(): DateRangeShortcutsType {
   const now = new Date()
   const nowTimestamp = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime()
   return {
@@ -27,9 +27,8 @@ export function yesterday(): DateRangeShortcutsType {
  * @param n
  * @param text
  */
-export function lastNDays(n: number, text: string = `近${n}天`): DateRangeShortcutsType {
-  const now = new Date()
-  const nowTimestamp = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime()
+export function lastNDaysDate(n: number, text: string = `近${n}天`): DateRangeShortcutsType {
+  const nowTimestamp = new Date().getTime()
   return {
     [text]: [nowTimestamp - n * 24 * 60 * 60 * 1000, nowTimestamp],
   }
@@ -38,21 +37,21 @@ export function lastNDays(n: number, text: string = `近${n}天`): DateRangeShor
 /**
  * 近7天
  */
-export function last7Days(): DateRangeShortcutsType {
-  return lastNDays(7)
+export function last7DaysDate(): DateRangeShortcutsType {
+  return lastNDaysDate(7)
 }
 
 /**
  * 近15天
  */
-export function last15Days(): DateRangeShortcutsType {
-  return lastNDays(15)
+export function last15DaysDate(): DateRangeShortcutsType {
+  return lastNDaysDate(15)
 }
 
 /**
  * 本月
  */
-export function thisMonth(): DateRangeShortcutsType {
+export function thisMonthDate(): DateRangeShortcutsType {
   const now = new Date()
   const firstTimestamp = new Date(now.getFullYear(), now.getMonth(), 1).getTime()
   const lastTimestamp = new Date(now.getFullYear(), now.getMonth() + 1, 1).getTime()
@@ -64,7 +63,7 @@ export function thisMonth(): DateRangeShortcutsType {
 /**
  * 上月
  */
-export function prevMonth(): DateRangeShortcutsType {
+export function prevMonthDate(): DateRangeShortcutsType {
   const now = new Date()
   const firstTimestamp = new Date(now.getFullYear(), now.getMonth() - 1, 1).getTime()
   const lastTimestamp = new Date(now.getFullYear(), now.getMonth(), 1).getTime()
@@ -76,10 +75,10 @@ export function prevMonth(): DateRangeShortcutsType {
 /**
  * 本年
  */
-export function thisYear(): DateRangeShortcutsType {
+export function thisYearDate(): DateRangeShortcutsType {
   const now = new Date()
-  const firstTimestamp = new Date(now.getFullYear(), 1, 1).getTime()
-  const lastTimestamp = new Date(now.getFullYear() + 1, 1, 1).getTime()
+  const firstTimestamp = new Date(now.getFullYear(), 0, 1).getTime()
+  const lastTimestamp = new Date(now.getFullYear() + 1, 0, 1).getTime()
   return {
     [`本年`]: [firstTimestamp, lastTimestamp],
   }
@@ -88,10 +87,10 @@ export function thisYear(): DateRangeShortcutsType {
 /**
  * 去年
  */
-export function prevYear(): DateRangeShortcutsType {
+export function prevYearDate(): DateRangeShortcutsType {
   const now = new Date()
-  const firstTimestamp = new Date(now.getFullYear() - 1, 1, 1).getTime()
-  const lastTimestamp = new Date(now.getFullYear(), 1, 1).getTime()
+  const firstTimestamp = new Date(now.getFullYear() - 1, 0, 1).getTime()
+  const lastTimestamp = new Date(now.getFullYear(), 0, 1).getTime()
   return {
     [`去年`]: [firstTimestamp, lastTimestamp],
   }
@@ -100,13 +99,13 @@ export function prevYear(): DateRangeShortcutsType {
 /**
  * 默认的快捷操作
  */
-export const DEFAULT_SHORTCUTS = {
-  ...today(),
-  ...yesterday(),
-  ...last7Days(),
-  ...last15Days(),
-  ...thisMonth(),
-  ...prevMonth(),
-  ...thisYear(),
-  ...prevYear(),
+export const DEFAULT_DATE_SHORTCUTS = {
+  ...todayDate(),
+  ...yesterdayDate(),
+  ...last7DaysDate(),
+  ...last15DaysDate(),
+  ...thisMonthDate(),
+  ...prevMonthDate(),
+  ...thisYearDate(),
+  ...prevYearDate(),
 }
