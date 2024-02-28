@@ -4,7 +4,7 @@ import { NDatePicker } from 'naive-ui'
 import { computed, defineExpose, onMounted, ref } from 'vue'
 import type { QueryDataType } from '../../../common'
 import type { BaseComponentStateProps } from '../../types'
-import type { DateRangeFieldFormatType, DateRangePicker } from './types'
+import type { DateRangeFieldFormatType, DateRangePicker, DateRangeShortcutsType } from './types'
 
 const props = withDefaults(defineProps<BaseComponentStateProps<[number, number], DateRangePicker>>(), {
   placeholder: '',
@@ -23,6 +23,11 @@ const value = ref<[number, number] | undefined>()
  * 格式化的内容
  */
 const formatter = computed<string>(() => props.extra?.format || 'yyyy-MM-dd')
+
+/**
+ * 快捷操作
+ */
+const finalShortcuts = computed<DateRangeShortcutsType>(() => props.extra?.shortcuts || {})
 
 /**
  * 默认的字段格式化数组
@@ -59,6 +64,7 @@ defineExpose({
     type="daterange"
     clearable
     :disabled="props.disabled"
+    :shortcuts="finalShortcuts"
     @update:value="() => emits('searchAction')"
   />
 </template>

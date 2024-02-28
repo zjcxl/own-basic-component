@@ -15,6 +15,12 @@ export type DateRangeFieldFormatType = [
 ]
 
 /**
+ * 日期范围快捷键的类型
+ */
+export type DateRangeShortcutsValueType = [number, number]
+export type DateRangeShortcutsType = Record<string, DateRangeShortcutsValueType>
+
+/**
  * 日期选择器的参数
  */
 export interface DateRangePicker extends DatePicker {
@@ -22,6 +28,10 @@ export interface DateRangePicker extends DatePicker {
    * 字段格式化
    */
   fieldFormat?: DateRangeFieldFormatType
+  /**
+   * 快捷操作
+   */
+  shortcuts?: DateRangeShortcutsType
 }
 
 /**
