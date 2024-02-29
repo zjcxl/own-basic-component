@@ -1,6 +1,6 @@
 {
   "name": "@own-basic-component/ui-naive",
-  "version": "0.6.47",
+  "version": "0.6.48",
   "packageManager": "pnpm@8.15.4",
   "license": "MIT",
   "author": "chenxueli",
@@ -41,12 +41,12 @@
     "vue": "^3.4.21"
   },
   "devDependencies": {
-    "@own-basic-component/buried": "workspace:*",
-    "@own-basic-component/config": "workspace:*",
-    "@own-basic-component/util": "workspace:*",
     "@antfu/eslint-config": "^2.6.4",
     "@iconify-json/carbon": "^1.1.30",
     "@iconify-json/ri": "^1.1.20",
+    "@own-basic-component/buried": "workspace:*",
+    "@own-basic-component/config": "workspace:*",
+    "@own-basic-component/util": "workspace:*",
     "@types/node": "^20.11.22",
     "@vicons/ionicons5": "^0.12.0",
     "@vitejs/plugin-vue": "^5.0.4",

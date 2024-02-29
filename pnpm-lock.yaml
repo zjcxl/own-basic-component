@@ -308,15 +308,6 @@ importers:
 
   packages/basic-ui-naive:
     dependencies:
-      '@own-basic-component/buried':
-        specifier: workspace:*
-        version: link:../basic-buried
-      '@own-basic-component/config':
-        specifier: workspace:*
-        version: link:../basic-config
-      '@own-basic-component/util':
-        specifier: workspace:*
-        version: link:../basic-util
       '@vueuse/core':
         specifier: ^10.9.0
         version: 10.9.0(vue@3.4.21)
@@ -333,6 +324,15 @@ importers:
       '@iconify-json/ri':
         specifier: ^1.1.20
         version: 1.1.20
+      '@own-basic-component/buried':
+        specifier: workspace:*
+        version: link:../basic-buried
+      '@own-basic-component/config':
+        specifier: workspace:*
+        version: link:../basic-config
+      '@own-basic-component/util':
+        specifier: workspace:*
+        version: link:../basic-util
       '@types/node':
         specifier: ^20.11.22
         version: 20.11.22
