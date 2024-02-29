@@ -1,6 +1,7 @@
 import type { DataTableColumn } from 'naive-ui'
 import { NButton } from 'naive-ui'
 import { h } from 'vue'
+import { sendAe } from '@own-basic-component/buried'
 import type { OperationExtra, OperationProps } from './operation-props'
 
 const FIELD_OPERATION = 'operation'
@@ -53,11 +54,16 @@ export function getOperationColumns<T>(operations: OperationProps<T>[], extra: O
       }, {
         default: () => operations.map((item) => {
           return h(NButton, {
-            'text': true,
-            'tag': 'a',
-            'type': 'primary',
-            'v-buried': true,
-            'onClick': () => item.action?.(row),
+            text: true,
+            tag: 'a',
+            type: 'primary',
+            onClick: () => {
+              sendAe({
+                actionName: item.title,
+                actionType: 'click',
+              })
+              item.action?.(row)
+            },
           }, {
             default: () => item.titleRender ? item.titleRender(row) : item.title,
           })
