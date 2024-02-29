@@ -97,7 +97,7 @@ defineExpose({
       <template v-if="slots.search">
         <slot name="search" />
       </template>
-      <NButton type="primary" @click="handleClickSearch">
+      <NButton v-buried type="primary" @click="handleClickSearch">
         <template #default>
           {{ searchExtra?.searchButtonText || '搜索' }}
         </template>
@@ -105,7 +105,7 @@ defineExpose({
           <SearchOutline />
         </template>
       </NButton>
-      <NButton type="primary" @click="handleReset">
+      <NButton v-buried type="primary" @click="handleReset">
         <template #default>
           重置
         </template>
@@ -113,7 +113,7 @@ defineExpose({
           <RefreshOutline />
         </template>
       </NButton>
-      <NButton v-if="itemMinorList.length > 0" quaternary type="success" @click="visibleMinorList = !visibleMinorList">
+      <NButton v-if="itemMinorList.length > 0" v-buried quaternary type="success" @click="visibleMinorList = !visibleMinorList">
         {{ visibleMinorList ? '收起更多' : '展开更多' }}
       </NButton>
       <template v-if="slots.operation">
