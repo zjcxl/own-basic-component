@@ -39,6 +39,7 @@
   "dependencies": {
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/util": "workspace:*",
+    "@own-basic-component/buried": "workspace:*",
     "@vueuse/core": "^10.9.0",
     "vue": "^3.4.21"
   },

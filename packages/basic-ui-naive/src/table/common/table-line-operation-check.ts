@@ -53,10 +53,11 @@ export function getOperationColumns<T>(operations: OperationProps<T>[], extra: O
       }, {
         default: () => operations.map((item) => {
           return h(NButton, {
-            text: true,
-            tag: 'a',
-            type: 'primary',
-            onClick: () => item.action?.(row),
+            'text': true,
+            'tag': 'a',
+            'type': 'primary',
+            'v-buried': true,
+            'onClick': () => item.action?.(row),
           }, {
             default: () => item.titleRender ? item.titleRender(row) : item.title,
           })
