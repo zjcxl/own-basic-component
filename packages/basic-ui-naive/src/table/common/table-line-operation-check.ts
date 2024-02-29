@@ -53,19 +53,21 @@ export function getOperationColumns<T>(operations: OperationProps<T>[], extra: O
         style: 'display: flex;flex-flow: wrap;justify-content: space-around;align-items: center;',
       }, {
         default: () => operations.map((item) => {
+          const title = item.titleRender ? item.titleRender(row) : item.title
           return h(NButton, {
             text: true,
             tag: 'a',
             type: 'primary',
             onClick: () => {
+              console.log('点击了操作按钮', title)
               sendAe({
-                actionName: item.title,
+                actionName: title,
                 actionType: 'click',
               })
               item.action?.(row)
             },
           }, {
-            default: () => item.titleRender ? item.titleRender(row) : item.title,
+            default: () => title,
           })
         }),
       })
