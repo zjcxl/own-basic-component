@@ -3,6 +3,7 @@ import type { QueryObjectType } from '@own-basic-component/config'
 import { NDataTable, NDivider, NPagination, NSpace, dataTableProps } from 'naive-ui'
 import type { PropType, UnwrapRef } from 'vue'
 import { computed, defineSlots, onMounted, reactive, ref, unref } from 'vue'
+import { sendAe } from '@own-basic-component/buried'
 import type { FetchMethodType, OperationProps, PageInfo, RowDataType, TableInstanceType, TableSlotsType } from '../common'
 import { baseTableProps } from '../common'
 import { BaseTableSearchHelper, calcPageSizes } from '../table-search'
@@ -74,6 +75,10 @@ async function fetchData(params?: QueryObjectType, page: number = pageInfo.page)
  * @param page
  */
 async function handleChangePage(page: number) {
+  sendAe({
+    actionName: 'changePage',
+    actionType: 'click',
+  })
   pageInfo.page = Math.max(page, 1)
   await fetchData()
 }
@@ -83,6 +88,10 @@ async function handleChangePage(page: number) {
  * @param rows
  */
 async function handleChangePageSize(rows: number) {
+  sendAe({
+    actionName: 'ChangePageSize',
+    actionType: 'click',
+  })
   pageInfo.rows = Math.max(rows, 1)
   // 需要将页数重置为1
   pageInfo.page = 1

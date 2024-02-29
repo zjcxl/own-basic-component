@@ -2,6 +2,7 @@
 import { format } from 'date-fns'
 import { NDatePicker } from 'naive-ui'
 import { computed, defineExpose, onMounted, ref } from 'vue'
+import { sendAe } from '@own-basic-component/buried'
 import type { QueryDataType } from '../../../common'
 import type { BaseComponentStateProps } from '../../types'
 import type { DateRangeFieldFormatType, DateRangePicker, DateRangeShortcutsType } from './types'
@@ -58,6 +59,15 @@ onMounted(() => {
   value.value = props.defaultValue
 })
 
+function handleChangeValue() {
+  sendAe({
+    actionName: 'search',
+    actionType: 'date-range-picker',
+    actionValue: value.value,
+  })
+  emits('searchAction')
+}
+
 defineExpose({
   getParams: (): QueryDataType => {
     const result = {} as QueryDataType
@@ -77,6 +87,6 @@ defineExpose({
     clearable
     :disabled="props.disabled"
     :shortcuts="finalShortcuts"
-    @update:value="() => emits('searchAction')"
+    @update:value="handleChangeValue"
   />
 </template>

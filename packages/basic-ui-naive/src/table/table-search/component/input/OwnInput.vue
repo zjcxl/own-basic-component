@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { NInput } from 'naive-ui'
 import { defineExpose, onMounted, ref } from 'vue'
+import { sendAe } from '@own-basic-component/buried'
 import type { QueryDataType } from '../../../common'
 import type { BaseComponentStateProps } from '../../types'
 
@@ -21,6 +22,15 @@ onMounted(() => {
   value.value = props.defaultValue
 })
 
+function handleChangeValue() {
+  sendAe({
+    actionName: 'search',
+    actionType: 'input',
+    actionValue: value.value,
+  })
+  emits('searchAction')
+}
+
 defineExpose({
   getParams: (): QueryDataType => ({ [props.field]: value.value }),
 })
@@ -33,6 +43,6 @@ defineExpose({
     clearable
     :disabled="props.disabled"
     :placeholder="props.placeholder"
-    @keydown.enter="emits('searchAction')"
+    @keydown.enter="handleChangeValue"
   />
 </template>

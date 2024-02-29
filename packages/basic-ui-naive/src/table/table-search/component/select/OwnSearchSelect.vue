@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { NSelect } from 'naive-ui'
 import { computed, defineExpose, onMounted, ref } from 'vue'
+import { sendAe } from '@own-basic-component/buried'
 import type { QueryDataType } from '../../../common'
 import type { BaseComponentStateProps } from '../../types'
 import type { SelectAdvancedOption } from './types'
@@ -36,6 +37,15 @@ onMounted(() => {
   value.value = props.defaultValue
 })
 
+function handleChangeValue() {
+  sendAe({
+    actionName: 'search',
+    actionType: 'select',
+    actionValue: value.value,
+  })
+  emits('searchAction')
+}
+
 defineExpose({
   getParams: (): QueryDataType => ({ [props.field]: value.value }),
 })
@@ -51,6 +61,6 @@ defineExpose({
     :filterable="filterable"
     :placeholder="props.placeholder"
     :options="props.extra?.options"
-    @update:value="() => emits('searchAction')"
+    @update:value="handleChangeValue"
   />
 </template>

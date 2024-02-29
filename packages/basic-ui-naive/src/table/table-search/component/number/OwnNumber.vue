@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { NInputNumber } from 'naive-ui'
 import { defineExpose, onMounted, ref } from 'vue'
+import { sendAe } from '@own-basic-component/buried'
 import type { QueryDataType } from '../../../common'
 import type { BaseComponentStateProps } from '../../types'
 import type { NumberAdvancedExtra } from './types'
@@ -22,6 +23,15 @@ onMounted(() => {
   value.value = props.defaultValue
 })
 
+function handleChangeValue() {
+  sendAe({
+    actionName: 'search',
+    actionType: 'number',
+    actionValue: value.value,
+  })
+  emits('searchAction')
+}
+
 defineExpose({
   getParams: (): QueryDataType => ({ [props.field]: value.value !== 0 ? (value.value ? value.value : undefined) : 0 }),
 })
@@ -37,6 +47,6 @@ defineExpose({
     clearable
     :disabled="props.disabled"
     :placeholder="props.placeholder"
-    @update:value="() => emits('searchAction')"
+    @update:value="handleChangeValue"
   />
 </template>

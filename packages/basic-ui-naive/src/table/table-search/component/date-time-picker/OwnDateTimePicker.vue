@@ -2,6 +2,7 @@
 import { format } from 'date-fns'
 import { NDatePicker } from 'naive-ui'
 import { computed, defineExpose, onMounted, ref } from 'vue'
+import { sendAe } from '@own-basic-component/buried'
 import type { QueryDataType } from '../../../common'
 import type { BaseComponentStateProps } from '../../types'
 import type { DateTimePicker } from './types'
@@ -28,6 +29,15 @@ onMounted(() => {
   value.value = props.defaultValue
 })
 
+function handleChangeValue() {
+  sendAe({
+    actionName: 'search',
+    actionType: 'date-time-picker',
+    actionValue: value.value,
+  })
+  emits('searchAction')
+}
+
 defineExpose({
   getParams: (): QueryDataType => ({
     [props.field]: value.value ? format(new Date(value.value), formatter.value) : undefined,
@@ -42,6 +52,6 @@ defineExpose({
     type="datetime"
     clearable
     :disabled="props.disabled"
-    @update:value="() => emits('searchAction')"
+    @update:value="handleChangeValue"
   />
 </template>
