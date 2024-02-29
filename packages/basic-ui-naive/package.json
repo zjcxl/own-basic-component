@@ -37,13 +37,13 @@
     "up": "taze major -I"
   },
   "dependencies": {
-    "@own-basic-component/buried": "workspace:*",
-    "@own-basic-component/config": "workspace:*",
-    "@own-basic-component/util": "workspace:*",
     "@vueuse/core": "^10.9.0",
     "vue": "^3.4.21"
   },
   "devDependencies": {
+    "@own-basic-component/buried": "workspace:*",
+    "@own-basic-component/config": "workspace:*",
+    "@own-basic-component/util": "workspace:*",
     "@antfu/eslint-config": "^2.6.4",
     "@iconify-json/carbon": "^1.1.30",
     "@iconify-json/ri": "^1.1.20",

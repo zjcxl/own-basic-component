@@ -59,7 +59,6 @@ export function getOperationColumns<T>(operations: OperationProps<T>[], extra: O
             tag: 'a',
             type: 'primary',
             onClick: () => {
-              console.log('点击了操作按钮', title)
               sendAe({
                 actionName: title,
                 actionType: 'click',
