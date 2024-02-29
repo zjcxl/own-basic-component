@@ -4,11 +4,21 @@ import { resolve } from 'node:path'
 import Vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 import ViteDts from 'vite-plugin-dts'
+import VueMacros from 'unplugin-vue-macros/vite'
 
 export default defineConfig({
   plugins: [
-    Vue({
-      reactivityTransform: true,
+    VueMacros({
+      defineOptions: false,
+      defineModels: false,
+      plugins: {
+        vue: Vue({
+          script: {
+            propsDestructure: true,
+            defineModel: true,
+          },
+        }),
+      },
     }),
     ViteDts({}),
   ],
