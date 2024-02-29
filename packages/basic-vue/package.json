@@ -41,11 +41,11 @@
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
     "@vueuse/core": "^10.9.0",
-    "vue": "^3.4.20"
+    "vue": "^3.4.21"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",
-    "@types/node": "^20.11.21",
+    "@types/node": "^20.11.22",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/test-utils": "^2.4.4",
