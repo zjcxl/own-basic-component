@@ -41,7 +41,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",
     "@own-basic-component/config": "workspace:*",
-    "@types/node": "^20.11.22",
+    "@types/node": "^20.11.24",
     "eslint": "^8.57.0",
     "pnpm": "^8.15.4",
     "typescript": "^5.3.3",
