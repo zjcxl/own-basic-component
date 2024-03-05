@@ -34,7 +34,7 @@
     "node": ">=16"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.7.0",
+    "@antfu/eslint-config": "^2.8.0",
     "@types/node": "^20.11.24",
     "eslint": "^8.57.0",
     "pnpm": "^8.15.4",
