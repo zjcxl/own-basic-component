@@ -20,16 +20,16 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.8.0",
-    "@types/node": "^20.11.24",
+    "@types/node": "^20.11.25",
     "@vitejs/plugin-vue": "^5.0.4",
     "eslint": "^8.57.0",
     "lerna": "^8.1.2",
     "pnpm": "^8.15.4",
     "taze": "^0.13.3",
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.2",
     "unbuild": "^2.0.0",
     "vite": "^5.1.5",
-    "vue-tsc": "^2.0.4"
+    "vue-tsc": "^2.0.5"
   },
   "workspaces": [
     "playground",
