@@ -5,7 +5,6 @@ import Clipboard from 'clipboard'
 
 /**
  * 生成uuid
- * @returns {string}
  */
 function uuid(): string {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
@@ -37,7 +36,6 @@ function deepCopy(_object: _typeObj, _obj: _typeObj = {}): _typeObj {
 /**
  * 格式化html文本
  * @param html html文本
- * @returns {string}
  */
 function formatTextFromHtml(html: string): string {
   return html.replace(/<.+?>/g, '').replace(/&nbsp;/ig, '').replace(/\s/ig, '').replace(/\n/g, '')
@@ -46,9 +44,10 @@ function formatTextFromHtml(html: string): string {
 /**
  * 格式化文件大小样式
  * @param size 文件大小
- * @returns {string}
  */
 function formatMemorySize(size: number): string {
+  if (size < 0)
+    return '0B'
   if (size < 1024)
     return `${size}B`
   else if (size / 1024 < 1024)
@@ -64,7 +63,6 @@ function formatMemorySize(size: number): string {
 /**
  * 半角转全角
  * @param content
- * @returns {string}
  */
 function toDBC(content: string): string {
   let temp = ''
@@ -80,7 +78,6 @@ function toDBC(content: string): string {
 /**
  * 全角转半角
  * @param content
- * @returns {string}
  */
 function toCDB(content: string): string {
   let temp = ''
@@ -105,7 +102,9 @@ function copyText(text: any) {
   const element = document.createElement('button')
   const clipboard = new Clipboard(element, {
     text: () => String(text).valueOf() as string,
-    action() { return 'copy' },
+    action() {
+      return 'copy'
+    },
     container: document.body,
   })
   clipboard.on('success', () => {
@@ -122,6 +121,27 @@ function copyText(text: any) {
   document.body.removeChild(element)
 }
 
+/**
+ * TextEncoder
+ */
+const ENCODER = new TextEncoder()
+
+/**
+ * 获取字符串的字节长度
+ * @param content
+ */
+function getStrByteLength(content: string): number {
+  return ENCODER.encode(content).byteLength
+}
+
+/**
+ * 获取字符串的内存大小
+ * @param content
+ */
+function getStrMemorySize(content: string): string {
+  return formatMemorySize(getStrByteLength(content))
+}
+
 export {
   uuid as UUID,
   nanoid as NANOID,
@@ -131,4 +151,6 @@ export {
   toDBC as Text2DBC,
   toCDB as Text2CDB,
   copyText,
+  getStrByteLength,
+  getStrMemorySize,
 }
