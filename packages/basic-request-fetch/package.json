@@ -1,6 +1,6 @@
 {
   "name": "@own-basic-component/request-fetch",
-  "version": "0.6.55",
+  "version": "0.6.56",
   "packageManager": "pnpm@8.15.4",
   "license": "MIT",
   "author": "chenxueli",
