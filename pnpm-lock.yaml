@@ -28,8 +28,8 @@ importers:
         specifier: ^8.1.2
         version: 8.1.2
       pnpm:
-        specifier: ^8.15.4
-        version: 8.15.4
+        specifier: ^8.15.5
+        version: 8.15.5
       taze:
         specifier: ^0.13.3
         version: 0.13.3
@@ -65,8 +65,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       pnpm:
-        specifier: ^8.15.4
-        version: 8.15.4
+        specifier: ^8.15.5
+        version: 8.15.5
       typescript:
         specifier: ^5.4.2
         version: 5.4.2
@@ -104,8 +104,8 @@ importers:
         specifier: ^2.4.5
         version: 2.4.5
       date-fns:
-        specifier: ^3.5.0
-        version: 3.5.0
+        specifier: ^3.6.0
+        version: 3.6.0
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -113,8 +113,8 @@ importers:
         specifier: ^24.0.0
         version: 24.0.0
       pnpm:
-        specifier: ^8.15.4
-        version: 8.15.4
+        specifier: ^8.15.5
+        version: 8.15.5
       taze:
         specifier: ^0.13.3
         version: 0.13.3
@@ -161,8 +161,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       pnpm:
-        specifier: ^8.15.4
-        version: 8.15.4
+        specifier: ^8.15.5
+        version: 8.15.5
       typescript:
         specifier: ^5.4.2
         version: 5.4.2
@@ -191,8 +191,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       pnpm:
-        specifier: ^8.15.4
-        version: 8.15.4
+        specifier: ^8.15.5
+        version: 8.15.5
       typescript:
         specifier: ^5.4.2
         version: 5.4.2
@@ -240,8 +240,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       pnpm:
-        specifier: ^8.15.4
-        version: 8.15.4
+        specifier: ^8.15.5
+        version: 8.15.5
       typescript:
         specifier: ^5.4.2
         version: 5.4.2
@@ -285,8 +285,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       pnpm:
-        specifier: ^8.15.4
-        version: 8.15.4
+        specifier: ^8.15.5
+        version: 8.15.5
       typescript:
         specifier: ^5.4.2
         version: 5.4.2
@@ -345,8 +345,8 @@ importers:
         specifier: ^10.9.0
         version: 10.9.0(vue@3.4.21)
       date-fns:
-        specifier: ^3.5.0
-        version: 3.5.0
+        specifier: ^3.6.0
+        version: 3.6.0
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -360,8 +360,8 @@ importers:
         specifier: ^2.38.1
         version: 2.38.1(vue@3.4.21)
       pnpm:
-        specifier: ^8.15.4
-        version: 8.15.4
+        specifier: ^8.15.5
+        version: 8.15.5
       taze:
         specifier: ^0.13.3
         version: 0.13.3
@@ -415,8 +415,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       pnpm:
-        specifier: ^8.15.4
-        version: 8.15.4
+        specifier: ^8.15.5
+        version: 8.15.5
       typescript:
         specifier: ^5.4.2
         version: 5.4.2
@@ -463,8 +463,8 @@ importers:
         specifier: ^4.2.0
         version: 4.2.0
       pnpm:
-        specifier: ^8.15.4
-        version: 8.15.4
+        specifier: ^8.15.5
+        version: 8.15.5
       taze:
         specifier: ^0.13.3
         version: 0.13.3
@@ -563,8 +563,8 @@ importers:
         specifier: ^2.4.5
         version: 2.4.5
       date-fns:
-        specifier: ^3.5.0
-        version: 3.5.0
+        specifier: ^3.6.0
+        version: 3.6.0
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -584,8 +584,8 @@ importers:
         specifier: ^2.1.7
         version: 2.1.7(typescript@5.4.2)(vue@3.4.21)
       pnpm:
-        specifier: ^8.15.4
-        version: 8.15.4
+        specifier: ^8.15.5
+        version: 8.15.5
       taze:
         specifier: ^0.13.3
         version: 0.13.3
@@ -5459,8 +5459,8 @@ packages:
       '@babel/runtime': 7.22.3
     dev: true
 
-  /date-fns@3.5.0:
-    resolution: {integrity: sha512-a+DwyXn7NOfdJireCzAA0B9p7jIXEu/Q9JKCyMYvH6+0vPUNbQceA0neXrdfJ/xzl3mhOh5vibQQ3936Tssm6A==}
+  /date-fns@3.6.0:
+    resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
     dev: true
 
   /dateformat@3.0.3:
@@ -9030,8 +9030,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm@8.15.4:
-    resolution: {integrity: sha512-C9Opvp6w6aaSZ23uwAowO6IYuiedmSQUdWFrOY267t0RFG+SwoQ0WPVXsdEn4J1MFx4QW9zWthACs5aFqAFrng==}
+  /pnpm@8.15.5:
+    resolution: {integrity: sha512-sFGjLH5pWDO4SSbTspuMylclS1ifBknYmcbp0O22cLkex+KkNFm65zdZu1zmGcMmbxFr+THOItHvF1mn5Fqpbw==}
     engines: {node: '>=16.14'}
     hasBin: true
     dev: true
