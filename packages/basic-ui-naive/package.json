@@ -43,7 +43,7 @@
     "@own-basic-component/buried": "workspace:*",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/util": "workspace:*",
-    "@types/node": "^20.11.28",
+    "@types/node": "^20.11.29",
     "@vicons/ionicons5": "^0.12.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
