@@ -171,6 +171,5 @@ const helperType = props.helperType
         @update:page-size="handleChangePageSize"
       />
     </NSpace>
-    <br>
   </div>
 </template>
