@@ -71,8 +71,6 @@ const watermark = {
   },
 }
 
-export default watermark
-
 export {
   watermark,
 }

@@ -36,3 +36,7 @@ export * from './utils/verify'
  * 消息工具
  */
 export * from './utils/message'
+/**
+ * 水印工具
+ */
+export * from './utils/watermark'
