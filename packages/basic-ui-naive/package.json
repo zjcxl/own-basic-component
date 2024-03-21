@@ -56,15 +56,15 @@
     "naive-ui": "^2.38.1",
     "pnpm": "^8.15.5",
     "taze": "^0.13.3",
-    "typescript": "^5.4.2",
+    "typescript": "^5.4.3",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-macros": "^2.7.11",
     "vfonts": "^0.0.3",
-    "vite": "^5.1.6",
+    "vite": "^5.2.2",
     "vite-plugin-dts": "^3.7.3",
     "vitest": "^1.4.0",
     "vue": "^3.4.21",
-    "vue-tsc": "^2.0.6"
+    "vue-tsc": "^2.0.7"
   },
   "gitHead": "847f386b3487f2e11b9297e44d5f67faf274f46f"
 }

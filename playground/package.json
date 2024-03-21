@@ -32,7 +32,7 @@
     "@vicons/ionicons5": "^0.12.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "@vue-macros/volar": "^0.18.12",
+    "@vue-macros/volar": "^0.18.13",
     "@vue/test-utils": "^2.4.5",
     "date-fns": "^3.6.0",
     "eslint": "^8.57.0",
@@ -43,15 +43,15 @@
     "pinia": "^2.1.7",
     "pnpm": "^8.15.5",
     "taze": "^0.13.3",
-    "typescript": "^5.4.2",
+    "typescript": "^5.4.3",
     "unocss": "^0.58.6",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-components": "^0.26.0",
     "unplugin-vue-macros": "^2.7.11",
     "unplugin-vue-router": "^0.8.5",
     "vfonts": "^0.0.3",
-    "vite": "^5.1.6",
+    "vite": "^5.2.2",
     "vitest": "^1.4.0",
-    "vue-tsc": "^2.0.6"
+    "vue-tsc": "^2.0.7"
   }
 }

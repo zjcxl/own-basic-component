@@ -44,7 +44,7 @@
     "@types/node": "^20.11.30",
     "eslint": "^8.57.0",
     "pnpm": "^8.15.5",
-    "typescript": "^5.4.2",
+    "typescript": "^5.4.3",
     "unbuild": "^2.0.0"
   },
   "gitHead": "847f386b3487f2e11b9297e44d5f67faf274f46f"
