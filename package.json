@@ -7,7 +7,7 @@
     "build": "pnpm -r run build",
     "build:stub": "pnpm -r run build:stub",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .",
-    "publish:release": "bumpp package.json packages/*/package.json --commit --push --tag && pnpm -r publish --no-git-checks --access public",
+    "publish:release": "nr build && bumpp package.json packages/*/package.json --commit --push --tag && pnpm -r publish --no-git-checks --access public",
     "publish:pre": "nr build",
     "up": "taze major -r -I"
   },
