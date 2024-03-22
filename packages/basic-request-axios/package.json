@@ -1,37 +1,52 @@
 {
   "name": "@own-basic-component/request-axios",
-  "version": "0.6.66",
+  "type": "module",
+  "version": "0.0.3",
   "packageManager": "pnpm@8.15.5",
+  "description": "_description_",
+  "author": "chenxueli<zjphchenxueli@163.com>",
   "license": "MIT",
-  "author": "chenxueli",
   "repository": {
     "type": "git",
     "url": "https://gitee.com/chenxueli0109/own-basic-component.git",
-    "directory": "packages/basic-http"
+    "directory": "packages/basic-request-axios"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
+  "keywords": [],
+  "sideEffects": false,
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
     }
   },
   "files": [
     "dist"
   ],
-  "sideEffects": false,
   "scripts": {
     "build": "unbuild",
-    "build:stub": "unbuild --stub",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
     "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:run": "vitest run"
+    "typecheck": "tsc --noEmit"
   },
   "engines": {
     "node": ">=16"
@@ -40,20 +55,22 @@
     "axios": "^1.6.8"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.8.3",
+    "@antfu/eslint-config": "^2.9.0",
+    "@antfu/ni": "^0.21.12",
+    "@antfu/utils": "^0.7.7",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
     "@types/node": "^20.11.30",
     "@vueuse/core": "^10.9.0",
+    "bumpp": "^9.4.0",
     "eslint": "^8.57.0",
+    "esno": "^4.7.0",
     "pnpm": "^8.15.5",
+    "rimraf": "^5.0.5",
     "typescript": "^5.4.3",
     "unbuild": "^2.0.0",
     "vite": "^5.2.2",
-    "vite-plugin-dts": "^3.7.3",
-    "vitest": "^1.4.0",
-    "vue": "^3.4.21"
-  },
-  "gitHead": "847f386b3487f2e11b9297e44d5f67faf274f46f"
+    "vitest": "^1.4.0"
+  }
 }

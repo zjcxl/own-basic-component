@@ -2,10 +2,10 @@ import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
   entries: [
-    'src/index',
+    './src/index',
   ],
-  clean: true,
   declaration: true,
+  clean: true,
   externals: [
     '@own-basic-component/config',
     '@own-basic-component/request',

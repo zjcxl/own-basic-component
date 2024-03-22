@@ -9,15 +9,7 @@ import type { MergeType, RequestConfig, ResultModel } from './types'
  * @param config
  * @param type
  */
-export function handleMergeRequestConfig<T1 = any,
-  RESPONSE_TYPE1 = ResultModel<T1>,
-  T2 = any,
-  RESPONSE_TYPE2 = ResultModel<T2>,
-  T3 = any,
-  RESPONSE_TYPE3 = ResultModel<T3>,
-  >(origin: RequestConfig<T1, RESPONSE_TYPE1>,
-  config: RequestConfig<T2, RESPONSE_TYPE2>,
-  type: MergeType = 'replace'): RequestConfig<T3, RESPONSE_TYPE3> {
+export function handleMergeRequestConfig<T1 = any, RESPONSE_TYPE1 = ResultModel<T1>, T2 = any, RESPONSE_TYPE2 = ResultModel<T2>, T3 = any, RESPONSE_TYPE3 = ResultModel<T3> >(origin: RequestConfig<T1, RESPONSE_TYPE1>, config: RequestConfig<T2, RESPONSE_TYPE2>, type: MergeType = 'replace'): RequestConfig<T3, RESPONSE_TYPE3> {
   if (type === 'replace') {
     return {
       ...origin,

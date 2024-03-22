@@ -1,13 +1,15 @@
-import { defineBuildConfig } from 'unbuild'
+import {defineBuildConfig} from 'unbuild'
 
 export default defineBuildConfig({
   entries: [
     './src/index',
   ],
-  declaration: true,
   clean: true,
+  declaration: true,
   externals: [
-    '@own-basic-component/config',
+    'vue',
+    'vue-router',
+    '@own-basic-component/buried'
   ],
   rollup: {
     emitCJS: true,
