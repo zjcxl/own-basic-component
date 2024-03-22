@@ -1,9 +1,10 @@
 {
   "name": "@own-basic-component/ui-naive",
-  "version": "0.0.4-beta.1",
+  "type": "module",
+  "version": "0.0.4-beta.4",
   "packageManager": "pnpm@8.15.5",
-  "license": "MIT",
   "author": "chenxueli",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://gitee.com/chenxueli0109/own-basic-component.git",
@@ -13,17 +14,16 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "type": "module",
-  "main": "./dist/index.umd.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/basic-ui-naive/src/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/basic-ui-naive/src/index.d.ts",
-      "require": "./dist/index.umd.cjs",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
     }
   },
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/basic-ui-naive/src/index.d.ts",
   "files": [
     "dist"
   ],
@@ -53,6 +53,7 @@
     "eslint": "^8.57.0",
     "jsdom": "^24.0.0",
     "less": "^4.2.0",
+    "lint-staged": "^15.2.2",
     "naive-ui": "^2.38.1",
     "pnpm": "^8.15.5",
     "taze": "^0.13.3",
@@ -66,5 +67,10 @@
     "vue": "^3.4.21",
     "vue-tsc": "^2.0.7"
   },
-  "gitHead": "847f386b3487f2e11b9297e44d5f67faf274f46f"
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
 }
