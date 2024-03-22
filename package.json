@@ -8,6 +8,7 @@
     "build:stub": "pnpm -r run build:stub",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .",
     "publish:release": "bumpp -r",
+    "publish:pre": "nr build",
     "up": "taze major -r -I"
   },
   "publishConfig": {
