@@ -1,0 +1,30 @@
+name: Dependency Update
+
+on:
+  push:
+    branches: main
+
+jobs:
+  update-dependencies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 拉取仓库
+        uses: actions/checkout@v2
+
+      - name: 安装pnpm
+        run: npm install -g pnpm
+
+      - name: 安装依赖
+        run: pnpm install
+
+      - name: 升级依赖
+        run: pnpm run up
+
+      - name: 提交变更记录
+        run: |
+          git config --local user.email "zjphchenxueli@163.com"
+          git config --local user.name "GitHub Actions"
+          git add .
+          git commit -m "auto update deps"
+          git push
