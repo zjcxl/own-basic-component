@@ -28,4 +28,4 @@ jobs:
           git config --local user.name "chenxueli"
           git add .
           git commit -m "auto update deps"
-          git push
+          git push origin HEAD:main
