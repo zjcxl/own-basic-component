@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/chenxueli0109/own-basic-component.git",
+    "url": "https://github.com/zjcxl/own-basic-component.git",
     "directory": "packages/basic-request"
   },
   "publishConfig": {
