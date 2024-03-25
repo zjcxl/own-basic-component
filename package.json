@@ -9,7 +9,7 @@
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .",
     "publish:release": "bumpp -r --commit --push --tag && pnpm -r publish --no-git-checks --access public",
     "publish:pre": "nr build",
-    "up": "taze major -r -I"
+    "up": "taze major -rf -I"
   },
   "publishConfig": {
     "access": "public",
