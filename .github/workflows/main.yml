@@ -26,6 +26,7 @@ jobs:
         run: |
           git config --local user.email "zjphchenxueli@163.com"
           git config --local user.name "GitHub Actions"
+          git remote set-url origin https://github.com/${{ github.repository }}.git
           git add .
           git commit -m "auto update deps"
           git push
