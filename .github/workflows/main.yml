@@ -22,16 +22,10 @@ jobs:
       - name: 升级依赖
         run: pnpm run up
 
-      - name: Set up Git
-        run: |
-          git config --local user.email "zjphchenxueli@163.com"
-          git config --local user.name "GitHub Actions"
-          git remote set-url origin https://username:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}
-          git config --global credential.helper store
-          echo "${{ secrets.PAT_TOKEN }}" | git credential approve
-
       - name: 提交变更记录
         run: |
+          git config --local user.email "zjphchenxueli@163.com"
+          git config --local user.name "chenxueli"
           git add .
           git commit -m "auto update deps"
           git push
