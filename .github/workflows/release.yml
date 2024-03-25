@@ -24,6 +24,11 @@ jobs:
       - name: PNPM build
         run: pnpm run build
 
+      - name: Set Changelog
+        run: |
+          git config --local user.email "zjphchenxueli@163.com"
+          git config --local user.name "chenxueli"
+
       - name: Publish to NPM
         run: pnpm run publish:release
         env:

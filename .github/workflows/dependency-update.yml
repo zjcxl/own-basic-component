@@ -1,6 +1,7 @@
 name: Dependency Update
 
 on:
+
   workflow_dispatch:
 
 jobs:
