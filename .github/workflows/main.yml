@@ -22,14 +22,6 @@ jobs:
       - name: 升级依赖
         run: pnpm run up
 
-      - name: 仓库认证
-        run: |
-         git remote set-url origin https://github.com/${{ github.repository }}.git
-         git config --global credential.helper store
-         git config --global user.email "zjphchenxueli@163.com"
-         git config --global user.name "GitHub Actions"
-         echo "${{ secrets.PAT_TOKEN }}" | git credential approve
-
       - name: 提交变更记录
         run: |
           git config --local user.email "zjphchenxueli@163.com"
@@ -37,3 +29,5 @@ jobs:
           git add .
           git commit -m "auto update deps"
           git push
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
