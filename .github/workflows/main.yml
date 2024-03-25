@@ -26,7 +26,7 @@ jobs:
         run: |
           git config --local user.email "zjphchenxueli@163.com"
           git config --local user.name "GitHub Actions"
-          git remote set-url origin https://github.com/${{ github.repository }}.git
+          git remote set-url origin https://username:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}
           git config --global credential.helper store
           echo "${{ secrets.PAT_TOKEN }}" | git credential approve
 
