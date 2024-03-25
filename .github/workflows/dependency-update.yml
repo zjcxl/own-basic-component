@@ -1,28 +1,31 @@
 name: Dependency Update
 
 on:
-  push:
-    branches: main
   workflow_dispatch:
 
 jobs:
   update-dependencies:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 拉取仓库
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - name: 安装pnpm
-        run: npm install -g pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
 
-      - name: 安装依赖
+      - name: Set node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: pnpm
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Dependencies
         run: pnpm install
 
-      - name: 升级依赖
+      - name: Update Dependencies
         run: pnpm run up
 
-      - name: 提交变更记录
+      - name: Set Changelog And Commit Push
         run: |
           git config --local user.email "zjphchenxueli@163.com"
           git config --local user.name "chenxueli"
