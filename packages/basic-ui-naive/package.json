@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/ui-naive",
   "type": "module",
-  "version": "0.8.11",
+  "version": "0.8.12",
   "packageManager": "pnpm@8.15.5",
   "author": "chenxueli",
   "license": "MIT",
