@@ -2,7 +2,7 @@
   "name": "@own-team/base",
   "private": true,
   "packageManager": "pnpm@8.15.5",
-  "version": "0.8.11",
+  "version": "0.8.12",
   "scripts": {
     "build": "pnpm -r run build",
     "build:stub": "pnpm -r run build:stub",
@@ -16,7 +16,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.9.1",
+    "@antfu/eslint-config": "^2.11.0",
     "@antfu/ni": "^0.21.12",
     "@antfu/utils": "^0.7.7",
     "bumpp": "^9.4.0",
