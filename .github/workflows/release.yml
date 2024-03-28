@@ -3,7 +3,7 @@ name: Release
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 8 * * *'
+    - cron: '30 0 * * *'
 
 jobs:
   update-dependencies:
