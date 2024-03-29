@@ -26,8 +26,8 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: PNPM build
-        run: pnpm run build
+#      - name: PNPM build
+#        run: pnpm run build
 
       - name: Set Changelog
         run: |
