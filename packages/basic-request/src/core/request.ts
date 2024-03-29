@@ -100,9 +100,10 @@ class RequestModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends BaseRequestM
       }
       // 获取请求头信息
       const headers: Record<string, string> = getHeadersFromConfig(extra, requestConfig)
+      const baseUrlFlag = this.getApi().startsWith('http')
       // 组合请求信息
       const requestData = {
-        baseURL: requestConfig.baseUrl,
+        baseURL: baseUrlFlag ? '' : requestConfig.baseUrl,
         method: this.getMethod(),
         url: this.getApi(),
         headers,
