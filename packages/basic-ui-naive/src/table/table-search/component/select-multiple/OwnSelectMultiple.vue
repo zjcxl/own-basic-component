@@ -57,7 +57,7 @@ defineExpose({
 <template>
   <NSelect
     :key="props.index"
-    v-model:value="value"
+    v-model:value="value as []"
     clearable
     multiple
     :disabled="props.disabled"
