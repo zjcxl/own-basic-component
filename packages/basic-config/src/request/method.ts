@@ -5,11 +5,39 @@ import type { MergeType, RequestConfig, ResultModel } from './types'
 
 /**
  * 合并配置的方法
+ * <table>
+ *   <tr>
+ *     <th>参数</th>
+ *     <th>replace</th>
+ *     <th>merge</th>
+ *   </tr>
+ *   <tr>
+ *     <td>success</td>
+ *     <td>直接替换</td>
+ *     <td>进行合并</td>
+ *   </tr>
+ *   <tr>
+ *     <td>header</td>
+ *     <td>直接替换</td>
+ *     <td>进行合并</td>
+ *   </tr>
+ *   <tr>
+ *     <td>after</td>
+ *     <td>直接替换</td>
+ *     <td>进行合并</td>
+ *   </tr>
+ *   <tr>
+ *     <td>exceptionHandleMap</td>
+ *     <td>直接替换</td>
+ *     <td>进行合并</td>
+ *   </tr>
+ * </table>
+ *
  * @param origin
  * @param config
  * @param type
  */
-export function handleMergeRequestConfig<T1 = any, RESPONSE_TYPE1 = ResultModel<T1>, T2 = any, RESPONSE_TYPE2 = ResultModel<T2>, T3 = any, RESPONSE_TYPE3 = ResultModel<T3> >(origin: RequestConfig<T1, RESPONSE_TYPE1>, config: RequestConfig<T2, RESPONSE_TYPE2>, type: MergeType = 'replace'): RequestConfig<T3, RESPONSE_TYPE3> {
+export function handleMergeRequestConfig<T1 = any, RESPONSE_TYPE1 = ResultModel<T1>, T2 = any, RESPONSE_TYPE2 = ResultModel<T2>, T3 = any, RESPONSE_TYPE3 = ResultModel<T3>>(origin: RequestConfig<T1, RESPONSE_TYPE1>, config: RequestConfig<T2, RESPONSE_TYPE2>, type: MergeType = 'replace'): RequestConfig<T3, RESPONSE_TYPE3> {
   if (type === 'replace') {
     return {
       ...origin,
@@ -56,7 +84,9 @@ export function handleMergeExtendConfig<T = any, RESPONSE_TYPE = ResultModel<T>>
   }
 }
 
-// 最终的配置信息
+/**
+ * 最终的配置信息
+ */
 let resultConfig: RequestConfig = DEFAULT_REQUEST_CONFIG
 
 /**
