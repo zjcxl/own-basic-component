@@ -37,7 +37,7 @@
     "up": "taze major -I"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.11.4",
+    "@antfu/eslint-config": "^2.11.5",
     "@iconify-json/carbon": "^1.1.31",
     "@iconify-json/ri": "^1.1.20",
     "@own-basic-component/buried": "workspace:*",
@@ -59,9 +59,9 @@
     "taze": "^0.13.3",
     "typescript": "^5.4.3",
     "unplugin-auto-import": "^0.17.5",
-    "unplugin-vue-macros": "^2.8.0",
+    "unplugin-vue-macros": "^2.9.0",
     "vfonts": "^0.0.3",
-    "vite": "^5.2.6",
+    "vite": "^5.2.7",
     "vite-plugin-dts": "^3.8.1",
     "vitest": "^1.4.0",
     "vue": "^3.4.21",
