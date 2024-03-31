@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/request-axios",
   "type": "module",
-  "version": "0.8.17",
+  "version": "0.8.18",
   "packageManager": "pnpm@8.15.5",
   "description": "_description_",
   "author": "chenxueli<zjphchenxueli@163.com>",
@@ -55,13 +55,13 @@
     "axios": "^1.6.8"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.11.5",
+    "@antfu/eslint-config": "^2.11.6",
     "@antfu/ni": "^0.21.12",
     "@antfu/utils": "^0.7.7",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
-    "@types/node": "^20.11.30",
+    "@types/node": "^20.12.2",
     "@vueuse/core": "^10.9.0",
     "bumpp": "^9.4.0",
     "eslint": "^8.57.0",
