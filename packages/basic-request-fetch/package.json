@@ -61,7 +61,7 @@
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
-    "@types/node": "^20.12.3",
+    "@types/node": "^20.12.4",
     "@vueuse/core": "^10.9.0",
     "bumpp": "^9.4.0",
     "eslint": "^8.57.0",
@@ -71,7 +71,7 @@
     "rimraf": "^5.0.5",
     "typescript": "^5.4.3",
     "unbuild": "^2.0.0",
-    "vite": "^5.2.7",
+    "vite": "^5.2.8",
     "vitest": "^1.4.0"
   },
   "simple-git-hooks": {
