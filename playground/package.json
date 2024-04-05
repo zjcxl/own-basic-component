@@ -42,7 +42,7 @@
     "pinia": "^2.1.7",
     "pnpm": "^8.15.6",
     "taze": "^0.13.3",
-    "typescript": "^5.4.3",
+    "typescript": "^5.4.4",
     "unocss": "^0.58.9",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-components": "^0.26.0",
@@ -51,6 +51,6 @@
     "vfonts": "^0.0.3",
     "vite": "^5.2.8",
     "vitest": "^1.4.0",
-    "vue-tsc": "^2.0.7"
+    "vue-tsc": "^2.0.10"
   }
 }
