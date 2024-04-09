@@ -32,13 +32,13 @@ defineExpose({ refresh, getDataList })
 
 <template>
   <BaseRealTableHelper v-bind="props" ref="baseRealTableHelper" helper-type="list">
-    <template v-if="slots.search && slots.search.length > 0" #search>
+    <template v-if="slots.search" #search>
       <slot name="search" />
     </template>
-    <template v-if="slots.operation && slots.operation.length > 0" #operation>
+    <template v-if="slots.operation" #operation>
       <slot name="operation" />
     </template>
-    <template v-if="slots.data && slots.data.length > 0" #data="{ list }">
+    <template v-if="slots.data" #data="{ list }">
       <slot name="data" :list="list as T[]" />
     </template>
   </BaseRealTableHelper>

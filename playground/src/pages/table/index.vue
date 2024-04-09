@@ -34,6 +34,8 @@ onMounted(() => {
 
 <template>
   <br>
-  <BaseTableHelper :columns="columns" :data="dataList" />
+  <BaseTableHelper :columns="columns" :data="dataList">
+    <template #operation />
+  </BaseTableHelper>
   <br>
 </template>

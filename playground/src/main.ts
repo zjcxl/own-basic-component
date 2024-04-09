@@ -29,5 +29,6 @@ defineProjectConfig({
   loading: loadingBarConfig,
 })
 
+app.directive('buried', {})
 app.use(router)
 app.mount('#app')
