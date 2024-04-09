@@ -1,5 +1,5 @@
 <script lang="ts" setup generic="T">
-import { type PropType, ref } from 'vue'
+import type { PropType, ref } from 'vue'
 import { baseTableProps } from '../common'
 import type { FetchMethodType, OperationProps, TableInstanceType, TableSlotsType } from '../common'
 import BaseRealTableHelper from './BaseRealTableHelper.vue'
@@ -31,13 +31,13 @@ defineExpose({ refresh, getDataList })
 
 <template>
   <BaseRealTableHelper v-bind="props" ref="baseTableHelper" helper-type="list">
-    <template v-if="slots.search" #search>
+    <template v-if="slots.search && slots.search.length > 0" #search>
       <slot name="search" />
     </template>
-    <template v-if="slots.operation" #operation>
+    <template v-if="slots.operation && slots.operation.length > 0" #operation>
       <slot name="operation" />
     </template>
-    <template v-if="slots.data" #data="{ list }">
+    <template v-if="slots.data && slots.data.length > 0" #data="{ list }">
       <slot name="data" :list="list as T[]" />
     </template>
   </BaseRealTableHelper>

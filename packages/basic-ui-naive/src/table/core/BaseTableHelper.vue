@@ -48,10 +48,10 @@ defineExpose<TableInstanceType<T>>({
 
 <template>
   <BaseRealTableHelper v-bind="props" ref="baseTableHelper" :columns="columns" helper-type="table">
-    <template v-if="slots.search" #search>
+    <template v-if="slots.search && slots.search.length > 0" #search>
       <slot name="search" />
     </template>
-    <template v-if="slots.operation" #operation>
+    <template v-if="slots.operation && slots.operation.length > 0" #operation>
       <slot name="operation" />
     </template>
   </BaseRealTableHelper>
