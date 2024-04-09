@@ -1,8 +1,12 @@
 {
-  "compilerOptions": {
-    "types": ["@vue-macros/reactivity-transform/macros-global"]
-  },
   "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "vite/client",
+      "naive-ui/volar",
+      "unplugin-vue-macros/macros-global"
+    ]
+  },
   "include": [
     "./src/**/*"
   ]

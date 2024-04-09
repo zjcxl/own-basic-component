@@ -29,12 +29,16 @@ const props = defineProps({
 
 const slots = defineSlots<TableSlotsType<T>>()
 
-// 定义默认的rows
+/**
+ * 定义默认的rows
+ */
 const defaultRows = unref(props.defaultRows)
 
 const baseTableSearchHelper = ref<InstanceType<typeof BaseTableSearchHelper>>()
 
-// 定义分页的参数信息
+/**
+ * 定义分页的参数信息
+ */
 const pageInfo = reactive<PageInfo>({
   page: unref(props.defaultPage),
   rows: unref(props.defaultRows),
