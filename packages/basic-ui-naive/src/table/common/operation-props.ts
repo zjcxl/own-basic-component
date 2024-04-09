@@ -35,7 +35,7 @@ export interface OperationProps<T> {
   /**
    * 权限判断（以当前的路由信息进行判断）
    */
-  permission?: boolean | string
+  permission?: boolean | string | (() => boolean)
   /**
    * 按钮样式
    */
