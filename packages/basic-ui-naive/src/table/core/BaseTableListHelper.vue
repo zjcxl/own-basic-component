@@ -1,7 +1,8 @@
 <script lang="ts" setup generic="T">
-import type { PropType, ref } from 'vue'
+import type { PropType } from 'vue'
+import { ref } from 'vue'
 import { baseTableProps } from '../common'
-import type { FetchMethodType, OperationProps, TableSlotsType } from '../common'
+import type { FetchMethodType, OperationProps, TableInstanceType, TableSlotsType } from '../common'
 import BaseRealTableHelper from './BaseRealTableHelper.vue'
 
 const props = defineProps({
@@ -17,7 +18,7 @@ const props = defineProps({
 
 const slots = defineSlots<TableSlotsType<T>>()
 
-const baseRealTableHelper = ref<InstanceType<typeof BaseRealTableHelper<T>>>()
+const baseRealTableHelper = ref<TableInstanceType<T>>()
 
 // 刷新的方法
 function refresh(pageInit: number | boolean = false): void {

@@ -1,4 +1,4 @@
-<script lang="ts" setup generic="T">
+<script lang="ts" setup generic="T = RowDataType">
 import type { QueryObjectType } from '@own-basic-component/config'
 import { NDataTable, NDivider, NPagination, NSpace, dataTableProps } from 'naive-ui'
 import type { PropType, UnwrapRef } from 'vue'
