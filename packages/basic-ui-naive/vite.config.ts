@@ -3,6 +3,7 @@
 import { resolve } from 'node:path'
 import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
+import AutoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
 import ViteDts from 'vite-plugin-dts'
 import VueMacros from 'unplugin-vue-macros/vite'
@@ -22,14 +23,14 @@ export default defineConfig({
       },
     }),
     // https://github.com/antfu/unplugin-auto-import
-    // AutoImport({
-    //   imports: [
-    //     'vue',
-    //     '@vueuse/core',
-    //   ],
-    //   dts: true,
-    //   vueTemplate: true,
-    // }),
+    AutoImport({
+      imports: [
+        'vue',
+        '@vueuse/core',
+      ],
+      dts: true,
+      vueTemplate: true,
+    }),
     VueJsx(),
     ViteDts(),
   ],
