@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/vue",
   "type": "module",
-  "version": "0.8.23",
+  "version": "0.8.24",
   "packageManager": "pnpm@8.15.6",
   "author": "chenxueli",
   "license": "MIT",
@@ -37,7 +37,7 @@
     "up": "taze major -I"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.12.2",
+    "@antfu/eslint-config": "^2.13.0",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
