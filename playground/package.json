@@ -22,7 +22,7 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.13.2",
+    "@antfu/eslint-config": "^2.13.3",
     "@iconify-json/carbon": "^1.1.31",
     "@iconify-json/ri": "^1.1.20",
     "@types/node": "^20.12.7",
@@ -42,7 +42,7 @@
     "pinia": "^2.1.7",
     "pnpm": "^8.15.6",
     "taze": "^0.13.3",
-    "typescript": "^5.4.4",
+    "typescript": "^5.4.5",
     "unocss": "^0.59.0",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-components": "^0.26.0",
@@ -51,6 +51,6 @@
     "vfonts": "^0.0.3",
     "vite": "^5.2.8",
     "vitest": "^1.4.0",
-    "vue-tsc": "^2.0.11"
+    "vue-tsc": "^2.0.12"
   }
 }
