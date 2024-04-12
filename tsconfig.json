@@ -24,7 +24,6 @@
       "@own-basic-component/request": ["./packages/basic-request/src/index.ts"],
       "@own-basic-component/request-axios": ["./packages/basic-request-axios/src/index.ts"],
       "@own-basic-component/request-fetch": ["./packages/basic-request-fetch/src/index.ts"],
-      "@own-basic-component/ui-naive": ["./packages/basic-ui-naive/src/index.ts"],
       "@own-basic-component/util": ["./packages/basic-util/src/index.ts"],
     }
   },
