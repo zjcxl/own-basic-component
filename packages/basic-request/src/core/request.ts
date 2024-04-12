@@ -10,7 +10,7 @@ import { handleFormDataParams } from '../util/handle-params-util'
 /**
  * 请求对象
  */
-class RequestModel<T = any, RESPONSE_TYPE = T extends ResultModel ? T : ResultModel<T>> extends BaseRequestModel<T, RESPONSE_TYPE> {
+class RequestModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends BaseRequestModel<T, RESPONSE_TYPE> {
   /**
    * 构造方法
    * @param method 请求方法
