@@ -218,9 +218,9 @@ export type ResultModelType<T = any, V = ResultModel<T>> = V
 export type ResultVo = ResultModelType
 
 /**
- * 分页返回实体类
+ * 分页数据
  */
-export type PageResultModel<T> = ResultModelType<{
+export interface PageResultModel<T> {
   // 列表数据
   list: Array<T>
   // 页码
@@ -231,4 +231,4 @@ export type PageResultModel<T> = ResultModelType<{
   total: number
   // 是否已经到最后
   isLastPage: boolean
-}>
+}
