@@ -220,7 +220,7 @@ export type ResultVo = ResultModelType
 /**
  * 分页数据
  */
-export interface PageResultModel<T> {
+export type PageResultModel<T> = ResultModelType<{
   // 列表数据
   list: Array<T>
   // 页码
@@ -231,4 +231,4 @@ export interface PageResultModel<T> {
   total: number
   // 是否已经到最后
   isLastPage: boolean
-}
+}>
