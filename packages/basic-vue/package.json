@@ -57,10 +57,10 @@
     "unplugin-vue-macros": "^2.9.1",
     "vfonts": "^0.0.3",
     "vite": "^5.2.8",
-    "vite-plugin-dts": "^3.8.1",
+    "vite-plugin-dts": "^3.8.2",
     "vitest": "^1.5.0",
     "vue": "^3.4.21",
-    "vue-tsc": "^2.0.12"
+    "vue-tsc": "^2.0.13"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
