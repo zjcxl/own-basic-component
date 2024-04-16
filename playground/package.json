@@ -17,11 +17,11 @@
     "@own-basic-component/util": "workspace:*",
     "@own-basic-component/vue": "workspace:*",
     "@vueuse/core": "^10.9.0",
-    "vue": "^3.4.21",
+    "vue": "^3.4.22",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.13.3",
+    "@antfu/eslint-config": "^2.14.0",
     "@iconify-json/carbon": "^1.1.31",
     "@iconify-json/ri": "^1.1.20",
     "@types/node": "^20.12.7",
