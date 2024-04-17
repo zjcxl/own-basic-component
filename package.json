@@ -1,5 +1,5 @@
 {
-  "name": "@own-team/base",
+  "name": "@own-team/own-basic-component",
   "private": true,
   "packageManager": "pnpm@9.0.1",
   "version": "0.8.38",
