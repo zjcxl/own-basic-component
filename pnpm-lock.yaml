@@ -279,7 +279,7 @@ importers:
         version: link:../basic-config
       '@own-basic-component/request':
         specifier: workspace:*
-        version: link:../basic-request
+        version: link:../basic-request2
       '@own-basic-component/util':
         specifier: workspace:*
         version: link:../basic-util
@@ -340,7 +340,7 @@ importers:
         version: link:../basic-config
       '@own-basic-component/request':
         specifier: workspace:*
-        version: link:../basic-request
+        version: link:../basic-request2
       '@own-basic-component/util':
         specifier: workspace:*
         version: link:../basic-util
@@ -377,6 +377,67 @@ importers:
       vite:
         specifier: ^5.2.9
         version: 5.2.9(@types/node@20.12.7)(less@4.2.0)
+      vitest:
+        specifier: ^1.5.0
+        version: 1.5.0(@types/node@20.12.7)(jsdom@24.0.0)(less@4.2.0)
+
+  packages/basic-request2:
+    dependencies:
+      axios:
+        specifier: ^1.6.8
+        version: 1.6.8
+    devDependencies:
+      '@antfu/eslint-config':
+        specifier: ^2.15.0
+        version: 2.15.0(@unocss/eslint-plugin@0.59.4(eslint@8.57.0)(typescript@5.4.5))(@vue/compiler-sfc@3.4.23)(eslint@8.57.0)(typescript@5.4.5)(vitest@1.5.0(@types/node@20.12.7)(jsdom@24.0.0)(less@4.2.0))
+      '@antfu/ni':
+        specifier: ^0.21.12
+        version: 0.21.12
+      '@antfu/utils':
+        specifier: ^0.7.7
+        version: 0.7.7
+      '@own-basic-component/config':
+        specifier: workspace:*
+        version: link:../basic-config
+      '@own-basic-component/util':
+        specifier: workspace:*
+        version: link:../basic-util
+      '@types/node':
+        specifier: ^20.12.7
+        version: 20.12.7
+      '@vueuse/core':
+        specifier: ^10.9.0
+        version: 10.9.0(vue@3.4.23(typescript@5.4.5))
+      bumpp:
+        specifier: ^9.4.0
+        version: 9.4.0
+      eslint:
+        specifier: 8.57.0
+        version: 8.57.0
+      esno:
+        specifier: ^4.7.0
+        version: 4.7.0
+      lint-staged:
+        specifier: ^15.2.2
+        version: 15.2.2
+      pnpm:
+        specifier: ^9.0.4
+        version: 9.0.4
+      rimraf:
+        specifier: ^5.0.5
+        version: 5.0.5
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+      unbuild:
+        specifier: ^2.0.0
+        version: 2.0.0(typescript@5.4.5)
+      vite:
+        specifier: ^5.2.9
+        version: 5.2.9(@types/node@20.12.7)(less@4.2.0)
+      vite-plugin-dts:
+        specifier: ^3.8.3
+        version: 3.8.3(@types/node@20.12.7)(rollup@3.28.1)(typescript@5.4.5)(vite@5.2.9(@types/node@20.12.7)(less@4.2.0))
       vitest:
         specifier: ^1.5.0
         version: 1.5.0(@types/node@20.12.7)(jsdom@24.0.0)(less@4.2.0)
@@ -446,7 +507,7 @@ importers:
         version: link:../basic-config
       '@own-basic-component/request':
         specifier: workspace:*
-        version: link:../basic-request
+        version: link:../basic-request2
       '@own-basic-component/util':
         specifier: workspace:*
         version: link:../basic-util
@@ -518,7 +579,7 @@ importers:
         version: link:../packages/basic-config
       '@own-basic-component/request':
         specifier: workspace:*
-        version: link:../packages/basic-request
+        version: link:../packages/basic-request2
       '@own-basic-component/request-axios':
         specifier: workspace:*
         version: link:../packages/basic-request-axios
@@ -1435,10 +1496,6 @@ packages:
 
   '@eslint-community/regexpp@4.10.0':
     resolution: {integrity: sha512-Cu96Sd2By9mCNTx2iyKOmq10v22jUVQv0lQnlGNy16oE9589yE+QADPbrMGCkA51cKZSg3Pu/aTJVTGfL/qjUA==, tarball: https://registry.npmjs.org/@eslint-community/regexpp/-/regexpp-4.10.0.tgz}
-    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
-
-  '@eslint-community/regexpp@4.6.2':
-    resolution: {integrity: sha512-pPTNuaAG3QMH+buKyBIGJs3g/S5y0caxw0ygM3YyE6yJFySwiGGSzA+mM3KJ8QQvzeLh3blwgSonkFjgQdxzMw==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
 
   '@eslint/eslintrc@2.1.4':
@@ -2721,7 +2778,7 @@ packages:
     engines: {node: '>=10'}
 
   escape-string-regexp@5.0.0:
-    resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
+    resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==, tarball: https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz}
     engines: {node: '>=12'}
 
   eslint-compat-utils@0.1.2:
@@ -2885,7 +2942,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
   eslint@8.57.0:
-    resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
+    resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==, tarball: https://registry.npmjs.org/eslint/-/eslint-8.57.0.tgz}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
 
@@ -3160,10 +3217,6 @@ packages:
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==, tarball: https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.6.3.tgz}
     engines: {node: '>=0.10.0'}
-
-  ignore@5.2.4:
-    resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==, tarball: https://registry.npmjs.org/ignore/-/ignore-5.2.4.tgz}
-    engines: {node: '>= 4'}
 
   ignore@5.3.1:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==, tarball: https://registry.npmjs.org/ignore/-/ignore-5.3.1.tgz}
@@ -3950,7 +4003,7 @@ packages:
     resolution: {integrity: sha512-r5a3l5HzYlIC68TpmYKlxWjmOP6wiPJ1vWv2HeLhNsRZMrCkxeqxiHlQ21oXmQ4F3SiryXBHhAD7JZqvOJjFmg==}
 
   rimraf@3.0.2:
-    resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==, tarball: https://registry.npmjs.org/rimraf/-/rimraf-3.0.2.tgz}
     hasBin: true
 
   rimraf@5.0.5:
@@ -5331,8 +5384,6 @@ snapshots:
       eslint-visitor-keys: 3.4.3
 
   '@eslint-community/regexpp@4.10.0': {}
-
-  '@eslint-community/regexpp@4.6.2': {}
 
   '@eslint/eslintrc@2.1.4':
     dependencies:
@@ -7245,7 +7296,7 @@ snapshots:
   eslint@8.57.0:
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.0)
-      '@eslint-community/regexpp': 4.6.2
+      '@eslint-community/regexpp': 4.10.0
       '@eslint/eslintrc': 2.1.4
       '@eslint/js': 8.57.0
       '@humanwhocodes/config-array': 0.11.14
@@ -7269,7 +7320,7 @@ snapshots:
       glob-parent: 6.0.2
       globals: 13.24.0
       graphemer: 1.4.0
-      ignore: 5.2.4
+      ignore: 5.3.1
       imurmurhash: 0.1.4
       is-glob: 4.0.3
       is-path-inside: 3.0.3
@@ -7571,8 +7622,6 @@ snapshots:
   iconv-lite@0.6.3:
     dependencies:
       safer-buffer: 2.1.2
-
-  ignore@5.2.4: {}
 
   ignore@5.3.1: {}
 
@@ -8962,7 +9011,7 @@ snapshots:
       '@vue/language-core': 1.8.27(typescript@5.4.5)
       debug: 4.3.4
       kolorist: 1.8.0
-      magic-string: 0.30.9
+      magic-string: 0.30.10
       typescript: 5.4.5
       vue-tsc: 1.8.27(typescript@5.4.5)
     optionalDependencies:
