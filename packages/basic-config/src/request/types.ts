@@ -88,12 +88,12 @@ export interface RequestConfig<T = any, RESPONSE_TYPE = ResultModel<T>> {
    */
   header?: () => Record<string, (extra: RequestExtra) => string>
   /**
-   * 预处理
+   * 仅success的状态下的预处理
    * @param data
    */
-  preprocess?: <D = T>(data: RESPONSE_TYPE) => ResultModelType<D, RESPONSE_TYPE>
+  preprocess?: <D = RESPONSE_TYPE>(data: RESPONSE_TYPE) => D
   /**
-   * 请求结束后处理
+   * 仅success的状态下的处理
    * @param status 状态
    * @param extra 额外数据
    * @param data 响应数据
