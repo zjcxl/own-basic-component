@@ -279,7 +279,7 @@ importers:
         version: link:../basic-config
       '@own-basic-component/request':
         specifier: workspace:*
-        version: link:../basic-request2
+        version: link:../basic-request
       '@own-basic-component/util':
         specifier: workspace:*
         version: link:../basic-util
@@ -340,7 +340,7 @@ importers:
         version: link:../basic-config
       '@own-basic-component/request':
         specifier: workspace:*
-        version: link:../basic-request2
+        version: link:../basic-request
       '@own-basic-component/util':
         specifier: workspace:*
         version: link:../basic-util
@@ -377,67 +377,6 @@ importers:
       vite:
         specifier: ^5.2.9
         version: 5.2.9(@types/node@20.12.7)(less@4.2.0)
-      vitest:
-        specifier: ^1.5.0
-        version: 1.5.0(@types/node@20.12.7)(jsdom@24.0.0)(less@4.2.0)
-
-  packages/basic-request2:
-    dependencies:
-      axios:
-        specifier: ^1.6.8
-        version: 1.6.8
-    devDependencies:
-      '@antfu/eslint-config':
-        specifier: ^2.15.0
-        version: 2.15.0(@unocss/eslint-plugin@0.59.4(eslint@8.57.0)(typescript@5.4.5))(@vue/compiler-sfc@3.4.23)(eslint@8.57.0)(typescript@5.4.5)(vitest@1.5.0(@types/node@20.12.7)(jsdom@24.0.0)(less@4.2.0))
-      '@antfu/ni':
-        specifier: ^0.21.12
-        version: 0.21.12
-      '@antfu/utils':
-        specifier: ^0.7.7
-        version: 0.7.7
-      '@own-basic-component/config':
-        specifier: workspace:*
-        version: link:../basic-config
-      '@own-basic-component/util':
-        specifier: workspace:*
-        version: link:../basic-util
-      '@types/node':
-        specifier: ^20.12.7
-        version: 20.12.7
-      '@vueuse/core':
-        specifier: ^10.9.0
-        version: 10.9.0(vue@3.4.23(typescript@5.4.5))
-      bumpp:
-        specifier: ^9.4.0
-        version: 9.4.0
-      eslint:
-        specifier: 8.57.0
-        version: 8.57.0
-      esno:
-        specifier: ^4.7.0
-        version: 4.7.0
-      lint-staged:
-        specifier: ^15.2.2
-        version: 15.2.2
-      pnpm:
-        specifier: ^9.0.4
-        version: 9.0.4
-      rimraf:
-        specifier: ^5.0.5
-        version: 5.0.5
-      typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
-      unbuild:
-        specifier: ^2.0.0
-        version: 2.0.0(typescript@5.4.5)
-      vite:
-        specifier: ^5.2.9
-        version: 5.2.9(@types/node@20.12.7)(less@4.2.0)
-      vite-plugin-dts:
-        specifier: ^3.8.3
-        version: 3.8.3(@types/node@20.12.7)(rollup@3.28.1)(typescript@5.4.5)(vite@5.2.9(@types/node@20.12.7)(less@4.2.0))
       vitest:
         specifier: ^1.5.0
         version: 1.5.0(@types/node@20.12.7)(jsdom@24.0.0)(less@4.2.0)
@@ -507,7 +446,7 @@ importers:
         version: link:../basic-config
       '@own-basic-component/request':
         specifier: workspace:*
-        version: link:../basic-request2
+        version: link:../basic-request
       '@own-basic-component/util':
         specifier: workspace:*
         version: link:../basic-util
@@ -579,7 +518,7 @@ importers:
         version: link:../packages/basic-config
       '@own-basic-component/request':
         specifier: workspace:*
-        version: link:../packages/basic-request2
+        version: link:../packages/basic-request
       '@own-basic-component/request-axios':
         specifier: workspace:*
         version: link:../packages/basic-request-axios
