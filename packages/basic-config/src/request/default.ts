@@ -21,7 +21,6 @@ export const defaultConfig: RequestConfig = {
   mergeType: 'replace',
   contentType: 'application/json;charset=UTF-8',
   timeout: 10000,
-  preprocess: data => data,
   success: [...SUCCESS_CODE_ARRAY],
   mask: false,
   header: () => ({}),

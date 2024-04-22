@@ -27,8 +27,8 @@ importers:
         specifier: ^4.7.0
         version: 4.7.0
       pnpm:
-        specifier: ^9.0.4
-        version: 9.0.4
+        specifier: ^9.0.5
+        version: 9.0.5
       rimraf:
         specifier: ^5.0.5
         version: 5.0.5
@@ -82,8 +82,8 @@ importers:
         specifier: ^15.2.2
         version: 15.2.2
       pnpm:
-        specifier: ^9.0.4
-        version: 9.0.4
+        specifier: ^9.0.5
+        version: 9.0.5
       rimraf:
         specifier: ^5.0.5
         version: 5.0.5
@@ -130,8 +130,8 @@ importers:
         specifier: ^15.2.2
         version: 15.2.2
       pnpm:
-        specifier: ^9.0.4
-        version: 9.0.4
+        specifier: ^9.0.5
+        version: 9.0.5
       rimraf:
         specifier: ^5.0.5
         version: 5.0.5
@@ -184,8 +184,8 @@ importers:
         specifier: ^15.2.2
         version: 15.2.2
       pnpm:
-        specifier: ^9.0.4
-        version: 9.0.4
+        specifier: ^9.0.5
+        version: 9.0.5
       rimraf:
         specifier: ^5.0.5
         version: 5.0.5
@@ -238,8 +238,8 @@ importers:
         specifier: ^15.2.2
         version: 15.2.2
       pnpm:
-        specifier: ^9.0.4
-        version: 9.0.4
+        specifier: ^9.0.5
+        version: 9.0.5
       rimraf:
         specifier: ^5.0.5
         version: 5.0.5
@@ -302,8 +302,8 @@ importers:
         specifier: ^15.2.2
         version: 15.2.2
       pnpm:
-        specifier: ^9.0.4
-        version: 9.0.4
+        specifier: ^9.0.5
+        version: 9.0.5
       rimraf:
         specifier: ^5.0.5
         version: 5.0.5
@@ -363,8 +363,8 @@ importers:
         specifier: ^15.2.2
         version: 15.2.2
       pnpm:
-        specifier: ^9.0.4
-        version: 9.0.4
+        specifier: ^9.0.5
+        version: 9.0.5
       rimraf:
         specifier: ^5.0.5
         version: 5.0.5
@@ -418,8 +418,8 @@ importers:
         specifier: ^15.2.2
         version: 15.2.2
       pnpm:
-        specifier: ^9.0.4
-        version: 9.0.4
+        specifier: ^9.0.5
+        version: 9.0.5
       rimraf:
         specifier: ^5.0.5
         version: 5.0.5
@@ -478,8 +478,8 @@ importers:
         specifier: ^15.2.2
         version: 15.2.2
       pnpm:
-        specifier: ^9.0.4
-        version: 9.0.4
+        specifier: ^9.0.5
+        version: 9.0.5
       taze:
         specifier: ^0.13.6
         version: 0.13.6
@@ -593,8 +593,8 @@ importers:
         specifier: ^2.1.7
         version: 2.1.7(typescript@5.4.5)(vue@3.4.23(typescript@5.4.5))
       pnpm:
-        specifier: ^9.0.4
-        version: 9.0.4
+        specifier: ^9.0.5
+        version: 9.0.5
       taze:
         specifier: ^0.13.6
         version: 0.13.6
@@ -3825,8 +3825,8 @@ packages:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==, tarball: https://registry.npmjs.org/pluralize/-/pluralize-8.0.0.tgz}
     engines: {node: '>=4'}
 
-  pnpm@9.0.4:
-    resolution: {integrity: sha512-w3S1LePeiMWP2DM99mSnNyec2w4TRLpAVNOx//qaGjZwhU91XcpPFq3qPxS+mJan/K8WdAn+DBrWBHUnHa/oGg==, tarball: https://registry.npmjs.org/pnpm/-/pnpm-9.0.4.tgz}
+  pnpm@9.0.5:
+    resolution: {integrity: sha512-pyJXXBj9eR+e9x44fG4WzAPJDYWbmwmY0EKMoOMiCCizKpbm3nPOo07bwPUIJHcbGmnH6ja4bao7icfm2aPZEg==, tarball: https://registry.npmjs.org/pnpm/-/pnpm-9.0.5.tgz}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -8224,7 +8224,7 @@ snapshots:
 
   pluralize@8.0.0: {}
 
-  pnpm@9.0.4: {}
+  pnpm@9.0.5: {}
 
   postcss-selector-parser@6.0.15:
     dependencies:

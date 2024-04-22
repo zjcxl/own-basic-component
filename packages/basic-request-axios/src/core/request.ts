@@ -44,7 +44,7 @@ const axiosRequestMethod: RequestMethod = <T = any, RESPONSE_TYPE = ResultModel<
           // 显示成功进度条
           loadingBar.success()
           // 执行预处理并返回
-          return Promise.resolve(config.preprocess!(response))
+          return Promise.resolve(response)
         }
         else {
           // 异常捕获处理
