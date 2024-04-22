@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/buried-vue",
   "type": "module",
-  "version": "0.8.45",
+  "version": "0.8.46",
   "packageManager": "pnpm@9.0.5",
   "description": "_description_",
   "author": "chenxueli<zjphchenxueli@163.com>",
