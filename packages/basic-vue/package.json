@@ -1,8 +1,8 @@
 {
   "name": "@own-basic-component/vue",
   "type": "module",
-  "version": "0.8.50",
-  "packageManager": "pnpm@9.0.5",
+  "version": "0.8.51",
+  "packageManager": "pnpm@9.0.6",
   "author": "chenxueli",
   "license": "MIT",
   "repository": {
@@ -50,7 +50,7 @@
     "jsdom": "^24.0.0",
     "less": "^4.2.0",
     "lint-staged": "^15.2.2",
-    "pnpm": "^9.0.5",
+    "pnpm": "^9.0.6",
     "taze": "^0.13.6",
     "typescript": "^5.4.5",
     "unplugin-auto-import": "^0.17.5",
@@ -58,8 +58,8 @@
     "vfonts": "^0.0.3",
     "vite": "^5.2.10",
     "vite-plugin-dts": "^3.9.0",
-    "vitest": "^1.5.0",
-    "vue": "^3.4.24",
+    "vitest": "^1.5.1",
+    "vue": "^3.4.25",
     "vue-tsc": "^2.0.14"
   },
   "simple-git-hooks": {
