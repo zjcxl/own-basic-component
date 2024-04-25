@@ -69,6 +69,7 @@ async function handleChangeSelectFile(e: Event) {
     else {
       emits('change', resolveFileListToArray(selectFileList) as T[])
     }
+    fileRef.value!.value = ''
   }
 }
 </script>
