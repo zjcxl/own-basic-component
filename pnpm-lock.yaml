@@ -253,8 +253,8 @@ importers:
         specifier: ^5.2.10
         version: 5.2.10(@types/node@20.12.7)(less@4.2.0)
       vite-plugin-dts:
-        specifier: ^3.8.3
-        version: 3.8.3(@types/node@20.12.7)(rollup@3.28.1)(typescript@5.4.5)(vite@5.2.10(@types/node@20.12.7)(less@4.2.0))
+        specifier: ^3.9.0
+        version: 3.9.0(@types/node@20.12.7)(rollup@3.28.1)(typescript@5.4.5)(vite@5.2.10(@types/node@20.12.7)(less@4.2.0))
       vitest:
         specifier: ^1.5.0
         version: 1.5.0(@types/node@20.12.7)(jsdom@24.0.0)(less@4.2.0)
@@ -499,8 +499,8 @@ importers:
         specifier: ^5.2.10
         version: 5.2.10(@types/node@20.12.7)(less@4.2.0)
       vite-plugin-dts:
-        specifier: ^3.8.3
-        version: 3.8.3(@types/node@20.12.7)(rollup@4.13.0)(typescript@5.4.5)(vite@5.2.10(@types/node@20.12.7)(less@4.2.0))
+        specifier: ^3.9.0
+        version: 3.9.0(@types/node@20.12.7)(rollup@4.13.0)(typescript@5.4.5)(vite@5.2.10(@types/node@20.12.7)(less@4.2.0))
       vitest:
         specifier: ^1.5.0
         version: 1.5.0(@types/node@20.12.7)(jsdom@24.0.0)(less@4.2.0)
@@ -4431,8 +4431,8 @@ packages:
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
-  vite-plugin-dts@3.8.3:
-    resolution: {integrity: sha512-yRHiRosQw7MXdOhmcrVI+kRiB8YEShbSxnADNteK4eZGdEoyOkMHihvO5XOAVlOq8ng9sIqu8vVefDK1zcj3qw==, tarball: https://registry.npmjs.org/vite-plugin-dts/-/vite-plugin-dts-3.8.3.tgz}
+  vite-plugin-dts@3.9.0:
+    resolution: {integrity: sha512-pwFIEYQ3LZvMafkEGvNnileb6af5JuyZsBfYQrTDYxdeGEy0OS4B4hCsLPo5YGnhK5k9EzyO6BXVO6y+Lt5T2A==, tarball: https://registry.npmjs.org/vite-plugin-dts/-/vite-plugin-dts-3.9.0.tgz}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       typescript: '*'
@@ -6068,7 +6068,7 @@ snapshots:
 
   '@vitest/snapshot@1.5.0':
     dependencies:
-      magic-string: 0.30.9
+      magic-string: 0.30.10
       pathe: 1.1.2
       pretty-format: 29.7.0
 
@@ -6130,7 +6130,7 @@ snapshots:
   '@vue-macros/boolean-prop@0.3.3(rollup@4.13.0)(vue@3.4.24(typescript@5.4.5))':
     dependencies:
       '@vue-macros/common': 1.10.2(rollup@4.13.0)(vue@3.4.24(typescript@5.4.5))
-      '@vue/compiler-core': 3.4.23
+      '@vue/compiler-core': 3.4.24
     transitivePeerDependencies:
       - rollup
       - vue
@@ -6272,7 +6272,7 @@ snapshots:
   '@vue-macros/named-template@0.4.3(rollup@4.13.0)(vue@3.4.24(typescript@5.4.5))':
     dependencies:
       '@vue-macros/common': 1.10.2(rollup@4.13.0)(vue@3.4.24(typescript@5.4.5))
-      '@vue/compiler-dom': 3.4.23
+      '@vue/compiler-dom': 3.4.24
       unplugin: 1.10.1
     transitivePeerDependencies:
       - rollup
@@ -6282,9 +6282,9 @@ snapshots:
     dependencies:
       '@babel/parser': 7.24.4
       '@vue-macros/common': 1.10.2(rollup@4.13.0)(vue@3.4.24(typescript@5.4.5))
-      '@vue/compiler-core': 3.4.23
-      '@vue/shared': 3.4.23
-      magic-string: 0.30.9
+      '@vue/compiler-core': 3.4.24
+      '@vue/shared': 3.4.24
+      magic-string: 0.30.10
       unplugin: 1.10.1
       vue: 3.4.24(typescript@5.4.5)
     transitivePeerDependencies:
@@ -6293,7 +6293,7 @@ snapshots:
   '@vue-macros/setup-block@0.3.3(rollup@4.13.0)(vue@3.4.24(typescript@5.4.5))':
     dependencies:
       '@vue-macros/common': 1.10.2(rollup@4.13.0)(vue@3.4.24(typescript@5.4.5))
-      '@vue/compiler-dom': 3.4.23
+      '@vue/compiler-dom': 3.4.24
       unplugin: 1.10.1
     transitivePeerDependencies:
       - rollup
@@ -6318,7 +6318,7 @@ snapshots:
   '@vue-macros/short-bind@0.2.3(rollup@4.13.0)(vue@3.4.24(typescript@5.4.5))':
     dependencies:
       '@vue-macros/common': 1.10.2(rollup@4.13.0)(vue@3.4.24(typescript@5.4.5))
-      '@vue/compiler-core': 3.4.23
+      '@vue/compiler-core': 3.4.24
     transitivePeerDependencies:
       - rollup
       - vue
@@ -6334,7 +6334,7 @@ snapshots:
   '@vue-macros/short-vmodel@1.4.3(rollup@4.13.0)(vue@3.4.24(typescript@5.4.5))':
     dependencies:
       '@vue-macros/common': 1.10.2(rollup@4.13.0)(vue@3.4.24(typescript@5.4.5))
-      '@vue/compiler-core': 3.4.23
+      '@vue/compiler-core': 3.4.24
     transitivePeerDependencies:
       - rollup
       - vue
@@ -6424,8 +6424,8 @@ snapshots:
     dependencies:
       '@volar/language-core': 1.11.1
       '@volar/source-map': 1.11.1
-      '@vue/compiler-dom': 3.4.23
-      '@vue/shared': 3.4.23
+      '@vue/compiler-dom': 3.4.24
+      '@vue/shared': 3.4.24
       computeds: 0.0.1
       minimatch: 9.0.4
       muggle-string: 0.3.1
@@ -8340,7 +8340,7 @@ snapshots:
 
   rollup-plugin-dts@6.0.0(rollup@3.28.1)(typescript@5.4.5):
     dependencies:
-      magic-string: 0.30.9
+      magic-string: 0.30.10
       rollup: 3.28.1
       typescript: 5.4.5
     optionalDependencies:
@@ -8684,7 +8684,7 @@ snapshots:
       estree-walker: 3.0.3
       fast-glob: 3.3.2
       local-pkg: 0.5.0
-      magic-string: 0.30.9
+      magic-string: 0.30.10
       mlly: 1.6.1
       pathe: 1.1.2
       pkg-types: 1.0.3
@@ -8926,14 +8926,14 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-dts@3.8.3(@types/node@20.12.7)(rollup@3.28.1)(typescript@5.4.5)(vite@5.2.10(@types/node@20.12.7)(less@4.2.0)):
+  vite-plugin-dts@3.9.0(@types/node@20.12.7)(rollup@3.28.1)(typescript@5.4.5)(vite@5.2.10(@types/node@20.12.7)(less@4.2.0)):
     dependencies:
       '@microsoft/api-extractor': 7.43.0(@types/node@20.12.7)
       '@rollup/pluginutils': 5.1.0(rollup@3.28.1)
       '@vue/language-core': 1.8.27(typescript@5.4.5)
       debug: 4.3.4
       kolorist: 1.8.0
-      magic-string: 0.30.9
+      magic-string: 0.30.10
       typescript: 5.4.5
       vue-tsc: 1.8.27(typescript@5.4.5)
     optionalDependencies:
@@ -8943,7 +8943,7 @@ snapshots:
       - rollup
       - supports-color
 
-  vite-plugin-dts@3.8.3(@types/node@20.12.7)(rollup@4.13.0)(typescript@5.4.5)(vite@5.2.10(@types/node@20.12.7)(less@4.2.0)):
+  vite-plugin-dts@3.9.0(@types/node@20.12.7)(rollup@4.13.0)(typescript@5.4.5)(vite@5.2.10(@types/node@20.12.7)(less@4.2.0)):
     dependencies:
       '@microsoft/api-extractor': 7.43.0(@types/node@20.12.7)
       '@rollup/pluginutils': 5.1.0(rollup@4.13.0)
