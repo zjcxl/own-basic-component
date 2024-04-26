@@ -25,6 +25,10 @@ export * from './utils/date'
  */
 export * from './utils/file'
 /**
+ * 文件工具
+ */
+export * from './utils/image'
+/**
  * 遮罩层工具
  */
 export * from './utils/mask'
