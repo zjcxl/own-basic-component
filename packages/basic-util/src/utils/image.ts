@@ -15,13 +15,13 @@ export interface CompressImageOptions {
 
 /**
  * 压缩图片
- * @param src
+ * @param base64
  * @param targetSize
  * @param options
  */
-export function compressImage(src: string, targetSize: number, options?: Partial<CompressImageOptions>): Promise<string> {
+export function compressImage(base64: string, targetSize: number, options?: Partial<CompressImageOptions>): Promise<string> {
   return new Promise((resolve) => {
-    compressImageCallback(src, targetSize, (data) => {
+    compressImageCallback(base64, targetSize, (data) => {
       resolve(data)
     }, options)
   })
@@ -29,14 +29,14 @@ export function compressImage(src: string, targetSize: number, options?: Partial
 
 /**
  * 压缩图片
- * @param src
+ * @param base64
  * @param targetSize
  * @param callback
  * @param options
  */
-function compressImageCallback(src: string, targetSize: number, callback: ((base64: string) => void), options?: Partial<CompressImageOptions>) {
+function compressImageCallback(base64: string, targetSize: number, callback: ((base64: string) => void), options?: Partial<CompressImageOptions>) {
   const img = new Image()
-  img.src = src
+  img.src = base64
   img.onload = function () {
     const width = img.width
     const height = img.height
@@ -74,4 +74,39 @@ function compressImageCallback(src: string, targetSize: number, callback: ((base
 
     resizeCanvasToTargetSize(base64String, targetSize, 0)
   }
+}
+
+/**
+ * 压缩图片到指定尺寸
+ * @param base64
+ * @param maxWidth
+ * @param maxHeight
+ */
+export function compressImageToSize(base64: string, maxWidth: number, maxHeight: number): Promise<string> {
+  return new Promise((resolve) => {
+    const image = new Image()
+    image.src = base64
+    image.onload = function () {
+      const canvas = document.createElement('canvas')
+      const context = canvas.getContext('2d')
+      let width = image.width
+      let height = image.height
+      if (width > height) {
+        if (width > maxWidth) {
+          height *= maxWidth / width
+          width = maxWidth
+        }
+      }
+      else {
+        if (height > maxHeight) {
+          width *= maxHeight / height
+          height = maxHeight
+        }
+      }
+      canvas.width = width
+      canvas.height = height
+      context!.drawImage(image, 0, 0, width, height)
+      resolve(canvas.toDataURL('image/jpeg', 1))
+    }
+  })
 }
