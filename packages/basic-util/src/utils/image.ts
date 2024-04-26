@@ -1,3 +1,6 @@
+import { fileBase64toBlob } from './file'
+import { NANOID } from './data'
+
 export interface CompressImageOptions {
   /**
    * 压缩的首次质量 0-1
@@ -14,16 +17,15 @@ export interface CompressImageOptions {
 }
 
 /**
- * 压缩图片
+ * 压缩图片到文件
  * @param base64
  * @param targetSize
  * @param options
  */
-export function compressImage(base64: string, targetSize: number, options?: Partial<CompressImageOptions>): Promise<string> {
-  return new Promise((resolve) => {
-    compressImageCallback(base64, targetSize, (data) => {
-      resolve(data)
-    }, options)
+export function compressImageToFile(base64: string, targetSize: number, options?: Partial<CompressImageOptions>): Promise<File> {
+  return compressImageToBase64(base64, targetSize, options).then((data) => {
+    const blob = fileBase64toBlob(data)
+    return new File([blob], `${NANOID(24)}.jpeg`, { type: 'image/jpeg' })
   })
 }
 
@@ -31,49 +33,63 @@ export function compressImage(base64: string, targetSize: number, options?: Part
  * 压缩图片
  * @param base64
  * @param targetSize
- * @param callback
  * @param options
  */
-function compressImageCallback(base64: string, targetSize: number, callback: ((base64: string) => void), options?: Partial<CompressImageOptions>) {
-  const img = new Image()
-  img.src = base64
-  img.onload = function () {
-    const width = img.width
-    const height = img.height
+export function compressImageToBase64(base64: string, targetSize: number, options?: Partial<CompressImageOptions>): Promise<string> {
+  return new Promise((resolve) => {
+    const img = new Image()
+    img.src = base64
+    img.onload = function () {
+      const width = img.width
+      const height = img.height
 
-    const canvas = document.createElement('canvas')
-    const context = canvas.getContext('2d')
+      const canvas = document.createElement('canvas')
+      const context = canvas.getContext('2d')
 
-    canvas.width = width
-    canvas.height = height
+      canvas.width = width
+      canvas.height = height
 
-    context!.drawImage(img, 0, 0, width, height)
+      context!.drawImage(img, 0, 0, width, height)
 
-    // 压缩质量
-    let compressQuality = options?.quality ?? 1
-    const base64String = canvas.toDataURL('image/jpeg', compressQuality)
+      // 压缩质量
+      let compressQuality = options?.quality ?? 1
+      const base64String = canvas.toDataURL('image/jpeg', compressQuality)
 
-    function resizeCanvasToTargetSize(base64String: string, targetSize: number, count = 0) {
-      if (options?.maxCompressCount && count >= options?.maxCompressCount) {
-        callback(base64String)
-        return
+      function resizeCanvasToTargetSize(base64String: string, targetSize: number, count = 0) {
+        if (options?.maxCompressCount && count >= options?.maxCompressCount) {
+          resolve(base64String)
+          return
+        }
+        const bytes = atob(base64String.split(',')[1])
+        const length = bytes.length
+        const targetLength = targetSize * 1024
+
+        if (length > targetLength) {
+          compressQuality -= options?.step ?? 0.01
+          base64String = canvas.toDataURL('image/jpeg', compressQuality)
+          return resizeCanvasToTargetSize(base64String, targetSize, count + 1)
+        }
+        else {
+          resolve(base64String)
+        }
       }
-      const bytes = atob(base64String.split(',')[1])
-      const length = bytes.length
-      const targetLength = targetSize * 1024
 
-      if (length > targetLength) {
-        compressQuality -= options?.step ?? 0.01
-        base64String = canvas.toDataURL('image/jpeg', compressQuality)
-        return resizeCanvasToTargetSize(base64String, targetSize, count + 1)
-      }
-      else {
-        callback(base64String)
-      }
+      resizeCanvasToTargetSize(base64String, targetSize, 0)
     }
+  })
+}
 
-    resizeCanvasToTargetSize(base64String, targetSize, 0)
-  }
+/**
+ * 压缩图片到文件
+ * @param base64
+ * @param maxWidth
+ * @param maxHeight
+ */
+export function compressImageSizeToFile(base64: string, maxWidth: number, maxHeight: number): Promise<File> {
+  return compressImageSizeToBase64(base64, maxWidth, maxHeight).then((data) => {
+    const blob = fileBase64toBlob(data)
+    return new File([blob], `${NANOID(24)}.jpeg`, { type: 'image/jpeg' })
+  })
 }
 
 /**
@@ -82,7 +98,7 @@ function compressImageCallback(base64: string, targetSize: number, callback: ((b
  * @param maxWidth
  * @param maxHeight
  */
-export function compressImageToSize(base64: string, maxWidth: number, maxHeight: number): Promise<string> {
+export function compressImageSizeToBase64(base64: string, maxWidth: number, maxHeight: number): Promise<string> {
   return new Promise((resolve) => {
     const image = new Image()
     image.src = base64
