@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/vue",
   "type": "module",
-  "version": "0.8.52",
+  "version": "0.8.53",
   "packageManager": "pnpm@9.0.6",
   "author": "chenxueli",
   "license": "MIT",
@@ -37,7 +37,7 @@
     "up": "taze major -I"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.15.0",
+    "@antfu/eslint-config": "^2.16.0",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
@@ -51,14 +51,14 @@
     "less": "^4.2.0",
     "lint-staged": "^15.2.2",
     "pnpm": "^9.0.6",
-    "taze": "^0.13.6",
+    "taze": "^0.13.7",
     "typescript": "^5.4.5",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-macros": "^2.9.1",
     "vfonts": "^0.0.3",
     "vite": "^5.2.10",
     "vite-plugin-dts": "^3.9.0",
-    "vitest": "^1.5.1",
+    "vitest": "^1.5.2",
     "vue": "^3.4.25",
     "vue-tsc": "^2.0.14"
   },
