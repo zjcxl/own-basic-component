@@ -102,13 +102,15 @@ class RequestModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends BaseRequestM
       const headers: Record<string, string> = getHeadersFromConfig(extra, requestConfig)
       const baseUrlFlag = this.getApi().startsWith('http')
       // 组合请求信息
-      const requestData = {
+      const requestData: Record<string, any> = {
         baseURL: baseUrlFlag ? '' : requestConfig.baseUrl,
         method: this.getMethod(),
         url: this.getApi(),
         headers,
         timeout: requestConfig.timeout,
       }
+      if (requestConfig.onUploadProgress)
+        requestData.onUploadProgress = requestConfig.onUploadProgress
       // 处理最后的配置
       this.setCustomConfig(requestData, { ...requestConfig })
       if (this.requestMethod) {

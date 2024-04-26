@@ -103,6 +103,11 @@ export interface RequestConfig<T = any, RESPONSE_TYPE = ResultModel<T>> {
    * 异常处理
    */
   exceptionHandleMap?: <R extends BaseRequestModel<T, RESPONSE_TYPE>>() => Record<CodeType, (res: RESPONSE_TYPE, model: R) => Promise<RESPONSE_TYPE | void>>
+  /**
+   * 上传进度
+   * @param progressEvent
+   */
+  onUploadProgress?: (progressEvent: ProgressEvent) => void
 }
 
 export type Method =
