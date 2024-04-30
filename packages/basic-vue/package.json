@@ -59,7 +59,7 @@
     "vite": "^5.2.10",
     "vite-plugin-dts": "^3.9.0",
     "vitest": "^1.5.2",
-    "vue": "^3.4.25",
+    "vue": "^3.4.26",
     "vue-tsc": "^2.0.14"
   },
   "simple-git-hooks": {

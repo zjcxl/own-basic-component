@@ -59,7 +59,7 @@
     "@own-basic-component/util": "workspace:*",
     "@types/node": "^20.12.7",
     "@vueuse/core": "^10.9.0",
-    "bumpp": "^9.4.0",
+    "bumpp": "^9.4.1",
     "eslint": "8.57.0",
     "esno": "^4.7.0",
     "lint-staged": "^15.2.2",
