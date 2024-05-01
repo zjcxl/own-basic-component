@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/request",
   "type": "module",
-  "version": "0.8.62",
+  "version": "0.8.63",
   "packageManager": "pnpm@9.0.6",
   "description": "_description_",
   "author": "chenxueli<zjphchenxueli@163.com>",
