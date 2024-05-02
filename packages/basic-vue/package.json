@@ -41,7 +41,7 @@
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
-    "@types/node": "^20.12.7",
+    "@types/node": "^20.12.8",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/test-utils": "^2.4.5",
@@ -51,7 +51,7 @@
     "less": "^4.2.0",
     "lint-staged": "^15.2.2",
     "pnpm": "^9.0.6",
-    "taze": "^0.13.7",
+    "taze": "^0.13.8",
     "typescript": "^5.4.5",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-macros": "^2.9.1",
@@ -60,7 +60,7 @@
     "vite-plugin-dts": "^3.9.0",
     "vitest": "^1.5.3",
     "vue": "^3.4.26",
-    "vue-tsc": "^2.0.15"
+    "vue-tsc": "^2.0.16"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
