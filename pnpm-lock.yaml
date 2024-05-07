@@ -253,8 +253,8 @@ importers:
         specifier: ^5.2.11
         version: 5.2.11(@types/node@20.12.8)(less@4.2.0)
       vite-plugin-dts:
-        specifier: ^3.9.0
-        version: 3.9.0(@types/node@20.12.8)(rollup@3.28.1)(typescript@5.4.5)(vite@5.2.11(@types/node@20.12.8)(less@4.2.0))
+        specifier: ^3.9.1
+        version: 3.9.1(@types/node@20.12.8)(rollup@3.28.1)(typescript@5.4.5)(vite@5.2.11(@types/node@20.12.8)(less@4.2.0))
       vitest:
         specifier: ^1.6.0
         version: 1.6.0(@types/node@20.12.8)(jsdom@24.0.0)(less@4.2.0)
@@ -499,8 +499,8 @@ importers:
         specifier: ^5.2.11
         version: 5.2.11(@types/node@20.12.8)(less@4.2.0)
       vite-plugin-dts:
-        specifier: ^3.9.0
-        version: 3.9.0(@types/node@20.12.8)(rollup@4.13.0)(typescript@5.4.5)(vite@5.2.11(@types/node@20.12.8)(less@4.2.0))
+        specifier: ^3.9.1
+        version: 3.9.1(@types/node@20.12.8)(rollup@4.13.0)(typescript@5.4.5)(vite@5.2.11(@types/node@20.12.8)(less@4.2.0))
       vitest:
         specifier: ^1.6.0
         version: 1.6.0(@types/node@20.12.8)(jsdom@24.0.0)(less@4.2.0)
@@ -1489,7 +1489,7 @@ packages:
     engines: {node: '>=6.0.0'}
 
   '@jridgewell/sourcemap-codec@1.4.15':
-    resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
+    resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==, tarball: https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.15.tgz}
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==, tarball: https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.25.tgz}
@@ -2481,7 +2481,7 @@ packages:
     engines: {node: '>= 0.8'}
 
   commander@10.0.1:
-    resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
+    resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==, tarball: https://registry.npmjs.org/commander/-/commander-10.0.1.tgz}
     engines: {node: '>=14'}
 
   commander@11.1.0:
@@ -4418,8 +4418,8 @@ packages:
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
-  vite-plugin-dts@3.9.0:
-    resolution: {integrity: sha512-pwFIEYQ3LZvMafkEGvNnileb6af5JuyZsBfYQrTDYxdeGEy0OS4B4hCsLPo5YGnhK5k9EzyO6BXVO6y+Lt5T2A==, tarball: https://registry.npmjs.org/vite-plugin-dts/-/vite-plugin-dts-3.9.0.tgz}
+  vite-plugin-dts@3.9.1:
+    resolution: {integrity: sha512-rVp2KM9Ue22NGWB8dNtWEr+KekN3rIgz1tWD050QnRGlriUCmaDwa7qA5zDEjbXg5lAXhYMSBJtx3q3hQIJZSg==, tarball: https://registry.npmjs.org/vite-plugin-dts/-/vite-plugin-dts-3.9.1.tgz}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       typescript: '*'
@@ -8883,7 +8883,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-dts@3.9.0(@types/node@20.12.8)(rollup@3.28.1)(typescript@5.4.5)(vite@5.2.11(@types/node@20.12.8)(less@4.2.0)):
+  vite-plugin-dts@3.9.1(@types/node@20.12.8)(rollup@3.28.1)(typescript@5.4.5)(vite@5.2.11(@types/node@20.12.8)(less@4.2.0)):
     dependencies:
       '@microsoft/api-extractor': 7.43.0(@types/node@20.12.8)
       '@rollup/pluginutils': 5.1.0(rollup@3.28.1)
@@ -8900,7 +8900,7 @@ snapshots:
       - rollup
       - supports-color
 
-  vite-plugin-dts@3.9.0(@types/node@20.12.8)(rollup@4.13.0)(typescript@5.4.5)(vite@5.2.11(@types/node@20.12.8)(less@4.2.0)):
+  vite-plugin-dts@3.9.1(@types/node@20.12.8)(rollup@4.13.0)(typescript@5.4.5)(vite@5.2.11(@types/node@20.12.8)(less@4.2.0)):
     dependencies:
       '@microsoft/api-extractor': 7.43.0(@types/node@20.12.8)
       '@rollup/pluginutils': 5.1.0(rollup@4.13.0)
