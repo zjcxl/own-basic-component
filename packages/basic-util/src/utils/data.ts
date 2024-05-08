@@ -48,6 +48,10 @@ export const MEMORY_UNIT_ARRAY = ['B', 'KB', 'MB', 'GB', 'TB']
 
 export interface FormatMemorySizeOptions {
   /**
+   * 起始的单位索引
+   */
+  index: 0
+  /**
    * 空白字符
    */
   blank?: string
@@ -62,12 +66,30 @@ export interface FormatMemorySizeOptions {
  * @param size 文件大小
  * @param options 空白字符
  */
-function formatMemorySize(size: number, options?: FormatMemorySizeOptions): string {
+function formatMemorySize(size: number | bigint, options?: FormatMemorySizeOptions): string {
   const blank = options?.blank || ''
   const unitArray = options?.unitArray || MEMORY_UNIT_ARRAY
+  let index = options?.index || 0
   if (size <= 0)
     return `0${blank}${unitArray[0]}`
-  let index = 0
+  if (!(typeof size !== 'number' && size <= Number.MAX_VALUE)) {
+    // 处理大数
+    size = BigInt(size)
+    let flag = true
+    while (size >= 1024n && index < unitArray.length - 1) {
+      size = size >> 10n
+      index++
+      if (size <= Number.MAX_VALUE) {
+        flag = false
+        break
+      }
+    }
+    // 如果此处的表示还是true代表还是大数，直接返回即可
+    if (flag)
+      return `${size}${blank}${unitArray[index]}`
+  }
+  size = Number(size)
+  // 此处全为number的数字
   while (size >= 1024 && index < unitArray.length - 1) {
     size /= 1024
     index++

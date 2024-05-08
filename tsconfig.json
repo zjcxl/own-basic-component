@@ -1,31 +1,49 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "esnext",
-    "target": "esnext",
-    "strict": true,
-    "jsx": "preserve",
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "noUnusedLocals": true,
-    "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["esnext", "dom", "dom.iterable"],
+    "jsx": "preserve",
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "paths": {
+      "@own-basic-component/buried": [
+        "./packages/basic-buried/src/index.ts"
+      ],
+      "@own-basic-component/buried-vue": [
+        "./packages/basic-buried-vue/src/index.ts"
+      ],
+      "@own-basic-component/config": [
+        "./packages/basic-config/src/index.ts"
+      ],
+      "@own-basic-component/request": [
+        "./packages/basic-request/src/index.ts"
+      ],
+      "@own-basic-component/request-axios": [
+        "./packages/basic-request-axios/src/index.ts"
+      ],
+      "@own-basic-component/request-fetch": [
+        "./packages/basic-request-fetch/src/index.ts"
+      ],
+      "@own-basic-component/util": [
+        "./packages/basic-util/src/index.ts"
+      ]
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "es2022",
     "types": [
       "vite/client",
       "node"
-    ],
-    "paths": {
-      "@own-basic-component/buried": ["./packages/basic-buried/src/index.ts"],
-      "@own-basic-component/buried-vue": ["./packages/basic-buried-vue/src/index.ts"],
-      "@own-basic-component/config": ["./packages/basic-config/src/index.ts"],
-      "@own-basic-component/request": ["./packages/basic-request/src/index.ts"],
-      "@own-basic-component/request-axios": ["./packages/basic-request-axios/src/index.ts"],
-      "@own-basic-component/request-fetch": ["./packages/basic-request-fetch/src/index.ts"],
-      "@own-basic-component/util": ["./packages/basic-util/src/index.ts"],
-    }
+    ]
   },
   "exclude": ["dist", "node_modules"]
 }
