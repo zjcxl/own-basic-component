@@ -42,22 +42,37 @@ function formatTextFromHtml(html: string): string {
 }
 
 /**
+ * 存储单位
+ */
+export const MEMORY_UNIT_ARRAY = ['B', 'KB', 'MB', 'GB', 'TB']
+
+export interface FormatMemorySizeOptions {
+  /**
+   * 空白字符
+   */
+  blank?: string
+  /**
+   * 单位数据
+   */
+  unitArray?: string[]
+}
+
+/**
  * 格式化文件大小样式
  * @param size 文件大小
+ * @param options 空白字符
  */
-function formatMemorySize(size: number): string {
-  if (size < 0)
-    return '0B'
-  if (size < 1024)
-    return `${size}B`
-  else if (size / 1024 < 1024)
-    return `${Math.round((size / 1024) * 100) / 100.0}KB`
-  else if (size / 1024 / 1024 < 1024)
-    return `${Math.round((size / 1024 / 1024) * 100) / 100.0}MB`
-  else if (size / 1024 / 1024 / 1024 < 1024 * 100)
-    return `${Math.round((size / 1024 / 1024 / 1024) * 100) / 100.0}GB`
-  else
-    return `${Math.round((size / 1024 / 1024 / 1024 / 1024) * 100) / 100.0}TB`
+function formatMemorySize(size: number, options?: FormatMemorySizeOptions): string {
+  const blank = options?.blank || ''
+  const unitArray = options?.unitArray || MEMORY_UNIT_ARRAY
+  if (size <= 0)
+    return `0${blank}${unitArray[0]}`
+  let index = 0
+  while (size >= 1024 && index < unitArray.length - 1) {
+    size /= 1024
+    index++
+  }
+  return `${Math.round(size * 100) / 100.0}${blank}${unitArray[index]}`
 }
 
 /**
