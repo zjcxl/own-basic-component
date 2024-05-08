@@ -50,7 +50,7 @@ export interface FormatMemorySizeOptions {
   /**
    * 起始的单位索引
    */
-  index: 0
+  index?: number
   /**
    * 空白字符
    */
