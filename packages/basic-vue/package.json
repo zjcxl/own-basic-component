@@ -53,14 +53,14 @@
     "pnpm": "^9.1.0",
     "taze": "^0.13.8",
     "typescript": "^5.4.5",
-    "unplugin-auto-import": "^0.17.5",
+    "unplugin-auto-import": "^0.17.6",
     "unplugin-vue-macros": "^2.9.2",
     "vfonts": "^0.0.3",
     "vite": "^5.2.11",
     "vite-plugin-dts": "^3.9.1",
     "vitest": "^1.6.0",
     "vue": "^3.4.27",
-    "vue-tsc": "^2.0.16"
+    "vue-tsc": "^2.0.17"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
