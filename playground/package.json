@@ -1,7 +1,7 @@
 {
   "name": "playground",
   "private": true,
-  "version": "0.8.73",
+  "version": "0.8.82",
   "type": "module",
   "scripts": {
     "dev": "vite --open",
@@ -21,13 +21,13 @@
     "vue-router": "^4.3.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.16.3",
-    "@iconify-json/carbon": "^1.1.32",
+    "@antfu/eslint-config": "^2.18.0",
+    "@iconify-json/carbon": "^1.1.33",
     "@iconify-json/ri": "^1.1.20",
-    "@types/node": "^20.12.10",
-    "@unocss/eslint-config": "^0.59.4",
-    "@unocss/eslint-plugin": "^0.59.4",
-    "@unocss/reset": "^0.59.4",
+    "@types/node": "^20.12.12",
+    "@unocss/eslint-config": "^0.60.2",
+    "@unocss/eslint-plugin": "^0.60.2",
+    "@unocss/reset": "^0.60.2",
     "@vicons/ionicons5": "^0.12.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
@@ -39,17 +39,17 @@
     "less": "^4.2.0",
     "naive-ui": "^2.38.2",
     "pinia": "^2.1.7",
-    "pnpm": "^9.1.0",
+    "pnpm": "^9.1.1",
     "taze": "^0.13.8",
     "typescript": "^5.4.5",
-    "unocss": "^0.59.4",
-    "unplugin-auto-import": "^0.17.5",
+    "unocss": "^0.60.2",
+    "unplugin-auto-import": "^0.17.6",
     "unplugin-vue-components": "^0.27.0",
     "unplugin-vue-macros": "^2.9.2",
     "unplugin-vue-router": "^0.8.6",
     "vfonts": "^0.0.3",
     "vite": "^5.2.11",
     "vitest": "^1.6.0",
-    "vue-tsc": "^2.0.16"
+    "vue-tsc": "^2.0.19"
   }
 }
