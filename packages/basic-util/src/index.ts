@@ -44,3 +44,7 @@ export * from './utils/message'
  * 水印工具
  */
 export * from './utils/watermark'
+/**
+ * 任务执行器工具
+ */
+export * from './utils/task'
