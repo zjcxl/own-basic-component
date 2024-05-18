@@ -508,7 +508,7 @@ importers:
         specifier: ^3.4.27
         version: 3.4.27(typescript@5.4.5)
       vue-tsc:
-        specifier: ^2.0.18
+        specifier: ^2.0.19
         version: 2.0.19(typescript@5.4.5)
 
   playground:
@@ -626,7 +626,7 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0(@types/node@20.12.12)(jsdom@24.0.0)(less@4.2.0)
       vue-tsc:
-        specifier: ^2.0.18
+        specifier: ^2.0.19
         version: 2.0.19(typescript@5.4.5)
 
 packages:
