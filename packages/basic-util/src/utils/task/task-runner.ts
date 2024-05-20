@@ -1,18 +1,21 @@
-export type TaskType = () => Promise<void>
+import type { BaseTaskRunner, BaseTaskRunnerOptions, TaskType } from './types'
 
-export interface TaskRunnerOptions {
+/**
+ * 任务执行器选项
+ */
+export interface TaskRunnerOptions extends BaseTaskRunnerOptions {
+
   /**
    * 并发数量
    */
   concurrency?: number
-  /**
-   * 是否自动开始
-   */
-  autoStart?: boolean
 
 }
 
-export interface TaskRunner {
+/**
+ * 任务执行器
+ */
+export interface TaskRunner extends BaseTaskRunner {
 /**
  * 开始
  */
@@ -21,13 +24,12 @@ export interface TaskRunner {
    * 停止
    */
   stop: () => void
-  /**
-   * 添加任务
-   * @param tasks 任务列表
-   */
-  append: (...tasks: TaskType[]) => void
 }
 
+/**
+ * 任务执行器
+ * @param options
+ */
 export function useTaskRunner(options: TaskRunnerOptions): TaskRunner {
   /**
    * 并发数量
@@ -36,7 +38,7 @@ export function useTaskRunner(options: TaskRunnerOptions): TaskRunner {
   /**
    * 是否自动开始
    */
-  const autoStart = options.autoStart ?? true
+  const autoStart = options.auto ?? true
 
   /**
    * 是否停止

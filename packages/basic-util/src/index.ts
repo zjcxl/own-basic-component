@@ -47,4 +47,4 @@ export * from './utils/watermark'
 /**
  * 任务执行器工具
  */
-export * from './utils/task'
+export * from './utils/task/task'
