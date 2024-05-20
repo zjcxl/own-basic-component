@@ -1,6 +1,7 @@
 'use strict'
 
 import { getProjectConfig } from '@own-basic-component/config'
+import * as cryptojs from 'crypto-js'
 
 // 文件相关配置
 export const FILE_CONFIG = {
@@ -131,15 +132,32 @@ export function downloadBackupFile(path: string, fileName: string) {
 }
 
 /**
- * 获取文件的md5
+ * 获取文件的sha256
  * @param file 计算的文件
  */
-export async function calculateFileMD5(file: File) {
+export async function calculateFileSha256(file: File) {
   const buffer = await readFileAsArrayBuffer(file)
   const hashArray = await crypto.subtle.digest('SHA-256', buffer)
   return Array.from(new Uint8Array(hashArray))
     .map(byte => byte.toString(16).padStart(2, '0'))
     .join('')
+}
+
+/**
+ * 获取文件的md5
+ * @param file 计算的文件
+ */
+export async function calculateFileMD5(file: File) {
+  return new Promise((resolve) => {
+  // 计算文件的md5
+    const reader = new FileReader()
+    reader.onload = (e) => {
+      const buffer = e.target?.result as ArrayBuffer
+      const wordArray = cryptojs.lib.WordArray.create(buffer)
+      resolve(cryptojs.MD5(wordArray).toString())
+    }
+    reader.readAsArrayBuffer(file)
+  })
 }
 
 /**
