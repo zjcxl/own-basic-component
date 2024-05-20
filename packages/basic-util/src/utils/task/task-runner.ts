@@ -17,7 +17,5 @@ export interface TaskRunner extends TaskRunnerItem<TaskType> {}
  * @param options
  */
 export function useTaskRunner(options: TaskRunnerOptions): TaskRunner {
-  return useTaskRunnerItem((item) => {
-    return item()
-  }, options)
+  return useTaskRunnerItem(item => item(), options)
 }

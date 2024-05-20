@@ -11,7 +11,5 @@ export interface TaskRunnerSequence extends TaskRunnerSequenceItem<TaskType> {}
  * 任务执行器
  */
 export function useTaskRunnerSequence(): TaskRunnerSequence {
-  return useTaskRunnerSequenceItem((item) => {
-    return item()
-  })
+  return useTaskRunnerSequenceItem(item => item())
 }
