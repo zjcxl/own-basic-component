@@ -39,25 +39,21 @@ export function useTaskRunnerItem<T>(func: (item: T) => Promise<void>, options: 
   /**
    * 是否自动开始
    */
-  const autoStart = options.auto ?? true
+  const auto = options.auto ?? true
+  /**
+   * 正在执行的数量
+   */
+  let executingCount = 0
 
   /**
    * 是否停止
    */
   let isStop: boolean = false
-  /**
-   * 是否正在执行中
-   */
-  let isRunning = false
 
   /**
    * 待执行的任务列表
    */
   const waitingArray: T[] = []
-  /**
-   * 当前执行的任务列表
-   */
-  const executingArray: Promise<void>[] = []
 
   /**
    * 执行任务的方法
@@ -65,31 +61,27 @@ export function useTaskRunnerItem<T>(func: (item: T) => Promise<void>, options: 
   const run = async (): Promise<void> => {
     if (isStop)
       return Promise.resolve()
-    if (isRunning)
+    // 如果没有任务则不执行
+    if (waitingArray.length === 0)
       return Promise.resolve()
-    isRunning = true
-    // 如果当前执行的任务数量超过并发限制，则等待任意一个任务完成
-    while (waitingArray.length > 0) {
-      if (isStop)
-        return
-      if (executingArray.length >= concurrency)
-        await Promise.race(executingArray)
-      // 如果剩余的任务数量大于0，则执行下一个任务
-      if (waitingArray.length > 0) {
-        // 获取剩余未执行的任务中的第一个
-        const item = waitingArray.shift()!
-        const p = func(item).then(() => {
-          // 从正在执行的任务列表中移除已完成的任务
-          executingArray.splice(executingArray.indexOf(p), 1)
-        })
-        executingArray.push(p)
-      }
-    }
-    // 等待所有剩余任务完成
-    await Promise.all(executingArray)
-    isRunning = false
-    if (waitingArray.length > 0)
-      return run()
+    // 如果当前执行的任务数量大于并发数量则不执行
+    if (executingCount >= concurrency)
+      return Promise.resolve()
+    // 获取等待列表中的第一个任务
+    const item = waitingArray.shift()
+    if (!item)
+      return Promise.resolve()
+    // 将执行的任务数量加一
+    executingCount++
+    // 执行任务
+    func(item).finally(() => {
+      // 将执行的任务数量减一
+      executingCount--
+      // 递归执行任务
+      run()
+    })
+    // 递归执行任务（并发执行）
+    return run()
   }
 
   return {
@@ -103,7 +95,7 @@ export function useTaskRunnerItem<T>(func: (item: T) => Promise<void>, options: 
     append: (...tasks: T[]) => {
       waitingArray.push(...tasks)
       // 如果设置了自动开始，则立即开始执行任务
-      if (autoStart)
+      if (auto)
         run().then(() => {})
     },
   }

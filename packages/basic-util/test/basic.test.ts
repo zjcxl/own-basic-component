@@ -1,4 +1,4 @@
-import { describe } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { useTaskRunner } from '@own-basic-component/util'
 
 /**
@@ -7,15 +7,21 @@ import { useTaskRunner } from '@own-basic-component/util'
  */
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
-describe('task-runner', () => {
+describe('task-runner', async () => {
+  beforeEach(() => {
+    vi.useFakeTimers()
+  })
   const task = async () => {
     await delay(1000)
     // eslint-disable-next-line no-console
     console.log('task')
   }
 
-  const runner = useTaskRunner({
-    concurrency: 1,
+  it('1', () => {
+    const runner = useTaskRunner({
+      concurrency: 1,
+    })
+    runner.append(task)
+    expect('')
   })
-  runner.append(task)
 })
