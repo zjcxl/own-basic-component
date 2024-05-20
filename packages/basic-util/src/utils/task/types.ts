@@ -18,10 +18,10 @@ export interface BaseTaskRunnerOptions {
 /**
  * 任务执行器
  */
-export interface BaseTaskRunner {
+export interface BaseTaskRunner<T = TaskType> {
   /**
    * 添加任务
    * @param tasks 任务列表
    */
-  append: (...tasks: TaskType[]) => void
+  append: (...tasks: T[]) => void
 }
