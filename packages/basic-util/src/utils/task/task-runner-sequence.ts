@@ -1,40 +1,17 @@
-import type { BaseTaskRunner, TaskType } from './types'
+import type { TaskType } from './types'
+import type { TaskRunnerSequenceItem } from './task-runner-sequence-item'
+import { useTaskRunnerSequenceItem } from './task-runner-sequence-item'
 
 /**
  * 任务执行器
  */
-export interface TaskRunnerSequence extends BaseTaskRunner {
-
-  /**
-   * 是否有下一个
-   */
-  hasNext: () => boolean
-
-  /**
-   * 执行
-   */
-  run: () => Promise<void>
-
-}
+export interface TaskRunnerSequence extends TaskRunnerSequenceItem<TaskType> {}
 
 /**
  * 任务执行器
  */
 export function useTaskRunnerSequence(): TaskRunnerSequence {
-  /**
-   * 待执行的任务列表
-   */
-  const waitingArray: TaskType[] = []
-
-  return {
-    hasNext: (): boolean => waitingArray.length > 0,
-    run: async (): Promise<void> => {
-      if (waitingArray.length > 0)
-        await waitingArray.shift()!()
-      return Promise.resolve()
-    },
-    append: (...tasks: TaskType[]) => {
-      waitingArray.push(...tasks)
-    },
-  }
+  return useTaskRunnerSequenceItem((item) => {
+    return item()
+  })
 }
