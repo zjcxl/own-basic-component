@@ -39,6 +39,8 @@ export function useTaskRunnerSequenceItem<T>(
   const run = async (): Promise<void> => {
     if (isRunning)
       return Promise.resolve()
+    // 将 isRunning 设置为 true，防止多次调用 run 方法
+    isRunning = true
 
     if (waitingArray.length > 0) {
       await func(waitingArray.shift()!)
