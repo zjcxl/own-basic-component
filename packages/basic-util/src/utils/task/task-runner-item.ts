@@ -45,6 +45,10 @@ export function useTaskRunnerItem<T>(func: (item: T) => Promise<void>, options: 
    * 是否停止
    */
   let isStop: boolean = false
+  /**
+   * 是否正在执行中
+   */
+  let isRunning = false
 
   /**
    * 待执行的任务列表
@@ -60,7 +64,10 @@ export function useTaskRunnerItem<T>(func: (item: T) => Promise<void>, options: 
    */
   const run = async (): Promise<void> => {
     if (isStop)
-      return
+      return Promise.resolve()
+    if (isRunning)
+      return Promise.resolve()
+    isRunning = true
     // 如果当前执行的任务数量超过并发限制，则等待任意一个任务完成
     while (waitingArray.length > 0) {
       if (isStop)
@@ -80,6 +87,7 @@ export function useTaskRunnerItem<T>(func: (item: T) => Promise<void>, options: 
     }
     // 等待所有剩余任务完成
     await Promise.all(executingArray)
+    isRunning = false
   }
 
   return {
