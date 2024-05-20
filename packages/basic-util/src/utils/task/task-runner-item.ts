@@ -88,6 +88,8 @@ export function useTaskRunnerItem<T>(func: (item: T) => Promise<void>, options: 
     // 等待所有剩余任务完成
     await Promise.all(executingArray)
     isRunning = false
+    if (waitingArray.length > 0)
+      return run()
   }
 
   return {
