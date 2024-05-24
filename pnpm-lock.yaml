@@ -620,8 +620,8 @@ importers:
         specifier: ^2.9.2
         version: 2.9.2(@vueuse/core@10.9.0(vue@3.4.27(typescript@5.4.5)))(esbuild@0.20.2)(rollup@4.13.0)(typescript@5.4.5)(vite@5.2.11(@types/node@20.12.12)(less@4.2.0))(vue@3.4.27(typescript@5.4.5))
       unplugin-vue-router:
-        specifier: ^0.8.7
-        version: 0.8.7(rollup@4.13.0)(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
+        specifier: ^0.8.8
+        version: 0.8.8(rollup@4.13.0)(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
       vfonts:
         specifier: ^0.0.3
         version: 0.0.3
@@ -4376,8 +4376,8 @@ packages:
     peerDependencies:
       vue: ^2.7.0 || ^3.2.25
 
-  unplugin-vue-router@0.8.7:
-    resolution: {integrity: sha512-HihvKGce/tQRU4+4+9KSe+0Dr+lWQ4ulPsxxelqbqtDoNNxeBBiIROuTO04trO3pLHRoMxmUg/XtJeItHGch/g==, tarball: https://registry.npmjs.org/unplugin-vue-router/-/unplugin-vue-router-0.8.7.tgz}
+  unplugin-vue-router@0.8.8:
+    resolution: {integrity: sha512-8fKHzIF8+Suc1DhoBHmGxLhXUjhzIKvdTwngAybJ+3UrhNLv7KsGrNjaBVnQmlS9VNpxlwHRJzZ2Vc7IDlDm+A==, tarball: https://registry.npmjs.org/unplugin-vue-router/-/unplugin-vue-router-0.8.8.tgz}
     peerDependencies:
       vue-router: ^4.3.0
     peerDependenciesMeta:
@@ -5381,7 +5381,7 @@ snapshots:
       debug: 4.3.4
       kolorist: 1.8.0
       local-pkg: 0.5.0
-      mlly: 1.6.1
+      mlly: 1.7.0
     transitivePeerDependencies:
       - supports-color
 
@@ -7745,8 +7745,8 @@ snapshots:
 
   local-pkg@0.5.0:
     dependencies:
-      mlly: 1.6.1
-      pkg-types: 1.0.3
+      mlly: 1.7.0
+      pkg-types: 1.1.1
 
   locate-path@5.0.0:
     dependencies:
@@ -7907,7 +7907,7 @@ snapshots:
       fs-extra: 11.1.1
       globby: 13.2.2
       jiti: 1.21.0
-      mlly: 1.6.1
+      mlly: 1.7.0
       mri: 1.2.0
       pathe: 1.1.2
     optionalDependencies:
@@ -7917,7 +7917,7 @@ snapshots:
     dependencies:
       acorn: 8.11.3
       pathe: 1.1.2
-      pkg-types: 1.0.3
+      pkg-types: 1.1.1
       ufo: 1.5.3
 
   mlly@1.6.1:
@@ -8165,7 +8165,7 @@ snapshots:
   pkg-types@1.0.3:
     dependencies:
       jsonc-parser: 3.2.0
-      mlly: 1.6.1
+      mlly: 1.7.0
       pathe: 1.1.2
 
   pkg-types@1.1.1:
@@ -8795,7 +8795,7 @@ snapshots:
       - vite
       - webpack
 
-  unplugin-vue-router@0.8.7(rollup@4.13.0)(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5)):
+  unplugin-vue-router@0.8.8(rollup@4.13.0)(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5)):
     dependencies:
       '@babel/types': 7.24.5
       '@rollup/pluginutils': 5.1.0(rollup@4.13.0)
