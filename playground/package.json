@@ -16,7 +16,7 @@
     "@own-basic-component/request-axios": "workspace:*",
     "@own-basic-component/util": "workspace:*",
     "@own-basic-component/vue": "workspace:*",
-    "@vueuse/core": "^10.9.0",
+    "@vueuse/core": "^10.10.0",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
   },
@@ -39,7 +39,7 @@
     "less": "^4.2.0",
     "naive-ui": "^2.38.2",
     "pinia": "^2.1.7",
-    "pnpm": "^9.1.2",
+    "pnpm": "^9.1.3",
     "taze": "^0.13.8",
     "typescript": "^5.4.5",
     "unocss": "^0.60.3",
