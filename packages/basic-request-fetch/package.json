@@ -61,7 +61,7 @@
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
-    "@types/node": "^20.14.0",
+    "@types/node": "^20.14.1",
     "@vueuse/core": "^10.10.0",
     "bumpp": "^9.4.1",
     "eslint": "8.57.0",

@@ -41,7 +41,7 @@
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
-    "@types/node": "^20.14.0",
+    "@types/node": "^20.14.1",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vue/test-utils": "^2.4.6",
