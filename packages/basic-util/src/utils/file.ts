@@ -149,7 +149,7 @@ export async function calculateFileSha256(file: File) {
  */
 export async function calculateFileMd5(file: File): Promise<string> {
   return new Promise((resolve) => {
-  // 计算文件的md5
+    // 计算文件的md5
     const reader = new FileReader()
     reader.onload = (e) => {
       const buffer = e.target?.result as ArrayBuffer

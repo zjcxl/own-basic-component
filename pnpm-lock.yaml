@@ -254,7 +254,7 @@ importers:
         version: 5.2.12(@types/node@20.14.2)(less@4.2.0)
       vite-plugin-dts:
         specifier: ^3.9.1
-        version: 3.9.1(@types/node@20.14.2)(rollup@4.13.0)(typescript@5.4.5)(vite@5.2.12(@types/node@20.14.2)(less@4.2.0))
+        version: 3.9.1(@types/node@20.14.2)(rollup@3.28.1)(typescript@5.4.5)(vite@5.2.12(@types/node@20.14.2)(less@4.2.0))
       vitest:
         specifier: ^1.6.0
         version: 1.6.0(@types/node@20.14.2)(jsdom@24.1.0)(less@4.2.0)
@@ -548,8 +548,8 @@ importers:
         specifier: ^2.20.0
         version: 2.20.0(@unocss/eslint-plugin@0.60.4(eslint@8.57.0)(typescript@5.4.5))(@vue/compiler-sfc@3.4.27)(eslint@8.57.0)(typescript@5.4.5)(vitest@1.6.0(@types/node@20.14.2)(jsdom@24.1.0)(less@4.2.0))
       '@iconify-json/carbon':
-        specifier: ^1.1.34
-        version: 1.1.34
+        specifier: ^1.1.35
+        version: 1.1.35
       '@iconify-json/ri':
         specifier: ^1.1.20
         version: 1.1.20
@@ -620,8 +620,8 @@ importers:
         specifier: ^2.9.4
         version: 2.9.4(@vueuse/core@10.10.0(vue@3.4.27(typescript@5.4.5)))(esbuild@0.20.2)(rollup@4.13.0)(typescript@5.4.5)(vite@5.2.12(@types/node@20.14.2)(less@4.2.0))(vue@3.4.27(typescript@5.4.5))
       unplugin-vue-router:
-        specifier: ^0.9.0
-        version: 0.9.0(rollup@4.13.0)(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
+        specifier: ^0.9.1
+        version: 0.9.1(rollup@4.13.0)(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
       vfonts:
         specifier: ^0.0.3
         version: 0.0.3
@@ -1469,8 +1469,8 @@ packages:
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
 
-  '@iconify-json/carbon@1.1.34':
-    resolution: {integrity: sha512-azvhc5HP+CilSrzSEfP4MezsG5n4tj+vIJLADhqCbFM1BOAmyDe/K1lTL9GLDluybsCvSqb15+6AIRb1jtKhpQ==, tarball: https://registry.npmjs.org/@iconify-json/carbon/-/carbon-1.1.34.tgz}
+  '@iconify-json/carbon@1.1.35':
+    resolution: {integrity: sha512-zKqioWceqFRiLJvxpjcCpVP3j2YcokYshlbwSAHBhOih5XNUymUS3hm1kpV4KljMI1xWH96UcozHaaf6x4YzdA==, tarball: https://registry.npmjs.org/@iconify-json/carbon/-/carbon-1.1.35.tgz}
 
   '@iconify-json/ri@1.1.20':
     resolution: {integrity: sha512-yScIGjLFBCJKWKskQTWRjNI2Awoq+VRDkRxEsCQvSfdz41n+xkRtFG2K6J1OVI90ClRHfjFC8VJ2+WzxxyFjTQ==}
@@ -4373,8 +4373,8 @@ packages:
     peerDependencies:
       vue: ^2.7.0 || ^3.2.25
 
-  unplugin-vue-router@0.9.0:
-    resolution: {integrity: sha512-ECa+S4A4WDP08ihKtiUG3OvNM4O1PWdobFz/2+wke/Gajm8PGqC8s+70fZvzVBD+fQmEZD6Ny+FNXBz7qBQDeA==, tarball: https://registry.npmjs.org/unplugin-vue-router/-/unplugin-vue-router-0.9.0.tgz}
+  unplugin-vue-router@0.9.1:
+    resolution: {integrity: sha512-kQfplWIowamMLclOdJREiVqhuwTs5dSNPz7YftjKibwSmihds6KdMI9O/3WqilGFo6Q5+8gNwQTpu356wWs8KQ==, tarball: https://registry.npmjs.org/unplugin-vue-router/-/unplugin-vue-router-0.9.1.tgz}
     peerDependencies:
       vue-router: ^4.3.0
     peerDependenciesMeta:
@@ -4647,6 +4647,11 @@ packages:
 
   yaml@2.4.2:
     resolution: {integrity: sha512-B3VqDZ+JAg1nZpaEmWtTXUlBneoGx6CPM9b0TENK6aoSu5t73dItudwdgmi6tHlIZZId4dZ9skcAQ2UbcyAeVA==, tarball: https://registry.npmjs.org/yaml/-/yaml-2.4.2.tgz}
+    engines: {node: '>= 14'}
+    hasBin: true
+
+  yaml@2.4.3:
+    resolution: {integrity: sha512-sntgmxj8o7DE7g/Qi60cqpLBA3HG3STcDA0kO+WfB05jEKhZMbY7umNm2rBpQvsmZ16/lPXCJGW2672dgOUkrg==, tarball: https://registry.npmjs.org/yaml/-/yaml-2.4.3.tgz}
     engines: {node: '>= 14'}
     hasBin: true
 
@@ -5299,7 +5304,7 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.3': {}
 
-  '@iconify-json/carbon@1.1.34':
+  '@iconify-json/carbon@1.1.35':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -8720,7 +8725,7 @@ snapshots:
       - vite
       - webpack
 
-  unplugin-vue-router@0.9.0(rollup@4.13.0)(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5)):
+  unplugin-vue-router@0.9.1(rollup@4.13.0)(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5)):
     dependencies:
       '@babel/types': 7.24.6
       '@rollup/pluginutils': 5.1.0(rollup@4.13.0)
@@ -8734,7 +8739,7 @@ snapshots:
       pathe: 1.1.2
       scule: 1.3.0
       unplugin: 1.10.1
-      yaml: 2.4.2
+      yaml: 2.4.3
     optionalDependencies:
       vue-router: 4.3.2(vue@3.4.27(typescript@5.4.5))
     transitivePeerDependencies:
@@ -8807,6 +8812,23 @@ snapshots:
       - sugarss
       - supports-color
       - terser
+
+  vite-plugin-dts@3.9.1(@types/node@20.14.2)(rollup@3.28.1)(typescript@5.4.5)(vite@5.2.12(@types/node@20.14.2)(less@4.2.0)):
+    dependencies:
+      '@microsoft/api-extractor': 7.43.0(@types/node@20.14.2)
+      '@rollup/pluginutils': 5.1.0(rollup@3.28.1)
+      '@vue/language-core': 1.8.27(typescript@5.4.5)
+      debug: 4.3.4
+      kolorist: 1.8.0
+      magic-string: 0.30.10
+      typescript: 5.4.5
+      vue-tsc: 1.8.27(typescript@5.4.5)
+    optionalDependencies:
+      vite: 5.2.12(@types/node@20.14.2)(less@4.2.0)
+    transitivePeerDependencies:
+      - '@types/node'
+      - rollup
+      - supports-color
 
   vite-plugin-dts@3.9.1(@types/node@20.14.2)(rollup@4.13.0)(typescript@5.4.5)(vite@5.2.12(@types/node@20.14.2)(less@4.2.0)):
     dependencies:
@@ -9013,6 +9035,8 @@ snapshots:
       yaml: 2.4.2
 
   yaml@2.4.2: {}
+
+  yaml@2.4.3: {}
 
   yargs-parser@21.1.1: {}
 
