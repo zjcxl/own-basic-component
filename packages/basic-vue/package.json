@@ -2,7 +2,7 @@
   "name": "@own-basic-component/vue",
   "type": "module",
   "version": "0.8.119",
-  "packageManager": "pnpm@9.2.0",
+  "packageManager": "pnpm@9.3.0",
   "author": "chenxueli",
   "license": "MIT",
   "repository": {
@@ -50,7 +50,7 @@
     "jsdom": "^24.1.0",
     "less": "^4.2.0",
     "lint-staged": "^15.2.5",
-    "pnpm": "^9.2.0",
+    "pnpm": "^9.3.0",
     "taze": "^0.13.8",
     "typescript": "^5.4.5",
     "unplugin-auto-import": "^0.17.6",
