@@ -27,8 +27,8 @@ importers:
         specifier: ^4.7.0
         version: 4.7.0
       pnpm:
-        specifier: ^9.2.0
-        version: 9.2.0
+        specifier: ^9.3.0
+        version: 9.3.0
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -82,8 +82,8 @@ importers:
         specifier: ^15.2.5
         version: 15.2.5
       pnpm:
-        specifier: ^9.2.0
-        version: 9.2.0
+        specifier: ^9.3.0
+        version: 9.3.0
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -130,8 +130,8 @@ importers:
         specifier: ^15.2.5
         version: 15.2.5
       pnpm:
-        specifier: ^9.2.0
-        version: 9.2.0
+        specifier: ^9.3.0
+        version: 9.3.0
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -154,8 +154,8 @@ importers:
         specifier: ^3.4.27
         version: 3.4.27(typescript@5.4.5)
       vue-router:
-        specifier: ^4.3.2
-        version: 4.3.2(vue@3.4.27(typescript@5.4.5))
+        specifier: ^4.3.3
+        version: 4.3.3(vue@3.4.27(typescript@5.4.5))
 
   packages/basic-config:
     devDependencies:
@@ -184,8 +184,8 @@ importers:
         specifier: ^15.2.5
         version: 15.2.5
       pnpm:
-        specifier: ^9.2.0
-        version: 9.2.0
+        specifier: ^9.3.0
+        version: 9.3.0
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -238,8 +238,8 @@ importers:
         specifier: ^15.2.5
         version: 15.2.5
       pnpm:
-        specifier: ^9.2.0
-        version: 9.2.0
+        specifier: ^9.3.0
+        version: 9.3.0
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -302,8 +302,8 @@ importers:
         specifier: ^15.2.5
         version: 15.2.5
       pnpm:
-        specifier: ^9.2.0
-        version: 9.2.0
+        specifier: ^9.3.0
+        version: 9.3.0
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -363,8 +363,8 @@ importers:
         specifier: ^15.2.5
         version: 15.2.5
       pnpm:
-        specifier: ^9.2.0
-        version: 9.2.0
+        specifier: ^9.3.0
+        version: 9.3.0
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -424,8 +424,8 @@ importers:
         specifier: ^15.2.5
         version: 15.2.5
       pnpm:
-        specifier: ^9.2.0
-        version: 9.2.0
+        specifier: ^9.3.0
+        version: 9.3.0
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -484,8 +484,8 @@ importers:
         specifier: ^15.2.5
         version: 15.2.5
       pnpm:
-        specifier: ^9.2.0
-        version: 9.2.0
+        specifier: ^9.3.0
+        version: 9.3.0
       taze:
         specifier: ^0.13.8
         version: 0.13.8
@@ -541,8 +541,8 @@ importers:
         specifier: ^3.4.27
         version: 3.4.27(typescript@5.4.5)
       vue-router:
-        specifier: ^4.3.2
-        version: 4.3.2(vue@3.4.27(typescript@5.4.5))
+        specifier: ^4.3.3
+        version: 4.3.3(vue@3.4.27(typescript@5.4.5))
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.21.0
@@ -599,8 +599,8 @@ importers:
         specifier: ^2.1.7
         version: 2.1.7(typescript@5.4.5)(vue@3.4.27(typescript@5.4.5))
       pnpm:
-        specifier: ^9.2.0
-        version: 9.2.0
+        specifier: ^9.3.0
+        version: 9.3.0
       taze:
         specifier: ^0.13.8
         version: 0.13.8
@@ -621,7 +621,7 @@ importers:
         version: 2.9.4(@vueuse/core@10.10.0(vue@3.4.27(typescript@5.4.5)))(esbuild@0.20.2)(rollup@4.13.0)(typescript@5.4.5)(vite@5.2.13(@types/node@20.14.2)(less@4.2.0))(vue@3.4.27(typescript@5.4.5))
       unplugin-vue-router:
         specifier: ^0.9.1
-        version: 0.9.1(rollup@4.13.0)(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
+        version: 0.9.1(rollup@4.13.0)(vue-router@4.3.3(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
       vfonts:
         specifier: ^0.0.3
         version: 0.0.3
@@ -3831,8 +3831,8 @@ packages:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==, tarball: https://registry.npmjs.org/pluralize/-/pluralize-8.0.0.tgz}
     engines: {node: '>=4'}
 
-  pnpm@9.2.0:
-    resolution: {integrity: sha512-mKgP0RwucJZ0d2IwQQZDKz3cZ9z1S1qMAck/aKLNXgXmghhJUioG+3YoTUGiZg1eM08u47vykYO/LnObHa+ncQ==, tarball: https://registry.npmjs.org/pnpm/-/pnpm-9.2.0.tgz}
+  pnpm@9.3.0:
+    resolution: {integrity: sha512-7nuT4MK9EUCcZCT5K4ZvMdPqG+9fvkfTx1AM3DyWaIM9LlVoGtZt9bZAxh+p3CXVRu+lTXbX+L9UsTYUrCk2MQ==, tarball: https://registry.npmjs.org/pnpm/-/pnpm-9.3.0.tgz}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -4553,8 +4553,8 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
-  vue-router@4.3.2:
-    resolution: {integrity: sha512-hKQJ1vDAZ5LVkKEnHhmm1f9pMiWIBNGF5AwU67PdH7TyXCj/a4hTccuUuYCAMgJK6rO/NVYtQIEN3yL8CECa7Q==, tarball: https://registry.npmjs.org/vue-router/-/vue-router-4.3.2.tgz}
+  vue-router@4.3.3:
+    resolution: {integrity: sha512-8Q+u+WP4N2SXY38FDcF2H1dUEbYVHVPtPCPZj/GTZx8RCbiB8AtJP9+YIxn4Vs0svMTNQcLIzka4GH7Utkx9xQ==, tarball: https://registry.npmjs.org/vue-router/-/vue-router-4.3.3.tgz}
     peerDependencies:
       vue: ^3.2.0
 
@@ -8175,7 +8175,7 @@ snapshots:
 
   pluralize@8.0.0: {}
 
-  pnpm@9.2.0: {}
+  pnpm@9.3.0: {}
 
   postcss-selector-parser@6.0.15:
     dependencies:
@@ -8794,7 +8794,7 @@ snapshots:
       - vite
       - webpack
 
-  unplugin-vue-router@0.9.1(rollup@4.13.0)(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5)):
+  unplugin-vue-router@0.9.1(rollup@4.13.0)(vue-router@4.3.3(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5)):
     dependencies:
       '@babel/types': 7.24.6
       '@rollup/pluginutils': 5.1.0(rollup@4.13.0)
@@ -8810,7 +8810,7 @@ snapshots:
       unplugin: 1.10.1
       yaml: 2.4.3
     optionalDependencies:
-      vue-router: 4.3.2(vue@3.4.27(typescript@5.4.5))
+      vue-router: 4.3.3(vue@3.4.27(typescript@5.4.5))
     transitivePeerDependencies:
       - rollup
       - vue
@@ -8973,7 +8973,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)):
+  vue-router@4.3.3(vue@3.4.27(typescript@5.4.5)):
     dependencies:
       '@vue/devtools-api': 6.6.1
       vue: 3.4.27(typescript@5.4.5)
