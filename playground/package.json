@@ -16,7 +16,7 @@
     "@own-basic-component/request-axios": "workspace:*",
     "@own-basic-component/util": "workspace:*",
     "@own-basic-component/vue": "workspace:*",
-    "@vueuse/core": "^10.10.1",
+    "@vueuse/core": "^10.11.0",
     "vue": "^3.4.27",
     "vue-router": "^4.3.3"
   },
