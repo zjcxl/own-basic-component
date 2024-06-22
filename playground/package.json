@@ -18,7 +18,7 @@
     "@own-basic-component/vue": "workspace:*",
     "@vueuse/core": "^10.11.0",
     "vue": "^3.4.29",
-    "vue-router": "^4.3.3"
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.21.1",
@@ -46,7 +46,7 @@
     "unplugin-auto-import": "^0.17.6",
     "unplugin-vue-components": "^0.27.0",
     "unplugin-vue-macros": "^2.9.5",
-    "unplugin-vue-router": "^0.9.1",
+    "unplugin-vue-router": "^0.10.0",
     "vfonts": "^0.0.3",
     "vite": "^5.3.1",
     "vitest": "^1.6.0",
