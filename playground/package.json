@@ -24,10 +24,10 @@
     "@antfu/eslint-config": "^2.21.2",
     "@iconify-json/carbon": "^1.1.36",
     "@iconify-json/ri": "^1.1.21",
-    "@types/node": "^20.14.9",
-    "@unocss/eslint-config": "^0.61.0",
-    "@unocss/eslint-plugin": "^0.61.0",
-    "@unocss/reset": "^0.61.0",
+    "@types/node": "^20.14.10",
+    "@unocss/eslint-config": "^0.61.2",
+    "@unocss/eslint-plugin": "^0.61.2",
+    "@unocss/reset": "^0.61.2",
     "@vicons/ionicons5": "^0.12.0",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
@@ -42,14 +42,14 @@
     "pnpm": "^9.4.0",
     "taze": "^0.14.2",
     "typescript": "^5.5.3",
-    "unocss": "^0.61.0",
+    "unocss": "^0.61.2",
     "unplugin-auto-import": "^0.17.6",
     "unplugin-vue-components": "^0.27.2",
     "unplugin-vue-macros": "^2.9.5",
     "unplugin-vue-router": "^0.10.0",
     "vfonts": "^0.0.3",
-    "vite": "^5.3.2",
+    "vite": "^5.3.3",
     "vitest": "^1.6.0",
-    "vue-tsc": "^2.0.24"
+    "vue-tsc": "^2.0.26"
   }
 }

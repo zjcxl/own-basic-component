@@ -41,7 +41,7 @@
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
-    "@types/node": "^20.14.9",
+    "@types/node": "^20.14.10",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vue/test-utils": "^2.4.6",
@@ -56,11 +56,11 @@
     "unplugin-auto-import": "^0.17.6",
     "unplugin-vue-macros": "^2.9.5",
     "vfonts": "^0.0.3",
-    "vite": "^5.3.2",
+    "vite": "^5.3.3",
     "vite-plugin-dts": "^3.9.1",
     "vitest": "^1.6.0",
     "vue": "^3.4.31",
-    "vue-tsc": "^2.0.24"
+    "vue-tsc": "^2.0.26"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
