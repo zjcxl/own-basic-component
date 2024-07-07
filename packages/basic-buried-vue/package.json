@@ -52,7 +52,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.21.2",
+    "@antfu/eslint-config": "^2.21.3",
     "@antfu/ni": "^0.21.12",
     "@antfu/utils": "^0.7.10",
     "@own-basic-component/buried": "workspace:*",
@@ -62,7 +62,7 @@
     "esno": "^4.7.0",
     "lint-staged": "^15.2.7",
     "pnpm": "^9.4.0",
-    "rimraf": "^5.0.7",
+    "rimraf": "^5.0.8",
     "taze": "^0.14.2",
     "typescript": "^5.5.3",
     "unbuild": "^2.0.0",
