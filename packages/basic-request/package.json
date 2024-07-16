@@ -52,7 +52,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.22.2",
+    "@antfu/eslint-config": "^2.22.3",
     "@antfu/ni": "^0.22.0",
     "@antfu/utils": "^0.7.10",
     "@own-basic-component/config": "workspace:*",
@@ -69,7 +69,7 @@
     "unbuild": "^2.0.0",
     "vite": "^5.3.3",
     "vite-plugin-dts": "^3.9.1",
-    "vitest": "^2.0.2"
+    "vitest": "^2.0.3"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
