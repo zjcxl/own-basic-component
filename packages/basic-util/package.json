@@ -57,7 +57,7 @@
     "nanoid": "^5.0.7"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.22.4",
+    "@antfu/eslint-config": "^2.23.0",
     "@antfu/ni": "^0.22.0",
     "@antfu/utils": "^0.7.10",
     "@own-basic-component/config": "workspace:*",
