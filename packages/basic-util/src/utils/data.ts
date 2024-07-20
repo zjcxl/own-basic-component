@@ -38,7 +38,7 @@ function deepCopy(_object: _typeObj, _obj: _typeObj = {}): _typeObj {
  * @param html html文本
  */
 function formatTextFromHtml(html: string): string {
-  return html.replace(/<.+?>/g, '').replace(/&nbsp;/ig, '').replace(/\s/ig, '').replace(/\n/g, '')
+  return html.replace(/<.+?>/g, '').replace(/&nbsp;/gi, '').replace(/\s/g, '').replace(/\n/g, '')
 }
 
 /**
@@ -61,6 +61,17 @@ export interface FormatMemorySizeOptions {
   unitArray?: string[]
 }
 
+export interface MemorySizeValue {
+  /**
+   * 数值
+   */
+  value: number
+  /**
+   * 单位
+   */
+  unit: string
+}
+
 /**
  * 格式化文件大小样式
  * @param size 文件大小
@@ -68,10 +79,24 @@ export interface FormatMemorySizeOptions {
  */
 function formatMemorySize(size: number | bigint, options?: FormatMemorySizeOptions): string {
   const blank = options?.blank || ''
+  const value = getFormatMemorySizeValue(size, options)
+  return `${value.value}${blank}${value.unit}`
+}
+
+/**
+ * 格式化文件大小样式
+ * @param size 文件大小
+ * @param options 空白字符
+ */
+function getFormatMemorySizeValue(size: number | bigint, options?: Omit<FormatMemorySizeOptions, 'blank'>): MemorySizeValue {
   const unitArray = options?.unitArray || MEMORY_UNIT_ARRAY
   let index = options?.index || 0
-  if (size <= 0)
-    return `0${blank}${unitArray[0]}`
+  if (size <= 0) {
+    return {
+      value: 0,
+      unit: unitArray[0],
+    }
+  }
   if (!(typeof size !== 'number' && size <= Number.MAX_VALUE)) {
     // 处理大数
     size = BigInt(size)
@@ -85,8 +110,12 @@ function formatMemorySize(size: number | bigint, options?: FormatMemorySizeOptio
       }
     }
     // 如果此处的表示还是true代表还是大数，直接返回即可
-    if (flag)
-      return `${size}${blank}${unitArray[index]}`
+    if (flag) {
+      return {
+        value: Number(size),
+        unit: unitArray[index],
+      }
+    }
   }
   size = Number(size)
   // 此处全为number的数字
@@ -94,7 +123,10 @@ function formatMemorySize(size: number | bigint, options?: FormatMemorySizeOptio
     size /= 1024
     index++
   }
-  return `${Math.round(size * 100) / 100.0}${blank}${unitArray[index]}`
+  return {
+    value: Math.round(size * 100) / 100.0,
+    unit: unitArray[index],
+  }
 }
 
 /**
@@ -190,4 +222,5 @@ export {
   copyText,
   getStrByteLength,
   getStrMemorySize,
+  getFormatMemorySizeValue,
 }
