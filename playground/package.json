@@ -17,7 +17,7 @@
     "@own-basic-component/util": "workspace:*",
     "@own-basic-component/vue": "workspace:*",
     "@vueuse/core": "^10.11.0",
-    "vue": "^3.4.32",
+    "vue": "^3.4.33",
     "vue-router": "^4.4.0"
   },
   "devDependencies": {
