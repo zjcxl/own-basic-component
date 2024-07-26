@@ -48,8 +48,8 @@
     "unplugin-vue-macros": "^2.10.0",
     "unplugin-vue-router": "^0.10.1",
     "vfonts": "^0.0.3",
-    "vite": "^5.3.4",
+    "vite": "^5.3.5",
     "vitest": "^2.0.4",
-    "vue-tsc": "^2.0.28"
+    "vue-tsc": "^2.0.29"
   }
 }
