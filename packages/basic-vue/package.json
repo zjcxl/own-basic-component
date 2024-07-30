@@ -51,7 +51,7 @@
     "less": "^4.2.0",
     "lint-staged": "^15.2.7",
     "pnpm": "^9.6.0",
-    "taze": "^0.16.1",
+    "taze": "^0.16.3",
     "typescript": "^5.5.4",
     "unplugin-auto-import": "^0.18.2",
     "unplugin-vue-macros": "^2.10.0",
