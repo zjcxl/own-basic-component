@@ -52,7 +52,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "axios": "^1.7.2"
+    "axios": "^1.7.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.24.1",
@@ -63,7 +63,7 @@
     "@own-basic-component/util": "workspace:*",
     "@types/node": "^22.0.2",
     "@vueuse/core": "^10.11.0",
-    "bumpp": "^9.4.1",
+    "bumpp": "^9.4.2",
     "eslint": "8.57.0",
     "esno": "^4.7.0",
     "lint-staged": "^15.2.7",
