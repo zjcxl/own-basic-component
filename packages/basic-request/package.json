@@ -57,7 +57,7 @@
     "@antfu/utils": "^0.7.10",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/util": "workspace:*",
-    "@types/node": "^22.0.2",
+    "@types/node": "^22.1.0",
     "@vueuse/core": "^10.11.0",
     "bumpp": "^9.4.2",
     "eslint": "8.57.0",
