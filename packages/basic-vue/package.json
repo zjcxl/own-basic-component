@@ -57,9 +57,9 @@
     "unplugin-vue-macros": "^2.11.4",
     "vfonts": "^0.0.3",
     "vite": "^5.3.5",
-    "vite-plugin-dts": "^3.9.1",
+    "vite-plugin-dts": "^4.0.0",
     "vitest": "^2.0.5",
-    "vue": "^3.4.35",
+    "vue": "^3.4.36",
     "vue-tsc": "^2.0.29"
   },
   "simple-git-hooks": {

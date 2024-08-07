@@ -17,8 +17,8 @@
     "@own-basic-component/util": "workspace:*",
     "@own-basic-component/vue": "workspace:*",
     "@vueuse/core": "^10.11.0",
-    "vue": "^3.4.35",
-    "vue-router": "^4.4.2"
+    "vue": "^3.4.36",
+    "vue-router": "^4.4.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.24.1",
@@ -38,7 +38,7 @@
     "jsdom": "^24.1.1",
     "less": "^4.2.0",
     "naive-ui": "^2.39.0",
-    "pinia": "^2.2.0",
+    "pinia": "^2.2.1",
     "pnpm": "^9.6.0",
     "taze": "^0.16.3",
     "typescript": "^5.5.4",
