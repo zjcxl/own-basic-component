@@ -37,7 +37,7 @@
     "up": "taze major -I"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.24.1",
+    "@antfu/eslint-config": "^2.25.0",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
@@ -45,7 +45,7 @@
     "@vitejs/plugin-vue": "^5.1.2",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vue/test-utils": "^2.4.6",
-    "@vueuse/core": "^10.11.0",
+    "@vueuse/core": "^10.11.1",
     "eslint": "8.57.0",
     "jsdom": "^24.1.1",
     "less": "^4.2.0",
@@ -59,7 +59,7 @@
     "vite": "^5.4.0",
     "vite-plugin-dts": "^4.0.1",
     "vitest": "^2.0.5",
-    "vue": "^3.4.36",
+    "vue": "^3.4.37",
     "vue-tsc": "^2.0.29"
   },
   "simple-git-hooks": {
