@@ -41,7 +41,7 @@
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/request": "workspace:*",
     "@own-basic-component/util": "workspace:*",
-    "@types/node": "^22.1.0",
+    "@types/node": "^22.2.0",
     "@vitejs/plugin-vue": "^5.1.2",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vue/test-utils": "^2.4.6",
@@ -57,7 +57,7 @@
     "unplugin-vue-macros": "^2.11.4",
     "vfonts": "^0.0.3",
     "vite": "^5.4.0",
-    "vite-plugin-dts": "^4.0.1",
+    "vite-plugin-dts": "^4.0.2",
     "vitest": "^2.0.5",
     "vue": "^3.4.37",
     "vue-tsc": "^2.0.29"

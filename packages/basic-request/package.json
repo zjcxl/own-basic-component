@@ -53,11 +53,11 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.25.0",
-    "@antfu/ni": "^0.22.0",
+    "@antfu/ni": "^0.22.1",
     "@antfu/utils": "^0.7.10",
     "@own-basic-component/config": "workspace:*",
     "@own-basic-component/util": "workspace:*",
-    "@types/node": "^22.1.0",
+    "@types/node": "^22.2.0",
     "@vueuse/core": "^10.11.1",
     "bumpp": "^9.4.2",
     "eslint": "8.57.0",
@@ -68,7 +68,7 @@
     "typescript": "^5.5.4",
     "unbuild": "^2.0.0",
     "vite": "^5.4.0",
-    "vite-plugin-dts": "^4.0.1",
+    "vite-plugin-dts": "^4.0.2",
     "vitest": "^2.0.5"
   },
   "simple-git-hooks": {
