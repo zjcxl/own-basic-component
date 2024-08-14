@@ -7,7 +7,10 @@ class EventEmits {
   events: Record<string, Set<TypeEvent>> = {}
 
   on(eventName: string, fun: TypeEvent) {
-    ;(this.events[eventName] ??= new Set<TypeEvent>()).add(fun)
+    if (!this.events[eventName]) {
+      this.events[eventName] = new Set()
+    }
+    this.events[eventName].add(fun)
   }
 
   emit(eventName: string, ...args: any[]) {
