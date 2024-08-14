@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/vue",
   "type": "module",
-  "version": "0.8.185",
+  "version": "0.8.186",
   "packageManager": "pnpm@9.7.0",
   "author": "chenxueli",
   "license": "MIT",
