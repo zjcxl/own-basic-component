@@ -48,3 +48,7 @@ export * from './utils/watermark'
  * 任务执行器工具
  */
 export * from './utils/task'
+/**
+ * 发布订阅工具
+ */
+export * from './utils/events'
