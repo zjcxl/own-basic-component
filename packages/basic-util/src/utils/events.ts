@@ -4,7 +4,7 @@ class EventEmits {
   /**
    * 事件集合
    */
-  events: Record<string, Set<TypeEvent>> = {}
+  private events: Record<string, Set<TypeEvent>> = {}
 
   on(eventName: string, fun: TypeEvent) {
     ;(this.events[eventName] ??= new Set<TypeEvent>()).add(fun)
