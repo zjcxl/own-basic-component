@@ -7,10 +7,7 @@ class EventEmits {
   events: Record<string, Set<TypeEvent>> = {}
 
   on(eventName: string, fun: TypeEvent) {
-    if (!this.events[eventName]) {
-      this.events[eventName] = new Set()
-    }
-    this.events[eventName].add(fun)
+    ;(this.events[eventName] ??= new Set<TypeEvent>()).add(fun)
   }
 
   emit(eventName: string, ...args: any[]) {
@@ -19,6 +16,9 @@ class EventEmits {
 
   off(eventName: string, fun: TypeEvent) {
     this.events[eventName]?.delete(fun)
+    if (this.events[eventName]?.size === 0) {
+      delete this.events[eventName]
+    }
   }
 
   once(eventName: string, fun: TypeEvent) {
@@ -30,4 +30,4 @@ class EventEmits {
   }
 }
 
-export const event = new EventEmits()
+export const EVENT_EMITS_UTIL = new EventEmits()
