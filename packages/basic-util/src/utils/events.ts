@@ -6,6 +6,22 @@ class EventEmits {
    */
   private events: Record<string, Set<TypeEvent>> = {}
 
+  /**
+   * 单例
+   * @private
+   */
+  private static instance: EventEmits
+
+  private constructor() {
+  }
+
+  /**
+   * 获取实例
+   */
+  public static getInstance() {
+    return this.instance ??= new EventEmits()
+  }
+
   on(eventName: string, fun: TypeEvent) {
     ;(this.events[eventName] ??= new Set<TypeEvent>()).add(fun)
   }
@@ -30,4 +46,4 @@ class EventEmits {
   }
 }
 
-export const EVENT_EMITS_UTIL = new EventEmits()
+export const EVENT_EMITS_UTIL = EventEmits.getInstance()
