@@ -29,6 +29,10 @@ export * from './utils/file'
  */
 export * from './utils/image'
 /**
+ * 函数工具
+ */
+export * from './utils/fun'
+/**
  * 遮罩层工具
  */
 export * from './utils/mask'
