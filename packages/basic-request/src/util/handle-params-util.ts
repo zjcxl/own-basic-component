@@ -1,5 +1,3 @@
-'use strict'
-
 import type { QueryType } from '@own-basic-component/config'
 
 /**
@@ -43,17 +41,14 @@ export function handleFormDataParams(data: QueryType, requestData: any) {
       key,
       value: String(value),
     }
-  })
-    // 需要过滤掉所有未空的字符串的值
-    .filter(({ value }) => value !== null && value !== undefined)
-    .forEach(({
-      key,
-      value,
-    }) => {
-      if (typeof value === 'undefined')
-        return
+  }).filter(({ value }) => value !== null && value !== undefined).forEach(({
+    key,
+    value,
+  }) => {
+    if (typeof value === 'undefined')
+      return
 
-      formData.append(key, value)
-    })
+    formData.append(key, value)
+  })
   requestData.data = formData
 }

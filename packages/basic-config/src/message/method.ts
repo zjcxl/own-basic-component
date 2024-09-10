@@ -1,5 +1,3 @@
-'use strict'
-
 import { defaultMessageConfig } from './default'
 import type { MessageUtilConfig } from './types'
 

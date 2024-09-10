@@ -1,12 +1,9 @@
-'use strict'
-
 import { browserIsSafari, browserIsTrident } from './browser'
 
 /**
  * 格式化时长（ms）
  * @param value 时长
  * @param format 格式化的格式
- * @returns {TimestampModel}
  */
 function formatByTimestamp(value = 0, format = 'hh:mm:ss.SSS') {
   return new TimestampModel(value, format)
@@ -16,7 +13,6 @@ function formatByTimestamp(value = 0, format = 'hh:mm:ss.SSS') {
  * 格式化时长（s）
  * @param value 时长
  * @param format 格式化的格式
- * @returns {TimeModel}
  */
 function formatByTime(value = 0, format = 'hh:mm:ss.SSS') {
   return new TimeModel(value, format)
@@ -26,7 +22,6 @@ function formatByTime(value = 0, format = 'hh:mm:ss.SSS') {
  * 格式化日期
  * @param value 日期或时间戳
  * @param format 格式化的格式
- * @returns {DateModel}
  */
 function formatByDate(value = new Date(), format = 'yyyy-MM-dd HH:mm.ss.SSS') {
   return new DateModel(value, format)
@@ -36,7 +31,6 @@ function formatByDate(value = new Date(), format = 'yyyy-MM-dd HH:mm.ss.SSS') {
  * 格式化日期
  * @param date
  * @param format 格式化的格式
- * @returns {DateModel}
  */
 function formatByString(date: string, format = 'yyyy-MM-dd HH:mm.ss.SSS') {
   const replaceDate = date.replace(/T/, ' ').replace(/-/g, '/')
@@ -47,8 +41,8 @@ function formatByString(date: string, format = 'yyyy-MM-dd HH:mm.ss.SSS') {
 /**
  * 本地日期格式化
  * @param dateTime
- * @param needSlash 是否需要斜杠
  * @param length
+ * @param needSlash 是否需要斜杠
  */
 function formatDateTimeWithSub(dateTime: string | undefined, length: number, needSlash?: boolean): string {
   if (!dateTime)
@@ -383,16 +377,16 @@ class TimeCountModel implements TimeCountType {
 }
 
 export {
-  formatByTimestamp,
-  formatByTime,
+  DateModel,
   formatByDate,
   formatByString,
+  formatByTime,
+  formatByTimestamp,
   formatDateTimeWithSub,
   formatSubDate,
   formatSubDateTime,
-  TimestampModel,
-  TimeModel,
-  DateModel,
-  TimeCountType,
   TimeCountModel,
+  TimeCountType,
+  TimeModel,
+  TimestampModel,
 }

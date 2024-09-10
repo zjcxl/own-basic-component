@@ -1,5 +1,3 @@
-'use strict'
-
 import { defaultMaskConfig as DEFAULT_CONFIG } from './default'
 import type { MaskConfig, MaskUtilConfig, MaskUtilMethodConfig } from './types'
 

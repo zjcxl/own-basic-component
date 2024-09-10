@@ -1,9 +1,7 @@
-'use strict'
-
-import { ST, getUrl } from '../../data'
-import type { SimpleExtraInfoStType } from '../../type'
+import { getUrl, ST } from '../../data'
 import { resolveToUrlSearchParams, send as resultSend } from '../../util'
 import { clear, getExtraInfo } from './push'
+import type { SimpleExtraInfoStType } from '../../type'
 
 /**
  * stay time 页面停留

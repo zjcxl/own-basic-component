@@ -1,9 +1,7 @@
-'use strict'
-
-import { PV, getUrl } from '../../data'
-import type { SimpleExtraInfoPvType } from '../../type'
+import { getUrl, PV } from '../../data'
 import { resolveToUrlSearchParams, send as resultSend } from '../../util'
 import { clear, getExtraInfo } from './push'
+import type { SimpleExtraInfoPvType } from '../../type'
 
 /**
  * page view 页面浏览

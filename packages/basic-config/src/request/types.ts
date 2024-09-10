@@ -1,7 +1,5 @@
-'use strict'
-
-import type { MaskConfig } from '../mask/types'
 import { getProjectConfig } from '../project'
+import type { MaskConfig } from '../mask/types'
 import type { RequestMethod } from '../project/types'
 
 /**

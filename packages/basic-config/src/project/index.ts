@@ -1,5 +1,3 @@
-'use strict'
-
 import { defineLoadingBarConfig } from '../loading'
 import { defineMaskUtilConfig } from '../mask'
 import { defineMessageConfig } from '../message'

@@ -1,9 +1,7 @@
-'use strict'
-
 import { CUSTOM, getUrl } from '../../data'
-import type { SimpleExtraInfoCustomType } from '../../type'
 import { resolveToUrlSearchParams, send as resultSend } from '../../util'
 import { clear, getExtraInfo } from './push'
+import type { SimpleExtraInfoCustomType } from '../../type'
 
 /**
  * 自定义

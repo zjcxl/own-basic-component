@@ -1,5 +1,3 @@
-'use strict'
-
 import { getResultConfig, handleMergeExtendConfig, handleMergeRequestConfig, setResultConfig } from './method'
 import type { RequestConfig, ResultModel } from './types'
 

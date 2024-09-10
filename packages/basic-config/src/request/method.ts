@@ -1,5 +1,3 @@
-'use strict'
-
 import { defaultConfig as DEFAULT_REQUEST_CONFIG } from './default'
 import type { MergeType, RequestConfig, ResultModel } from './types'
 

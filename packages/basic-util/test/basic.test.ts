@@ -1,5 +1,5 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { useTaskRunner } from '@own-basic-component/util'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 /**
  * 延时函数

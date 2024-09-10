@@ -1,5 +1,3 @@
-'use strict'
-
 import type { SimpleBuriedCustomModelValue, SimpleExtraInfoCustomType } from '../../type'
 
 /**

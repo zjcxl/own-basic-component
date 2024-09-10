@@ -1,5 +1,3 @@
-'use strict'
-
 import { defaultLoadingConfig } from './default'
 import type { LoadingBarConfig } from './types'
 

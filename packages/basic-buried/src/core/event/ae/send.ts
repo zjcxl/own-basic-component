@@ -1,9 +1,7 @@
-'use strict'
-
 import { AE, getUrl } from '../../data'
-import type { SimpleExtraInfoAeType } from '../../type'
 import { resolveToUrlSearchParams, send as resultSend } from '../../util'
 import { clear, getExtraInfo } from './push'
+import type { SimpleExtraInfoAeType } from '../../type'
 
 /**
  * action event 点击

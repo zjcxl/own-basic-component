@@ -1,9 +1,5 @@
-'use strict'
-// browser.ts
-
 /**
  * 获取浏览器标识
- * @returns {string}
  */
 function getUserAgent(): string {
   return window.navigator.userAgent.toLowerCase()
@@ -11,7 +7,6 @@ function getUserAgent(): string {
 
 /**
  * 获取浏览器的版本
- * @returns {string}
  */
 function getAppVersion(): string {
   const userAgent = getUserAgent()
@@ -26,7 +21,6 @@ function getAppVersion(): string {
 
 /**
  * 获取浏览器的语言信息
- * @returns {string}
  */
 function getLanguage(): string {
   return window.navigator.language.toLowerCase()
@@ -34,7 +28,6 @@ function getLanguage(): string {
 
 /**
  * 是否为IE内核
- * @returns {boolean}
  */
 function isTrident(): boolean {
   return getUserAgent().includes('trident') || getUserAgent().includes('msie')
@@ -42,7 +35,6 @@ function isTrident(): boolean {
 
 /**
  * 是否为opera内核
- * @returns {boolean}
  */
 function isPresto(): boolean {
   return !!getUserAgent().match(/presto/i)
@@ -50,7 +42,6 @@ function isPresto(): boolean {
 
 /**
  * 是否为苹果、谷歌内核
- * @returns {boolean}
  */
 function isWebKit(): boolean {
   return !!getUserAgent().match(/applewebkit/i)
@@ -65,7 +56,6 @@ function isGecko(): boolean {
 
 /**
  * 是否为移动终端
- * @returns {boolean}
  */
 function isMobile(): boolean {
   return !!getUserAgent().match(/applewebkit.*mobile.*/i)
@@ -73,7 +63,6 @@ function isMobile(): boolean {
 
 /**
  * ios终端
- * @returns {boolean}
  */
 function isIOS(): boolean {
   return !!getUserAgent().match(/\(i[^;]+;( u;)? cpu.+mac os x/i)
@@ -81,7 +70,6 @@ function isIOS(): boolean {
 
 /**
  * android终端
- * @returns {boolean}
  */
 function isAndroid(): boolean {
   return !!getUserAgent().match(/android/i) || !!getUserAgent().match(/adr/i)
@@ -89,7 +77,6 @@ function isAndroid(): boolean {
 
 /**
  * 是否为iPhone或者QQHD浏览器
- * @returns {boolean}
  */
 function isIPhone(): boolean {
   return !!getUserAgent().match(/iphone/i)
@@ -97,7 +84,6 @@ function isIPhone(): boolean {
 
 /**
  * 是否iPad
- * @returns {boolean}
  */
 function isIPad(): boolean {
   return !!getUserAgent().match(/ipad/i)
@@ -105,7 +91,6 @@ function isIPad(): boolean {
 
 /**
  * 是否web应该程序，没有头部与底部
- * @returns {boolean}
  */
 function isWebApp(): boolean {
   return !!getUserAgent().match(/safari/i)
@@ -113,7 +98,6 @@ function isWebApp(): boolean {
 
 /**
  * 是否是微信客户端
- * @returns {boolean}
  */
 function isWeChat(): boolean {
   return !!getUserAgent().match(/micromessenger/i)
@@ -121,7 +105,6 @@ function isWeChat(): boolean {
 
 /**
  * 是否QQ客户端
- * @returns {boolean}
  */
 function isQQ(): boolean {
   return !!getUserAgent().match(/mqqbrowser/i)
@@ -129,7 +112,6 @@ function isQQ(): boolean {
 
 /**
  * 是否为mac终端
- * @returns {boolean}
  */
 function isMac(): boolean {
   return /macintosh|mac os x/i.test(getUserAgent())
@@ -137,7 +119,6 @@ function isMac(): boolean {
 
 /**
  * 是否为windows终端
- * @returns {boolean}
  */
 function isWindows(): boolean {
   return /windows|win32/i.test(getUserAgent())
@@ -145,7 +126,6 @@ function isWindows(): boolean {
 
 /**
  * 是否为safari浏览器
- * @returns {boolean}
  */
 function isSafari(): boolean {
   return /safari/i.test(getUserAgent()) && !/chrome/i.test(getUserAgent())
@@ -277,23 +257,23 @@ function browserType(lang: 'zh-cn' | 'en' = 'en') {
 }
 
 export {
-  getUserAgent as browserUserAgent,
+  browserType,
   getAppVersion as browserVersion,
   getLanguage as browserLanguage,
-  browserType,
-  isTrident as browserIsTrident,
-  isPresto as browserIsPresto,
-  isWebKit as browserIsWebKit,
-  isGecko as browserIsGecko,
-  isMobile as browserIsMobile,
-  isIOS as browserIsIOS,
+  getUserAgent as browserUserAgent,
   isAndroid as browserIsAndroid,
-  isIPhone as browserIsIPhone,
+  isGecko as browserIsGecko,
+  isIOS as browserIsIOS,
   isIPad as browserIsIPad,
-  isWebApp as browserIsWebApp,
-  isWeChat as browserIsWeChat,
-  isQQ as browserIsQQ,
+  isIPhone as browserIsIPhone,
   isMac as browserIsMac,
-  isWindows as browserIsWindows,
+  isMobile as browserIsMobile,
+  isPresto as browserIsPresto,
+  isQQ as browserIsQQ,
   isSafari as browserIsSafari,
+  isTrident as browserIsTrident,
+  isWebApp as browserIsWebApp,
+  isWebKit as browserIsWebKit,
+  isWeChat as browserIsWeChat,
+  isWindows as browserIsWindows,
 }

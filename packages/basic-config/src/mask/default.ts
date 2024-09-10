@@ -1,5 +1,3 @@
-'use strict'
-
 import type { MaskConfig, MaskUtilConfig } from './types'
 
 /**
@@ -12,6 +10,7 @@ export const defaultMaskConfig: MaskUtilConfig = {
    * @param put 放置遮罩层的方法
    */
   open(config: MaskConfig, put: (item: any) => void): void {
+    // eslint-disable-next-line no-console
     console.log('open', config, put)
   },
   /**
@@ -19,6 +18,7 @@ export const defaultMaskConfig: MaskUtilConfig = {
    * @param item 关闭的遮罩层信息
    */
   close(item: any): void {
+    // eslint-disable-next-line no-console
     console.log('close', item)
   },
 }

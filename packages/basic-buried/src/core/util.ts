@@ -1,5 +1,3 @@
-'use strict'
-
 import { getAuthInfo } from './auth'
 import { getBasicInfo, getDefaultParams } from './data'
 import { getGeoPointInfo } from './geo-point'

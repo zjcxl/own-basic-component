@@ -1,58 +1,14 @@
-'use strict'
-
-/**
- * 浏览器工具
- */
 export * from './utils/browser'
-/**
- * 缓存工具
- */
 export * from './utils/cache'
-/**
- * 数据工具
- */
 export * from './utils/data'
-/**
- * 日期工具
- */
 export * from './utils/date'
-/**
- * 加密工具
- */
-// export * from './utils/encrypt'
-/**
- * 文件工具
- */
-export * from './utils/file'
-/**
- * 文件工具
- */
-export * from './utils/image'
-/**
- * 函数工具
- */
-export * from './utils/fun'
-/**
- * 遮罩层工具
- */
-export * from './utils/mask'
-/**
- * 验证工具
- */
-export * from './utils/verify'
-/**
- * 消息工具
- */
-export * from './utils/message'
-/**
- * 水印工具
- */
-export * from './utils/watermark'
-/**
- * 任务执行器工具
- */
-export * from './utils/task'
-/**
- * 发布订阅工具
- */
 export * from './utils/events'
+// export * from './utils/encrypt'
+export * from './utils/file'
+export * from './utils/fun'
+export * from './utils/image'
+export * from './utils/mask'
+export * from './utils/message'
+export * from './utils/task'
+export * from './utils/verify'
+export * from './utils/watermark'

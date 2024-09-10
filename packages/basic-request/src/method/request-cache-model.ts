@@ -1,9 +1,7 @@
-'use strict'
-
 import type { BaseRequestModel, QueryType, RequestConfig, ResultModel } from '@own-basic-component/config'
 import { RequestModel } from '../core'
-import type { Method, MiddleRequestResult } from '../types'
 import { METHOD_TYPE_DELETE, METHOD_TYPE_GET, METHOD_TYPE_POST, METHOD_TYPE_PUT } from '../types'
+import type { Method, MiddleRequestResult } from '../types'
 
 /**
  * 缓存对象
@@ -12,8 +10,6 @@ const CACHE_MAP: Record<string, string> = {}
 
 /**
  * 默认缓存的请求对象
- * @type T 数据返回的类型（不包括通用返回对象）
- * @type RESPONSE_TYPE 通用返回对象
  */
 class RequestCacheModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends RequestModel<T, RESPONSE_TYPE> {
   /**
@@ -73,8 +69,6 @@ class RequestCacheModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends Request
 
 /**
  * 带缓存的get请求
- * @type T 数据返回的类型（不包括通用返回对象）
- * @type RESPONSE_TYPE 通用返回对象
  */
 class GetRequestCacheModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends RequestCacheModel<T, RESPONSE_TYPE> {
   /**
@@ -90,8 +84,6 @@ class GetRequestCacheModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends Requ
 
 /**
  * 带缓存的post请求
- * @type T 数据返回的类型（不包括通用返回对象）
- * @type RESPONSE_TYPE 通用返回对象
  */
 class PostRequestCacheModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends RequestCacheModel<T, RESPONSE_TYPE> {
   /**
@@ -107,8 +99,6 @@ class PostRequestCacheModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends Req
 
 /**
  * 带缓存的put请求
- * @type T 数据返回的类型（不包括通用返回对象）
- * @type RESPONSE_TYPE 通用返回对象
  */
 class PutRequestCacheModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends RequestCacheModel<T, RESPONSE_TYPE> {
   /**
@@ -124,8 +114,6 @@ class PutRequestCacheModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends Requ
 
 /**
  * 带缓存的delete请求
- * @type T 数据返回的类型（不包括通用返回对象）
- * @type RESPONSE_TYPE 通用返回对象
  */
 class DeleteRequestCacheModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends RequestCacheModel<T, RESPONSE_TYPE> {
   /**
@@ -140,9 +128,9 @@ class DeleteRequestCacheModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends R
 }
 
 export {
-  RequestCacheModel,
+  DeleteRequestCacheModel,
   GetRequestCacheModel,
   PostRequestCacheModel,
   PutRequestCacheModel,
-  DeleteRequestCacheModel,
+  RequestCacheModel,
 }

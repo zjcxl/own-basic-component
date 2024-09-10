@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * 消息基础配置
  */
@@ -25,7 +23,7 @@ export interface MessageUtilMethod<ContentType = string, ReturnType = void> {
    * @param duration
    * @param onClose
    */
-  info(content: ContentType, duration?: number, onClose?: () => void): ReturnType
+  info: (content: ContentType, duration?: number, onClose?: () => void) => ReturnType
 
   /**
    * 错误消息提示
@@ -33,7 +31,7 @@ export interface MessageUtilMethod<ContentType = string, ReturnType = void> {
    * @param duration
    * @param onClose
    */
-  error(content: ContentType, duration?: number, onClose?: () => void): ReturnType
+  error: (content: ContentType, duration?: number, onClose?: () => void) => ReturnType
 
   /**
    * 警告消息提示
@@ -41,7 +39,7 @@ export interface MessageUtilMethod<ContentType = string, ReturnType = void> {
    * @param duration
    * @param onClose
    */
-  warning(content: ContentType, duration?: number, onClose?: () => void): ReturnType
+  warning: (content: ContentType, duration?: number, onClose?: () => void) => ReturnType
 
   /**
    * 成功消息提示
@@ -49,7 +47,7 @@ export interface MessageUtilMethod<ContentType = string, ReturnType = void> {
    * @param duration
    * @param onClose
    */
-  success(content: ContentType, duration?: number, onClose?: () => void): ReturnType
+  success: (content: ContentType, duration?: number, onClose?: () => void) => ReturnType
 
   /**
    * 加载框
@@ -57,7 +55,7 @@ export interface MessageUtilMethod<ContentType = string, ReturnType = void> {
    * @param duration
    * @param onClose
    */
-  loading(content: ContentType, duration?: number, onClose?: () => void): ReturnType
+  loading: (content: ContentType, duration?: number, onClose?: () => void) => ReturnType
 
   /**
    * 弹框
@@ -65,7 +63,7 @@ export interface MessageUtilMethod<ContentType = string, ReturnType = void> {
    * @param ok
    * @param cancel
    */
-  confirm(title: string | (() => string), ok?: () => void, cancel?: () => void): void
+  confirm: (title: string | (() => string), ok?: () => void, cancel?: () => void) => void
 }
 
 /**

@@ -1,5 +1,5 @@
-import type { RequestConfig } from '@own-basic-component/config'
 import { NANOID } from '@own-basic-component/util'
+import type { RequestConfig } from '@own-basic-component/config'
 
 export const requestConfig: RequestConfig = {
   header: () => ({

@@ -1,7 +1,7 @@
 <script setup lang="ts" generic="T = File">
 import { ref } from 'vue'
-import type { FileResolveMethod } from '../composables'
 import { resolveFileList, resolveFileListToArray } from '../composables'
+import type { FileResolveMethod } from '../composables'
 
 /**
  * 定义传入参数

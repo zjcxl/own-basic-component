@@ -1,5 +1,3 @@
-'use strict'
-
 import type { QueryType, RequestConfig, ResultModel } from '@own-basic-component/config'
 import { RequestModel } from '../core'
 import {
@@ -46,8 +44,8 @@ class DeleteRequestModel<T = any, RESPONSE_TYPE = ResultModel<T>> extends Reques
 }
 
 export {
+  DeleteRequestModel,
   GetRequestModel,
   PostRequestModel,
   PutRequestModel,
-  DeleteRequestModel,
 }

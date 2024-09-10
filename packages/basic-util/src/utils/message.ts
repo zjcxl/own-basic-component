@@ -1,5 +1,3 @@
-'use strict'
-
 import { getMessageConfig } from '@own-basic-component/config'
 import type { MessageUtilMethod } from '@own-basic-component/config'
 

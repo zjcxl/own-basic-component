@@ -1,5 +1,3 @@
-'use strict'
-
 import type { AuthInfoModel } from '../auth'
 import type { BowserInfo } from '../data'
 

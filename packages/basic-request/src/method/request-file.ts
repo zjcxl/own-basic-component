@@ -1,11 +1,9 @@
-'use strict'
-
-import type { BaseRequestModel, RequestConfig, ResultModel } from '@own-basic-component/config'
 import { getRequestConfig } from '@own-basic-component/config'
+import type { BaseRequestModel, RequestConfig, ResultModel } from '@own-basic-component/config'
 import { RequestModel } from '../core'
 import { METHOD_TYPE_POST } from '../types'
-import type { MiddleRequestResult } from '../types'
 import { handleFormDataParams } from '../util/handle-params-util'
+import type { MiddleRequestResult } from '../types'
 
 /**
  * 文件上传类 默认文件字段为file

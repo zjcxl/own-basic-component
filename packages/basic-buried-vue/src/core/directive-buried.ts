@@ -1,5 +1,5 @@
-import type { App, DirectiveBinding } from 'vue'
 import { sendAe } from '@own-basic-component/buried'
+import type { App, DirectiveBinding } from 'vue'
 
 /**
  * 发送按钮点击事件的方法

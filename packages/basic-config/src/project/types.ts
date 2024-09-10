@@ -1,5 +1,3 @@
-'use strict'
-
 import type { LoadingBarConfig } from '../loading/types'
 import type { MaskUtilConfig } from '../mask/types'
 import type { MessageUtilConfig } from '../message/types'
@@ -7,8 +5,6 @@ import type { BaseRequestModel, RequestConfig, ResultModel } from '../request/ty
 
 /**
  * 临时请求对象
- * @type T 数据返回的类型（不包括通用返回对象）
- * @type RESPONSE_TYPE 通用返回对象
  */
 export interface TempResponseType<T = any, RESPONSE_TYPE = ResultModel<T>> {
   type: 'success' | 'error'
@@ -17,10 +13,8 @@ export interface TempResponseType<T = any, RESPONSE_TYPE = ResultModel<T>> {
 
 /**
  * 临时请求对象
- * @type T 数据返回的类型（不包括通用返回对象）
- * @type RESPONSE_TYPE 通用返回对象
  */
-export type RequestMethod = <T = any, RESPONSE_TYPE = ResultModel<T>, CONFIG = {}>
+export type RequestMethod = <T = any, RESPONSE_TYPE = ResultModel<T>, CONFIG = object>
 (
   requestModel: BaseRequestModel<T, RESPONSE_TYPE>,
   requestData: CONFIG,

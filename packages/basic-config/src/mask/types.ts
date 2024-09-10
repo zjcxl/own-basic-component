@@ -1,5 +1,3 @@
-'use strict'
-
 export interface MaskConfig {
   /**
    * 遮罩层的编号

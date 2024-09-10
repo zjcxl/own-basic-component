@@ -1,10 +1,10 @@
-'use strict'
-
 import platform from 'platform'
 import type { BaseInfoModel, EventType } from '../type'
 import type { BowserInfo } from './types'
 
-// 获取客户端的平台信息
+/**
+ * 获取客户端的平台信息
+ */
 const clientPlatform = platform.parse(navigator.userAgent)
 
 export const AE: EventType = 'ae'

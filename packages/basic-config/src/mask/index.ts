@@ -1,5 +1,3 @@
-'use strict'
-
 import { parentMaskConfig as PARENT_MASK_CONFIG, setResultConfig } from './method'
 import type { MaskUtilConfig, MaskUtilMethodConfig } from './types'
 

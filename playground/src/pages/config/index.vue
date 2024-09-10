@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { ProjectConfig, RequestConfig } from '@own-basic-component/config'
 import { defineProjectConfig, defineRequestConfig, getProjectConfig, getRequestConfig } from '@own-basic-component/config'
 import { getRequestHeaders } from '@own-basic-component/request'
+import type { ProjectConfig, RequestConfig } from '@own-basic-component/config'
 
 defineProjectConfig({
   baseUrl: '/api/test',

@@ -10,7 +10,7 @@ export interface Buried {
    * 安装方法
    * @param app
    */
-  install(app: App): void
+  install: (app: App) => void
 }
 
 /**

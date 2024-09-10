@@ -1,12 +1,8 @@
-'use strict'
-
-import type { Method, QueryType, RequestConfig, RequestExtra, ResultModel } from '@own-basic-component/config'
 import { getRequestConfig } from '@own-basic-component/config'
+import type { Method, QueryType, RequestConfig, RequestExtra, ResultModel } from '@own-basic-component/config'
 
 /**
  * 从配置中获取请求头信息
- * @param extra 额外数据
- * @param config 配置信息
  */
 export function getHeadersFromConfig<T = any, RESPONSE_TYPE = ResultModel<T>>(extra: {
   method: Method

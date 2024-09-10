@@ -1,5 +1,3 @@
-'use strict'
-
 import type { AMapModel } from './types'
 
 let MAP_API = 'https://restapi.amap.com/v3/ip?key=ef7a817cfd8d2b4e62873daf64021d2c'

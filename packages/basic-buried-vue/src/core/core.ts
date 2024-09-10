@@ -1,9 +1,8 @@
 import { initUrl, setAMapApi, setAppKey, setGlobalInfo } from '@own-basic-component/buried'
 import type { App } from 'vue'
+import buriedDirective from './directive-buried'
 import { setRouterBuried } from './router'
 import type { Buried, BuriedOptions } from './types'
-
-import buriedDirective from './directive-buried'
 
 /**
  * 创建埋点对象信息

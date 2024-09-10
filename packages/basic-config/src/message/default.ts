@@ -1,5 +1,3 @@
-'use strict'
-
 import type { MessageUtilConfig } from './types'
 
 /**
@@ -19,6 +17,7 @@ export const defaultMessageConfig: Required<MessageUtilConfig<any, any>> = {
      * @param onClose 关闭的回调
      */
     success(content: string, duration?: number, onClose?: () => void): void {
+      // eslint-disable-next-line no-console
       console.log(content, duration, onClose)
     },
     /**
@@ -28,6 +27,7 @@ export const defaultMessageConfig: Required<MessageUtilConfig<any, any>> = {
      * @param onClose 关闭的回调
      */
     info(content: string, duration?: number, onClose?: () => void): void {
+      // eslint-disable-next-line no-console
       console.log(content, duration, onClose)
     },
     /**
@@ -37,6 +37,7 @@ export const defaultMessageConfig: Required<MessageUtilConfig<any, any>> = {
      * @param onClose 关闭的回调
      */
     warning(content: string, duration?: number, onClose?: () => void): void {
+      // eslint-disable-next-line no-console
       console.log(content, duration, onClose)
     },
     /**
@@ -46,6 +47,7 @@ export const defaultMessageConfig: Required<MessageUtilConfig<any, any>> = {
      * @param onClose 关闭的回调
      */
     error(content: string, duration?: number, onClose?: () => void): void {
+      // eslint-disable-next-line no-console
       console.log(content, duration, onClose)
     },
     /**
@@ -55,6 +57,7 @@ export const defaultMessageConfig: Required<MessageUtilConfig<any, any>> = {
      * @param onClose 关闭的回调
      */
     loading(content: string, duration?: number, onClose?: () => void): void {
+      // eslint-disable-next-line no-console
       console.log(content, duration, onClose)
     },
     /**
@@ -64,6 +67,7 @@ export const defaultMessageConfig: Required<MessageUtilConfig<any, any>> = {
      * @param cancel 关闭的回调
      */
     confirm(title: string | (() => string), ok?: () => void, cancel?: () => void): void {
+      // eslint-disable-next-line no-console
       console.log(title, ok, cancel)
     },
   },

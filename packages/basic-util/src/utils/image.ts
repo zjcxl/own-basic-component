@@ -1,5 +1,5 @@
-import { fileBase64toBlob } from './file'
 import { NANOID } from './data'
+import { fileBase64toBlob } from './file'
 
 export interface CompressImageOptions {
   /**

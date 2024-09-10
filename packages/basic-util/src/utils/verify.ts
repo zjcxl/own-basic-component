@@ -1,12 +1,9 @@
-'use strict'
-// verify.ts
-
 /**
  * 手机号验证
  * @param phone 手机号
  */
 function isPhone(phone: string): boolean {
-  return /^1([3-9])\d{9}$/.test(phone)
+  return /^1[3-9]\d{9}$/.test(phone)
 }
 
 /**
@@ -14,7 +11,7 @@ function isPhone(phone: string): boolean {
  * @param account 用户账号
  */
 function isAccount(account: string): boolean {
-  return /^[A-Za-z\d]{4,15}$/.test(account)
+  return /^[A-Z\d]{4,15}$/i.test(account)
 }
 
 /**
@@ -75,7 +72,7 @@ function checkProvince(content: string) {
  * @param content
  */
 function checkBirthday(content: string) {
-  const pattern = /^(18|19|20)\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)$/
+  const pattern = /^(?:18|19|20)\d{2}(?:0[1-9]|1[0-2])(?:[0-2][1-9]|10|20|30|31)$/
   if (pattern.test(content)) {
     const year = content.substring(0, 4)
     const month = content.substring(4, 6)
@@ -92,7 +89,7 @@ function checkBirthday(content: string) {
  * @param content
  */
 function checkCode(content: string) {
-  const p = /^[1-9]\d{5}(18|19|20)\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[\dXx]$/
+  const p = /^[1-9]\d{5}(?:18|19|20)\d{2}(?:0[1-9]|1[0-2])(?:[0-2][1-9]|10|20|30|31)\d{3}[\dX]$/i
   const factor = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
   const parity = ['1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2']
   const code = content.substring(17)
@@ -121,8 +118,8 @@ function isIdCard(content: string) {
 }
 
 export {
-  isPhone as verifyPhone,
   isAccount as verifyAccount,
   isEmail as verifyEmail,
   isIdCard as verifyIdCard,
+  isPhone as verifyPhone,
 }

@@ -1,5 +1,3 @@
-'use strict'
-
 import type { AuthInfoModel } from '../auth'
 import type { BuriedAeModel, SimpleBuriedAeModel } from '../event/ae/types'
 import type { BuriedCustomModel, SimpleBuriedCustomModel } from '../event/custom/types'

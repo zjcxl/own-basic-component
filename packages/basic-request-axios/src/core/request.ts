@@ -1,5 +1,6 @@
-'use strict'
-
+import { useLoadingBar } from '@own-basic-component/config'
+import { useMask, useMessage } from '@own-basic-component/util'
+import axios from 'axios'
 import type {
   BaseRequestModel,
   CodeType,
@@ -8,10 +9,7 @@ import type {
   ResultModel,
   TempResponseType,
 } from '@own-basic-component/config'
-import { useLoadingBar } from '@own-basic-component/config'
-import { useMask, useMessage } from '@own-basic-component/util'
 import type { AxiosRequestConfig } from 'axios'
-import axios from 'axios'
 
 const instance = axios.create({})
 

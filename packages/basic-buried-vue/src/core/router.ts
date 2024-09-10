@@ -1,5 +1,3 @@
-'use strict'
-
 import { sendPv, sendSt } from '@own-basic-component/buried'
 import type { Router } from 'vue-router'
 

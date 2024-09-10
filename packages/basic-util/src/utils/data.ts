@@ -1,7 +1,5 @@
-'use strict'
-
-import { nanoid } from 'nanoid'
 import Clipboard from 'clipboard'
+import { nanoid } from 'nanoid'
 
 /**
  * 生成uuid
@@ -10,8 +8,7 @@ function uuid(): string {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
     const r = (Math.random() * 16) | 0
     return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16)
-  })
-    .replace('-', '')
+  }).replace('-', '')
 }
 
 type _typeObj = Record<string, any>
@@ -212,15 +209,15 @@ function getStrMemorySize(content: string): string {
 }
 
 export {
-  uuid as UUID,
-  nanoid as NANOID,
-  deepCopy as dataDeepCopy,
-  formatTextFromHtml,
-  formatMemorySize,
-  toDBC as Text2DBC,
-  toCDB as Text2CDB,
   copyText,
+  deepCopy as dataDeepCopy,
+  formatMemorySize,
+  formatTextFromHtml,
+  getFormatMemorySizeValue,
   getStrByteLength,
   getStrMemorySize,
-  getFormatMemorySizeValue,
+  nanoid as NANOID,
+  toCDB as Text2CDB,
+  toDBC as Text2DBC,
+  uuid as UUID,
 }

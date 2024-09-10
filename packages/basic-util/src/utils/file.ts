@@ -1,5 +1,3 @@
-'use strict'
-
 import { getProjectConfig } from '@own-basic-component/config'
 import * as cryptojs from 'crypto-js'
 
@@ -18,7 +16,6 @@ export const FILE_CONFIG = {
 /**
  * base64转blob
  * @param base64 base64
- * @returns {Blob}
  */
 function base64toBlob(base64: string): Blob {
   const array = base64.split(',')
@@ -34,7 +31,6 @@ function base64toBlob(base64: string): Blob {
 /**
  * blob转base64
  * @param blob blob
- * @returns {Promise<string | ArrayBuffer>}
  */
 function blobToBase64(blob: Blob): Promise<string | ArrayBuffer> {
   return new Promise((resolve) => {
@@ -106,7 +102,6 @@ export function downloadFile(path: string, fileName: string): void {
 
 /**
  * 下载上传文件
- * @param file 文件对象
  */
 export function downloadUploadFile(file: { uploadPath: string, oldFileName: string }) {
   const downPath = getUploadPath(file.uploadPath)
@@ -138,9 +133,7 @@ export function downloadBackupFile(path: string, fileName: string) {
 export async function calculateFileSha256(file: File) {
   const buffer = await readFileAsArrayBuffer(file)
   const hashArray = await crypto.subtle.digest('SHA-256', buffer)
-  return Array.from(new Uint8Array(hashArray))
-    .map(byte => byte.toString(16).padStart(2, '0'))
-    .join('')
+  return Array.from(new Uint8Array(hashArray)).map(byte => byte.toString(16).padStart(2, '0')).join('')
 }
 
 /**

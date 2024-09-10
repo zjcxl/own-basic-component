@@ -1,5 +1,3 @@
-'use strict'
-
 import { getResultConfig, setResultConfig } from './method'
 import type { MessageUtilConfig } from './types'
 

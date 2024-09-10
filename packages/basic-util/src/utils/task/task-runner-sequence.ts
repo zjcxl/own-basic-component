@@ -1,6 +1,6 @@
-import type { BaseTaskRunnerOptions, TaskType } from './types'
-import type { TaskRunnerSequenceItem } from './task-runner-sequence-item'
 import { useTaskRunnerSequenceItem } from './task-runner-sequence-item'
+import type { TaskRunnerSequenceItem } from './task-runner-sequence-item'
+import type { BaseTaskRunnerOptions, TaskType } from './types'
 
 /**
  * 任务执行器

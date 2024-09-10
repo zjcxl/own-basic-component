@@ -1,5 +1,3 @@
-'use strict'
-
 // import { JSEncrypt } from 'jsencrypt'
 //
 // /**

@@ -1,7 +1,5 @@
-'use strict'
-
-import type { BaseRequestModel, ResultModel } from '@own-basic-component/config'
 import { useMessage } from '@own-basic-component/util'
+import type { BaseRequestModel, ResultModel } from '@own-basic-component/config'
 import type { RequestModel } from '../core'
 import type { ResultModelConfirm } from '../types'
 

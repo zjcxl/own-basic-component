@@ -1,9 +1,7 @@
-'use strict'
-
-import { OP, getUrl } from '../../data'
-import type { SimpleExtraInfoOpType } from '../../type'
+import { getUrl, OP } from '../../data'
 import { resolveToUrlSearchParams, send as resultSend } from '../../util'
 import { clear, getExtraInfo } from './push'
+import type { SimpleExtraInfoOpType } from '../../type'
 
 /**
  * 操作事件

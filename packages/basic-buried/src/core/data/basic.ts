@@ -1,5 +1,3 @@
-'use strict'
-
 import type { AppInfoModel } from '../type'
 
 /**

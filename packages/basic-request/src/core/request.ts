@@ -1,11 +1,9 @@
-'use strict'
-
-import type { QueryType, RequestConfig, RequestExtra, ResultModel, TempResponseType } from '@own-basic-component/config'
 import { BaseRequestModel, getRequestConfig, handleMergeRequestConfig } from '@own-basic-component/config'
-import type { Method, MiddleRequestResult } from '../types'
+import type { QueryType, RequestConfig, RequestExtra, ResultModel, TempResponseType } from '@own-basic-component/config'
 import { METHOD_TYPE_DELETE, METHOD_TYPE_PATCH, METHOD_TYPE_POST, METHOD_TYPE_PUT } from '../types'
 import { getHeadersFromConfig } from '../util/default-util'
 import { handleFormDataParams } from '../util/handle-params-util'
+import type { Method, MiddleRequestResult } from '../types'
 
 /**
  * 请求对象

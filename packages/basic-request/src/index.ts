@@ -1,5 +1,3 @@
-'use strict'
-
 // 核心方法
 export * from './core'
 // 开放方法

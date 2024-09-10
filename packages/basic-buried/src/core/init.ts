@@ -1,5 +1,3 @@
-'use strict'
-
 import { setAuthInfo } from './auth'
 import { getEventTypeArray, setAppKey, setGlobalInfo, setUrl } from './data'
 import type { EventType } from './type'
