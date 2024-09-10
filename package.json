@@ -2,7 +2,7 @@
   "name": "@own-team/own-basic-component",
   "private": true,
   "packageManager": "pnpm@9.10.0",
-  "version": "0.8.199",
+  "version": "0.8.200",
   "scripts": {
     "build": "pnpm -r run build",
     "build:stub": "pnpm -r run build:stub",
