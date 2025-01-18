@@ -179,6 +179,26 @@ export async function readFileAsString(file: File): Promise<string> {
   })
 }
 
+/**
+ * 字符串转base64
+ * @param str
+ */
+export function stringToBase64(str: string): string {
+  return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (match, p1) => {
+    return String.fromCharCode(Number(`0x${p1}`))
+  }))
+}
+
+/**
+ * base64转字符串
+ * @param base64
+ */
+export function base64ToString(base64: string): string {
+  return decodeURIComponent(atob(base64).split('').map((c) => {
+    return `%${(`00${c.charCodeAt(0).toString(16)}`).slice(-2)}`
+  }).join(''))
+}
+
 export {
   base64toBlob as fileBase64toBlob,
   blobToBase64 as fileBlobToBase64,
