@@ -1,7 +1,7 @@
 {
   "name": "@own-basic-component/request-fetch",
   "type": "module",
-  "version": "0.8.203",
+  "version": "0.8.204",
   "packageManager": "pnpm@9.14.2",
   "description": "_description_",
   "author": "chenxueli<zjphchenxueli@163.com>",
